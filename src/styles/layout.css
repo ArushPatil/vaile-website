@@ -1,0 +1,52 @@
+/* ==========================================================================
+   LAYOUT
+   16-column CSS Grid system and responsive breakpoints
+   ========================================================================== */
+
+/* 16-column grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+/* Base section wrapper */
+.section {
+  width: 100%;
+  position: relative;
+}
+
+/* -----------------------------------------------------------------------
+   TILE SPANS (Desktop >= 992px)
+   ----------------------------------------------------------------------- */
+.tile--span-4 {
+  grid-column: span 4;
+}
+
+.tile--span-8 {
+  grid-column: span 8;
+}
+
+.tile--span-16 {
+  grid-column: span 16;
+}
+
+/* -----------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS (Mobile & Tablet)
+   ----------------------------------------------------------------------- */
+@media screen and (max-width: 991px) {
+  .tile--span-4 {
+    grid-column: span 8;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tile--span-4 {
+    grid-column: span 16;
+  }
+
+  .tile--span-8 {
+    grid-column: span 16;
+  }
+}

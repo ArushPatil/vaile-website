@@ -1,0 +1,40 @@
+/* ==========================================================================
+   VARIABLES
+   CSS custom properties definition for VAILE website
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #767676;
+  --color-gray-light: #999999;
+  --color-border: #e5e5e5;
+  --color-blue: #002bff;
+  --color-green: #00a651;
+
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+
+  /* Layout */
+  --nav-height: 48px;
+
+  /* Spacing */
+  --spacing-micro: 4px;
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+  --spacing-xlarge: 64px;
+
+  /* Breakpoints */
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1440px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.4s ease;
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}

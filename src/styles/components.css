@@ -1,0 +1,1359 @@
+/* ==========================================================================
+   COMPONENTS
+   Pixel-perfect Acne Studios–inspired luxury aesthetic for VAILE
+   ========================================================================== */
+
+/* Global body */
+body {
+  font-family: var(--font-primary);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body.state--menu-open {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   SKIP LINKS
+   ========================================================================== */
+.skip-links {
+  position: absolute;
+  z-index: 9999;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 8px 16px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* ==========================================================================
+   NAVIGATION — Fixed, Hairline Grid
+   ========================================================================== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.nav__left,
+.nav__right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav__logo-link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  transition: opacity var(--transition-fast);
+  text-decoration: none;
+}
+
+.nav__logo-link:hover {
+  opacity: 0.6;
+}
+
+.nav__logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.nav__link {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: opacity var(--transition-fast), background-color var(--transition-fast);
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--color-black);
+  border-left: 1px solid var(--color-border);
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  opacity: 0.5;
+  background-color: #fafafa;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__logo-link {
+    padding: 0 16px;
+  }
+  
+  .nav__logo {
+    height: 22px;
+  }
+
+  .nav__link {
+    padding: 0 16px;
+    font-size: 10px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE MENU DRAWER
+   ========================================================================== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--color-white);
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+body.state--menu-open .mobile-menu {
+  transform: translateX(0);
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: 0 var(--spacing-medium);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-menu__title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.mobile-menu__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-large) var(--spacing-medium);
+  gap: 16px;
+}
+
+.mobile-menu__link {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   ACNE STUDIOS NATIVE 120FPS STICKY COLOR-REACTIVE MASTHEAD
+   ========================================================================== */
+.editorial-stream {
+  position: relative;
+  width: 100%;
+}
+
+/* Zero-layout overhead portal spanning the full height of the image stream */
+.masthead-portal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.masthead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50vh;
+  transform: translateY(-50%);
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: difference;
+}
+
+.masthead__text {
+  font-family: var(--font-primary);
+  font-size: clamp(4.5rem, 18vw, 8.5rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  color: #ffffff;
+  line-height: 0.95;
+  text-align: center;
+  mix-blend-mode: difference;
+  padding: 0 16px;
+  max-width: 96vw;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 767px) {
+  .masthead__text {
+    font-size: clamp(4.2rem, 21vw, 6.5rem);
+    letter-spacing: -0.04em;
+  }
+}
+
+/* ==========================================================================
+   PAGE CONTENT
+   ========================================================================== */
+.page-content {
+  padding-top: var(--nav-height);
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   TILES — Editorial Photography
+   ========================================================================== */
+.tile {
+  position: relative;
+  overflow: hidden;
+  background-color: #111111;
+}
+
+.tile__link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+}
+
+.tile__media {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #141414;
+}
+
+.tile__image {
+  width: 100%;
+  height: 120%;
+  margin-top: -10%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Aspect Ratios */
+.media--ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.media--ratio-2-3 {
+  aspect-ratio: 2 / 3;
+}
+
+@media screen and (max-width: 767px) {
+  .media--ratio-2-3-mobile {
+    aspect-ratio: 2 / 3 !important;
+  }
+}
+
+/* Sticky Category Labels */
+.tile__sticky-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   PRODUCT ACQUISITION & SIZE CONFIGURATION SECTION
+   ========================================================================== */
+.allocation {
+  padding: 80px 20px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-white);
+  position: relative;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   EXPERIENCE ZONE & UNIFIED MOLTEN METAL LIQUID GLASS
+   ========================================================================== */
+.experience-zone {
+  position: relative;
+  background: #f4f5f8;
+  color: #000000;
+  overflow: hidden;
+  padding: 80px 0 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* MoltenMetal WebGL Procedural Background Canvas */
+.molten-metal-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+.molten-metal-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Authentic iOS / Windows Aero Liquid Glass Panel */
+.liquid-card {
+  position: relative;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.52) 50%, rgba(255, 255, 255, 0.72) 100%);
+  backdrop-filter: blur(40px) saturate(190%) brightness(104%);
+  -webkit-backdrop-filter: blur(40px) saturate(190%) brightness(104%);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.03),
+    0 24px 60px -10px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  will-change: transform;
+}
+
+.liquid-card:hover {
+  box-shadow: 
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1),
+    0 36px 80px -10px rgba(0, 30, 80, 0.14),
+    0 4px 14px rgba(0, 0, 0, 0.04);
+  border-top-color: #ffffff;
+}
+
+/* Pure Liquid Glass Specular Lens Flare on Cursor */
+.liquid-card__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.35) 35%,
+    rgba(255, 255, 255, 0.1) 60%,
+    transparent 75%
+  );
+  transition: opacity 0.35s ease;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+.liquid-card:hover .liquid-card__glow {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   ACQUIRE — AERO LIQUID SPEC & ALLOCATION CARD
+   ========================================================================== */
+.acquire {
+  padding: 0 24px 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.acquire__container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.acquire__card {
+  padding: 64px 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .acquire__card {
+    padding: 36px 24px;
+    border-radius: 12px;
+  }
+}
+
+.acquire__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #000000;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.acquire__badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.acquire__title {
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.acquire__tagline {
+  font-size: 12px;
+  color: #555560;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.acquire__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
+  align-items: start;
+  margin-top: 48px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 48px;
+}
+
+@media screen and (max-width: 991px) {
+  .acquire__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 32px;
+    padding-top: 32px;
+  }
+}
+
+.acquire__body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #222226;
+  margin-bottom: 32px;
+  max-width: 580px;
+  font-weight: 400;
+}
+
+.acquire__specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media screen and (max-width: 500px) {
+  .acquire__specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.acquire__spec-chip {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 4px 12px rgba(0, 20, 60, 0.03);
+}
+
+.acquire__spec-k {
+  font-size: 10px;
+  color: #666672;
+  letter-spacing: 0.06em;
+}
+
+.acquire__spec-v {
+  font-size: 11px;
+  font-weight: 600;
+  color: #000000;
+  letter-spacing: 0.04em;
+}
+
+/* Sizing & Liquid Glass Action Box */
+.acquire__size-box {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.55) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 4px 14px rgba(0, 20, 60, 0.03);
+}
+
+.acquire__size-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.acquire__size-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.acquire__size-status {
+  font-size: 10px;
+  color: #3b185f;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  background: rgba(59, 24, 95, 0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(59, 24, 95, 0.18);
+}
+
+.acquire__sizes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.acquire__size-pill {
+  height: 48px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.65) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  color: #000000;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.acquire__size-pill.active {
+  background: linear-gradient(180deg, #1e1e24 0%, #09090b 100%);
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 6px 18px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+}
+
+/* Aero Obsidian Liquid Glass CTA */
+.acquire__cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 24px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #24242a 0%, #111114 50%, #000000 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.38);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 18px 45px -8px rgba(0, 10, 30, 0.35);
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.acquire__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s ease;
+}
+
+.acquire__cta:hover::before {
+  left: 100%;
+}
+
+.acquire__cta-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  color: #ffffff;
+}
+
+.acquire__cta-sub {
+  font-size: 10px;
+  color: #a1a1aa;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 2px;
+  display: block;
+}
+
+.acquire__cta-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+.acquire__cta:hover .acquire__cta-icon {
+  transform: translateX(4px);
+  background: #ffffff;
+  color: #000000;
+}
+
+.acquire__whisper {
+  font-size: 10px;
+  color: #666672;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ==========================================================================
+   MANIFESTO — AERO LIQUID BENTO MATRIX
+   ========================================================================== */
+.manifesto {
+  padding: 40px 24px 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.manifesto__container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.manifesto__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #000000;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.manifesto__badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.manifesto__lead {
+  font-size: clamp(1.3rem, 2.3vw, 1.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  max-width: 720px;
+  color: #000000;
+}
+
+.manifesto__bento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .manifesto__bento {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.manifesto__card {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  border-radius: 12px;
+}
+
+.manifesto__card--wide {
+  grid-column: span 2;
+}
+
+@media screen and (max-width: 767px) {
+  .manifesto__card--wide {
+    grid-column: span 1;
+  }
+}
+
+.manifesto__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.manifesto__index {
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.manifesto__pill {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #555560;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.manifesto__title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.manifesto__detail {
+  font-size: 13px;
+  color: #44444c;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   FAQ — LUXURY STUDIO PROTOCOL
+   ========================================================================== */
+.faq {
+  padding: 40px 24px 80px;
+}
+
+.faq__container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.faq__header {
+  margin-bottom: 36px;
+}
+
+.faq__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #3b185f;
+  letter-spacing: 0.08em;
+  background: rgba(59, 24, 95, 0.08);
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(59, 24, 95, 0.18);
+  margin-bottom: 14px;
+}
+
+.faq__badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #3b185f;
+}
+
+.faq__lead {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq__item {
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.faq__summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+.faq__summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__icon {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 400;
+  color: #3b185f;
+  transition: transform 0.25s ease;
+}
+
+details[open] .faq__icon {
+  transform: rotate(45deg);
+}
+
+.faq__answer {
+  padding: 0 28px 24px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #44444c;
+}
+
+/* ==========================================================================
+   DISPATCH — LIQUID GLASS MODULE
+   ========================================================================== */
+.dispatch {
+  padding: 20px 24px 60px;
+}
+
+.dispatch__container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.dispatch__card {
+  padding: 48px 44px;
+  border-radius: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .dispatch__card {
+    padding: 32px 20px;
+    border-radius: 12px;
+  }
+}
+
+.dispatch__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media screen and (max-width: 991px) {
+  .dispatch__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.dispatch__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #000000;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.dispatch__tag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.dispatch__title {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  color: #000000;
+}
+
+.dispatch__desc {
+  font-size: 13px;
+  color: #555560;
+  line-height: 1.5;
+}
+
+.dispatch__capsule {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 4px 6px 4px 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 4px 14px rgba(0, 20, 60, 0.04);
+}
+
+.dispatch__input {
+  width: 100%;
+  height: 42px;
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #000000;
+  outline: none;
+}
+
+.dispatch__input::placeholder {
+  color: #71717a;
+}
+
+.dispatch__submit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #222228 0%, #000000 100%);
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid #000000;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  height: 38px;
+  padding: 0 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dispatch__submit:hover {
+  background: linear-gradient(180deg, #2e2e36 0%, #111114 100%);
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   FOOTER — AERO ARCHITECTURAL BLUEPRINT
+   ========================================================================== */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  padding: 56px 24px 36px;
+  color: var(--color-black);
+}
+
+.footer__container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.footer__brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 36px;
+}
+
+.footer__wordmark {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.footer__meta {
+  font-size: 10px;
+  color: #666672;
+  letter-spacing: 0.05em;
+}
+
+.footer__bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 40px 20px 32px;
+  }
+
+  .footer__brand-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .footer__meta {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+
+  .footer__bottom-row {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .footer__links {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .footer__nav-pill {
+    flex: 1 1 auto;
+    text-align: center;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+}
+
+.footer__copy {
+  font-size: 10px;
+  color: #666672;
+}
+
+.footer__links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer__nav-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000000;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1), 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.footer__nav-pill:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   BEHIND THE SCENES PAGE
+   ========================================================================== */
+.bts-hero {
+  padding: 80px 20px 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.bts-hero__tag {
+  font-size: 11px;
+  color: #3b185f;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.bts-hero__title {
+  font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+
+.bts-hero__subtitle {
+  font-size: 14px;
+  color: var(--color-gray);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.bts-section {
+  padding: 72px 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.bts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bts-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media screen and (max-width: 767px) {
+  .bts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.bts-grid__label {
+  font-size: 11px;
+  color: var(--color-gray);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.bts-heading {
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.bts-body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333333;
+  margin-bottom: 16px;
+  max-width: 680px;
+}
+
+.bts-specs-table {
+  margin-top: 32px;
+  border-top: 1px solid var(--color-border);
+}
+
+.bts-spec-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.bts-spec-num {
+  font-size: 11px;
+  font-weight: 600;
+  color: #3b185f;
+}
+
+.bts-spec-item strong {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  color: var(--color-black);
+}
+
+.bts-spec-item p {
+  color: var(--color-gray);
+  font-family: var(--font-primary);
+  font-size: 12px;
+}
+
+.bts-cta-section {
+  padding: 80px 20px 100px;
+  border-top: 1px solid var(--color-border);
+  background: #f4f5f8;
+}
+
+.bts-cta-box {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 36px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.58) 50%, rgba(255, 255, 255, 0.76) 100%);
+  backdrop-filter: blur(40px) saturate(190%) brightness(104%);
+  -webkit-backdrop-filter: blur(40px) saturate(190%) brightness(104%);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+    0 24px 60px -10px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.bts-cta-tag {
+  font-size: 10px;
+  color: #3b185f;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  background: rgba(59, 24, 95, 0.08);
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(59, 24, 95, 0.18);
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.bts-cta-title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  color: #000000;
+}
+
+.bts-cta-desc {
+  font-size: 14px;
+  color: #44444c;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.bts-cta-btn {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Utility */
+.text-mono {
+  font-family: var(--font-mono);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

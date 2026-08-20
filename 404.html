@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover" />
+  <meta name="description" content="Archive Not Found — VAILE Luxury Fashion Atelier." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>404 — Archive Not Found | VAILE</title>
+
+  <!-- Google Fonts: Inter & IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/src/styles/main.css" />
+  <style>
+    .not-found {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #f4f5f8;
+      position: relative;
+      overflow: hidden;
+    }
+    .not-found__content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+    }
+    .not-found__card {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      padding: 56px 40px;
+      border-radius: 16px;
+    }
+    .not-found__code {
+      font-size: 11px;
+      color: #3b185f;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .not-found__title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .not-found__desc {
+      font-size: 14px;
+      color: #555560;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+  </style>
+</head>
+
+<body class="not-found">
+  <!-- Header -->
+  <header class="nav" id="header" role="banner">
+    <nav class="nav__inner" aria-label="Main navigation">
+      <div class="nav__left">
+        <a href="/" class="nav__logo-link" aria-label="VAILE Home">
+          <img src="/images/logo.png" alt="VAILE" class="nav__logo" />
+        </a>
+      </div>
+      <div class="nav__right">
+        <a href="/" class="nav__link">
+          <span>Back to Studio</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 404 Panel -->
+  <main class="not-found__content">
+    <div class="liquid-card not-found__card" data-liquid-card>
+      <div class="liquid-card__glow" aria-hidden="true"></div>
+      
+      <div class="not-found__code text-mono">ERROR &bull; 404</div>
+      <h1 class="not-found__title">ARCHIVE NOT FOUND</h1>
+      <p class="not-found__desc">
+        The studio entry or document you are seeking has been archived or does not exist.
+      </p>
+
+      <a href="/" class="acquire__cta" style="margin: 0 auto; max-width: 320px;">
+        <div class="acquire__cta-text-wrap" style="text-align: left;">
+          <span class="acquire__cta-label">RETURN TO STUDIO</span>
+          <span class="acquire__cta-sub text-mono">EXPLORE EDITION 01</span>
+        </div>
+        <div class="acquire__cta-icon" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1.5 7H12.5M12.5 7L7.5 2M12.5 7L7.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <div class="footer__bottom-row" style="border-top: none; padding-top: 0;">
+        <div class="footer__copy text-mono">
+          &copy; 2026 VAILE STUDIO INC.
+        </div>
+        <div class="footer__links">
+          <a href="/" class="footer__nav-pill">Back to Studio</a>
+          <a href="/behind-the-scenes.html" class="footer__nav-pill">Behind the Scenes</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

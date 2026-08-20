@@ -1,0 +1,16 @@
+/* ==========================================================================
+   FONTS
+   Google Fonts imports for VAILE website
+   ========================================================================== */
+
+/* 
+ * Inter - Primary font 
+ * Weights: 300 (Light), 400 (Regular), 500 (Medium), 700 (Bold)
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+/* 
+ * IBM Plex Mono - Monospace font 
+ * Weights: 400 (Regular), 500 (Medium)
+ */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');

@@ -1,0 +1,10 @@
+/* ==========================================================================
+   MAIN
+   Imports all CSS partials for VAILE website
+   ========================================================================== */
+
+@import './reset.css';
+@import './fonts.css';
+@import './variables.css';
+@import './layout.css';
+@import './components.css';

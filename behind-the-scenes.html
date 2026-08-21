@@ -3,36 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover" />
+
+  <!-- 1. PRIORITY #1: Instant Hero Image Stream (Preload First) -->
+  <link rel="preload" as="image" href="/images/4-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/4-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
+
+  <!-- 2. Meta & SEO -->
+  <title>Behind the Scenes — Studio Archive | VAILE</title>
   <meta name="description" content="Behind the Scenes — The Anatomy, Philosophy, and Craftsmanship Behind VAILE Edition 01 in 12 oz Heavyweight Duck Canvas." />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://vaile.studio/behind-the-scenes.html" />
+
+  <!-- 3. Ultra-Lightweight 1.5KB Favicon (Non-blocking) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://vaile.studio/behind-the-scenes.html" />
   <meta property="og:title" content="Behind the Scenes — The Making of Edition 01 | VAILE" />
   <meta property="og:description" content="Explore the single-garment philosophy, anatomical knee darting, and 12 oz duck canvas development." />
-  <meta property="og:image" content="/images/4.jpg.jpeg" />
+  <meta property="og:image" content="/images/4-desktop.jpg" />
   <meta property="og:site_name" content="VAILE" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Behind the Scenes — VAILE Edition 01" />
   <meta name="twitter:description" content="The making of Edition 01 in 12 oz Heavyweight Duck Canvas." />
-  <meta name="twitter:image" content="/images/4.jpg.jpeg" />
-
-  <title>Behind the Scenes — Studio Archive | VAILE</title>
-
-  <!-- Favicon & Touch Icons (Safari macOS + iOS + Chrome Complete Suite) -->
-  <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-circle.png?v=4" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-circle.png?v=4" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-circle.png?v=4" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=4" />
-
-  <!-- Preload Critical Hero Studio Image (Responsive: Mobile gets Mobile master, Desktop gets 2000px master) -->
-  <link rel="preload" as="image" href="/images/4-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="/images/4-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
+  <meta name="twitter:image" content="/images/4-desktop.jpg" />
 
   <!-- Google Fonts: Inter & IBM Plex Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -3,23 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, viewport-fit=cover" />
+
+  <!-- 1. PRIORITY #1: Instant Hero Image Stream (Preload First) -->
+  <link rel="preload" as="image" href="/images/5-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/5-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
+
+  <!-- 2. Meta & SEO -->
+  <title>VAILE — Edition 01 | Architectural Duck Canvas Pant</title>
   <meta name="description" content="VAILE — Edition 01 Architectural Pant. Hand-cut and assembled in Bangalore from 12 oz heavyweight duck canvas in numbered runs of 50." />
   <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://vaile.studio/" />
+
+  <!-- 3. Ultra-Lightweight 1.5KB Favicon (Non-blocking) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <!-- Open Graph / Social Sharing (iMessage, WhatsApp, Instagram, Twitter) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vaile.studio/" />
   <meta property="og:title" content="VAILE — Edition 01 | Architectural Duck Canvas Pant" />
   <meta property="og:description" content="Single-garment luxury atelier. Hand-cut in Bangalore from 12 oz heavyweight raw duck canvas in numbered runs of 50." />
-  <meta property="og:image" content="/images/5.jpg.jpeg" />
+  <meta property="og:image" content="/images/5-desktop.jpg" />
   <meta property="og:site_name" content="VAILE" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="VAILE — Edition 01 | Architectural Pant" />
   <meta name="twitter:description" content="Single-edition architectural trouser in 12 oz heavyweight duck canvas." />
-  <meta name="twitter:image" content="/images/5.jpg.jpeg" />
+  <meta name="twitter:image" content="/images/5-desktop.jpg" />
 
   <!-- JSON-LD Structured Product Schema (Google Rich Snippets) -->
   <script type="application/ld+json">
@@ -28,9 +39,9 @@
     "@type": "Product",
     "name": "VAILE Edition 01 — Architectural Pant",
     "image": [
-      "/images/5.jpg.jpeg",
-      "/images/2.jpg.jpeg",
-      "/images/3.jpg.jpeg"
+      "/images/5-desktop.jpg",
+      "/images/2-desktop.jpg",
+      "/images/3-desktop.jpg"
     ],
     "description": "Architectural relaxed taper trouser cut from 12 oz heavyweight duck canvas with ergonomic knee articulation and custom matte solid alloy hardware.",
     "brand": {
@@ -52,19 +63,6 @@
     }
   }
   </script>
-
-  <title>VAILE — Edition 01 | Architectural Duck Canvas Pant</title>
-
-  <!-- Favicon & Touch Icons (Safari macOS + iOS + Chrome Complete Suite) -->
-  <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon-circle.png?v=4" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-circle.png?v=4" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-circle.png?v=4" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=4" />
-
-  <!-- Preload Critical Hero Master Image (Responsive: Mobile gets Mobile master, Desktop gets 2000px master) -->
-  <link rel="preload" as="image" href="/images/5-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="/images/5-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
 
   <!-- Google Fonts: Inter & IBM Plex Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

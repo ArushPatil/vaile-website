@@ -55,8 +55,9 @@
 
   <title>VAILE — Edition 01 | Architectural Duck Canvas Pant</title>
 
-  <!-- Preload Critical Hero Master Image -->
-  <link rel="preload" as="image" href="/images/5.jpg.jpeg" fetchpriority="high" />
+  <!-- Preload Critical Hero Master Image (Responsive: Mobile gets Mobile master, Desktop gets 2000px master) -->
+  <link rel="preload" as="image" href="/images/5-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/5-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
 
   <!-- Google Fonts: Inter & IBM Plex Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -117,14 +118,18 @@
         <div class="grid-container">
           <div class="tile tile--span-16 tile--hero">
             <div class="tile__media media--ratio-16-9 media--ratio-2-3-mobile">
-              <img
-                src="/images/5.jpg.jpeg"
-                alt="VAILE — Edition 01 Campaign"
-                class="tile__image"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcset="/images/5-mobile.jpg" type="image/jpeg">
+                <source media="(min-width: 768px)" srcset="/images/5-desktop.jpg" type="image/jpeg">
+                <img
+                  src="/images/5-desktop.jpg"
+                  alt="VAILE — Edition 01 Campaign"
+                  class="tile__image"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="tile__sticky-label">
@@ -141,13 +146,17 @@
           <!-- TILE 2 (Left) -->
           <div class="tile tile--span-8">
             <div class="tile__media media--ratio-2-3">
-              <img
-                src="/images/2.jpg.jpeg"
-                alt="VAILE — The Silhouette"
-                class="tile__image"
-                loading="lazy"
-                decoding="async"
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcset="/images/2-mobile.jpg" type="image/jpeg">
+                <source media="(min-width: 768px)" srcset="/images/2-desktop.jpg" type="image/jpeg">
+                <img
+                  src="/images/2-desktop.jpg"
+                  alt="VAILE — The Silhouette"
+                  class="tile__image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="tile__sticky-label">
@@ -158,13 +167,17 @@
           <!-- TILE 3 (Right) -->
           <div class="tile tile--span-8">
             <div class="tile__media media--ratio-2-3">
-              <img
-                src="/images/3.jpg.jpeg"
-                alt="VAILE — The Fabric"
-                class="tile__image"
-                loading="lazy"
-                decoding="async"
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcset="/images/3-mobile.jpg" type="image/jpeg">
+                <source media="(min-width: 768px)" srcset="/images/3-desktop.jpg" type="image/jpeg">
+                <img
+                  src="/images/3-desktop.jpg"
+                  alt="VAILE — The Fabric"
+                  class="tile__image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="tile__sticky-label">
@@ -182,13 +195,17 @@
           <!-- TILE 4 (Left) -->
           <div class="tile tile--span-8">
             <div class="tile__media media--ratio-2-3">
-              <img
-                src="/images/6.jpg.jpeg"
-                alt="VAILE — Construction & Craft"
-                class="tile__image"
-                loading="lazy"
-                decoding="async"
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcset="/images/6-mobile.jpg" type="image/jpeg">
+                <source media="(min-width: 768px)" srcset="/images/6-desktop.jpg" type="image/jpeg">
+                <img
+                  src="/images/6-desktop.jpg"
+                  alt="VAILE — Construction & Craft"
+                  class="tile__image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="tile__sticky-label">
@@ -199,13 +216,17 @@
           <!-- TILE 5 (Right) -->
           <div class="tile tile--span-8">
             <div class="tile__media media--ratio-2-3">
-              <img
-                src="/images/1.jpg.jpeg"
-                alt="VAILE — Hardware and Fit"
-                class="tile__image"
-                loading="lazy"
-                decoding="async"
-              />
+              <picture>
+                <source media="(max-width: 767px)" srcset="/images/1-mobile.jpg" type="image/jpeg">
+                <source media="(min-width: 768px)" srcset="/images/1-desktop.jpg" type="image/jpeg">
+                <img
+                  src="/images/1-desktop.jpg"
+                  alt="VAILE — Hardware and Fit"
+                  class="tile__image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
 
             <div class="tile__sticky-label">

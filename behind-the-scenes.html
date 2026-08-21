@@ -23,8 +23,9 @@
 
   <title>Behind the Scenes — Studio Archive | VAILE</title>
 
-  <!-- Preload Critical Hero Studio Image -->
-  <link rel="preload" as="image" href="/images/4.jpg.jpeg" fetchpriority="high" />
+  <!-- Preload Critical Hero Studio Image (Responsive: Mobile gets Mobile master, Desktop gets 2000px master) -->
+  <link rel="preload" as="image" href="/images/4-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/4-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
 
   <!-- Google Fonts: Inter & IBM Plex Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -84,14 +85,18 @@
       <div class="grid-container">
         <div class="tile tile--span-16">
           <div class="tile__media media--ratio-16-9">
-            <img
-              src="/images/4.jpg.jpeg"
-              alt="VAILE Studio Process"
-              class="tile__image"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+            <picture>
+              <source media="(max-width: 767px)" srcset="/images/4-mobile.jpg" type="image/jpeg">
+              <source media="(min-width: 768px)" srcset="/images/4-desktop.jpg" type="image/jpeg">
+              <img
+                src="/images/4-desktop.jpg"
+                alt="VAILE Studio Process"
+                class="tile__image"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -126,13 +131,17 @@
         
         <div class="tile tile--span-8">
           <div class="tile__media media--ratio-2-3">
-            <img
-              src="/images/9.jpg.jpeg"
-              alt="VAILE Fabric & Detail"
-              class="tile__image"
-              loading="lazy"
-              decoding="async"
-            />
+            <picture>
+              <source media="(max-width: 767px)" srcset="/images/9-mobile.jpg" type="image/jpeg">
+              <source media="(min-width: 768px)" srcset="/images/9-desktop.jpg" type="image/jpeg">
+              <img
+                src="/images/9-desktop.jpg"
+                alt="VAILE Fabric & Detail"
+                class="tile__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
           <div class="tile__sticky-label">
             <span class="tile__label-base">Fabric Weight &bull; 12 oz</span>
@@ -141,13 +150,17 @@
 
         <div class="tile tile--span-8">
           <div class="tile__media media--ratio-2-3">
-            <img
-              src="/images/10 warm (1 of 1).jpg.jpeg"
-              alt="VAILE Fitting & Silhouette"
-              class="tile__image"
-              loading="lazy"
-              decoding="async"
-            />
+            <picture>
+              <source media="(max-width: 767px)" srcset="/images/10_warm-mobile.jpg" type="image/jpeg">
+              <source media="(min-width: 768px)" srcset="/images/10_warm-desktop.jpg" type="image/jpeg">
+              <img
+                src="/images/10_warm-desktop.jpg"
+                alt="VAILE Fitting & Silhouette"
+                class="tile__image"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
           <div class="tile__sticky-label">
             <span class="tile__label-base">Articulated Taper</span>

@@ -85,7 +85,7 @@ body.state--menu-open {
 }
 
 .nav__logo {
-  height: 28px;
+  height: 34px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -1068,8 +1068,21 @@ details[open] .faq__icon {
 .footer__brand-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   margin-bottom: 36px;
+}
+
+.footer__brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer__logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .footer__wordmark {

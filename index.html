@@ -55,6 +55,10 @@
 
   <title>VAILE — Edition 01 | Architectural Duck Canvas Pant</title>
 
+  <!-- Favicon & Apple Touch Icon -->
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="apple-touch-icon" href="/images/logo.png" />
+
   <!-- Preload Critical Hero Master Image (Responsive: Mobile gets Mobile master, Desktop gets 2000px master) -->
   <link rel="preload" as="image" href="/images/5-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
   <link rel="preload" as="image" href="/images/5-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
@@ -566,7 +570,16 @@
         <div class="footer__container">
 
           <div class="footer__brand-row">
-            <span class="footer__wordmark">VAILE</span>
+            <div class="footer__brand-lockup">
+              <img
+                src="/images/logo.png"
+                alt="VAILE Logo"
+                class="footer__logo"
+                width="32"
+                height="32"
+              />
+              <span class="footer__wordmark">VAILE</span>
+            </div>
             <span class="footer__meta text-mono">STUDIO ARCHIVE &bull; BANGALORE &bull; ALL RIGHTS RESERVED</span>
           </div>
 

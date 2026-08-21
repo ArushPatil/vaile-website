@@ -1,215 +1,224 @@
 /* ================================================================
    VAILE — Main JavaScript
-   Menu toggle, size selector, scroller, newsletter, and modules
+   Robust Event Delegation, Size Matrix, Anatomy Inspector, Unit Switcher
    ================================================================ */
 
 import { initAnimations } from './animations.js';
-import { initMoltenMetal } from './moltenMetal.js';
 
-// ----------------------------------------------------------------
-// DOM Ready
-// ----------------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  initMobileMenu();
-  initSizeSelector();
-  initLiquidGlassCards();
-  initScrollerControls();
-  initNewsletterForm();
-  initAnimations();
-
-  // Initialize MoltenMetal WebGL Procedural Shader (React Bits)
-  const moltenCanvas = document.getElementById('molten-metal-canvas');
-  if (moltenCanvas) {
-    initMoltenMetal(moltenCanvas, {
-      color1: '#9085b9',
-      color2: '#2a1145',
-      color3: '#FFFFFF',
-      colorMode: 'molten',
-      speed: 0.35,
-      scale: 4,
-      detail: 3,
-      glow: 1.6,
-      coreSize: 0.1,
-      swirl: 1,
-      fold: -0.2,
-      blackPoint: 0.05,
-      brightness: 1.3,
-      opacity: 1,
-      grain: true,
-      grainIntensity: 0.05,
-      mouseInteraction: false,
-      mouseStrength: 0.3,
-    });
-  }
-});
-
-// ----------------------------------------------------------------
-// iOS Liquid Glass 3D Tilt & Specular Reflection
-// ----------------------------------------------------------------
-function initLiquidGlassCards() {
-  const cards = document.querySelectorAll('[data-liquid-card]');
-
-  // Interactive 3D glass perspective & specular lens flare
-  cards.forEach((card) => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      
-      // Calculate realistic glass micro-tilt (-4deg to +4deg)
-      const tiltX = ((y - centerY) / centerY) * -3.5;
-      const tiltY = ((x - centerX) / centerX) * 3.5;
-
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-      card.style.setProperty('--tilt-x', `${tiltX.toFixed(2)}deg`);
-      card.style.setProperty('--tilt-y', `${tiltY.toFixed(2)}deg`);
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.setProperty('--tilt-x', '0deg');
-      card.style.setProperty('--tilt-y', '0deg');
-    });
-  });
-}
-
-// ----------------------------------------------------------------
-// Mobile Menu Toggle
-// ----------------------------------------------------------------
-function initMobileMenu() {
-  const body = document.body;
-  const menuToggle = document.querySelector('[data-menu-toggle]');
-  const menuClose = document.querySelector('[data-menu-close]');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  if (!menuToggle || !menuClose || !mobileMenu) return;
-
-  menuToggle.addEventListener('click', () => {
-    body.classList.add('state--menu-open');
-    mobileMenu.setAttribute('aria-hidden', 'false');
-    menuToggle.setAttribute('aria-expanded', 'true');
-    menuClose.focus();
-  });
-
-  menuClose.addEventListener('click', closeMenu);
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && body.classList.contains('state--menu-open')) {
-      closeMenu();
-    }
-  });
-
-  // Close when clicking menu links
-  mobileMenu.querySelectorAll('.mobile-menu__link').forEach((link) => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  function closeMenu() {
-    body.classList.remove('state--menu-open');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.focus();
-  }
-}
-
-// ----------------------------------------------------------------
-// Size Selector & Allocation Link Setup
-// ----------------------------------------------------------------
 const WHATSAPP_PHONE = '918951066881';
 
-function initSizeSelector() {
-  const sizeButtons = document.querySelectorAll('.acquire__size-pill, .allocation__size-btn');
-  const sizeLabel = document.getElementById('selected-size-label');
-  const allocationBtn = document.getElementById('allocation-btn');
-
-  if (!sizeButtons.length || !allocationBtn) return;
-
-  sizeButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      // Remove active from all
-      sizeButtons.forEach((b) => b.classList.remove('active'));
-      
-      // Activate clicked
-      btn.classList.add('active');
-
-      const size = btn.getAttribute('data-size');
-      if (sizeLabel) {
-        sizeLabel.textContent = size;
-      }
-
-      // Update WhatsApp URL with pre-filled size and direct phone destination
-      const message = encodeURIComponent(
-        `Hello VAILE, I would like to request an allocation for Edition 01 Pant in Size ${size}.`
-      );
-      allocationBtn.href = `https://wa.me/${WHATSAPP_PHONE}?text=${message}`;
-    });
-  });
-}
-
-
-
 // ----------------------------------------------------------------
-// Services Scroller Arrow Controls
+// 1. SIZE CONFIGURATION & ALLOCATION TERMINAL
 // ----------------------------------------------------------------
-function initScrollerControls() {
-  const track = document.querySelector('[data-scroller-track]');
-  const prevBtn = document.querySelector('[data-scroll-prev]');
-  const nextBtn = document.querySelector('[data-scroll-next]');
-
-  if (!track || !prevBtn || !nextBtn) return;
-
-  const getScrollAmount = () => {
-    const item = track.querySelector('.services-scroller__item');
-    if (!item) return 300;
-    return item.offsetWidth + parseInt(getComputedStyle(track).gap || '16');
-  };
-
-  prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-  });
-
-  nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-  });
-
-  const updateArrows = () => {
-    const isAtStart = track.scrollLeft <= 10;
-    const isAtEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 10;
-
-    prevBtn.style.opacity = isAtStart ? '0' : '1';
-    prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
-    nextBtn.style.opacity = isAtEnd ? '0' : '1';
-    nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
-  };
-
-  track.addEventListener('scroll', updateArrows, { passive: true });
-  updateArrows();
-
-  window.addEventListener('resize', updateArrows, { passive: true });
-}
-
-// ----------------------------------------------------------------
-// Newsletter Form — Floating Label
-// ----------------------------------------------------------------
-function initNewsletterForm() {
-  const input = document.querySelector('.newsletter__input');
-  if (!input) return;
-
-  const field = input.closest('.newsletter__field');
-  if (!field) return;
-
-  const updateState = () => {
-    if (input.value.trim() !== '') {
-      field.classList.add('is-filled');
+export function updateSelectedSize(size, inseam, targetBtn) {
+  // Update button states
+  const allButtons = document.querySelectorAll('.size-terminal__btn, .acquire__size-pill, .allocation__size-btn');
+  allButtons.forEach((b) => {
+    if (b === targetBtn || b.getAttribute('data-size') === size) {
+      b.classList.add('active');
+      b.setAttribute('aria-checked', 'true');
     } else {
-      field.classList.remove('is-filled');
+      b.classList.remove('active');
+      b.setAttribute('aria-checked', 'false');
     }
-  };
+  });
 
-  input.addEventListener('input', updateState);
-  input.addEventListener('blur', updateState);
+  // Update label in terminal
+  const sizeLabel = document.getElementById('selected-size-label');
+  if (sizeLabel) {
+    sizeLabel.textContent = size;
+  }
+
+  // Update preview line
+  const sizePreview = document.getElementById('terminal-size-preview');
+  if (sizePreview) {
+    sizePreview.textContent = `WAIST ${size}" // INSEAM ${inseam || '32.0'}"`;
+  }
+
+  // Update WhatsApp link
+  const allocationBtn = document.getElementById('allocation-btn');
+  if (allocationBtn) {
+    const message = encodeURIComponent(
+      `Hello VAILE, I would like to request an allocation for Edition 01 Pant in Size ${size}.`
+    );
+    allocationBtn.href = `https://wa.me/${WHATSAPP_PHONE}?text=${message}`;
+  }
+}
+
+// ----------------------------------------------------------------
+// 2. GARMENT ANATOMY VECTOR INSPECTOR
+// ----------------------------------------------------------------
+export function setActiveAnatomyFeature(id) {
+  const pins = document.querySelectorAll('.anatomy-pin');
+  const navBtns = document.querySelectorAll('.anatomy__nav-btn');
+  const cards = document.querySelectorAll('.anatomy__card');
+
+  // Update pins in SVG
+  pins.forEach((pin) => {
+    if (pin.getAttribute('data-pin') === id) {
+      pin.classList.add('active');
+    } else {
+      pin.classList.remove('active');
+    }
+  });
+
+  // Update tabs
+  navBtns.forEach((btn) => {
+    if (btn.getAttribute('data-target') === id) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+    } else {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-selected', 'false');
+    }
+  });
+
+  // Update spec cards
+  cards.forEach((card) => {
+    if (card.id === `spec-card-${id}`) {
+      card.classList.add('active');
+    } else {
+      card.classList.remove('active');
+    }
+  });
+}
+
+// ----------------------------------------------------------------
+// 3. MEASUREMENT UNIT SWITCHER (INCHES <-> CENTIMETERS)
+// ----------------------------------------------------------------
+export function setMeasurementUnit(unit) {
+  const unitInBtn = document.getElementById('unit-in');
+  const unitCmBtn = document.getElementById('unit-cm');
+  const cells = document.querySelectorAll('.matrix-table td[data-in]');
+
+  if (unit === 'cm') {
+    if (unitCmBtn) unitCmBtn.classList.add('active');
+    if (unitInBtn) unitInBtn.classList.remove('active');
+    cells.forEach((td) => {
+      const val = td.getAttribute('data-cm');
+      if (val) td.textContent = `${val} cm`;
+    });
+  } else {
+    if (unitInBtn) unitInBtn.classList.add('active');
+    if (unitCmBtn) unitCmBtn.classList.remove('active');
+    cells.forEach((td) => {
+      const val = td.getAttribute('data-in');
+      if (val) td.textContent = `${val}"`;
+    });
+  }
+}
+
+// ----------------------------------------------------------------
+// 4. GLOBAL CLICK & INTERACTION DISPATCHER (EVENT DELEGATION)
+// ----------------------------------------------------------------
+function setupGlobalDelegation() {
+  document.addEventListener('click', (e) => {
+    // 1. Size Button Click
+    const sizeBtn = e.target.closest('.size-terminal__btn, .acquire__size-pill, .allocation__size-btn');
+    if (sizeBtn) {
+      e.preventDefault();
+      const size = sizeBtn.getAttribute('data-size') || '30';
+      const inseam = sizeBtn.getAttribute('data-inseam') || '32.0';
+      updateSelectedSize(size, inseam, sizeBtn);
+      return;
+    }
+
+    // 2. Anatomy Tab Button Click
+    const tabBtn = e.target.closest('.anatomy__nav-btn');
+    if (tabBtn) {
+      e.preventDefault();
+      const id = tabBtn.getAttribute('data-target');
+      if (id) setActiveAnatomyFeature(id);
+      return;
+    }
+
+    // 3. Anatomy SVG Pin Click
+    const pin = e.target.closest('.anatomy-pin');
+    if (pin) {
+      e.preventDefault();
+      const id = pin.getAttribute('data-pin');
+      if (id) setActiveAnatomyFeature(id);
+      return;
+    }
+
+    // 4. Measurement Unit Toggle Click
+    const unitBtn = e.target.closest('.unit-toggle__btn, [data-unit]');
+    if (unitBtn) {
+      e.preventDefault();
+      const unit = unitBtn.getAttribute('data-unit') || (unitBtn.id === 'unit-cm' ? 'cm' : 'in');
+      setMeasurementUnit(unit);
+      return;
+    }
+
+    // 5. Smooth Anchor Jump Links
+    const anchor = e.target.closest('a[href^="#"]');
+    if (anchor && anchor.getAttribute('href').length > 1) {
+      const targetId = anchor.getAttribute('href').substring(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+}
+
+// ----------------------------------------------------------------
+// 5. STUDIO COMMUNIQUÉ DISPATCH FORM
+// ----------------------------------------------------------------
+function initDarkDispatch() {
+  const form = document.querySelector('.dark-dispatch__form');
+  const input = document.getElementById('newsletter-email');
+  const btn = document.querySelector('.dark-dispatch__btn');
+
+  if (!form || !input || !btn) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!input.value || !input.checkValidity()) return;
+
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = `<span>RECORDED</span><span aria-hidden="true">&check;</span>`;
+    btn.style.background = '#22c55e';
+    btn.style.color = '#ffffff';
+    input.value = '';
+    input.placeholder = 'CLIENT EMAIL LOGGED INTO ARCHIVE';
+    input.disabled = true;
+
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+      btn.style.background = '';
+      btn.style.color = '';
+      input.disabled = false;
+      input.placeholder = 'ENTER CLIENT EMAIL ADDRESS...';
+    }, 4000);
+  });
+}
+
+// ----------------------------------------------------------------
+// INITIALIZATION
+// ----------------------------------------------------------------
+function initApp() {
+  setupGlobalDelegation();
+  initDarkDispatch();
+  initAnimations();
+
+  // Initialize default active size
+  const activeSizeBtn =
+    document.querySelector('.size-terminal__btn.active') ||
+    document.querySelector('.size-terminal__btn[data-size="30"]') ||
+    document.querySelector('.size-terminal__btn');
+
+  if (activeSizeBtn) {
+    const size = activeSizeBtn.getAttribute('data-size') || '30';
+    const inseam = activeSizeBtn.getAttribute('data-inseam') || '32.0';
+    updateSelectedSize(size, inseam, activeSizeBtn);
+  }
+}
+
+// Execute immediately if DOM is ready, or on DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
 }

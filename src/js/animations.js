@@ -48,6 +48,7 @@ function initPageLoad() {
 // SCROLL EFFECTS & RESPONSIVE MULTI-LAYER PARALLAX
 // ----------------------------------------------------------------
 function initScrollEffects() {
+  // Editorial Stream Tiles Parallax
   const allTiles = document.querySelectorAll('.editorial-stream .tile');
 
   // MatchMedia for Desktop vs Mobile Performance Tuning
@@ -100,55 +101,4 @@ function initScrollEffects() {
       });
     },
   });
-
-
-
-  // Liquid Acquire Card entrance
-  const acquireCard = document.querySelector('.acquire__card');
-  if (acquireCard) {
-    gsap.from(acquireCard, {
-      opacity: 0,
-      y: 28,
-      duration: 0.7,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: acquireCard,
-        start: 'top 85%',
-        once: true,
-      },
-    });
-  }
-
-  // Manifesto Bento Liquid Cards reveal
-  const manifesto = document.querySelector('.manifesto');
-  if (manifesto) {
-    gsap.from('.manifesto__card', {
-      opacity: 0,
-      y: 24,
-      duration: 0.6,
-      stagger: 0.08,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: manifesto,
-        start: 'top 85%',
-        once: true,
-      },
-    });
-  }
-
-  // Dispatch Liquid Card reveal
-  const dispatchCard = document.querySelector('.dispatch__card');
-  if (dispatchCard) {
-    gsap.from(dispatchCard, {
-      opacity: 0,
-      y: 20,
-      duration: 0.6,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: dispatchCard,
-        start: 'top 88%',
-        once: true,
-      },
-    });
-  }
 }

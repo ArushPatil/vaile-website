@@ -46,5 +46,8 @@
 - [x] Make carousel next and previous controls advance the visible slide reliably.
 - [x] Add subtle paper, grain, and material textures across the storefront without reducing legibility.
 - [x] Validate carousel interaction and textured surfaces across desktop and mobile.
-- [ ] Synchronize the latest carousel-control and textured-surface files into the standalone GitHub bundle.
-- [ ] Commit and push the latest Vaile storefront revision to ArushPatil/vaile-website.
+- [x] Synchronize the latest carousel-control and textured-surface files into the standalone GitHub bundle.
+- [x] Commit and push the latest Vaile storefront revision to ArushPatil/vaile-website.
+- [x] Identify why campaign assets fail to load from the Cloudflare Pages deployment.
+- [x] Convert asset references in the standalone bundle to a Cloudflare-compatible strategy.
+- [ ] Validate and push the deployment-compatibility fix without changing Cloudflare configuration.

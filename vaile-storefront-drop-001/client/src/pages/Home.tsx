@@ -7,15 +7,15 @@ import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronDown
 import { useEffect, useRef, useState } from "react";
 
 const assets = {
-  hero: "/manus-storage/duck-canvas-05_73ef0bd8.jpg",
-  lookOne: "/manus-storage/duck-canvas-01_740a9ac7.jpg",
-  lookTwo: "/manus-storage/duck-canvas-02_2ceea2d9.jpg",
-  closeOne: "/manus-storage/duck-canvas-03_894dfdb0.jpg",
-  closeTwo: "/manus-storage/duck-canvas-06_978e729c.jpg",
-  grain: "/manus-storage/duck-canvas-grain-editorial_4ea19f4e.jpg",
-  paper: "/manus-storage/duck-canvas-paper-fiber_b0e794ac.jpg",
-  hardware: "/manus-storage/duck-canvas-copper-hardware_dbf587d9.jpg",
-  mark: "/manus-storage/vaile-logo_a0e37931.png",
+  hero: "/images/hero.webp",
+  lookOne: "/images/look-one.webp",
+  lookTwo: "/images/look-two.webp",
+  closeOne: "/images/close-one.webp",
+  closeTwo: "/images/close-two.webp",
+  grain: "/images/grain.webp",
+  paper: "/images/paper.webp",
+  hardware: "/images/hardware.webp",
+  mark: "/images/vaile-logo.png",
 };
 
 const sizes = ["30", "32", "34", "36", "38"];

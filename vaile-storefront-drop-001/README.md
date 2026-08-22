@@ -10,6 +10,8 @@ From this directory, install dependencies with `pnpm install`, then run `pnpm de
 
 The campaign index is intentionally designed as an unexposed contact-sheet archive. When final campaign or studio images are ready, replace the entries in `campaignSlots` in `client/src/pages/Home.tsx` with the approved assets while keeping the edition data and archive captions.
 
-## Hosted image references
+## Cloudflare Pages image assets
 
-The current source uses managed image URLs from the existing Vaile build environment. For an external deployment, replace those URLs with assets hosted by your chosen CDN or repository-compatible image source.
+The bundle now carries optimized portable images in `client/public/images/`, so Cloudflare Pages serves them from `/images/...` with no reliance on the build environment’s managed asset paths.
+
+When final photography is ready, replace the matching files in `client/public/images/` while preserving the filenames, or update the `assets` map in `client/src/pages/Home.tsx`. The expected files are `hero.webp`, `look-one.webp`, `look-two.webp`, `close-one.webp`, `close-two.webp`, `hardware.webp`, `grain.webp`, `paper.webp`, and `vaile-logo.png`.

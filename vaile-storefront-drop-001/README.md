@@ -12,6 +12,6 @@ The campaign index is intentionally designed as an unexposed contact-sheet archi
 
 ## Cloudflare Pages image assets
 
-The bundle now carries optimized portable images in `client/public/images/`, so Cloudflare Pages serves them from `/images/...` with no reliance on the build environment’s managed asset paths.
+This Cloudflare Pages deployment already serves its working campaign image set from the repository root at `public/images/`. The bundle therefore uses those established `/images/...` paths rather than managed build-environment URLs or a second asset directory.
 
-When final photography is ready, replace the matching files in `client/public/images/` while preserving the filenames, or update the `assets` map in `client/src/pages/Home.tsx`. The expected files are `hero.webp`, `look-one.webp`, `look-two.webp`, `close-one.webp`, `close-two.webp`, `hardware.webp`, `grain.webp`, `paper.webp`, and `vaile-logo.png`.
+When final photography is ready, replace the corresponding files in the repository root’s `public/images/` directory while preserving the established filenames, or update the `assets` map in `client/src/pages/Home.tsx`.

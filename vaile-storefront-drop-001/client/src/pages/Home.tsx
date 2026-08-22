@@ -7,15 +7,15 @@ import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronDown
 import { useEffect, useRef, useState } from "react";
 
 const assets = {
-  hero: "/images/hero.webp",
-  lookOne: "/images/look-one.webp",
-  lookTwo: "/images/look-two.webp",
-  closeOne: "/images/close-one.webp",
-  closeTwo: "/images/close-two.webp",
-  grain: "/images/grain.webp",
-  paper: "/images/paper.webp",
-  hardware: "/images/hardware.webp",
-  mark: "/images/vaile-logo.png",
+  hero: "/images/5-desktop.jpg",
+  lookOne: "/images/1-desktop.jpg",
+  lookTwo: "/images/2-desktop.jpg",
+  closeOne: "/images/3-desktop.jpg",
+  closeTwo: "/images/6-desktop.jpg",
+  grain: "/images/10_warm-desktop.jpg",
+  paper: "/images/4-desktop.jpg",
+  hardware: "/images/1-desktop.jpg",
+  mark: "/images/logo.png",
 };
 
 const sizes = ["30", "32", "34", "36", "38"];

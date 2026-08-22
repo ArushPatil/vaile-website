@@ -50,4 +50,6 @@
 - [x] Commit and push the latest Vaile storefront revision to ArushPatil/vaile-website.
 - [x] Identify why campaign assets fail to load from the Cloudflare Pages deployment.
 - [x] Convert asset references in the standalone bundle to a Cloudflare-compatible strategy.
-- [ ] Validate and push the deployment-compatibility fix without changing Cloudflare configuration.
+- [x] Validate and push the deployment-compatibility fix without changing Cloudflare configuration.
+- [x] Compare the last working and latest Cloudflare bundle commits to isolate the image-path regression.
+- [x] Restore the exact prior working Cloudflare image-path strategy and push only that targeted correction.

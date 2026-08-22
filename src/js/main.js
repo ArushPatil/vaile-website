@@ -1,6 +1,6 @@
 /* ================================================================
    VAILE — Main JavaScript
-   Robust Event Delegation, Size Matrix, Anatomy Inspector, Unit Switcher
+   Event Delegation, Size Selection Matrix, Unit Switcher, Mobile Bar
    ================================================================ */
 
 import { initAnimations } from './animations.js';
@@ -8,11 +8,11 @@ import { initAnimations } from './animations.js';
 const WHATSAPP_PHONE = '918951066881';
 
 // ----------------------------------------------------------------
-// 1. SIZE CONFIGURATION & ALLOCATION TERMINAL
+// 1. SIZE CONFIGURATION & ALLOCATION LINK BUILDER
 // ----------------------------------------------------------------
 export function updateSelectedSize(size, inseam, targetBtn) {
-  // Update button states
-  const allButtons = document.querySelectorAll('.size-terminal__btn, .acquire__size-pill, .allocation__size-btn');
+  // Update button states across all size pill instances
+  const allButtons = document.querySelectorAll('.size-pill');
   allButtons.forEach((b) => {
     if (b === targetBtn || b.getAttribute('data-size') === size) {
       b.classList.add('active');
@@ -23,68 +23,43 @@ export function updateSelectedSize(size, inseam, targetBtn) {
     }
   });
 
-  // Update label in terminal
+  // Update label in desktop CTA button
   const sizeLabel = document.getElementById('selected-size-label');
   if (sizeLabel) {
     sizeLabel.textContent = size;
   }
 
+  // Update label in mobile CTA bar
+  const mobileSizeLabel = document.getElementById('mobile-size-label');
+  if (mobileSizeLabel) {
+    mobileSizeLabel.textContent = size;
+  }
+
   // Update preview line
-  const sizePreview = document.getElementById('terminal-size-preview');
+  const sizePreview = document.getElementById('selected-size-preview');
   if (sizePreview) {
     sizePreview.textContent = `WAIST ${size}" // INSEAM ${inseam || '32.0'}"`;
   }
 
-  // Update WhatsApp link
+  // Update WhatsApp links
+  const message = encodeURIComponent(
+    `Hello VAILE, I would like to request an allocation for Edition 01 Pant in Size ${size}.`
+  );
+  const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${message}`;
+
   const allocationBtn = document.getElementById('allocation-btn');
   if (allocationBtn) {
-    const message = encodeURIComponent(
-      `Hello VAILE, I would like to request an allocation for Edition 01 Pant in Size ${size}.`
-    );
-    allocationBtn.href = `https://wa.me/${WHATSAPP_PHONE}?text=${message}`;
+    allocationBtn.href = waUrl;
+  }
+
+  const mobileAllocationBtn = document.getElementById('mobile-allocation-btn');
+  if (mobileAllocationBtn) {
+    mobileAllocationBtn.href = waUrl;
   }
 }
 
 // ----------------------------------------------------------------
-// 2. GARMENT ANATOMY VECTOR INSPECTOR
-// ----------------------------------------------------------------
-export function setActiveAnatomyFeature(id) {
-  const pins = document.querySelectorAll('.anatomy-pin');
-  const navBtns = document.querySelectorAll('.anatomy__nav-btn');
-  const cards = document.querySelectorAll('.anatomy__card');
-
-  // Update pins in SVG
-  pins.forEach((pin) => {
-    if (pin.getAttribute('data-pin') === id) {
-      pin.classList.add('active');
-    } else {
-      pin.classList.remove('active');
-    }
-  });
-
-  // Update tabs
-  navBtns.forEach((btn) => {
-    if (btn.getAttribute('data-target') === id) {
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', 'true');
-    } else {
-      btn.classList.remove('active');
-      btn.setAttribute('aria-selected', 'false');
-    }
-  });
-
-  // Update spec cards
-  cards.forEach((card) => {
-    if (card.id === `spec-card-${id}`) {
-      card.classList.add('active');
-    } else {
-      card.classList.remove('active');
-    }
-  });
-}
-
-// ----------------------------------------------------------------
-// 3. MEASUREMENT UNIT SWITCHER (INCHES <-> CENTIMETERS)
+// 2. MEASUREMENT UNIT SWITCHER (INCHES <-> CENTIMETERS)
 // ----------------------------------------------------------------
 export function setMeasurementUnit(unit) {
   const unitInBtn = document.getElementById('unit-in');
@@ -109,12 +84,12 @@ export function setMeasurementUnit(unit) {
 }
 
 // ----------------------------------------------------------------
-// 4. GLOBAL CLICK & INTERACTION DISPATCHER (EVENT DELEGATION)
+// 3. GLOBAL CLICK & INTERACTION DISPATCHER (EVENT DELEGATION)
 // ----------------------------------------------------------------
 function setupGlobalDelegation() {
   document.addEventListener('click', (e) => {
     // 1. Size Button Click
-    const sizeBtn = e.target.closest('.size-terminal__btn, .acquire__size-pill, .allocation__size-btn');
+    const sizeBtn = e.target.closest('.size-pill');
     if (sizeBtn) {
       e.preventDefault();
       const size = sizeBtn.getAttribute('data-size') || '30';
@@ -123,25 +98,7 @@ function setupGlobalDelegation() {
       return;
     }
 
-    // 2. Anatomy Tab Button Click
-    const tabBtn = e.target.closest('.anatomy__nav-btn');
-    if (tabBtn) {
-      e.preventDefault();
-      const id = tabBtn.getAttribute('data-target');
-      if (id) setActiveAnatomyFeature(id);
-      return;
-    }
-
-    // 3. Anatomy SVG Pin Click
-    const pin = e.target.closest('.anatomy-pin');
-    if (pin) {
-      e.preventDefault();
-      const id = pin.getAttribute('data-pin');
-      if (id) setActiveAnatomyFeature(id);
-      return;
-    }
-
-    // 4. Measurement Unit Toggle Click
+    // 2. Measurement Unit Toggle Click
     const unitBtn = e.target.closest('.unit-toggle__btn, [data-unit]');
     if (unitBtn) {
       e.preventDefault();
@@ -150,7 +107,7 @@ function setupGlobalDelegation() {
       return;
     }
 
-    // 5. Smooth Anchor Jump Links
+    // 3. Smooth Anchor Jump Links
     const anchor = e.target.closest('a[href^="#"]');
     if (anchor && anchor.getAttribute('href').length > 1) {
       const targetId = anchor.getAttribute('href').substring(1);
@@ -164,34 +121,203 @@ function setupGlobalDelegation() {
 }
 
 // ----------------------------------------------------------------
-// 5. STUDIO COMMUNIQUÉ DISPATCH FORM
+// 4. STUDIO COMMUNIQUÉ DISPATCH FORM
 // ----------------------------------------------------------------
-function initDarkDispatch() {
-  const form = document.querySelector('.dark-dispatch__form');
+function initNewsletter() {
+  const form = document.getElementById('newsletter-form');
   const input = document.getElementById('newsletter-email');
-  const btn = document.querySelector('.dark-dispatch__btn');
+  const feedback = document.getElementById('newsletter-feedback');
 
-  if (!form || !input || !btn) return;
+  if (!form || !input) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (!input.value || !input.checkValidity()) return;
 
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = `<span>RECORDED</span><span aria-hidden="true">&check;</span>`;
-    btn.style.background = '#22c55e';
-    btn.style.color = '#ffffff';
+    if (feedback) {
+      feedback.textContent = 'CLIENT EMAIL REGISTERED IN STUDIO ARCHIVE.';
+      feedback.style.color = '#008744';
+    }
+
+    const originalVal = input.value;
     input.value = '';
-    input.placeholder = 'CLIENT EMAIL LOGGED INTO ARCHIVE';
+    input.placeholder = 'REGISTERED — THANK YOU';
     input.disabled = true;
 
     setTimeout(() => {
-      btn.innerHTML = originalHTML;
-      btn.style.background = '';
-      btn.style.color = '';
       input.disabled = false;
-      input.placeholder = 'ENTER CLIENT EMAIL ADDRESS...';
+      input.placeholder = 'CLIENT EMAIL ADDRESS';
+      if (feedback) feedback.textContent = '';
     }, 4000);
+  });
+}
+
+// ----------------------------------------------------------------
+// 5. MOBILE STICKY ACQUIRE BAR ON SCROLL
+// ----------------------------------------------------------------
+function initMobileBarScroll() {
+  const mobileBar = document.getElementById('mobile-acquire-bar');
+  const productSection = document.getElementById('product');
+
+  if (!mobileBar || !productSection) return;
+
+  let ticking = false;
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const rect = productSection.getBoundingClientRect();
+          // Show bar once the top of the product section enters viewport
+          if (rect.top <= window.innerHeight * 0.75 && rect.bottom > 100) {
+            mobileBar.classList.add('visible');
+          } else {
+            mobileBar.classList.remove('visible');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+}
+
+// ----------------------------------------------------------------
+// 6. EDITORIAL MODEL LOOKBOOK CAROUSEL
+// ----------------------------------------------------------------
+function initLookbookViewer() {
+  const track = document.getElementById('lookbook-track');
+  const prevBtn = document.getElementById('lookbook-prev');
+  const nextBtn = document.getElementById('lookbook-next');
+  const counter = document.getElementById('lookbook-counter');
+  const dots = document.querySelectorAll('.lookbook-dot');
+  const thumbs = document.querySelectorAll('.lookbook-thumb');
+  const slides = document.querySelectorAll('.lookbook-slide');
+
+  if (!track || slides.length === 0) return;
+
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+
+  function scrollToSlide(index) {
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+    currentIndex = index;
+
+    const targetSlide = slides[index];
+    if (targetSlide) {
+      track.scrollTo({
+        left: targetSlide.offsetLeft,
+        behavior: 'smooth',
+      });
+    }
+
+    updateUI(index);
+  }
+
+  function updateUI(index) {
+    currentIndex = index;
+
+    // Update counter
+    if (counter) {
+      const currentFormatted = String(index + 1).padStart(2, '0');
+      const totalFormatted = String(totalSlides).padStart(2, '0');
+      counter.textContent = `${currentFormatted} / ${totalFormatted}`;
+    }
+
+    // Update dots
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('active');
+        dot.setAttribute('aria-selected', 'true');
+      } else {
+        dot.classList.remove('active');
+        dot.setAttribute('aria-selected', 'false');
+      }
+    });
+
+    // Update thumbs
+    thumbs.forEach((thumb, i) => {
+      if (i === index) {
+        thumb.classList.add('active');
+      } else {
+        thumb.classList.remove('active');
+      }
+    });
+  }
+
+  // Previous Button
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSlide(currentIndex - 1);
+    });
+  }
+
+  // Next Button
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToSlide(currentIndex + 1);
+    });
+  }
+
+  // Dot Clicks
+  dots.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault();
+      const idx = parseInt(dot.getAttribute('data-index'), 10);
+      if (!isNaN(idx)) scrollToSlide(idx);
+    });
+  });
+
+  // Thumb Clicks
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener('click', (e) => {
+      e.preventDefault();
+      const idx = parseInt(thumb.getAttribute('data-index'), 10);
+      if (!isNaN(idx)) scrollToSlide(idx);
+    });
+  });
+
+  // Sync with manual swipe/scroll
+  let scrollTimeout = null;
+  track.addEventListener(
+    'scroll',
+    () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const trackScrollLeft = track.scrollLeft;
+        let activeIdx = 0;
+        let minDiff = Infinity;
+
+        slides.forEach((slide, i) => {
+          const diff = Math.abs(slide.offsetLeft - trackScrollLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            activeIdx = i;
+          }
+        });
+
+        if (activeIdx !== currentIndex) {
+          updateUI(activeIdx);
+        }
+      }, 50);
+    },
+    { passive: true }
+  );
+
+  // Keyboard navigation
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      scrollToSlide(currentIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      scrollToSlide(currentIndex + 1);
+    }
   });
 }
 
@@ -200,14 +326,16 @@ function initDarkDispatch() {
 // ----------------------------------------------------------------
 function initApp() {
   setupGlobalDelegation();
-  initDarkDispatch();
+  initNewsletter();
+  initMobileBarScroll();
+  initLookbookViewer();
   initAnimations();
 
   // Initialize default active size
   const activeSizeBtn =
-    document.querySelector('.size-terminal__btn.active') ||
-    document.querySelector('.size-terminal__btn[data-size="30"]') ||
-    document.querySelector('.size-terminal__btn');
+    document.querySelector('.size-pill.active') ||
+    document.querySelector('.size-pill[data-size="30"]') ||
+    document.querySelector('.size-pill');
 
   if (activeSizeBtn) {
     const size = activeSizeBtn.getAttribute('data-size') || '30';

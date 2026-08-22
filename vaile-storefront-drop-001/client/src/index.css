@@ -347,6 +347,31 @@ h2 em, .hero h1 em { font-weight: 400; }
 .site-footer__info { display: flex; align-items: center; justify-content: space-between; margin-top: 28px; font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .1em; }
 .site-footer__info a { display: flex; align-items: center; gap: 7px; color: inherit; text-decoration: none; }
 
+/* Quarry Specimen desktop repair: the archive plate, construction proof, and
+   care note share bounded proportions and a single readable alignment frame. */
+@media (min-width: 901px) {
+  .campaign-gallery { padding: clamp(76px, 7vw, 126px) 7vw; }
+  .campaign-gallery__head, .campaign-gallery__carousel { max-width: 1180px; }
+  .campaign-gallery__head { align-items: center; margin-bottom: 28px; }
+  .campaign-gallery__head > p { max-width: 330px; }
+  .campaign-carousel__track, .campaign-slot { min-height: clamp(430px, 39vw, 560px); }
+  .campaign-slot { padding: 30px; }
+  .campaign-slot__index { top: 25px; left: 27px; font-size: clamp(4rem, 6vw, 6.4rem); }
+  .campaign-slot__content h3 { font-size: clamp(3.5rem, 5.2vw, 5.9rem); }
+
+  .construction { grid-template-columns: minmax(0, 54%) minmax(0, 46%); }
+  .construction__image-wrap { min-height: clamp(660px, 52vw, 820px); }
+  .construction__story { align-self: stretch; display: flex; flex-direction: column; justify-content: center; padding: clamp(82px, 8vw, 142px) clamp(64px, 7vw, 132px); }
+  .construction h2 { margin-bottom: 34px; font-size: clamp(4rem, 6.1vw, 6.8rem); }
+  .construction__items { max-width: 430px; }
+
+  .care-note { grid-template-columns: minmax(0, .96fr) minmax(470px, 1.04fr); }
+  .care-note__lead { padding: clamp(82px, 8vw, 136px) 7vw; }
+  .care-note h2 { margin-top: 20px; font-size: clamp(3.7rem, 5.4vw, 6.3rem); line-height: .86; }
+  .care-note__lead > p { max-width: 420px; margin-top: 29px; }
+  .care-note__guide { width: min(100% - 9vw, 640px); margin: clamp(54px, 6vw, 96px) auto; }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .detail-inspector { cursor: crosshair; }
   .detail-inspector:hover img { transform: scale(1.018); filter: saturate(.75) contrast(1.025); }
@@ -487,6 +512,50 @@ h2 em, .hero h1 em { font-weight: 400; }
   .mobile-allocation { padding: 10px; font-size: 6.5px; }
   .site-footer__masthead { gap: 5px; font-size: 3.8rem; }
   .site-footer__masthead img { width: 27px; height: 27px; }
+}
+
+/* Quarry Specimen mobile repair: retain native document scrolling, the
+   existing stacked-sheet order, and CTA-safe content clearances. */
+@media (max-width: 900px) {
+  :root { --mobile-cta-clearance: calc(94px + env(safe-area-inset-bottom)); }
+
+  .mobile-allocation {
+    right: 14px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+
+  .allocation__grid { padding-bottom: var(--mobile-cta-clearance); }
+  .allocation__paper-fragment { display: none; }
+
+  .campaign-gallery { padding: 70px 20px var(--mobile-cta-clearance); }
+  .campaign-gallery__stamp { display: none; }
+  .campaign-slot { min-height: min(48svh, 390px); }
+
+  .fit-guide { grid-template-columns: 28px minmax(0, 1fr); }
+  .fit-guide__rail { padding-top: 28px; font-size: 6px; letter-spacing: .08em; }
+  .fit-guide__content { padding: 68px 18px var(--mobile-cta-clearance); }
+  .fit-guide h2 { margin-top: 18px; font-size: clamp(2.75rem, 12vw, 4.2rem); }
+  .fit-guide__intro { gap: 14px; margin: 24px 0 29px; }
+  .fit-card__sizes { padding-bottom: 18px; }
+
+  .construction { grid-template-columns: 1fr; }
+  .construction__image-wrap { min-height: min(64svh, 540px); }
+  .construction__image-wrap::before { top: 74px; left: 18px; }
+  .construction__image-wrap::after { bottom: 64px; }
+  .construction .image-tag { right: 14px; bottom: 64px; gap: 16px; padding: 9px 11px; font-size: 7px; }
+  .construction__story { padding: 46px 20px var(--mobile-cta-clearance); }
+  .construction h2 { margin-bottom: 28px; font-size: clamp(2.8rem, 12vw, 4.25rem); }
+
+  .care-note { grid-template-columns: 1fr; }
+  .care-note__lead { padding: 68px 20px 32px; }
+  .care-note h2 { margin-top: 18px; font-size: clamp(2.8rem, 12vw, 4.3rem); }
+  .care-note__lead > p { margin-top: 21px; }
+  .care-note__guide { margin: 0 20px var(--mobile-cta-clearance); }
+  .care-note__fineprint { padding-bottom: 20px; }
+
+  .lookbook { grid-template-columns: 1fr; }
+  .lookbook__lead { height: min(56svh, 470px); min-height: 360px; }
+  .lookbook__aside { min-height: 0; padding: 46px 20px var(--mobile-cta-clearance); }
 }
 
 @media (prefers-reduced-motion: reduce) {

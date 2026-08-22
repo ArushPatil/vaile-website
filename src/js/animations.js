@@ -33,7 +33,7 @@ function initPageLoad() {
       duration: 0.8,
       ease: 'power2.out',
     },
-    '+=0.1'
+    '-=0.2'
   );
 }
 
@@ -70,25 +70,24 @@ function initScrollEffects() {
       });
     },
 
-    // Mobile (< 768px): Lightweight 3% parallax on editorial showcase rows
+    // Mobile (< 768px): Lightweight 4% parallax for high-framerate touch response
     '(max-width: 767px)': function () {
-      const secondaryTiles = document.querySelectorAll('.editorial-row .tile');
-      secondaryTiles.forEach((tile) => {
+      allTiles.forEach((tile) => {
         const img = tile.querySelector('.tile__image');
         if (!img) return;
 
         gsap.fromTo(
           img,
-          { yPercent: -3 },
+          { yPercent: -4 },
           {
-            yPercent: 3,
+            yPercent: 4,
             ease: 'none',
             force3D: true,
             scrollTrigger: {
               trigger: tile,
               start: 'top bottom',
               end: 'bottom top',
-              scrub: true,
+              scrub: 0.3,
             },
           }
         );

@@ -293,7 +293,7 @@ body.state--menu-open .mobile-menu {
 
 .masthead__text {
   font-family: var(--font-primary);
-  font-size: clamp(3.2rem, 14vw, 8.5rem);
+  font-size: clamp(4.5rem, 18vw, 8.5rem);
   font-weight: 700;
   letter-spacing: -0.045em;
   text-transform: uppercase;
@@ -302,16 +302,14 @@ body.state--menu-open .mobile-menu {
   text-align: center;
   mix-blend-mode: difference;
   padding: 0 16px;
-  max-width: 100vw;
-  box-sizing: border-box;
+  max-width: 96vw;
   white-space: nowrap;
 }
 
 @media screen and (max-width: 767px) {
   .masthead__text {
-    font-size: clamp(2.2rem, 13vw, 4.2rem);
-    letter-spacing: -0.035em;
-    padding: 0 12px;
+    font-size: clamp(3.5rem, 18vw, 6.5rem);
+    letter-spacing: -0.04em;
   }
 }
 

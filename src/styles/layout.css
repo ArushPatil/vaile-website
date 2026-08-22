@@ -9,16 +9,12 @@
   grid-template-columns: repeat(16, 1fr);
   gap: 0;
   width: 100%;
-  max-width: 100%;
-  overflow: hidden;
 }
 
 /* Base section wrapper */
 .section {
   width: 100%;
-  max-width: 100%;
   position: relative;
-  overflow: hidden;
 }
 
 /* -----------------------------------------------------------------------

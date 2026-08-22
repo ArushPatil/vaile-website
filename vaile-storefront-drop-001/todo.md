@@ -1,0 +1,30 @@
+# Vaile Refinement Tasks
+
+- [x] Download and upload the supplied Vaile logo into the project asset store.
+- [x] Replace the temporary DUCK / 12 identity with Vaile in navigation, copy, and metadata.
+- [x] Add composed scroll choreography that moves and reveals complete editorial sections, not only individual text blocks.
+- [x] Validate desktop and mobile motion, then save a delivery checkpoint.
+- [x] Remove the section-level scroll choreography and restore the original restrained animation behavior.
+- [x] Connect the allocation CTA to the supplied WhatsApp number with a prefilled Vaile enquiry.
+- [x] Display the confirmed price of ₹6,200 INR / $100 USD.
+- [x] Add a detailed, editorial sizing and fit guide section.
+- [x] Add practical care instructions for the 12oz duck canvas trousers.
+- [x] Restore the saved Quarry Specimen layout and interaction treatment.
+- [x] Replace palette-specific accents with a neutral, future-photography-ready material palette.
+- [x] Validate the restored neutral Quarry Specimen version before saving a checkpoint.
+- [x] Introduce a controlled color accent that adds energy without depending on the campaign photography.
+- [x] Validate the refreshed Quarry Specimen color balance before saving a checkpoint.
+- [x] Make the Vaile navigation sticky with a persistent direct WhatsApp allocation action.
+- [x] Add a brief Vaile-branded loading sequence before the editorial page reveals.
+- [x] Remove “protocol” wording and refine affected calls-to-action and labels into professional editorial copy.
+- [x] Validate the updated browsing experience on desktop and mobile.
+- [x] Restore the preferred serif Vaile footer wordmark treatment.
+- [x] Make in-view text reveals reliably animate after page load and scroll.
+- [x] Ensure the Vaile loader appears on a fresh page load without requiring publication.
+- [x] Validate the refined typography, reveals, and loading behavior.
+- [x] Add a neutral, future-ready campaign carousel with clear replacement points for final photography.
+- [x] Add a subtle attention pulse to the sticky WhatsApp allocation action.
+- [ ] Validate the carousel and allocation motion across device sizes.
+- [ ] Commit the completed revision to the linked GitHub repository.
+- [ ] Push the prepared storefront revision to the correct repository, ArushPatil/vaile-website.
+- [ ] Add the storefront as a separate source bundle without replacing any existing ArushPatil/vaile-website code.

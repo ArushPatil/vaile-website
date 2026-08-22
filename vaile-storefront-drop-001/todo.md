@@ -55,5 +55,51 @@
 - [x] Restore the exact prior working Cloudflare image-path strategy and push only that targeted correction.
 - [x] Replace the orange signal accent with a more distinctive material-led color.
 - [x] Validate the refined accent across desktop and mobile.
-- [ ] Synchronize the Cairn Teal accent revision into the standalone GitHub bundle.
-- [ ] Commit and push the Cairn Teal revision to ArushPatil/vaile-website.
+- [x] Synchronize the Cairn Teal accent revision into the standalone GitHub bundle.
+- [x] Commit and push the Cairn Teal revision to ArushPatil/vaile-website.
+- [x] Save the current Cairn Teal storefront as the restoration point before texture exploration.
+- [x] Prepare a Vaile-specific torn-paper, layered-material, and pointer-interaction plan for approval.
+- [x] Create and apply the approved torn-paper, archive-scrap, and material-texture system.
+- [x] Move the private allocation purchase module directly after the hero and add a subtle scroll prompt.
+- [x] Remove low-priority editorial sections to create a cleaner product narrative.
+- [x] Add restrained desktop pointer interactions with static mobile fallbacks.
+- [x] Validate the streamlined textured storefront across desktop and mobile.
+- [x] Reorder the sections into a deliberate alternating dark–light editorial rhythm.
+- [x] Replace long torn-paper strips with quieter, local paper fragments and image-edge details.
+- [x] Add smooth, restrained scroll transitions that bridge section changes without shifting layouts aggressively.
+- [x] Validate section ordering, imagery balance, and motion across desktop and mobile.
+- [x] Extend the reversible editorial stack to mobile touch layouts.
+- [x] Make the footer a normal full-page scroll destination that does not enter the stack.
+- [x] Preserve upward-scroll unstacking from the footer back through the editorial layers.
+- [x] Validate the revised footer handoff and stack behavior across desktop and mobile.
+- [x] Remove the visible blur-gradient section transitions and validate the cleaner handoffs.
+- [x] Remove section-transition components entirely and retain only direct surface boundaries.
+- [x] Validate the simplified dark–light flow across desktop and mobile.
+- [x] Implement an allocation-anchored reversible stack for editorial sections.
+- [x] Ensure upward scrolling unpacks the stack back to the allocation and size-selector section.
+- [x] Keep the final footer outside the stack in normal document flow.
+- [x] Validate desktop and mobile stack behavior, including reduced-motion fallback.
+- [x] Diagnose why the reversible stack is not activating in the live preview.
+- [x] Restore reliable desktop and mobile stacking while keeping the footer outside the stack.
+- [x] Validate live stacking and upward unstacking before saving the repair checkpoint.
+- [x] Propose a cleaner end-of-stack handoff that removes last-image edge artifacts.
+- [x] Propose a tighter mobile footer treatment without excess blank scroll space.
+- [x] Obtain approval before modifying the stack or footer implementation.
+- [x] Add the release panel and remove the final lookbook image-edge artifact.
+- [x] Compact the normal-flow footer, especially on mobile.
+- [x] Validate the full stack-to-release-to-footer sequence on desktop and mobile.
+- [x] Inspect and correct mobile allocation-card sizing, clipping, and control visibility.
+- [x] Validate all waist options and allocation controls at narrow mobile widths.
+- [ ] Delay mobile stack activation until after the complete allocation selector slide.
+- [ ] Validate mobile upward unstacking back through the complete allocation slide.
+- [ ] Return the allocation size-selector slide to the stack and delay its pinning until its bottom is reached.
+- [ ] Audit and correct mobile scale, alignment, and clipping across allocation, campaign, fit, construction, care, and lookbook sections.
+- [ ] Validate all mobile controls, stack transitions, and reverse unstacking in a real scrolling browser session.
+- [x] Remove the fragile mobile delayed-stack logic and restore stable standard mobile scrolling.
+- [x] Preserve the desktop stack while ensuring every mobile control and section remains usable.
+- [x] Validate mobile scrolling, controls, and section visibility before saving the repair checkpoint.
+- [x] Restore the mobile editorial stack with allocation as its first sheet.
+- [x] Keep every allocation control usable before the campaign sheet reaches the viewport.
+- [x] Validate touch scrolling, reverse unstacking, and section visibility at narrow mobile widths.
+- [ ] Synchronize checkpoint 20623464 into the additive GitHub storefront bundle only.
+- [ ] Commit and push the restored bundle without modifying repository-root code.

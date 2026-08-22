@@ -4,7 +4,7 @@
 
 ### Theme Name: Quarry Specimen
 
-**Very Brief Intro:** A material-led fashion editorial that treats the pants as a field specimen: dark canvas, limestone dust, copper hardware, and measured museum-label typography. It feels intimate, weathered, and deliberate rather than commercial.
+**Very Brief Intro:** A material-led fashion editorial that treats the pants as a field specimen: dark canvas, limestone dust, aged hardware, and measured museum-label typography. It feels intimate, weathered, and deliberate rather than commercial.
 
 **Probability:** 0.04
 
@@ -31,11 +31,11 @@
 1. **Material before marketing:** The weave, weight, wear, construction, and hardware should be visually and verbally foregrounded.
 2. **Asymmetric observation:** Editorial panels, oversized numerals, vertical labels, and cropped imagery create a sense of considered discovery rather than a centered sales funnel.
 3. **Scarcity with calm:** “50 pieces” is stated plainly and repeatedly as a factual edition mark, without countdown pressure or artificial urgency.
-4. **Tactile contrast:** Bone paper and weathered concrete counterbalance the ink-black canvas, while oxidized copper signals construction quality.
+4. **Tactile contrast:** Bone paper and weathered concrete counterbalance the ink-black canvas, while Cairn Teal signals allocation and archival moments.
 
 ### Color Philosophy
 
-The palette is drawn from the supplied campaign photography: **carbon black** as the garment and authority color, **limestone** as a breathing ground, **oat paper** as a tactile neutral, and **verdigris copper** as a small punctuation that leads allocation moments. The site should feel sun-faded and tactile, not digitally pristine. The signature brand color is **Oxide Copper — #A85A37**.
+The palette is drawn from the supplied campaign photography: **carbon black** as the garment and authority color, **limestone** as a breathing ground, **oat paper** as a tactile neutral, and **Cairn Teal** as a small punctuation that leads allocation and archive moments. The site should feel sun-faded and tactile, not digitally pristine. The signature brand color is **Cairn Teal — #356C76**.
 
 ### Layout Paradigm
 
@@ -86,3 +86,11 @@ The wordmark uses intentionally spaced mono lettering, **VAILE**, paired with th
 5. The allocation experience states the price clearly and gives buyers a useful fit and care reference without inventing unconfirmed garment measurements.
 6. In the absence of final campaign assets, the gallery is presented as an intentional unexposed contact-sheet archive with crop plates, inspection grids, and edition data—never as a generic placeholder.
 7. Allocation calls-to-action use concise archive instructions, such as “REQUEST ALLOCATION / WHATSAPP,” rather than conventional ecommerce language.
+8. Unexposed campaign areas are physical archive plates, with paper fibre, inspection grids, crop marks, specimen tabs, and light material wear—never blank digital placeholder slabs.
+9. Construction proof returns to real garment evidence: weave, pocket edge, rivet, seam, and weight markers are treated as product documentation rather than decorative styling.
+10. VAILE is used confidently as an archive imprint: the radial star, spaced mono wordmark, and edition number appear together at entry and closing moments.
+11. Cairn Teal is the sole accent for allocation actions, edition markers, archive tags, and focus states; orange and copper accents remain excluded by explicit brand preference.
+12. The alternating dark–light sequence is a structural rhythm rather than a decorative pattern: every surface change prepares the next editorial subject and avoids back-to-back image-led sections.
+13. Paper details remain small and local—an archive stamp, a specimen fragment, an image edge—rather than long strips or repeated dividers.
+14. Scroll transitions fade and rise each section by a small amount while using surface fades between dark and light states; they never throw entire layouts across the page.
+15. The allocation module is treated as a private ledger, and unexposed campaign plates carry visible archive grids, registration marks, and specimen notation.

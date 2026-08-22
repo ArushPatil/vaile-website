@@ -109,10 +109,8 @@ export default function Home() {
     const updateActiveSlide = () => setActiveCampaignSlide(campaignApi.selectedScrollSnap());
     updateActiveSlide();
     campaignApi.on("select", updateActiveSlide);
-    campaignApi.on("reInit", updateActiveSlide);
     return () => {
       campaignApi.off("select", updateActiveSlide);
-      campaignApi.off("reInit", updateActiveSlide);
     };
   }, [campaignApi]);
 
@@ -321,7 +319,7 @@ export default function Home() {
           <Reveal delay={0.08}><p>A contact-sheet index for campaign, studio, and construction studies.</p></Reveal>
         </div>
         <Reveal className="campaign-gallery__carousel" delay={0.12}>
-          <Carousel opts={{ loop: true }} setApi={setCampaignApi} className="campaign-carousel">
+          <Carousel opts={{ loop: true, watchResize: false }} setApi={setCampaignApi} className="campaign-carousel">
             <CarouselContent className="campaign-carousel__track">
               {campaignSlots.map((slot) => (
                 <CarouselItem key={slot.index} className="campaign-carousel__item">

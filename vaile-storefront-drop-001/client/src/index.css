@@ -2,7 +2,6 @@
  * Vaile Quarry Specimen neutral material system: charcoal, bone, weathered paper and signal clay.
  * The palette stays image-agnostic while a warm accent lifts key editorial and allocation moments.
  */
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,800;6..96,900;6..96,400;6..96,500&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -66,13 +65,13 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--bone); color: var(--ink); font-family: "Manrope", sans-serif; }
+body { margin: 0; overflow-x: hidden; background: var(--bone); color: var(--ink); font-family: "Manrope", sans-serif; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--copper); outline-offset: 4px; }
 button:not(:disabled), a[href] { cursor: pointer; }
 
-.site-shell { overflow: clip; background: var(--bone); }
-.site-shell.is-loading { height: 100svh; overflow: hidden; pointer-events: none; }
+.site-shell { overflow-x: hidden; background: var(--bone); }
+.site-shell.is-loading { min-height: 100dvh; pointer-events: none; }
 .scroll-progress { position: fixed; inset: 0 auto auto 0; z-index: 70; width: 100%; height: 2px; transform-origin: left; background: var(--copper); }
 
 .site-header { position: fixed; z-index: 60; top: 0; left: 0; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 20px 28px; color: #fffdf4; border-bottom: 1px solid rgba(255,255,255,.2); background: rgba(22,22,20,.26); backdrop-filter: blur(9px); transition: padding .24s var(--ease-out), background .24s var(--ease-out), border-color .24s var(--ease-out); }
@@ -185,9 +184,9 @@ button:not(:disabled), a[href] { cursor: pointer; }
 .campaign-gallery__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; max-width: 1090px; margin: 0 auto 46px; }
 .campaign-gallery__head > p { max-width: 290px; margin: 0; color: rgba(37,37,34,.68); font-family: "DM Mono", monospace; font-size: 9px; line-height: 1.6; letter-spacing: .08em; text-align: right; }
 .campaign-gallery__carousel { max-width: 1090px; margin: 0 auto; }
-.campaign-carousel { position: relative; }
-.campaign-carousel__track { margin-left: 0 !important; }
-.campaign-carousel__item { padding-left: 0 !important; }
+.campaign-carousel { position: relative; min-width: 0; }
+.campaign-carousel__track { margin-left: 0 !important; backface-visibility: hidden; transform: translate3d(0, 0, 0); }
+.campaign-carousel__item { flex: 0 0 100%; min-width: 0; padding-left: 0 !important; }
 .campaign-slot { position: relative; display: flex; align-items: flex-end; min-height: min(56vw, 670px); overflow: hidden; padding: 34px; isolation: isolate; }
 .campaign-slot::after { position: absolute; z-index: -1; inset: 0; content: ""; opacity: .33; background-image: linear-gradient(120deg, transparent 49.75%, currentColor 50%, transparent 50.25%), linear-gradient(25deg, transparent 49.75%, currentColor 50%, transparent 50.25%); background-size: 64px 64px; mix-blend-mode: overlay; }
 .campaign-slot--stone { color: #272724; background: #bcb9b0; }
@@ -334,6 +333,98 @@ button:not(:disabled), a[href] { cursor: pointer; }
   .site-footer { padding: 0 22px 20px; }
   .site-footer__masthead { padding-top: 8vw; font-size: clamp(7rem, 20vw, 19rem); letter-spacing: -.1em; }
   .site-footer__info { display: grid; gap: 12px; line-height: 1.4; }
+}
+
+@media (max-width: 480px) {
+  .site-header { padding: 15px 16px; }
+  .site-header.is-scrolled { padding-top: 11px; padding-bottom: 11px; }
+  .brand-lockup { gap: 8px; font-size: 9px; }
+  .brand-mark { width: 24px; height: 24px; }
+  .mobile-allocation { right: 12px; bottom: 12px; max-width: calc(100vw - 24px); padding: 11px 12px; font-size: 7px; letter-spacing: .07em; }
+
+  .hero { min-height: max(680px, 100svh); padding: 100px 20px 38px; }
+  .hero__topline { top: 70px; left: 20px; right: 20px; }
+  .hero h1 { font-size: clamp(3.2rem, 14.1vw, 4.95rem); line-height: .78; }
+  .hero__cta { max-width: 270px; margin-top: 29px; gap: 9px; font-size: 8px; line-height: 1.45; }
+  .hero__footnote { right: 11px; bottom: 18px; font-size: 7px; }
+
+  .intro__main { padding: 58px 22px 62px; }
+  .intro h2, .construction h2, .object-study h2, .allocation h2, .fit-guide h2, .care-note h2 { font-size: clamp(3rem, 13vw, 4.7rem); line-height: .8; }
+  .intro__copy, .fit-guide__intro { font-size: 11px; line-height: 1.62; }
+  .intro__price strong { font-size: 10px; }
+
+  .lookbook__lead { height: 126vw; min-height: 460px; }
+  .lookbook__lead img { object-position: 50% 44%; }
+  .lookbook__aside { min-height: 372px; padding: 54px 22px 30px; }
+  .lookbook__quote { font-size: clamp(2.45rem, 10.8vw, 3.65rem); line-height: .88; }
+  .lookbook__microcopy { margin-top: 24px; font-size: 8px; }
+  .lookbook__chapter { font-size: 3.9rem; }
+
+  .material-note { padding: 64px 20px; }
+  .material-note__headline { margin: 24px 0 43px; font-size: clamp(2.65rem, 11.8vw, 4rem); line-height: .88; }
+  .material-note__card div, .material-note__card div + div { grid-template-columns: 95px 1fr; gap: 15px; }
+  .material-note__card strong { font-size: 10px; }
+
+  .construction__image-wrap { min-height: 535px; }
+  .construction__primary-image { object-position: 48% center; }
+  .construction__story { padding: 60px 20px; }
+  .construction h2 { margin-bottom: 34px; }
+  .construction__items article { gap: 11px; padding: 16px 0; }
+
+  .detail-spread__left { min-height: 510px; }
+  .detail-spread__right { min-height: 430px; }
+  .detail-spread__left img { object-position: 52% center; }
+  .detail-spread__right img { object-position: 54% center; }
+
+  .campaign-gallery { padding: 60px 20px; }
+  .campaign-gallery__head { margin-bottom: 24px; }
+  .campaign-gallery__head > p { max-width: 255px; font-size: 8px; }
+  .campaign-slot { min-height: 408px; padding: 21px; }
+  .campaign-slot__index { top: 22px; left: 20px; font-size: clamp(3.6rem, 15vw, 5rem); }
+  .campaign-slot__content h3 { margin: 8px 0 10px; font-size: clamp(2.8rem, 12.3vw, 4.1rem); line-height: .78; }
+  .campaign-slot__content > span { font-size: 8px; }
+  .campaign-slot__content p { max-width: 195px; font-size: 10px; line-height: 1.5; }
+  .campaign-slot__measurements { right: 19px; bottom: 19px; max-width: 150px; font-size: 6.5px; }
+  .campaign-carousel__controls { padding-top: 13px; }
+
+  .fit-guide__content { padding: 60px 20px 68px; }
+  .fit-guide__intro { margin: 28px 0 32px; }
+  .fit-card__head, .fit-card__sizes { padding: 12px 14px; font-size: 7px; }
+  .fit-card__rows article { padding: 14px; }
+  .fit-card__rows strong { font-size: 9px; letter-spacing: .045em; }
+  .fit-card__sizes div { gap: 7px; }
+  .fit-card__sizes b { width: 25px; height: 25px; }
+
+  .object-study { min-height: 520px; padding: 48px 20px; }
+  .object-study__note { right: 18px; bottom: 18px; max-width: 142px; font-size: 7px; }
+  .care-note__lead { padding: 62px 20px 48px; }
+  .care-note__lead > p { margin-top: 27px; font-size: 11px; }
+  .care-note__guide { margin: 20px 20px 58px; }
+  .care-list article { grid-template-columns: 28px 1fr; gap: 10px; padding: 15px 13px; }
+  .care-list p { font-size: 10px; }
+
+  .allocation { padding: 64px 20px 0; }
+  .allocation__top { gap: 26px; padding-bottom: 40px; }
+  .allocation__pre { font-size: clamp(1.75rem, 8vw, 2.6rem); }
+  .allocation__grid { gap: 42px; padding: 54px 0 72px; }
+  .allocation__statement > p { margin-top: 25px; font-size: 11px; }
+  .allocation__panel { padding: 14px; }
+  .allocation__panel-top { gap: 10px; padding-bottom: 15px; flex-wrap: wrap; font-size: 7px; }
+  .allocation__price strong { font-size: 1.7rem; }
+  .allocation__fineprint { font-size: 9px; }
+  .allocation__button { padding: 15px 14px; font-size: 9px; }
+
+  .site-footer { padding: 0 16px 18px; }
+  .site-footer__masthead { gap: clamp(7px, 2.7vw, 13px); padding: 8vw 0 3vw; font-size: clamp(4rem, 17.2vw, 6.2rem); letter-spacing: -.09em; }
+  .site-footer__masthead img { width: clamp(28px, 9vw, 42px); height: clamp(28px, 9vw, 42px); }
+  .site-footer__info { margin-top: 20px; font-size: 7px; }
+}
+
+@media (max-width: 340px) {
+  .hero h1 { font-size: clamp(2.95rem, 14vw, 3.45rem); }
+  .mobile-allocation { padding: 10px; font-size: 6.5px; }
+  .site-footer__masthead { gap: 5px; font-size: 3.8rem; }
+  .site-footer__masthead img { width: 27px; height: 27px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -24,7 +24,13 @@
 - [x] Validate the refined typography, reveals, and loading behavior.
 - [x] Add a neutral, future-ready campaign carousel with clear replacement points for final photography.
 - [x] Add a subtle attention pulse to the sticky WhatsApp allocation action.
-- [ ] Validate the carousel and allocation motion across device sizes.
-- [ ] Commit the completed revision to the linked GitHub repository.
-- [ ] Push the prepared storefront revision to the correct repository, ArushPatil/vaile-website.
-- [ ] Add the storefront as a separate source bundle without replacing any existing ArushPatil/vaile-website code.
+- [x] Validate the carousel and allocation motion across device sizes.
+- [x] Commit the completed revision to the linked GitHub repository.
+- [x] Push the prepared storefront revision to the correct repository, ArushPatil/vaile-website.
+- [x] Add the storefront as a separate source bundle without replacing any existing ArushPatil/vaile-website code.
+- [x] Audit and correct mobile text scaling, media crops, spacing, and overflow across the storefront.
+- [x] Validate the corrected mobile hierarchy across phone-sized viewports.
+- [x] Identify and eliminate the ResizeObserver loop warning without affecting responsive layout behavior.
+- [x] Validate that gallery and viewport changes no longer emit the observer warning.
+- [ ] Synchronize the latest stable storefront source into the standalone GitHub bundle.
+- [ ] Commit and push the observer-stability revision to ArushPatil/vaile-website.

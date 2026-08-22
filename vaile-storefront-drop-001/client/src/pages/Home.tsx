@@ -8,15 +8,15 @@ import { useEffect, useRef, useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
 const assets = {
-  hero: "/manus-storage/duck-canvas-05_73ef0bd8.jpg",
-  lookOne: "/manus-storage/duck-canvas-01_740a9ac7.jpg",
-  lookTwo: "/manus-storage/duck-canvas-02_2ceea2d9.jpg",
-  closeOne: "/manus-storage/duck-canvas-03_894dfdb0.jpg",
-  closeTwo: "/manus-storage/duck-canvas-06_978e729c.jpg",
-  grain: "/manus-storage/duck-canvas-grain-editorial_4ea19f4e.jpg",
-  paper: "/manus-storage/duck-canvas-paper-fiber_b0e794ac.jpg",
-  hardware: "/manus-storage/duck-canvas-copper-hardware_dbf587d9.jpg",
-  mark: "/manus-storage/vaile-logo_a0e37931.png",
+  hero: "/images/5-desktop.jpg",
+  lookOne: "/images/1-desktop.jpg",
+  lookTwo: "/images/2-desktop.jpg",
+  closeOne: "/images/3-desktop.jpg",
+  closeTwo: "/images/6-desktop.jpg",
+  grain: "/images/10_warm-desktop.jpg",
+  paper: "/images/4-desktop.jpg",
+  hardware: "/images/1-desktop.jpg",
+  mark: "/images/logo.png",
 };
 
 const sizes = ["30", "32", "34", "36", "38"];

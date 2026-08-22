@@ -270,8 +270,14 @@
               
               <!-- Top Model Meta Header -->
               <div class="lookbook-viewer__header text-mono">
-                <span class="lookbook-viewer__tag">MODEL LOOKBOOK // SPECIMEN ARCHIVE</span>
-                <span class="lookbook-viewer__counter" id="lookbook-counter">01 / 06</span>
+                <div class="lookbook-header__left">
+                  <span class="lookbook-crosshair" aria-hidden="true">+</span>
+                  <span class="lookbook-viewer__tag">SPECIMEN // 4:5 MONOGRAPH ARCHIVE</span>
+                </div>
+                <div class="lookbook-header__right">
+                  <span class="lookbook-viewer__focal">FOCAL // 50MM</span>
+                  <span class="lookbook-viewer__counter" id="lookbook-counter">01 / 06</span>
+                </div>
               </div>
 
               <!-- Main Lookbook Track -->
@@ -477,6 +483,38 @@
                 An architectural wide-leg trouser cut from raw 12 oz (405 GSM) Indian cotton duck canvas. Tailored with ergonomic knee volume darts, deep reinforced utility slant pockets, and custom matte black solid alloy hardware.
               </p>
 
+              <!-- Tactile Archival Material Specimen Module -->
+              <div class="material-specimen">
+                <div class="material-specimen__header text-mono">
+                  <span class="material-specimen__tag">SPECIMEN // 01</span>
+                  <span class="material-specimen__stamp">12 OZ RAW CANVAS &bull; 405 GSM</span>
+                </div>
+                <div class="material-specimen__grid">
+                  <div class="material-specimen__swatch">
+                    <img src="/images/3-desktop.jpg" alt="12 oz Cotton Duck Canvas Weave" class="material-specimen__img" loading="lazy" />
+                    <span class="material-specimen__micro-tag text-mono">100% RAW COTTON</span>
+                  </div>
+                  <div class="material-specimen__details text-mono">
+                    <div class="material-specimen__row">
+                      <span class="specimen-key">WEAVE</span>
+                      <span class="specimen-val">RIGID PLAIN DUCK DENSE 2-PLY</span>
+                    </div>
+                    <div class="material-specimen__row">
+                      <span class="specimen-key">FINISH</span>
+                      <span class="specimen-val">RAW UNWASHED NATURAL ECRU</span>
+                    </div>
+                    <div class="material-specimen__row">
+                      <span class="specimen-key">HARDWARE</span>
+                      <span class="specimen-val">SOLID ALLOY MATTE SHANK + RIVETS</span>
+                    </div>
+                    <div class="material-specimen__row">
+                      <span class="specimen-key">ORIGIN</span>
+                      <span class="specimen-val">BANGALORE ATELIER &bull; RUN OF 50</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <!-- Size Selection Matrix -->
               <div class="product-sizing" id="sizing-module">
                 <div class="product-sizing__header text-mono">
@@ -644,6 +682,7 @@
          SECTION: BRAND MANIFESTO (EDITORIAL STATEMENT)
          =========================================================== -->
     <section class="manifesto-section" aria-label="Atelier Philosophy">
+      <div class="manifesto-crosshair-top text-mono">+ 12.9716&deg; N / 77.5946&deg; E &bull; ARCHIVE VOL. 01 +</div>
       <div class="manifesto-container">
         <div class="manifesto-tag text-mono">PHILOSOPHY // ANTI-DISPOSABLE</div>
         <blockquote class="manifesto-quote">
@@ -651,17 +690,20 @@
         </blockquote>
         <div class="manifesto-grid text-mono">
           <div class="manifesto-pillar">
-            <span class="manifesto-pillar__num">01</span>
+            <span class="manifesto-pillar__ghost-num" aria-hidden="true">01</span>
+            <span class="manifesto-pillar__num">01 // LIMITATION</span>
             <span class="manifesto-pillar__label">50 PIECES TOTAL</span>
             <p class="manifesto-pillar__desc">Strict edition limits. Every garment is stamped with its sequential number on the interior patch.</p>
           </div>
           <div class="manifesto-pillar">
-            <span class="manifesto-pillar__num">02</span>
+            <span class="manifesto-pillar__ghost-num" aria-hidden="true">02</span>
+            <span class="manifesto-pillar__num">02 // PROVENANCE</span>
             <span class="manifesto-pillar__label">BANGALORE TAILORING</span>
             <p class="manifesto-pillar__desc">Cut, sewn, and finished slowly in our private atelier in Bangalore, India.</p>
           </div>
           <div class="manifesto-pillar">
-            <span class="manifesto-pillar__num">03</span>
+            <span class="manifesto-pillar__ghost-num" aria-hidden="true">03</span>
+            <span class="manifesto-pillar__num">03 // PERPETUITY</span>
             <span class="manifesto-pillar__label">LIFETIME RESTORATION</span>
             <p class="manifesto-pillar__desc">Complimentary studio seam restoration and hardware renewal for the life of the garment.</p>
           </div>
@@ -676,16 +718,18 @@
       <div class="faq-container">
         
         <div class="faq-header">
-          <div class="faq-tag text-mono">GUIDANCE // INQUIRIES</div>
-          <h2 class="faq-title">FREQUENTLY ASKED QUESTIONS</h2>
+          <div class="faq-tag text-mono">DOSSIER // INQUIRIES</div>
+          <h2 class="faq-title">ARCHIVAL INQUIRIES</h2>
         </div>
 
         <div class="faq-list">
           
           <details class="faq-item">
             <summary class="faq-summary">
-              <span class="faq-num text-mono">01</span>
-              <span class="faq-question">HOW DOES THE EDITION 01 ARCHITECTURAL SILHOUETTE FIT?</span>
+              <div class="faq-summary__left">
+                <span class="faq-doc-tag text-mono">DOC // 01</span>
+                <span class="faq-question">HOW DOES THE EDITION 01 ARCHITECTURAL SILHOUETTE FIT?</span>
+              </div>
               <span class="faq-toggle text-mono" aria-hidden="true">+</span>
             </summary>
             <div class="faq-answer">
@@ -695,8 +739,10 @@
 
           <details class="faq-item">
             <summary class="faq-summary">
-              <span class="faq-num text-mono">02</span>
-              <span class="faq-question">HOW DOES 12 OZ DUCK CANVAS BREAK IN OVER TIME?</span>
+              <div class="faq-summary__left">
+                <span class="faq-doc-tag text-mono">DOC // 02</span>
+                <span class="faq-question">HOW DOES 12 OZ DUCK CANVAS BREAK IN OVER TIME?</span>
+              </div>
               <span class="faq-toggle text-mono" aria-hidden="true">+</span>
             </summary>
             <div class="faq-answer">
@@ -706,8 +752,10 @@
 
           <details class="faq-item">
             <summary class="faq-summary">
-              <span class="faq-num text-mono">03</span>
-              <span class="faq-question">HOW ARE NUMBERED ALLOCATIONS ASSIGNED?</span>
+              <div class="faq-summary__left">
+                <span class="faq-doc-tag text-mono">DOC // 03</span>
+                <span class="faq-question">HOW ARE NUMBERED ALLOCATIONS ASSIGNED?</span>
+              </div>
               <span class="faq-toggle text-mono" aria-hidden="true">+</span>
             </summary>
             <div class="faq-answer">
@@ -717,8 +765,10 @@
 
           <details class="faq-item">
             <summary class="faq-summary">
-              <span class="faq-num text-mono">04</span>
-              <span class="faq-question">HOW DOES THE DIRECT ATELIER DISPATCH PROCESS WORK?</span>
+              <div class="faq-summary__left">
+                <span class="faq-doc-tag text-mono">DOC // 04</span>
+                <span class="faq-question">HOW DOES THE DIRECT ATELIER DISPATCH PROCESS WORK?</span>
+              </div>
               <span class="faq-toggle text-mono" aria-hidden="true">+</span>
             </summary>
             <div class="faq-answer">
@@ -728,8 +778,10 @@
 
           <details class="faq-item">
             <summary class="faq-summary">
-              <span class="faq-num text-mono">05</span>
-              <span class="faq-question">WHAT IS COVERED UNDER THE LIFETIME STUDIO WARRANTY?</span>
+              <div class="faq-summary__left">
+                <span class="faq-doc-tag text-mono">DOC // 05</span>
+                <span class="faq-question">WHAT IS COVERED UNDER THE LIFETIME STUDIO WARRANTY?</span>
+              </div>
               <span class="faq-toggle text-mono" aria-hidden="true">+</span>
             </summary>
             <div class="faq-answer">

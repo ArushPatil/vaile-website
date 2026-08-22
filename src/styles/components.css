@@ -1436,7 +1436,7 @@ body.state--menu-open .mobile-menu {
 
 .bts-hero__tag {
   font-size: 11px;
-  color: #3b185f;
+  color: #767682;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -1454,14 +1454,14 @@ body.state--menu-open .mobile-menu {
 
 .bts-hero__subtitle {
   font-size: 14px;
-  color: var(--color-gray);
+  color: #666675;
   max-width: 620px;
   line-height: 1.6;
 }
 
 .bts-section {
   padding: 72px 20px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #e5e5eb;
 }
 
 .bts-container {
@@ -1485,7 +1485,7 @@ body.state--menu-open .mobile-menu {
 
 .bts-grid__label {
   font-size: 11px;
-  color: var(--color-gray);
+  color: #767682;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 500;
@@ -1503,14 +1503,14 @@ body.state--menu-open .mobile-menu {
 .bts-body {
   font-size: 14px;
   line-height: 1.8;
-  color: #333333;
+  color: #33333e;
   margin-bottom: 16px;
   max-width: 680px;
 }
 
 .bts-specs-table {
   margin-top: 32px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #e5e5eb;
 }
 
 .bts-spec-item {
@@ -1518,7 +1518,7 @@ body.state--menu-open .mobile-menu {
   grid-template-columns: 40px 1fr;
   gap: 16px;
   padding: 20px 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid #e5e5eb;
   font-size: 12px;
   line-height: 1.6;
 }
@@ -1526,7 +1526,7 @@ body.state--menu-open .mobile-menu {
 .bts-spec-num {
   font-size: 11px;
   font-weight: 600;
-  color: #3b185f;
+  color: #767682;
 }
 
 .bts-spec-item strong {
@@ -1534,55 +1534,51 @@ body.state--menu-open .mobile-menu {
   font-size: 11px;
   letter-spacing: 0.05em;
   margin-bottom: 4px;
-  color: var(--color-black);
+  color: #000000;
 }
 
 .bts-spec-item p {
-  color: var(--color-gray);
+  color: #666675;
   font-family: var(--font-primary);
   font-size: 12px;
+  margin: 0;
 }
 
 .bts-cta-section {
-  padding: 80px 20px 100px;
-  border-top: 1px solid var(--color-border);
-  background: #f4f5f8;
+  padding: 88px 20px 100px;
+  border-top: 1px solid #e5e5eb;
+  background: #ffffff;
 }
 
 .bts-cta-box {
-  max-width: 580px;
+  max-width: 620px;
   margin: 0 auto;
   text-align: center;
-  padding: 48px 36px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.58) 50%, rgba(255, 255, 255, 0.76) 100%);
-  backdrop-filter: blur(40px) saturate(190%) brightness(104%);
-  -webkit-backdrop-filter: blur(40px) saturate(190%) brightness(104%);
-  border-top: 1.5px solid rgba(255, 255, 255, 0.95);
-  border-left: 1px solid rgba(255, 255, 255, 0.75);
-  border-right: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 
-    inset 0 1px 1px 0 rgba(255, 255, 255, 1),
-    0 24px 60px -10px rgba(0, 0, 0, 0.06),
-    0 2px 8px rgba(0, 0, 0, 0.02);
+  padding: 56px 40px;
+  background: #fbfbfd;
+  border: 1px solid #e5e5eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .bts-cta-box {
+    padding: 40px 20px;
+  }
 }
 
 .bts-cta-tag {
   font-size: 10px;
-  color: #3b185f;
+  color: #767682;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  background: rgba(59, 24, 95, 0.08);
-  padding: 3px 10px;
-  border-radius: 4px;
-  border: 1px solid rgba(59, 24, 95, 0.18);
-  display: inline-block;
+  letter-spacing: 0.1em;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .bts-cta-title {
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -1592,14 +1588,23 @@ body.state--menu-open .mobile-menu {
 
 .bts-cta-desc {
   font-size: 14px;
-  color: #44444c;
+  color: #555562;
   line-height: 1.6;
   margin-bottom: 28px;
+  max-width: 480px;
 }
 
 .bts-cta-btn {
-  max-width: 380px;
+  width: 100%;
+  max-width: 440px;
   margin: 0 auto;
+}
+
+.bts-cta-note {
+  font-size: 10px;
+  color: #767682;
+  letter-spacing: 0.08em;
+  margin-top: 18px;
 }
 
 /* Utility */

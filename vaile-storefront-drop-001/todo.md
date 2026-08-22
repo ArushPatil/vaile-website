@@ -32,5 +32,19 @@
 - [x] Validate the corrected mobile hierarchy across phone-sized viewports.
 - [x] Identify and eliminate the ResizeObserver loop warning without affecting responsive layout behavior.
 - [x] Validate that gallery and viewport changes no longer emit the observer warning.
-- [ ] Synchronize the latest stable storefront source into the standalone GitHub bundle.
-- [ ] Commit and push the observer-stability revision to ArushPatil/vaile-website.
+- [x] Synchronize the latest stable storefront source into the standalone GitHub bundle.
+- [x] Commit and push the observer-stability revision to ArushPatil/vaile-website.
+- [x] Correct the desktop paired-image composition and scale.
+- [x] Add a restrained pointer-led inspection interaction for the paired image spread.
+- [x] Validate the refined desktop image experience.
+- [x] Recompose the paired desktop image spread into a calmer, more balanced arrangement.
+- [x] Reduce the image hover interaction to a subtle editorial inspection effect.
+- [x] Validate the revised desktop image spread.
+- [x] Restore the functional campaign carousel controls.
+- [x] Move the campaign carousel before the paired product-image spread.
+- [x] Validate the reordered carousel and image sequence across device sizes.
+- [x] Make carousel next and previous controls advance the visible slide reliably.
+- [x] Add subtle paper, grain, and material textures across the storefront without reducing legibility.
+- [x] Validate carousel interaction and textured surfaces across desktop and mobile.
+- [ ] Synchronize the latest carousel-control and textured-surface files into the standalone GitHub bundle.
+- [ ] Commit and push the latest Vaile storefront revision to ArushPatil/vaile-website.

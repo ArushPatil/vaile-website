@@ -3,20 +3,19 @@
  * The palette stays image-agnostic while color appears only at editorial and allocation moments.
  */
 import { AnimatePresence, motion, useInView, useScroll, useSpring } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight, Check, ChevronDown, Copy, Menu, X } from "lucide-react";
+import { ArrowDownRight, ArrowLeft, ArrowRight, ArrowUpRight, Check, ChevronDown, Copy, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
 const assets = {
-  hero: "/images/5-desktop.jpg",
-  lookOne: "/images/1-desktop.jpg",
-  lookTwo: "/images/2-desktop.jpg",
-  closeOne: "/images/3-desktop.jpg",
-  closeTwo: "/images/6-desktop.jpg",
-  grain: "/images/10_warm-desktop.jpg",
-  paper: "/images/4-desktop.jpg",
-  hardware: "/images/1-desktop.jpg",
-  mark: "/images/logo.png",
+  hero: "/manus-storage/duck-canvas-05_73ef0bd8.jpg",
+  lookOne: "/manus-storage/duck-canvas-01_740a9ac7.jpg",
+  lookTwo: "/manus-storage/duck-canvas-02_2ceea2d9.jpg",
+  closeOne: "/manus-storage/duck-canvas-03_894dfdb0.jpg",
+  closeTwo: "/manus-storage/duck-canvas-06_978e729c.jpg",
+  grain: "/manus-storage/duck-canvas-grain-editorial_4ea19f4e.jpg",
+  paper: "/manus-storage/duck-canvas-paper-fiber_b0e794ac.jpg",
+  hardware: "/manus-storage/duck-canvas-copper-hardware_dbf587d9.jpg",
+  mark: "/manus-storage/vaile-logo_a0e37931.png",
 };
 
 const sizes = ["30", "32", "34", "36", "38"];
@@ -26,6 +25,12 @@ const campaignSlots = [
   { index: "02", category: "STUDIO CONTACT / MODEL", title: "Unexposed Studio", note: "Studio contact plate / held in the archive", tone: "paper", plate: "PLATE / 6×7 / 02" },
   { index: "03", category: "CONSTRUCTION CONTACT / DETAIL", title: "Unexposed Detail", note: "Material contact plate / held in the archive", tone: "charcoal", plate: "PLATE / 6×7 / 03" },
 ];
+
+const campaignSlideVariants = {
+  enter: (direction: number) => ({ opacity: 0, x: direction > 0 ? 26 : -26 }),
+  center: { opacity: 1, x: 0 },
+  exit: (direction: number) => ({ opacity: 0, x: direction > 0 ? -26 : 26 }),
+};
 
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -75,8 +80,8 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [campaignApi, setCampaignApi] = useState<CarouselApi>();
   const [activeCampaignSlide, setActiveCampaignSlide] = useState(0);
+  const [campaignDirection, setCampaignDirection] = useState(1);
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
   useHashScroll();
@@ -104,18 +109,13 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    if (!campaignApi) return;
-    const updateActiveSlide = () => setActiveCampaignSlide(campaignApi.selectedScrollSnap());
-    updateActiveSlide();
-    campaignApi.on("select", updateActiveSlide);
-    return () => {
-      campaignApi.off("select", updateActiveSlide);
-    };
-  }, [campaignApi]);
-
   const allocationMessage = `VAILE — DROP 001\n\nI would like to request a private allocation.\nPreferred waist: ${selectedSize}\n\nPlease share availability and next steps.`;
   const allocationHref = `https://wa.me/918951066881?text=${encodeURIComponent(allocationMessage)}`;
+
+  const moveCampaignSlide = (direction: 1 | -1) => {
+    setCampaignDirection(direction);
+    setActiveCampaignSlide((current) => (current + direction + campaignSlots.length) % campaignSlots.length);
+  };
 
   const copyAllocationMessage = async () => {
     await navigator.clipboard?.writeText(allocationMessage);
@@ -302,47 +302,61 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="detail-spread">
-        <div className="detail-spread__left">
-          <img src={assets.lookTwo} alt="Back view of the duck canvas pants in dry brush" />
-          <div className="image-tag image-tag--dark"><span>FIG. 03</span><span>BACK / FIELD</span></div>
-        </div>
-        <div className="detail-spread__right">
-          <img src={assets.closeTwo} alt="Close view of the side utility pocket and copper rivets" />
-          <div className="detail-spread__caption"><span>DISCREET BY DEFAULT.</span><span>BUILT WITH INTENT.</span></div>
-        </div>
-      </section>
-
       <section className="campaign-gallery" id="campaign">
         <div className="campaign-gallery__head">
           <Reveal><SectionLabel index="04" label="CAMPAIGN INDEX" /></Reveal>
           <Reveal delay={0.08}><p>A contact-sheet index for campaign, studio, and construction studies.</p></Reveal>
         </div>
         <Reveal className="campaign-gallery__carousel" delay={0.12}>
-          <Carousel opts={{ loop: true, watchResize: false }} setApi={setCampaignApi} className="campaign-carousel">
-            <CarouselContent className="campaign-carousel__track">
-              {campaignSlots.map((slot) => (
-                <CarouselItem key={slot.index} className="campaign-carousel__item">
-                  <article className={`campaign-slot campaign-slot--${slot.tone}`}>
-                    <span className="campaign-slot__index">{slot.index}</span>
-                    <div className="campaign-slot__grid" aria-hidden="true" />
-                    <div className="campaign-slot__content">
-                      <span>{slot.category}</span>
-                      <h3>{slot.title}</h3>
-                      <p>{slot.note}</p>
-                    </div>
-                    <div className="campaign-slot__measurements"><span>{slot.plate}</span><span>UNEXPOSED / VAILE ARCHIVE</span></div>
-                  </article>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="campaign-carousel__controls">
-              <CarouselPrevious className="campaign-carousel__arrow campaign-carousel__arrow--previous" />
-              <span>{String(activeCampaignSlide + 1).padStart(2, "0")} / {String(campaignSlots.length).padStart(2, "0")}</span>
-              <CarouselNext className="campaign-carousel__arrow campaign-carousel__arrow--next" />
+          <div className="campaign-carousel" role="region" aria-roledescription="carousel" aria-label="Vaile campaign archive">
+            <div className="campaign-carousel__track" aria-live="polite">
+              <AnimatePresence initial={false} mode="wait" custom={campaignDirection}>
+                {(() => {
+                  const slot = campaignSlots[activeCampaignSlide];
+                  return (
+                    <motion.article
+                      key={slot.index}
+                      className={`campaign-slot campaign-slot--${slot.tone}`}
+                      custom={campaignDirection}
+                      variants={campaignSlideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{ duration: 0.36, ease: [0.23, 1, 0.32, 1] }}
+                    >
+                      <span className="campaign-slot__index">{slot.index}</span>
+                      <div className="campaign-slot__grid" aria-hidden="true" />
+                      <div className="campaign-slot__content">
+                        <span>{slot.category}</span>
+                        <h3>{slot.title}</h3>
+                        <p>{slot.note}</p>
+                      </div>
+                      <div className="campaign-slot__measurements"><span>{slot.plate}</span><span>UNEXPOSED / VAILE ARCHIVE</span></div>
+                    </motion.article>
+                  );
+                })()}
+              </AnimatePresence>
             </div>
-          </Carousel>
+            <div className="campaign-carousel__controls">
+              <button type="button" className="campaign-carousel__arrow campaign-carousel__arrow--previous" onClick={() => moveCampaignSlide(-1)} aria-label="Previous archive plate"><ArrowLeft size={16} /></button>
+              <span>{String(activeCampaignSlide + 1).padStart(2, "0")} / {String(campaignSlots.length).padStart(2, "0")}</span>
+              <button type="button" className="campaign-carousel__arrow campaign-carousel__arrow--next" onClick={() => moveCampaignSlide(1)} aria-label="Next archive plate"><ArrowRight size={16} /></button>
+            </div>
+          </div>
         </Reveal>
+      </section>
+
+      <section className="detail-spread">
+        <div className="detail-spread__left detail-inspector">
+          <img src={assets.lookTwo} alt="Back view of the duck canvas pants in dry brush" />
+          <div className="image-tag image-tag--dark"><span>FIG. 03</span><span>BACK / FIELD</span></div>
+          <span className="detail-inspector__cue" aria-hidden="true">INSPECT</span>
+        </div>
+        <div className="detail-spread__right detail-inspector">
+          <img src={assets.closeTwo} alt="Close view of the side utility pocket and copper rivets" />
+          <div className="detail-spread__caption"><span>DISCREET BY DEFAULT.</span><span>BUILT WITH INTENT.</span></div>
+          <span className="detail-inspector__cue" aria-hidden="true">INSPECT</span>
+        </div>
       </section>
 
       <section className="fit-guide" id="fit">

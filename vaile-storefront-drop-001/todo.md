@@ -53,3 +53,7 @@
 - [x] Validate and push the deployment-compatibility fix without changing Cloudflare configuration.
 - [x] Compare the last working and latest Cloudflare bundle commits to isolate the image-path regression.
 - [x] Restore the exact prior working Cloudflare image-path strategy and push only that targeted correction.
+- [x] Replace the orange signal accent with a more distinctive material-led color.
+- [x] Validate the refined accent across desktop and mobile.
+- [ ] Synchronize the Cairn Teal accent revision into the standalone GitHub bundle.
+- [ ] Commit and push the Cairn Teal revision to ArushPatil/vaile-website.

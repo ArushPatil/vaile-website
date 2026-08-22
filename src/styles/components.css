@@ -58,6 +58,20 @@ body.state--menu-open {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+/* Scroll Reveal Mode on Hero Landing */
+.nav--scroll-reveal {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.nav--scroll-reveal.nav--visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .nav__inner {
   position: relative;
   display: flex;
@@ -303,9 +317,13 @@ body.state--menu-open .mobile-menu {
    PAGE CONTENT
    ========================================================================== */
 .page-content {
-  padding-top: var(--nav-height);
+  padding-top: 0;
   position: relative;
   z-index: 1;
+}
+
+.page-content.bts-page {
+  padding-top: var(--nav-height);
 }
 
 /* ==========================================================================

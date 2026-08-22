@@ -25,13 +25,6 @@ function initPageLoad() {
     },
   });
 
-  // Nav drops down
-  tl.from('.nav', {
-    y: '-100%',
-    duration: 0.6,
-    ease: 'power2.out',
-  });
-
   // Masthead enters purely centered with zero positional movement
   tl.from(
     '.masthead__text',
@@ -40,7 +33,7 @@ function initPageLoad() {
       duration: 0.8,
       ease: 'power2.out',
     },
-    '-=0.2'
+    '+=0.1'
   );
 }
 

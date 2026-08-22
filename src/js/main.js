@@ -322,6 +322,46 @@ function initLookbookViewer() {
 }
 
 // ----------------------------------------------------------------
+// 7. EDITORIAL HEADER SCROLL-REVEAL ON LANDING
+// ----------------------------------------------------------------
+function initHeaderScroll() {
+  const header = document.getElementById('header');
+  const editorialStream = document.getElementById('editorial-stream');
+
+  // Only apply scroll-reveal behavior on pages with the hero landing stream (homepage)
+  if (!header || !editorialStream) return;
+
+  header.classList.add('nav--scroll-reveal');
+
+  let ticking = false;
+  const SCROLL_THRESHOLD = 80; // pixels from top before header glides down and sticks
+
+  function checkHeaderVisibility() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > SCROLL_THRESHOLD) {
+      header.classList.add('nav--visible');
+    } else {
+      header.classList.remove('nav--visible');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(checkHeaderVisibility);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  // Initial check on load in case page is reloaded mid-scroll
+  checkHeaderVisibility();
+}
+
+// ----------------------------------------------------------------
 // INITIALIZATION
 // ----------------------------------------------------------------
 function initApp() {
@@ -329,6 +369,7 @@ function initApp() {
   initNewsletter();
   initMobileBarScroll();
   initLookbookViewer();
+  initHeaderScroll();
   initAnimations();
 
   // Initialize default active size

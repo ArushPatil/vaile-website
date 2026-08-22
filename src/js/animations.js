@@ -70,24 +70,25 @@ function initScrollEffects() {
       });
     },
 
-    // Mobile (< 768px): Lightweight 4% parallax for high-framerate touch response
+    // Mobile (< 768px): Lightweight 3% parallax on editorial showcase rows
     '(max-width: 767px)': function () {
-      allTiles.forEach((tile) => {
+      const secondaryTiles = document.querySelectorAll('.editorial-row .tile');
+      secondaryTiles.forEach((tile) => {
         const img = tile.querySelector('.tile__image');
         if (!img) return;
 
         gsap.fromTo(
           img,
-          { yPercent: -4 },
+          { yPercent: -3 },
           {
-            yPercent: 4,
+            yPercent: 3,
             ease: 'none',
             force3D: true,
             scrollTrigger: {
               trigger: tile,
               start: 'top bottom',
               end: 'bottom top',
-              scrub: 0.3,
+              scrub: true,
             },
           }
         );

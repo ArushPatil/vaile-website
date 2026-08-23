@@ -586,9 +586,9 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
     letter-spacing: .06em;
   }
 
-  .hero { min-height: max(640px, 100svh); padding: 90px 16px 44px; }
-  .hero__topline { top: 62px; right: 16px; left: 16px; font-size: 6.5px; }
-  .hero__imprint { top: 88px; right: 16px; font-size: 6.5px; }
+  .hero { min-height: max(640px, 100svh); padding: 110px 16px 44px; }
+  .hero__topline { top: 84px; right: 16px; left: 16px; font-size: 7.5px; }
+  .hero__imprint { top: 110px; right: 16px; font-size: 7.5px; }
   .hero__imprint img { width: 14px; height: 14px; }
   .hero h1 { font-size: clamp(2.6rem, 12.5vw, 4.2rem); line-height: .92; }
 
@@ -612,11 +612,12 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
   .allocation__button { padding: 15px 14px; font-size: 9px; min-height: 48px; }
   .copy-button { min-height: 38px; font-size: 8px; }
 
-  .lookbook__lead { height: 110vw; min-height: 340px; }
-  .lookbook__lead img { object-position: 50% 25%; }
-  .lookbook__aside { padding: 28px 16px 36px; }
-  .lookbook__quote { margin-top: 10px; font-size: clamp(1.8rem, 8.5vw, 2.6rem); line-height: .96; }
-  .lookbook__microcopy { margin-top: 12px; font-size: 8px; line-height: 1.5; }
+  .lookbook { min-height: 100svh; display: flex; flex-direction: column; }
+  .lookbook__lead { height: 62svh; min-height: 340px; width: 100%; overflow: hidden; flex-shrink: 0; }
+  .lookbook__lead img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; }
+  .lookbook__aside { flex: 1; padding: 18px 16px 36px; display: flex; flex-direction: column; justify-content: center; }
+  .lookbook__quote { margin-top: 6px; font-size: clamp(1.8rem, 8vw, 2.5rem); line-height: 1.0; }
+  .lookbook__microcopy { margin-top: 10px; font-size: 8.5px; line-height: 1.5; }
 
   .construction__image-wrap { min-height: 320px; height: 95vw; }
   .construction__primary-image { object-position: 45% 25%; }

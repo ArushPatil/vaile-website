@@ -1,0 +1,105 @@
+# Vaile Refinement Tasks
+
+- [x] Download and upload the supplied Vaile logo into the project asset store.
+- [x] Replace the temporary DUCK / 12 identity with Vaile in navigation, copy, and metadata.
+- [x] Add composed scroll choreography that moves and reveals complete editorial sections, not only individual text blocks.
+- [x] Validate desktop and mobile motion, then save a delivery checkpoint.
+- [x] Remove the section-level scroll choreography and restore the original restrained animation behavior.
+- [x] Connect the allocation CTA to the supplied WhatsApp number with a prefilled Vaile enquiry.
+- [x] Display the confirmed price of ₹6,200 INR / $100 USD.
+- [x] Add a detailed, editorial sizing and fit guide section.
+- [x] Add practical care instructions for the 12oz duck canvas trousers.
+- [x] Restore the saved Quarry Specimen layout and interaction treatment.
+- [x] Replace palette-specific accents with a neutral, future-photography-ready material palette.
+- [x] Validate the restored neutral Quarry Specimen version before saving a checkpoint.
+- [x] Introduce a controlled color accent that adds energy without depending on the campaign photography.
+- [x] Validate the refreshed Quarry Specimen color balance before saving a checkpoint.
+- [x] Make the Vaile navigation sticky with a persistent direct WhatsApp allocation action.
+- [x] Add a brief Vaile-branded loading sequence before the editorial page reveals.
+- [x] Remove “protocol” wording and refine affected calls-to-action and labels into professional editorial copy.
+- [x] Validate the updated browsing experience on desktop and mobile.
+- [x] Restore the preferred serif Vaile footer wordmark treatment.
+- [x] Make in-view text reveals reliably animate after page load and scroll.
+- [x] Ensure the Vaile loader appears on a fresh page load without requiring publication.
+- [x] Validate the refined typography, reveals, and loading behavior.
+- [x] Add a neutral, future-ready campaign carousel with clear replacement points for final photography.
+- [x] Add a subtle attention pulse to the sticky WhatsApp allocation action.
+- [x] Validate the carousel and allocation motion across device sizes.
+- [x] Commit the completed revision to the linked GitHub repository.
+- [x] Push the prepared storefront revision to the correct repository, ArushPatil/vaile-website.
+- [x] Add the storefront as a separate source bundle without replacing any existing ArushPatil/vaile-website code.
+- [x] Audit and correct mobile text scaling, media crops, spacing, and overflow across the storefront.
+- [x] Validate the corrected mobile hierarchy across phone-sized viewports.
+- [x] Identify and eliminate the ResizeObserver loop warning without affecting responsive layout behavior.
+- [x] Validate that gallery and viewport changes no longer emit the observer warning.
+- [x] Synchronize the latest stable storefront source into the standalone GitHub bundle.
+- [x] Commit and push the observer-stability revision to ArushPatil/vaile-website.
+- [x] Correct the desktop paired-image composition and scale.
+- [x] Add a restrained pointer-led inspection interaction for the paired image spread.
+- [x] Validate the refined desktop image experience.
+- [x] Recompose the paired desktop image spread into a calmer, more balanced arrangement.
+- [x] Reduce the image hover interaction to a subtle editorial inspection effect.
+- [x] Validate the revised desktop image spread.
+- [x] Restore the functional campaign carousel controls.
+- [x] Move the campaign carousel before the paired product-image spread.
+- [x] Validate the reordered carousel and image sequence across device sizes.
+- [x] Make carousel next and previous controls advance the visible slide reliably.
+- [x] Add subtle paper, grain, and material textures across the storefront without reducing legibility.
+- [x] Validate carousel interaction and textured surfaces across desktop and mobile.
+- [x] Synchronize the latest carousel-control and textured-surface files into the standalone GitHub bundle.
+- [x] Commit and push the latest Vaile storefront revision to ArushPatil/vaile-website.
+- [x] Identify why campaign assets fail to load from the Cloudflare Pages deployment.
+- [x] Convert asset references in the standalone bundle to a Cloudflare-compatible strategy.
+- [x] Validate and push the deployment-compatibility fix without changing Cloudflare configuration.
+- [x] Compare the last working and latest Cloudflare bundle commits to isolate the image-path regression.
+- [x] Restore the exact prior working Cloudflare image-path strategy and push only that targeted correction.
+- [x] Replace the orange signal accent with a more distinctive material-led color.
+- [x] Validate the refined accent across desktop and mobile.
+- [x] Synchronize the Cairn Teal accent revision into the standalone GitHub bundle.
+- [x] Commit and push the Cairn Teal revision to ArushPatil/vaile-website.
+- [x] Save the current Cairn Teal storefront as the restoration point before texture exploration.
+- [x] Prepare a Vaile-specific torn-paper, layered-material, and pointer-interaction plan for approval.
+- [x] Create and apply the approved torn-paper, archive-scrap, and material-texture system.
+- [x] Move the private allocation purchase module directly after the hero and add a subtle scroll prompt.
+- [x] Remove low-priority editorial sections to create a cleaner product narrative.
+- [x] Add restrained desktop pointer interactions with static mobile fallbacks.
+- [x] Validate the streamlined textured storefront across desktop and mobile.
+- [x] Reorder the sections into a deliberate alternating dark–light editorial rhythm.
+- [x] Replace long torn-paper strips with quieter, local paper fragments and image-edge details.
+- [x] Add smooth, restrained scroll transitions that bridge section changes without shifting layouts aggressively.
+- [x] Validate section ordering, imagery balance, and motion across desktop and mobile.
+- [x] Extend the reversible editorial stack to mobile touch layouts.
+- [x] Make the footer a normal full-page scroll destination that does not enter the stack.
+- [x] Preserve upward-scroll unstacking from the footer back through the editorial layers.
+- [x] Validate the revised footer handoff and stack behavior across desktop and mobile.
+- [x] Remove the visible blur-gradient section transitions and validate the cleaner handoffs.
+- [x] Remove section-transition components entirely and retain only direct surface boundaries.
+- [x] Validate the simplified dark–light flow across desktop and mobile.
+- [x] Implement an allocation-anchored reversible stack for editorial sections.
+- [x] Ensure upward scrolling unpacks the stack back to the allocation and size-selector section.
+- [x] Keep the final footer outside the stack in normal document flow.
+- [x] Validate desktop and mobile stack behavior, including reduced-motion fallback.
+- [x] Diagnose why the reversible stack is not activating in the live preview.
+- [x] Restore reliable desktop and mobile stacking while keeping the footer outside the stack.
+- [x] Validate live stacking and upward unstacking before saving the repair checkpoint.
+- [x] Propose a cleaner end-of-stack handoff that removes last-image edge artifacts.
+- [x] Propose a tighter mobile footer treatment without excess blank scroll space.
+- [x] Obtain approval before modifying the stack or footer implementation.
+- [x] Add the release panel and remove the final lookbook image-edge artifact.
+- [x] Compact the normal-flow footer, especially on mobile.
+- [x] Validate the full stack-to-release-to-footer sequence on desktop and mobile.
+- [x] Inspect and correct mobile allocation-card sizing, clipping, and control visibility.
+- [x] Validate all waist options and allocation controls at narrow mobile widths.
+- [ ] Delay mobile stack activation until after the complete allocation selector slide.
+- [ ] Validate mobile upward unstacking back through the complete allocation slide.
+- [ ] Return the allocation size-selector slide to the stack and delay its pinning until its bottom is reached.
+- [ ] Audit and correct mobile scale, alignment, and clipping across allocation, campaign, fit, construction, care, and lookbook sections.
+- [ ] Validate all mobile controls, stack transitions, and reverse unstacking in a real scrolling browser session.
+- [x] Remove the fragile mobile delayed-stack logic and restore stable standard mobile scrolling.
+- [x] Preserve the desktop stack while ensuring every mobile control and section remains usable.
+- [x] Validate mobile scrolling, controls, and section visibility before saving the repair checkpoint.
+- [x] Restore the mobile editorial stack with allocation as its first sheet.
+- [x] Keep every allocation control usable before the campaign sheet reaches the viewport.
+- [x] Validate touch scrolling, reverse unstacking, and section visibility at narrow mobile widths.
+- [ ] Synchronize checkpoint 20623464 into the additive GitHub storefront bundle only.
+- [ ] Commit and push the restored bundle without modifying repository-root code.

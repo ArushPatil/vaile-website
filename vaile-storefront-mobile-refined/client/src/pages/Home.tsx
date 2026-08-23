@@ -157,7 +157,7 @@ export default function Home() {
 
       </div>
       <section className="release-panel" aria-label="End of field study"><div className="release-panel__line" /><p>END OF FIELD STUDY / 001</p><span>VAILE ARCHIVE / 12 OZ DUCK CANVAS</span></section>
-      <footer className="site-footer"><div className="site-footer__inner"><div className="site-footer__masthead"><span>VAILE</span><img src={assets.mark} alt="" /><span>001</span></div><div className="site-footer__grid"><div className="site-footer__col site-footer__col--left"><nav className="site-footer__legal" aria-label="Legal"><span>LEGAL</span><a href="/terms">TERMS</a><a href="/privacy">PRIVACY</a></nav><a href="#top" className="site-footer__back-to-top">BACK TO TOP <ArrowUpRight size={13} strokeWidth={1.5} /></a></div><div className="site-footer__col site-footer__col--right"><span>DROP 001 / 50 PIECES</span><span>12 OZ DUCK CANVAS</span></div></div></div></footer>
+      <footer className="site-footer"><div className="site-footer__inner"><div className="site-footer__masthead"><span className="site-footer__word"><span className="site-footer__v">V</span>AILE</span><img src={assets.mark} alt="" /><span>001</span></div><div className="site-footer__grid"><div className="site-footer__col site-footer__col--left"><nav className="site-footer__legal" aria-label="Legal"><span>LEGAL</span><a href="/terms">TERMS</a><a href="/privacy">PRIVACY</a></nav><a href="#top" className="site-footer__back-to-top">BACK TO TOP <ArrowUpRight size={13} strokeWidth={1.5} /></a></div><div className="site-footer__col site-footer__col--right"><span>DROP 001 / 50 PIECES</span><span>12 OZ DUCK CANVAS</span></div></div></div></footer>
     </motion.main>
   </>;
 }

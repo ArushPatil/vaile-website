@@ -144,7 +144,6 @@ button:not(:disabled), a[href] { cursor: pointer; }
 .desktop-nav a, .header-allocation { color: inherit; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: .1em; text-decoration: none; transition: opacity .2s var(--ease-out); }
 .desktop-nav a:hover { opacity: .58; }
 .header-allocation { position: relative; display: flex; align-items: center; gap: 8px; padding: 8px 0; border-left: none; }
-.header-allocation::before { width: 6px; height: 6px; border-radius: 99px; background: var(--cairn); box-shadow: 0 0 0 3px rgba(53,108,118,.18); content: ""; animation: allocation-pulse 2.25s cubic-bezier(.23,1,.32,1) infinite; }
 .menu-trigger, .mobile-allocation { display: none; }
 
 .page-loader { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; overflow: hidden; color: var(--bone); background: var(--charcoal); }

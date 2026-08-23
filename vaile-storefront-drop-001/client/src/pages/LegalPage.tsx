@@ -16,7 +16,7 @@ export default function LegalPage({ eyebrow, title, lead, children }: LegalPageP
     <main className="legal-page">
       <header className="legal-page__header">
         <a href="/" className="legal-page__brand" aria-label="Return to Vaile storefront">
-          <span aria-hidden="true">✦</span>
+          <img src="/images/logo.png" alt="" style={{ width: 18, height: 18, objectFit: "contain", filter: "brightness(0) invert(1)" }} />
           <span>VAILE</span>
           <small>/ 001</small>
         </a>

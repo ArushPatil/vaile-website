@@ -54,10 +54,14 @@ function useHashScroll() {
     const handler = (event: MouseEvent) => {
       const anchor = (event.target as HTMLElement).closest<HTMLAnchorElement>("a[href^='#']");
       if (!anchor) return;
-      const destination = document.querySelector(anchor.getAttribute("href") || "");
-      if (!destination) return;
-      event.preventDefault();
-      destination.scrollIntoView({ behavior: "smooth", block: "start" });
+      const href = anchor.getAttribute("href");
+      if (!href || href === "#" || href.length <= 1) return;
+      try {
+        const destination = document.querySelector(href);
+        if (!destination) return;
+        event.preventDefault();
+        destination.scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch (_) {}
     };
     document.addEventListener("click", handler);
     return () => document.removeEventListener("click", handler);
@@ -68,7 +72,13 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedSize, setSelectedSize] = useState("32");
   const [copied, setCopied] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    try {
+      return !sessionStorage.getItem("vaile_has_loaded");
+    } catch (_) {
+      return false;
+    }
+  });
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeCampaignSlide, setActiveCampaignSlide] = useState(0);
   const [campaignDirection, setCampaignDirection] = useState(1);
@@ -77,23 +87,32 @@ export default function Home() {
   useHashScroll();
 
   useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
 
-    let timer: number;
-    const runLoader = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      setIsLoading(true);
-      window.clearTimeout(timer);
-      timer = window.setTimeout(() => setIsLoading(false), reduced ? 0 : 1550);
-    };
-    runLoader();
-    window.addEventListener("pageshow", runLoader);
-    return () => { window.clearTimeout(timer); window.removeEventListener("pageshow", runLoader); };
-  }, []);
+    if (!isLoading) return;
+
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const timer = window.setTimeout(() => {
+      setIsLoading(false);
+      try { sessionStorage.setItem("vaile_has_loaded", "1"); } catch (_) {}
+    }, reduced ? 0 : 1200);
+
+    return () => window.clearTimeout(timer);
+  }, [isLoading]);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 24);
@@ -138,7 +157,7 @@ export default function Home() {
 
       </div>
       <section className="release-panel" aria-label="End of field study"><div className="release-panel__line" /><p>END OF FIELD STUDY / 001</p><span>VAILE ARCHIVE / 12 OZ DUCK CANVAS</span></section>
-      <footer className="site-footer"><div className="site-footer__masthead"><span>VAILE</span><img src={assets.mark} alt="" /><span>001</span></div><div className="site-footer__info"><span>VAILE / DROP 001 / 12 OZ DUCK CANVAS</span><span>EDITION OF 50</span><nav className="site-footer__legal" aria-label="Legal"><span>LEGAL</span><a href="/terms">TERMS</a><a href="/privacy">PRIVACY</a></nav><a href="#top">BACK TO TOP <ArrowUpRight size={13} /></a></div></footer>
+      <footer className="site-footer"><div className="site-footer__masthead"><span>VAILE</span><img src={assets.mark} alt="" /><span>001</span></div><div className="site-footer__bottom-row"><a href="#top" className="site-footer__back-to-top">BACK TO TOP <ArrowUpRight size={13} strokeWidth={1.5} /></a><nav className="site-footer__legal" aria-label="Legal"><span>LEGAL</span><a href="/terms">TERMS</a><a href="/privacy">PRIVACY</a></nav></div></footer>
     </motion.main>
   </>;
 }

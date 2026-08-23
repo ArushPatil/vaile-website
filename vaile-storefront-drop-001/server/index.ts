@@ -16,11 +16,21 @@ async function startServer() {
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
 
-  app.use(express.static(staticPath));
+  app.use(
+    express.static(staticPath, {
+      maxAge: process.env.NODE_ENV === "production" ? "1d" : 0,
+      etag: true,
+    })
+  );
 
   // Handle client-side routing - serve index.html for all routes
   app.get("*", (_req, res) => {
-    res.sendFile(path.join(staticPath, "index.html"));
+    const indexPath = path.join(staticPath, "index.html");
+    res.sendFile(indexPath, (err) => {
+      if (err) {
+        res.status(500).send("Storefront unavailable.");
+      }
+    });
   });
 
   const port = process.env.PORT || 3000;

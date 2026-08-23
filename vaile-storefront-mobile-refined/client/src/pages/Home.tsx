@@ -132,7 +132,7 @@ export default function Home() {
 
       </div>
       <section className="release-panel" aria-label="End of field study"><div className="release-panel__line" /><p>END OF FIELD STUDY / 001</p><span>VAILE ARCHIVE / 12 OZ DUCK CANVAS</span></section>
-      <footer className="site-footer"><div className="site-footer__masthead"><span>VAILE</span><img src={assets.mark} alt="" /><span>001</span></div><div className="site-footer__info"><span>VAILE / DROP 001 / 12 OZ DUCK CANVAS</span><span>EDITION OF 50</span><a href="#top">BACK TO TOP <ArrowUpRight size={13} /></a></div></footer>
+      <footer className="site-footer"><div className="site-footer__masthead"><span>VAILE</span><img src={assets.mark} alt="" /><span>001</span></div><div className="site-footer__info"><span>VAILE / DROP 001 / 12 OZ DUCK CANVAS</span><span>EDITION OF 50</span><nav className="site-footer__legal" aria-label="Legal"><span>LEGAL</span><a href="/terms">TERMS</a><a href="/privacy">PRIVACY</a></nav><a href="#top">BACK TO TOP <ArrowUpRight size={13} /></a></div></footer>
     </motion.main>
   </>;
 }

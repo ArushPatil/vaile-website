@@ -162,7 +162,7 @@ button:not(:disabled), a[href] { cursor: pointer; }
 .mobile-menu__top button { border: 0; color: inherit; background: transparent; }
 .brand-lockup--light .brand-mark--light { filter: grayscale(1) contrast(5) invert(1); }
 .mobile-menu__links { display: grid; gap: 14px; }
-.mobile-menu__links a { color: var(--bone); font-family: "Bodoni Moda", serif; font-size: clamp(3.5rem, 15vw, 6rem); line-height: .86; letter-spacing: -.07em; text-decoration: none; }
+.mobile-menu__links a { color: var(--bone); font-family: "Bodoni Moda", serif; font-size: clamp(3.5rem, 15vw, 6rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .86; letter-spacing: -.07em; text-decoration: none; }
 .mobile-menu__links a span { display: inline-block; width: 34px; margin-right: 13px; vertical-align: top; color: var(--cairn); font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: 0; }
 .mobile-menu > p { margin: 0; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: .1em; }
 
@@ -177,8 +177,8 @@ button:not(:disabled), a[href] { cursor: pointer; }
 .hero__content { align-self: flex-end; max-width: 1000px; }
 .eyebrow { margin: 0 0 15px; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: .14em; }
 .eyebrow--light { color: #fffdf4; }
-.hero h1 { margin: 0; font-family: "Bodoni Moda", serif; font-size: clamp(3rem, 5.8vw, 6.4rem); font-weight: 500; line-height: .92; letter-spacing: -.06em; }
-h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-settings: "opsz" 14; }
+.hero h1 { margin: 0; font-family: "Bodoni Moda", serif; font-size: clamp(3rem, 5.8vw, 6.4rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .92; letter-spacing: -.06em; }
+h2 em, .hero h1 em, em { font-style: italic; font-weight: 580; font-variation-settings: "opsz" 28, "wght" 580; }
 .hero__cta { display: inline-flex; align-items: center; gap: 12px; margin-top: 38px; padding-bottom: 8px; border-bottom: 2px solid var(--cairn); color: inherit; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .12em; text-decoration: none; transition: gap .25s var(--ease-out), color .25s var(--ease-out); }
 .hero__cta:hover { gap: 20px; color: #cce9ec; }
 .hero__scroll-cue { position: absolute; right: 30px; bottom: 58px; display: flex; align-items: center; gap: 10px; color: #fffdf4; font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .12em; text-decoration: none; }
@@ -191,21 +191,21 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .allocation { position: relative; z-index: 3; overflow: hidden; padding: 100px 7vw 0; background-color: #e6e4de; background-image: linear-gradient(rgba(230,228,222,.88), rgba(230,228,222,.88)), var(--paper-grain); background-size: auto, 220px 220px; }
 .allocation__top, .allocation__grid { position: relative; z-index: 2; }
 .allocation__top { display: flex; align-items: flex-start; justify-content: space-between; padding-bottom: 58px; border-bottom: 1px solid var(--ink); }
-.allocation__pre { margin: 0; font-family: "Bodoni Moda", serif; font-size: clamp(1.8rem, 3.4vw, 3.5rem); line-height: .89; letter-spacing: -.06em; text-align: right; }
+.allocation__pre { margin: 0; font-family: "Bodoni Moda", serif; font-size: clamp(1.8rem, 3.4vw, 3.5rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .89; letter-spacing: -.06em; text-align: right; }
 .allocation__grid { display: grid; grid-template-columns: 1fr minmax(310px, 430px); gap: 11vw; padding: 7.8vw 0 8.5vw; }
 .allocation__statement { max-width: 590px; }
-.allocation h2, .construction h2 { margin: 0; font-family: "Bodoni Moda", serif; font-size: clamp(3.5rem, 7.5vw, 8rem); font-weight: 500; line-height: .82; letter-spacing: -.07em; }
+.allocation h2, .construction h2 { margin: 0; font-family: "Bodoni Moda", serif; font-size: clamp(3.5rem, 7.5vw, 8rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .82; letter-spacing: -.07em; }
 .allocation__statement > p { max-width: 320px; margin: 31px 0 0; color: rgba(25,25,24,.7); font-size: 12px; line-height: 1.65; }
 .allocation__edition-line { display: flex; align-items: baseline; gap: 14px; margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--hairline); font-family: "DM Mono", monospace; }
 .allocation__edition-line span { font-size: 8px; letter-spacing: .11em; }
-.allocation__edition-line strong { color: var(--cairn); font-family: "Bodoni Moda", serif; font-size: 2.3rem; font-weight: 400; line-height: .8; letter-spacing: -.07em; }
+.allocation__edition-line strong { color: var(--cairn); font-family: "Bodoni Moda", serif; font-size: 2.3rem; font-weight: 500; font-variation-settings: "opsz" 32, "wght" 500; line-height: .8; letter-spacing: -.07em; }
 .allocation__panel { position: relative; padding: 20px; color: var(--bone); border: 1px solid rgba(237,232,216,.24); background: var(--ink); box-shadow: 12px 13px 0 var(--cairn); }
 .allocation__panel::before { position: absolute; top: -9px; right: 16px; padding: 4px 7px; border: 1px solid rgba(237,232,216,.35); color: var(--cairn); background: var(--ink); font-family: "DM Mono", monospace; font-size: 7px; letter-spacing: .11em; content: "PRIVATE LEDGER"; }
 .allocation__panel::after { position: absolute; right: 10px; bottom: 10px; left: 10px; height: 1px; opacity: .34; background: repeating-linear-gradient(90deg, var(--cairn) 0 2px, transparent 2px 8px); content: ""; pointer-events: none; }
 .allocation__panel-top { display: flex; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid rgba(237,232,216,.25); font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .09em; }
 .allocation__price { display: grid; gap: 6px; padding: 18px 0 4px; }
 .allocation__price span { color: rgba(237,232,216,.62); font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .1em; }
-.allocation__price strong { color: var(--bone); font-family: "Bodoni Moda", serif; font-size: 2rem; font-weight: 500; line-height: 1; letter-spacing: -.04em; }
+.allocation__price strong { color: var(--bone); font-family: "Bodoni Moda", serif; font-size: 2rem; font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: 1; letter-spacing: -.04em; }
 .allocation__price small { color: rgba(237,232,216,.62); font-family: "DM Mono", monospace; font-size: 9px; font-weight: 400; letter-spacing: .04em; }
 .allocation__label { margin: 25px 0 10px; color: rgba(237,232,216,.7); font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .1em; }
 .size-grid { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid rgba(237,232,216,.25); border-left: 1px solid rgba(237,232,216,.25); }
@@ -227,7 +227,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .image-tag--dark { border-top: 2px solid var(--cairn); color: var(--bone); background: var(--ink); }
 .image-tag--light { color: var(--ink); background: var(--bone); }
 .lookbook__aside { display: flex; flex-direction: column; justify-content: center; padding: 10vw 9vw 7vw 7vw; border-left: 1px solid var(--hairline); }
-.lookbook__quote { max-width: 470px; margin: 34px 0 0; font-family: "Bodoni Moda", serif; font-size: clamp(2.35rem, 4.3vw, 4.6rem); line-height: .91; letter-spacing: -.065em; }
+.lookbook__quote { max-width: 470px; margin: 34px 0 0; font-family: "Bodoni Moda", serif; font-size: clamp(2.35rem, 4.3vw, 4.6rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .91; letter-spacing: -.065em; }
 .lookbook__microcopy { margin-top: 35px; color: rgba(25,25,24,.64); font-family: "DM Mono", monospace; font-size: 9px; line-height: 1.65; letter-spacing: .06em; }
 .lookbook--dark { color: var(--bone); background: var(--charcoal); }
 .lookbook--dark .lookbook__aside { border-left-color: rgba(237,235,229,.2); background: linear-gradient(135deg, #1c1c1a 0%, #161614 74%); }
@@ -253,7 +253,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .construction__image-wrap::after { display: none; }
 .construction__primary-image { width: 100%; height: 100%; object-fit: cover; object-position: 45% center; filter: saturate(.62) contrast(1.03); }
 .construction__story { display: flex; flex-direction: column; justify-content: flex-start; align-self: flex-start; padding: clamp(48px, 6vw, 96px) clamp(32px, 6vw, 96px); width: 100%; box-sizing: border-box; }
-.construction h2 { margin: 18px 0 32px; font-family: "Bodoni Moda", serif; font-size: clamp(3.2rem, 5.5vw, 6.2rem); font-weight: 500; line-height: 0.9; letter-spacing: -.07em; }
+.construction h2 { margin: 18px 0 32px; font-family: "Bodoni Moda", serif; font-size: clamp(3.2rem, 5.5vw, 6.2rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: 0.9; letter-spacing: -.07em; }
 .construction__items { border-top: 1px solid var(--hairline); width: 100%; max-width: 480px; }
 .construction__items article { display: grid; grid-template-columns: 36px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--hairline); align-items: start; }
 .construction__items article > span { color: var(--cairn); font-family: "DM Mono", monospace; font-size: 11px; font-weight: 500; line-height: 1.3; }
@@ -291,7 +291,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .campaign-slot--stone { color: #272724; background-color: #bcb9b0; background-image: linear-gradient(rgba(188,185,176,.7), rgba(188,185,176,.7)), var(--paper-grain); background-size: auto, 150px 150px; }
 .campaign-slot--paper { color: #272724; background-color: #f0eee7; background-image: linear-gradient(rgba(240,238,231,.74), rgba(240,238,231,.74)), var(--paper-grain); background-size: auto, 155px 155px; }
 .campaign-slot--charcoal { color: var(--bone); background-color: #242421; background-image: linear-gradient(rgba(36,36,33,.84), rgba(36,36,33,.84)), var(--paper-grain); background-size: auto, 155px 155px; }
-.campaign-slot__index { position: absolute; top: 29px; left: 31px; color: var(--cairn); font-family: "Bodoni Moda", serif; font-size: clamp(4.2rem, 8vw, 8rem); line-height: .58; letter-spacing: -.09em; }
+.campaign-slot__index { position: absolute; top: 29px; left: 31px; color: var(--cairn); font-family: "Bodoni Moda", serif; font-size: clamp(4.2rem, 8vw, 8rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .58; letter-spacing: -.09em; }
 .campaign-slot__grid { position: absolute; inset: 15px; border: 1px solid currentColor; opacity: .34; pointer-events: none; background-image: repeating-linear-gradient(90deg, currentColor 0 1px, transparent 1px 78px), repeating-linear-gradient(0deg, currentColor 0 1px, transparent 1px 78px); }
 .campaign-slot__grid::before, .campaign-slot__grid::after { position: absolute; opacity: .38; background: currentColor; content: ""; }
 .campaign-slot__grid::before { top: -1px; bottom: -1px; left: 50%; width: 1px; box-shadow: -8px 8px 0 -7px currentColor, 8px -8px 0 -7px currentColor; }
@@ -299,7 +299,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .campaign-slot__content { position: relative; max-width: 510px; }
 .campaign-slot__content::before { display: inline-block; margin-bottom: 17px; padding: 6px 8px; border: 1px solid currentColor; color: var(--cairn); background: color-mix(in srgb, currentColor 6%, transparent); font-family: "DM Mono", monospace; font-size: 7px; letter-spacing: .12em; content: "SPECIMEN / UNEXPOSED"; opacity: .96; }
 .campaign-slot__content > span { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: .11em; }
-.campaign-slot__content h3 { margin: 11px 0 12px; font-family: "Bodoni Moda", serif; font-size: clamp(3.6rem, 7vw, 7.5rem); font-weight: 500; line-height: .76; letter-spacing: -.075em; }
+.campaign-slot__content h3 { margin: 11px 0 12px; font-family: "Bodoni Moda", serif; font-size: clamp(3.6rem, 7vw, 7.5rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .76; letter-spacing: -.075em; }
 .campaign-slot__content p { margin: 0; color: currentColor; font-size: 12px; opacity: .72; }
 .campaign-slot__measurements { position: absolute; right: 31px; bottom: 31px; display: grid; gap: 4px; color: currentColor; font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .1em; opacity: .72; text-align: right; }
 .campaign-slot__measurements span:first-child { color: var(--cairn); }
@@ -317,7 +317,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .fit-guide { display: grid; grid-template-columns: 58px minmax(0, 1fr); border-top: 1px solid var(--hairline); background-color: var(--bone); background-image: linear-gradient(90deg, rgba(237,235,229,.94), rgba(237,235,229,.94)), var(--paper-grain); background-size: auto, 210px 210px; }
 .fit-guide__rail { display: flex; justify-content: center; padding-top: 43px; border-right: 1px solid var(--hairline); color: rgba(25,25,24,.68); font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .11em; writing-mode: vertical-rl; }
 .fit-guide__content { max-width: 1130px; padding: 8vw 9vw 9vw; }
-.fit-guide h2 { margin: 25px 0 0; font-family: "Bodoni Moda", serif; font-size: clamp(3.5rem, 7.2vw, 7.7rem); font-weight: 500; line-height: .88; letter-spacing: -.07em; }
+.fit-guide h2 { margin: 25px 0 0; font-family: "Bodoni Moda", serif; font-size: clamp(3.5rem, 7.2vw, 7.7rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .88; letter-spacing: -.07em; }
 .fit-guide__intro { display: grid; grid-template-columns: repeat(2, minmax(0, 245px)); gap: 32px; max-width: 660px; margin: 41px 0 50px; color: rgba(25,25,24,.72); font-size: 12px; line-height: 1.65; }
 .fit-guide__intro p { margin: 0; }
 .fit-card { max-width: 850px; color: var(--bone); background: var(--ink); box-shadow: 12px 13px 0 var(--cairn); }
@@ -331,7 +331,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 
 .care-note { display: grid; grid-template-columns: minmax(0, .85fr) minmax(420px, 1.15fr); color: var(--bone); background: var(--charcoal); }
 .care-note__lead { padding: 9vw 7vw; border-right: 1px solid rgba(237,232,216,.22); }
-.care-note h2 { margin: 24px 0 28px; font-family: "Bodoni Moda", serif; font-size: clamp(3.2rem, 5.4vw, 6.2rem); font-weight: 500; line-height: 0.95; letter-spacing: -.07em; }
+.care-note h2 { margin: 24px 0 28px; font-family: "Bodoni Moda", serif; font-size: clamp(3.2rem, 5.4vw, 6.2rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: 0.95; letter-spacing: -.07em; }
 .care-note__lead > p { max-width: 420px; margin: 0; color: rgba(237,232,216,.72); font-size: 12px; line-height: 1.65; }
 .care-note__guide { align-self: center; margin: 7vw; border: 1px solid rgba(237,232,216,.34); }
 .care-note__guide-top { display: flex; justify-content: space-between; padding: 13px 16px; border-bottom: 1px solid rgba(237,232,216,.25); color: rgba(237,232,216,.69); font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .1em; }
@@ -398,7 +398,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .legal-page__return:active { transform: scale(.97); }
 .legal-page__hero { display: grid; grid-template-columns: minmax(120px, .35fr) minmax(0, 1fr); gap: clamp(28px, 7vw, 120px); max-width: 1260px; margin: 0 auto; padding: clamp(72px, 10vw, 150px) 7vw clamp(52px, 7vw, 94px); border-bottom: 1px solid var(--ink); }
 .legal-page__eyebrow { margin: 9px 0 0; color: var(--cairn); font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: .12em; }
-.legal-page__hero h1 { grid-column: 2; margin: -8px 0 0; font-family: "Bodoni Moda", serif; font-size: clamp(4rem, 8vw, 9rem); font-weight: 500; line-height: .78; letter-spacing: -.08em; }
+.legal-page__hero h1 { grid-column: 2; margin: -8px 0 0; font-family: "Bodoni Moda", serif; font-size: clamp(4rem, 8vw, 9rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .78; letter-spacing: -.08em; }
 .legal-page__lead { grid-column: 2; max-width: 500px; margin: 18px 0 0; color: rgba(25,25,24,.7); font-size: 14px; line-height: 1.65; }
 .legal-page__notice { display: grid; grid-template-columns: minmax(120px, .35fr) minmax(0, 1fr); gap: clamp(28px, 7vw, 120px); max-width: 1260px; margin: 0 auto; padding: 23px 7vw; border-bottom: 1px solid var(--hairline); background: rgba(53,108,118,.09); }
 .legal-page__notice span { color: var(--cairn); font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .11em; }
@@ -423,7 +423,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .not-found__rail { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; padding: 20px 0; border-right: 1px solid var(--ink); background: var(--charcoal); color: rgba(237,235,229,.72); font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .13em; writing-mode: vertical-rl; }
 .not-found__sheet { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: min(880px, calc(100% - 12vw)); min-height: calc(100svh - 82px); margin: 0 auto; padding: clamp(56px, 9vw, 130px) 0; }
 .not-found__sheet > p:first-child { margin: 0; color: var(--cairn); font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: .12em; }
-.not-found h1 { margin: 22px 0 28px; font-family: "Bodoni Moda", serif; font-size: clamp(4.6rem, 11vw, 11rem); font-weight: 500; line-height: .75; letter-spacing: -.09em; }
+.not-found h1 { margin: 22px 0 28px; font-family: "Bodoni Moda", serif; font-size: clamp(4.6rem, 11vw, 11rem); font-weight: 520; font-variation-settings: "opsz" 32, "wght" 520; line-height: .75; letter-spacing: -.09em; }
 .not-found h1 em { font-weight: 400; }
 .not-found__rule { width: min(100%, 540px); height: 1px; background: var(--ink); }
 .not-found__copy { max-width: 400px; margin: 23px 0 0; color: rgba(25,25,24,.7); font-size: 14px; line-height: 1.65; }

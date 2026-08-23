@@ -134,8 +134,10 @@ button:not(:disabled), a[href] { cursor: pointer; }
 
 .site-header { position: fixed; z-index: 60; top: 0; left: 0; display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 20px 28px; border-bottom: 1px solid rgba(255,255,255,.2); color: #fffdf4; background: rgba(22,22,20,.26); backdrop-filter: blur(9px); transition: padding .24s var(--ease-out), background .24s var(--ease-out), border-color .24s var(--ease-out); }
 .site-header.is-scrolled { padding-top: 13px; padding-bottom: 13px; border-color: rgba(237,235,229,.18); background: rgba(22,22,20,.93); }
-.brand-lockup { display: flex; align-items: center; gap: 10px; color: inherit; font-family: "DM Mono", monospace; font-size: 10px; letter-spacing: .13em; text-decoration: none; }
-.brand-lockup small { margin-left: -4px; color: var(--cairn); font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: .08em; }
+.brand-lockup { display: flex; align-items: center; gap: 9px; color: inherit; text-decoration: none; }
+.brand-name { font-family: "Bodoni Moda", serif; font-size: 15px; font-weight: 550; font-variation-settings: "opsz" 18, "wght" 550; letter-spacing: -.03em; display: inline-flex; align-items: baseline; }
+.brand-name__v { display: inline-block; margin-right: -0.16em; }
+.brand-lockup small { margin-left: 2px; color: var(--cairn); font-family: "DM Mono", monospace; font-size: 8.5px; letter-spacing: .08em; }
 .brand-mark { width: 27px; height: 27px; object-fit: contain; filter: grayscale(1) contrast(5) invert(1); mix-blend-mode: screen; }
 .site-header .brand-mark { width: 38px; height: 38px; padding: 6px; border: 1px solid rgba(22,22,20,.32); background: var(--bone); box-shadow: 2px 2px 0 rgba(53,108,118,.72); filter: none; mix-blend-mode: normal; }
 .desktop-nav { display: flex; gap: 23px; margin-left: 100px; }
@@ -234,7 +236,21 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 
 .construction { display: grid; grid-template-columns: minmax(0, 52%) 1fr; background: var(--stone); align-items: start; }
 .construction__image-wrap { position: relative; min-height: 820px; overflow: hidden; }
-.construction__image-wrap::before, .construction__image-wrap::after { display: none; }
+.construction__image-wrap::before {
+  content: "WEAVE / RIVET / EDGE";
+  position: absolute;
+  top: clamp(86px, 7vw, 104px);
+  right: 24px;
+  z-index: 3;
+  padding: 6px 11px;
+  border: 1px solid rgba(237,235,229,.34);
+  background: rgba(22,22,20,.6);
+  color: var(--bone);
+  font-family: "DM Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .12em;
+}
+.construction__image-wrap::after { display: none; }
 .construction__primary-image { width: 100%; height: 100%; object-fit: cover; object-position: 45% center; filter: saturate(.62) contrast(1.03); }
 .construction__story { display: flex; flex-direction: column; justify-content: flex-start; align-self: flex-start; padding: clamp(48px, 6vw, 96px) clamp(32px, 6vw, 96px); width: 100%; box-sizing: border-box; }
 .construction h2 { margin: 18px 0 32px; font-family: "Bodoni Moda", serif; font-size: clamp(3.2rem, 5.5vw, 6.2rem); font-weight: 500; line-height: 0.9; letter-spacing: -.07em; }
@@ -625,6 +641,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
   .lookbook__microcopy { margin-top: 8px; font-size: 8px; line-height: 1.45; }
 
   .construction__image-wrap { min-height: 320px; height: 95vw; }
+  .construction__image-wrap::before { display: none; }
   .construction__primary-image { object-position: 45% 25%; }
   .construction .image-tag {
     position: absolute;

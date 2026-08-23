@@ -77,8 +77,14 @@ export default function Home() {
   useHashScroll();
 
   useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
     let timer: number;
     const runLoader = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       setIsLoading(true);
       window.clearTimeout(timer);

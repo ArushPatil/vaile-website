@@ -342,9 +342,9 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
 .site-footer { position: relative; overflow: hidden; padding: 48px 7vw 32px; background-color: var(--bone); background-image: linear-gradient(rgba(237,235,229,.88), rgba(237,235,229,.88)), var(--paper-grain); background-size: auto, 210px 210px; }
 .site-footer__torn-edge { position: absolute; top: -1px; right: -1%; left: -1%; width: 102%; height: clamp(42px, 4vw, 70px); transform: rotate(180deg); object-fit: fill; object-position: top; pointer-events: none; }
 .site-footer__inner { max-width: 1200px; margin: 0 auto; width: 100%; }
-.site-footer__masthead { display: flex; align-items: center; justify-content: center; width: 100%; gap: clamp(16px, 4vw, 44px); padding: 24px 0 20px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); color: var(--ink); font-family: "Bodoni Moda", serif; font-size: clamp(5.5rem, 14vw, 13.5rem); font-weight: 550; font-variation-settings: "opsz" 18, "wght" 550; line-height: .75; letter-spacing: -.07em; text-align: center; white-space: nowrap; margin: 0 auto; }
+.site-footer__masthead { display: flex; align-items: center; justify-content: center; width: 100%; gap: clamp(16px, 4vw, 44px); padding: 24px 0 20px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); color: var(--ink); font-family: "Bodoni Moda", serif; font-size: clamp(5.5rem, 14vw, 13.5rem); font-weight: 550; font-variation-settings: "opsz" 18, "wght" 550; line-height: .75; letter-spacing: -.07em; text-align: center; white-space: nowrap; margin: 0 auto; transform: translateX(-0.04em); }
 .site-footer__word { display: inline-flex; align-items: baseline; }
-.site-footer__v { display: inline-block; margin-right: -0.06em; }
+.site-footer__v { display: inline-block; margin-right: -0.16em; }
 .site-footer__masthead img { width: clamp(36px, 6vw, 76px); height: clamp(36px, 6vw, 76px); object-fit: contain; filter: grayscale(1) contrast(5); mix-blend-mode: multiply; flex-shrink: 0; }
 .site-footer__grid { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; margin-top: 16px; font-family: "DM Mono", monospace; font-size: 8.5px; letter-spacing: .1em; }
 .site-footer__col { display: flex; flex-direction: column; gap: 8px; }
@@ -712,6 +712,7 @@ h2 em, .hero h1 em, em { font-style: italic; font-weight: 600; font-variation-se
     text-align: center;
     max-width: 100%;
     overflow: hidden;
+    transform: translateX(-0.04em);
   }
   .site-footer__masthead img { width: clamp(22px, 6vw, 34px); height: clamp(22px, 6vw, 34px); flex-shrink: 0; }
   .site-footer__grid {

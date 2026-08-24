@@ -216,17 +216,15 @@ export default function Home() {
                 <SectionHead
                   number="01"
                   title="One run. Fifty pairs."
-                  note="Choose your usual waist. We confirm availability and complete your order directly on WhatsApp."
+                  note="Choose your usual waist. We confirm availability and next steps directly on WhatsApp."
                 />
                 <div className="allocation-facts">
                   <span>FABRIC</span>
                   <b>12oz cotton duck canvas</b>
                   <span>PRICE</span>
-                  <b className="fact-price">₹6,200 INR / $100 USD (Tax incl.)</b>
+                  <b className="fact-price">₹6,200 INR / $100 USD</b>
                   <span>FORMAT</span>
-                  <b>Private allocation / 50 total</b>
-                  <span>DISPATCH</span>
-                  <b>Worldwide tracked delivery</b>
+                  <b>Private WhatsApp allocation / 50 pairs</b>
                 </div>
               </div>
 
@@ -241,7 +239,6 @@ export default function Home() {
                     </div>
                     <div className="card-price-secondary">
                       <span className="usd">$100 USD</span>
-                      <span className="tax">ALL TAXES INCLUDED</span>
                     </div>
                   </div>
                 </div>

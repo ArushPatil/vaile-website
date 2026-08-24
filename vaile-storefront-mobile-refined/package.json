@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
+    "test:layout": "node scripts/verify-responsive-layout.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {

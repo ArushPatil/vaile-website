@@ -41,7 +41,11 @@ try {
     pending.set(requestId, { resolve, reject });
     socket.send(JSON.stringify({ id: requestId, method, params }));
   });
-  const evaluate = async (expression) => (await cdp('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })).result.value;
+  const evaluate = async (expression) => {
+    const response = await cdp('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true });
+    if (response.exceptionDetails) throw new Error(response.exceptionDetails.exception?.description ?? JSON.stringify(response.exceptionDetails));
+    return response.result.value;
+  };
 
   await cdp('Page.enable');
   await cdp('Runtime.enable');
@@ -52,18 +56,19 @@ try {
     await cdp('Emulation.setDeviceMetricsOverride', { width: viewport.width, height: viewport.height, deviceScaleFactor: 1, mobile: viewport.mobile, screenWidth: viewport.width, screenHeight: viewport.height });
     await cdp('Page.navigate', { url });
     for (let attempt = 0; attempt < 50; attempt += 1) {
-      if (await evaluate(`Boolean(document.querySelector('.manual-shell') && !document.querySelector('.manual-shell.is-loading') && document.querySelector('.proof-inner') && document.querySelector('.build-inner'))`)) break;
+      if (await evaluate(`Boolean(document.querySelector('.chapter-shell') && !document.querySelector('.manual-shell.is-loading') && document.querySelector('.chapter-cut') && document.querySelector('.chapter-build'))`)) break;
       await sleep(150);
     }
     await evaluate(`document.documentElement.style.scrollBehavior = 'auto'; document.body.style.scrollBehavior = 'auto';`);
     const metric = await evaluate(`(() => {
-      const box = (selector) => { const el = document.querySelector(selector); const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return { selector, flowTop: Math.round(r.top + scrollY), width: Math.round(r.width), height: Math.round(r.height), position: s.position, grid: s.gridTemplateColumns, overflow: s.overflow }; };
+      const box = (selector) => { const el = document.querySelector(selector); if (!el) return { selector, missing: true, width: 0, height: 0, position: 'missing', grid: 'missing', overflow: 'missing', borderWidth: 'missing', padding: 'missing' }; const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return { selector, flowTop: Math.round(r.top + scrollY), width: Math.round(r.width), height: Math.round(r.height), position: s.position, grid: s.gridTemplateColumns, overflow: s.overflow, borderWidth: s.borderTopWidth, padding: s.paddingTop }; };
       return {
         viewport: { width: innerWidth, height: innerHeight },
         scrollWidth: document.documentElement.scrollWidth,
         privacyPosition: getComputedStyle(document.querySelector('.privacy-choice')).position,
         stackPositions: [...document.querySelectorAll('.manual-stack > [data-stack-item]')].map((el) => getComputedStyle(el).position),
-        elements: ['.proof-inner', '.proof-image', '.proof-copy', '.build-inner', '.build-copy', '.build-image', '.care-inner'].map(box),
+        elements: ['.chapter-allocation', '.gallery-stage', '.gallery-stage figure', '.chapter-cut', '.cut-layout figure', '.chapter-fit', '.fit-layout figure', '.chapter-build', '.build-layout figure', '.chapter-care'].map(box),
+        headerMark: box('.manual-header .manual-brand img'),
       };
     })()`);
 
@@ -73,12 +78,14 @@ try {
       noHorizontalOverflow: metric.scrollWidth === viewport.width,
       privacyIsInFlow: metric.privacyPosition !== 'fixed',
       expectedStackMode: desktop ? metric.stackPositions.every((position) => position === 'sticky') : metric.stackPositions.every((position) => position === 'relative'),
-      proofImageHasReadableWidth: lookup['.proof-image'].width >= Math.floor(viewport.width * (desktop ? 0.24 : 0.8)),
-      buildImageHasReadableWidth: lookup['.build-image'].width >= Math.floor(viewport.width * (desktop ? 0.26 : 0.8)),
-      mobileProofIsOneColumn: desktop || !lookup['.proof-inner'].grid.includes(' '),
-      mobileBuildIsOneColumn: desktop || !lookup['.build-inner'].grid.includes(' '),
+      galleryImageHasReadableWidth: lookup['.gallery-stage figure'].width >= Math.floor(viewport.width * (desktop ? 0.42 : 0.82)),
+      cutImageHasReadableWidth: lookup['.cut-layout figure'].width >= Math.floor(viewport.width * (desktop ? 0.25 : 0.82)),
+      fitImageHasReadableWidth: lookup['.fit-layout figure'].width >= Math.floor(viewport.width * (desktop ? 0.14 : 0.9)),
+      buildImageHasReadableWidth: lookup['.build-layout figure'].width >= Math.floor(viewport.width * (desktop ? 0.3 : 0.82)),
+      mobileGalleryIsOneColumn: desktop || !lookup['.gallery-stage'].grid.includes(' '),
+      unboxedHeaderMark: metric.headerMark.width >= (desktop ? 42 : 30) && metric.headerMark.borderWidth === '0px' && metric.headerMark.padding === '0px',
     };
-    const sectionTargets = ['.allocation-sheet', '.proof-spread', '.build-spread', '.care-sheet'];
+    const sectionTargets = ['.chapter-allocation', '.chapter-gallery', '.chapter-cut', '.chapter-fit', '.chapter-build', '.chapter-care'];
     const screenshots = [];
     for (const selector of sectionTargets) {
       const y = await evaluate(`(() => { const r = document.querySelector('${selector}').getBoundingClientRect(); return Math.round(r.top + scrollY + 12); })()`);

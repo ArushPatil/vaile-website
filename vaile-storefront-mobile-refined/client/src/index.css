@@ -388,3 +388,206 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   }
 }
 
+/* CHAPTER OVERHAUL — CONNECTED EDITORIAL NARRATIVE, NOT REPEATED SPLIT PANELS */
+.chapter-shell { overflow: clip; }
+.chapter-shell .manual-brand img { width: 45px; height: 45px; padding: 0; border: 0; background: transparent; object-fit: contain; }
+.chapter-shell .manual-brand { gap: 10px; font-size: 19px; }
+.chapter-shell .manual-brand small { margin-top: 2px; }
+.chapter-stack { background: var(--stock); }
+.chapter { position: relative; isolation: isolate; overflow: clip; border-top: 1px solid var(--line); }
+.chapter-head { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 14px; }
+.chapter-head > span, .fit-marker, .chapter-bridge, .proof-label, .care-layout aside, .chapter figure figcaption { font: 500 8px/1.4 "DM Mono", monospace; letter-spacing: .14em; }
+.chapter-head h2 { max-width: 760px; margin: 0; font: 800 clamp(2.5rem, 5vw, 5.9rem)/.86 Archivo, sans-serif; letter-spacing: -.055em; }
+.chapter-head p { max-width: 380px; margin: 18px 0 0; color: var(--mute); font-size: 13px; line-height: 1.65; }
+.chapter figure { position: relative; margin: 0; }
+.chapter figure::before { position: absolute; z-index: 1; top: -7px; left: -7px; width: 13px; height: 13px; border: 1px solid currentColor; background: var(--teal); content: ""; }
+.chapter figure img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(1.03); }
+.chapter figure figcaption { display: inline-block; margin-top: 10px; color: currentColor; opacity: .7; }
+
+/* 01 — ALLOCATION AS A DOSSIER, NOT A CARD NEXT TO COPY */
+.chapter-allocation { padding: clamp(68px, 8vw, 132px) 7vw; background: var(--pale); }
+.allocation-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(330px, .7fr); align-items: end; gap: clamp(42px, 8vw, 132px); max-width: 1300px; margin: auto; }
+.chapter-allocation .allocation-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 42px 0 0; border-top: 2px solid var(--ink); }
+.chapter-allocation .allocation-facts div { display: grid; gap: 8px; min-height: 90px; padding: 16px 20px 14px 0; border-bottom: 1px solid var(--line); }
+.chapter-allocation .allocation-facts div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.chapter-allocation dt { color: var(--mute); font: 500 8px "DM Mono", monospace; letter-spacing: .13em; }
+.chapter-allocation dd { margin: 0; font: 700 13px/1.35 Archivo, sans-serif; }
+.chapter-allocation .allocation-facts div:nth-child(2) dd { color: var(--teal); }
+.chapter-bridge { max-width: 370px; margin: 22px 0 0 52px; color: var(--mute); }
+.chapter-allocation .allocation-card { width: 100%; padding: 27px; border: 1px solid rgba(247,245,239,.35); color: var(--pale); background: var(--lichen); box-shadow: 14px 14px 0 rgba(53,72,61,.15); }
+.chapter-allocation .card-price-eyebrow { margin: 0 0 10px; color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: .14em; }
+.chapter-allocation .card-price-row { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--line-light); }
+.chapter-allocation .card-price-row strong { font: 800 38px/1 Archivo, sans-serif; letter-spacing: -.05em; }
+.chapter-allocation .card-price-row strong small { font: 500 10px "DM Mono", monospace; letter-spacing: .06em; }
+.chapter-allocation .card-price-row > span { font: 600 12px "DM Mono", monospace; }
+.chapter-allocation .card-size-label { margin: 18px 0 8px; color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: .13em; }
+.chapter-allocation .size-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line-light); }
+.chapter-allocation .size-grid button { min-height: 46px; border: 0; border-right: 1px solid var(--line-light); color: inherit; background: transparent; font: 700 14px Archivo, sans-serif; }
+.chapter-allocation .size-grid button:last-child { border-right: 0; }
+.chapter-allocation .size-grid .is-selected { color: var(--lichen); background: var(--pale); }
+.chapter-allocation .allocation-record { margin-top: 14px; }
+
+/* 02 — LOOKBOOK AS A SINGLE BLEEDING EVIDENCE BAND */
+.chapter-gallery { padding: clamp(56px, 7vw, 110px) 7vw 34px; color: var(--pale); background: var(--lichen); }
+.gallery-ribbon { max-width: 1300px; margin: auto; }
+.chapter-gallery .gallery-header { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--line-light); }
+.chapter-gallery .gallery-header > div:first-child > span, .gallery-caption > span { color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: .15em; }
+.chapter-gallery .gallery-header h2 { margin: 7px 0 0; font: 800 clamp(2.7rem, 5vw, 5.5rem)/.84 Archivo, sans-serif; letter-spacing: -.055em; }
+.chapter-gallery .gallery-header h2 em { color: var(--mute-light); font-style: normal; font-weight: 500; }
+.chapter-gallery .gallery-controls { display: flex; align-items: center; gap: 18px; }
+.chapter-gallery .gallery-controls b { color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: .14em; }
+.chapter-gallery .gallery-controls > div { display: flex; gap: 5px; }
+.chapter-gallery .gallery-controls button { display: grid; place-items: center; width: 37px; height: 37px; border: 1px solid var(--line-light); color: var(--pale); background: transparent; }
+.gallery-stage { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr); align-items: end; min-height: 570px; margin-top: clamp(24px, 4vw, 52px); }
+.gallery-stage figure { min-height: 570px; overflow: hidden; border-left: 1px solid var(--line-light); }
+.gallery-stage figure::before { background: var(--stock); }
+.gallery-stage figure picture, .gallery-stage figure img { display: block; width: 100%; height: 100%; }
+.gallery-stage figure img { object-fit: cover; object-position: 50% 26%; }
+.gallery-stage figure figcaption { position: absolute; right: 12px; bottom: 10px; margin: 0; padding: 5px 7px; color: var(--ink); background: var(--stock); }
+.gallery-caption { align-self: stretch; display: flex; flex-direction: column; justify-content: end; padding: 38px clamp(25px, 4vw, 55px); border-top: 1px solid var(--line-light); }
+.gallery-caption h3 { max-width: 290px; margin: 12px 0 14px; font: 800 clamp(2rem, 3.2vw, 3.8rem)/.88 Archivo, sans-serif; letter-spacing: -.05em; }
+.gallery-caption p { max-width: 250px; margin: 0; color: var(--mute-light); font-size: 13px; line-height: 1.6; }
+.gallery-caption i { display: block; width: 42px; height: 2px; margin-top: 34px; background: var(--teal); }
+.chapter-gallery .gallery-pills { display: flex; gap: 0; margin-top: 0; border-top: 1px solid var(--line-light); }
+.chapter-gallery .gallery-pills button { flex: 1; min-height: 44px; border: 0; border-right: 1px solid var(--line-light); color: var(--mute-light); background: transparent; font: 500 9px "DM Mono", monospace; letter-spacing: .1em; }
+.chapter-gallery .gallery-pills .is-active { color: var(--lichen); background: var(--pale); }
+
+/* 03 — THE CUT: IMAGE IS A SPATIAL ANCHOR, NOT A LEFT COLUMN */
+.chapter-cut { padding: clamp(64px, 8vw, 118px) 7vw; color: var(--pale); background: #203229; }
+.cut-layout { display: grid; grid-template-columns: .68fr .95fr .48fr; grid-template-rows: auto 1fr; align-items: center; gap: 34px clamp(22px, 4vw, 66px); max-width: 1300px; margin: auto; }
+.cut-title { grid-row: 1 / span 2; }
+.cut-title > span, .fit-marker { color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: .14em; }
+.cut-title h2 { margin: 16px 0 20px; font: 800 clamp(3rem, 5.5vw, 6.4rem)/.84 Archivo, sans-serif; letter-spacing: -.06em; }
+.cut-title p { max-width: 315px; margin: 0; color: var(--mute-light); font-size: 13px; line-height: 1.65; }
+.cut-layout figure { grid-row: 1 / span 2; aspect-ratio: 4 / 5.15; overflow: hidden; border: 1px solid var(--line-light); }
+.cut-layout figure::before { background: var(--teal); }
+.cut-layout figure img { object-position: 50% 76%; }
+.cut-layout figure figcaption { position: absolute; right: -5px; bottom: 21px; margin: 0; padding: 6px 8px; color: var(--ink); background: var(--stock); transform: rotate(-90deg) translateX(100%); transform-origin: right bottom; }
+.cut-layout blockquote { grid-column: 3; align-self: end; margin: 0 0 10px; padding-top: 14px; border-top: 1px solid var(--line-light); font: 700 13px/1.35 Archivo, sans-serif; }
+
+/* 04 — FIT: AN OPEN LEDGER CUT BY A NARROW SILHOUETTE */
+.chapter-fit { padding: clamp(64px, 8vw, 120px) 7vw; background: var(--stock); }
+.fit-layout { display: grid; grid-template-columns: 58px minmax(0, 1fr) minmax(210px, .37fr); gap: clamp(24px, 4.5vw, 72px); align-items: stretch; max-width: 1300px; margin: auto; }
+.fit-marker { padding-top: 4px; color: var(--mute); }
+.fit-marker span { display: inline-block; margin-top: 8px; font-size: 7px; }
+.fit-main { display: flex; flex-direction: column; justify-content: space-between; }
+.fit-main .chapter-head h2 { max-width: 580px; }
+.fit-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 54px; border-top: 2px solid var(--ink); }
+.fit-list article { display: grid; grid-template-columns: 86px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.fit-list article:nth-child(odd) { margin-right: 34px; }
+.fit-list span { color: var(--mute); font: 500 8px "DM Mono", monospace; letter-spacing: .13em; }
+.fit-list b { font: 700 13px/1.35 Archivo, sans-serif; }
+.fit-layout figure { align-self: end; height: min(66vh, 600px); overflow: hidden; border-right: 1px solid var(--line); }
+.fit-layout figure::before { left: auto; right: -7px; background: var(--teal); }
+.fit-layout figure img { object-position: 50% 40%; }
+.fit-layout figure figcaption { position: absolute; left: -2px; bottom: 10px; margin: 0; padding: 5px 7px; color: var(--pale); background: var(--ink); }
+
+/* 05 — BUILD: DETAIL PHOTO PUNCTURES THE FIELD, COPY IS A LEDGER */
+.chapter-build { padding: clamp(64px, 8vw, 118px) 7vw; background: var(--pale); }
+.build-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(330px, .9fr); align-items: center; gap: clamp(36px, 8vw, 130px); max-width: 1240px; margin: auto; }
+.build-layout figure { aspect-ratio: 1 / 1.12; overflow: hidden; border: 1px solid var(--line); box-shadow: -12px 12px 0 rgba(53,108,118,.13); }
+.build-layout figure::before { background: var(--teal); }
+.build-layout figure img { object-position: 51% center; }
+.build-layout figure figcaption { position: absolute; left: 12px; bottom: 10px; margin: 0; padding: 5px 7px; color: var(--pale); background: var(--ink); }
+.build-copy .chapter-head { margin-left: clamp(0px, 2vw, 24px); }
+.build-copy ol { display: grid; gap: 0; margin: 42px 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+.build-copy li { display: grid; grid-template-columns: 32px 1fr; gap: 6px 13px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.build-copy li::before { color: var(--mute); font: 500 8px "DM Mono", monospace; content: "00"; }
+.build-copy li b { font: 700 15px Archivo, sans-serif; }
+.build-copy li span { grid-column: 2; color: var(--mute); font-size: 12px; line-height: 1.5; }
+
+/* 06 — CARE: A QUIET FINISH WITH A SINGLE MATERIAL STAMP */
+.chapter-care { padding: clamp(64px, 8vw, 118px) 7vw; color: var(--pale); background: var(--lichen-2); }
+.care-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(240px, .7fr) 150px; gap: clamp(28px, 6vw, 100px); align-items: end; max-width: 1300px; margin: auto; }
+.care-layout .chapter-head > span, .care-layout .chapter-head p, .care-layout > div > p { color: var(--mute-light); }
+.care-layout > div > p { max-width: 390px; margin: 22px 0 0 52px; font-size: 13px; line-height: 1.65; }
+.care-layout ul { margin: 0; padding: 0; border-top: 1px solid var(--line-light); list-style: none; }
+.care-layout li { display: grid; grid-template-columns: 35px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line-light); }
+.care-layout li b { color: var(--mute-light); font: 500 8px "DM Mono", monospace; }
+.care-layout li span { font: 700 14px Archivo, sans-serif; }
+.care-layout aside { align-self: stretch; display: grid; place-content: end start; padding: 12px; border: 1px solid var(--line-light); color: var(--mute-light); line-height: 1.7; }
+@media (min-width: 901px) {
+  .care-layout { min-height: min(660px, 72svh); }
+  .care-layout ul { align-self: end; }
+  .care-layout aside { min-height: 100%; }
+}
+.chapter-shell .closing-allocation { display: grid; grid-template-columns: 1fr auto; gap: 25px; align-items: end; min-height: 46vh; padding: clamp(64px, 8vw, 120px) 7vw; color: var(--ink); background: var(--stock); }
+.chapter-shell .closing-allocation p { grid-column: 1 / -1; margin: 0; color: var(--mute); font: 500 8px "DM Mono", monospace; letter-spacing: .14em; }
+.chapter-shell .closing-allocation h2 { margin: 0; font: 800 clamp(3rem, 6vw, 6.6rem)/.82 Archivo, sans-serif; letter-spacing: -.06em; }
+.chapter-shell .closing-allocation > div { width: min(360px, 100%); }
+.chapter-shell .closing-allocation > div > span { display: block; margin-bottom: 12px; color: var(--mute); font: 500 9px "DM Mono", monospace; letter-spacing: .1em; }
+.chapter-shell .manual-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 25px 7vw; border-top: 1px solid var(--line); }
+.chapter-shell .manual-footer > div { display: flex; gap: 18px; align-items: center; color: var(--mute); font: 500 9px "DM Mono", monospace; letter-spacing: .1em; }
+.chapter-shell .manual-footer a { color: inherit; text-decoration: none; }
+
+@media (min-width: 901px) {
+  .chapter-stack > .chapter { position: sticky; top: 0; min-height: 100svh; }
+  .chapter-stack > .chapter:nth-child(1) { z-index: 2; }
+  .chapter-stack > .chapter:nth-child(2) { z-index: 3; }
+  .chapter-stack > .chapter:nth-child(3) { z-index: 4; }
+  .chapter-stack > .chapter:nth-child(4) { z-index: 5; }
+  .chapter-stack > .chapter:nth-child(5) { z-index: 6; }
+  .chapter-stack > .chapter:nth-child(6) { z-index: 7; }
+}
+
+@media (max-width: 900px) {
+  .chapter-shell .manual-brand { gap: 7px; font-size: 17px; }
+  .chapter-shell .manual-brand img { width: 35px; height: 35px; }
+  .chapter-stack > .chapter { position: relative !important; top: auto !important; min-height: 0 !important; }
+  .chapter { padding-right: 16px; padding-left: 16px; }
+  .chapter-head { grid-template-columns: 27px minmax(0, 1fr); gap: 10px; }
+  .chapter-head h2 { font-size: clamp(2.5rem, 11vw, 4.4rem); }
+  .chapter-head p { margin-top: 14px; font-size: 12.5px; }
+  .chapter-allocation { padding-top: 68px; padding-bottom: 54px; }
+  .allocation-layout { grid-template-columns: 1fr; gap: 34px; }
+  .chapter-allocation .allocation-facts { grid-template-columns: 1fr; margin-top: 30px; }
+  .chapter-allocation .allocation-facts div, .chapter-allocation .allocation-facts div + div { min-height: auto; padding: 13px 0; border-left: 0; }
+  .chapter-bridge { margin-left: 37px; }
+  .chapter-allocation .allocation-card { padding: 21px; box-shadow: 9px 9px 0 rgba(53,72,61,.12); }
+  .chapter-gallery { padding: 56px 16px 0; }
+  .chapter-gallery .gallery-header { align-items: start; flex-direction: column; gap: 16px; }
+  .chapter-gallery .gallery-controls { width: 100%; justify-content: space-between; }
+  .gallery-stage { grid-template-columns: 1fr; min-height: 0; margin: 26px -16px 0; }
+  .gallery-stage figure { min-height: 0; aspect-ratio: 4 / 5; border-left: 0; }
+  .gallery-stage figure img { object-position: 50% 25%; }
+  .gallery-caption { min-height: 265px; padding: 28px 16px 30px; border-top: 0; }
+  .gallery-caption h3 { font-size: clamp(2.3rem, 10vw, 4rem); }
+  .chapter-gallery .gallery-pills { margin: 0 -16px; overflow: auto; }
+  .chapter-gallery .gallery-pills button { flex: 0 0 58px; }
+  .chapter-cut { padding-top: 0; padding-bottom: 56px; }
+  .cut-layout { display: flex; flex-direction: column; gap: 0; }
+  .cut-title { order: 2; width: 100%; padding-top: 34px; }
+  .cut-title h2 { font-size: clamp(3rem, 13vw, 5rem); }
+  .cut-layout figure { order: 1; width: 100%; aspect-ratio: 4 / 5; }
+  .cut-layout blockquote { order: 3; width: 100%; margin-top: 32px; }
+  .cut-layout figure figcaption { right: 10px; bottom: 10px; transform: none; }
+  .chapter-fit { padding-top: 56px; padding-bottom: 0; }
+  .fit-layout { grid-template-columns: 1fr; gap: 0; }
+  .fit-marker { display: none; }
+  .fit-main { grid-column: 1; }
+  .fit-list { grid-template-columns: 1fr; margin-top: 32px; }
+  .fit-list article:nth-child(odd) { margin-right: 0; }
+  .fit-layout figure { grid-column: 1 / -1; height: auto; aspect-ratio: 4 / 3; margin: 38px -16px 0; }
+  .chapter-build { padding-top: 0; padding-bottom: 56px; }
+  .build-layout { display: flex; flex-direction: column; gap: 0; }
+  .build-layout figure { order: 2; width: 100%; margin-top: 36px; aspect-ratio: 4 / 3; box-shadow: -8px 8px 0 rgba(53,108,118,.13); }
+  .build-copy { order: 1; width: 100%; }
+  .build-copy .chapter-head { margin-left: 0; }
+  .build-copy ol { margin-top: 30px; }
+  .chapter-care { padding-top: 56px; padding-bottom: 58px; }
+  .care-layout { grid-template-columns: 1fr; gap: 30px; }
+  .care-layout > div > p { margin-left: 37px; }
+  .care-layout aside { min-height: 90px; }
+  .chapter-shell .closing-allocation { display: block; min-height: 0; padding: 58px 16px; }
+  .chapter-shell .closing-allocation h2 { margin: 16px 0 38px; font-size: clamp(3rem, 13vw, 5rem); }
+  .chapter-shell .closing-allocation > div { width: 100%; }
+  .chapter-shell .manual-footer { align-items: flex-start; flex-direction: column; padding: 24px 16px; }
+  .chapter-shell .manual-footer > div { flex-wrap: wrap; }
+}
+
+@media (max-width: 420px) {
+  .chapter-shell .manual-header { padding: 8px 13px; }
+  .chapter-shell .manual-brand img { width: 31px; height: 31px; }
+  .chapter-shell .manual-brand { gap: 5px; font-size: 15px; }
+  .chapter-shell .manual-brand small { font-size: 7px; }
+}

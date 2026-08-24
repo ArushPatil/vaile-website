@@ -6,7 +6,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
+import Home from "./pages/HomeChapters";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 

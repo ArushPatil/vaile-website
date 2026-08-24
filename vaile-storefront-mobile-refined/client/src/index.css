@@ -440,9 +440,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .chapter-gallery .gallery-controls button { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--line-light); color: var(--pale); background: transparent; cursor: pointer; transition: background 0.15s var(--ease), color 0.15s var(--ease); }
 .chapter-gallery .gallery-controls button:hover { background: var(--pale); color: var(--lichen); }
 
-.gallery-stage { position: relative; width: 100%; display: grid; grid-template-columns: 1fr; height: 240px; max-height: 240px; background: var(--lichen-2); border: 1px solid var(--line-light); overflow: hidden; }
-.gallery-stage figure { position: relative; width: 100%; height: 240px; max-height: 240px; margin: 0 auto; overflow: hidden; }
-.gallery-stage figure picture, .gallery-stage figure img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.gallery-stage { position: relative; width: 100%; display: grid; grid-template-columns: 1fr; background: var(--lichen-2); border: 1px solid var(--line-light); overflow: hidden; }
+.gallery-stage figure { position: relative; width: 100%; margin: 0 auto; overflow: hidden; aspect-ratio: 4/5; }
+.gallery-stage figure picture, .gallery-stage figure img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; }
 .gallery-stage figure figcaption { position: absolute; right: 8px; bottom: 8px; margin: 0; padding: 3px 6px; color: var(--ink); background: var(--stock); font: 500 7.5px "DM Mono", monospace; letter-spacing: .12em; }
 
 .gallery-caption { display: none; }
@@ -453,33 +453,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .chapter-gallery .gallery-pills .is-active { color: var(--lichen); background: var(--pale); font-weight: 700; }
 .chapter-gallery .gallery-pills button:hover:not(.is-active) { background: rgba(247, 245, 239, 0.08); }
 
-/* 03 — FIT: AN OPEN LEDGER CUT BY A NARROW SILHOUETTE */
-.chapter-fit { padding: clamp(48px, 6vw, 84px) var(--grid-margin); background: var(--stock); }
-.fit-layout { display: grid; grid-template-columns: 58px minmax(0, 1fr) minmax(210px, .37fr); gap: clamp(24px, 4.5vw, 72px); align-items: stretch; max-width: 1300px; margin: auto; }
-.fit-marker { padding-top: 4px; color: var(--mute); }
-.fit-marker span { display: inline-block; margin-top: 8px; font-size: 7px; }
-.fit-main { display: flex; flex-direction: column; justify-content: space-between; }
-.fit-main .chapter-head h2 { max-width: 580px; }
-.fit-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 54px; border-top: 2px solid var(--ink); }
-.fit-list article { display: grid; grid-template-columns: 86px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
-.fit-list article:nth-child(odd) { margin-right: 34px; }
-.fit-list span { color: var(--mute); font: 500 8px "DM Mono", monospace; letter-spacing: .13em; }
-.fit-list b { font: 700 13px/1.35 Archivo, sans-serif; }
-.fit-layout figure { align-self: end; height: min(66vh, 600px); overflow: hidden; border-right: 1px solid var(--line); }
-.fit-layout figure::before { left: auto; right: -7px; background: var(--teal); }
-.fit-layout figure img { object-position: 50% 40%; }
-.fit-layout figure figcaption { position: absolute; left: -2px; bottom: 10px; margin: 0; padding: 5px 7px; color: var(--pale); background: var(--ink); }
 
-/* 05 — BUILD: DETAIL PHOTO PUNCTURES THE FIELD, COPY IS A LEDGER */
-.chapter-build { padding: clamp(64px, 8vw, 118px) 7vw; background: var(--pale); }
-.build-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(330px, .9fr); align-items: center; gap: clamp(36px, 8vw, 130px); max-width: 1240px; margin: auto; }
-.build-layout figure { aspect-ratio: 1 / 1.12; overflow: hidden; border: 1px solid var(--line); box-shadow: -12px 12px 0 rgba(53,108,118,.13); }
-.build-layout figure::before { background: var(--teal); }
-.build-layout figure img { object-position: 51% center; }
-.build-layout figure figcaption { position: absolute; left: 12px; bottom: 10px; margin: 0; padding: 5px 7px; color: var(--pale); background: var(--ink); }
-.build-copy .chapter-head { margin-left: clamp(0px, 2vw, 24px); }
-.build-copy ol { display: grid; gap: 0; margin: 42px 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; counter-reset: build-count; }
-.build-copy li { counter-increment: build-count; display: grid; grid-template-columns: 32px 1fr; gap: 6px 13px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .build-copy li::before { color: var(--mute); font: 500 8px "DM Mono", monospace; content: counter(build-count, decimal-leading-zero); }
 .build-copy li b { font: 700 15px Archivo, sans-serif; }
 .build-copy li span { grid-column: 2; color: var(--mute); font-size: 12px; line-height: 1.5; }
@@ -672,40 +646,33 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .chapter-shell .gallery-controls .gallery-nav-buttons { display: flex; gap: 4px; }
 .chapter-shell .gallery-controls button { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--line-light); background: transparent; color: var(--pale); cursor: pointer; transition: background 0.15s var(--ease), color 0.15s var(--ease); }
 .chapter-shell .gallery-controls button:hover { background: var(--pale); color: var(--lichen); }
-.chapter-shell .gallery-stage { position: relative; width: 100%; display: grid; grid-template-columns: 1fr; height: 260px; max-height: 260px; background: var(--lichen-2); border: 1px solid var(--line-light); overflow: hidden; }
-.chapter-shell .gallery-stage figure { position: relative; width: 100%; height: 260px; max-height: 260px; margin: 0 auto; border: 0; overflow: hidden; }
-.chapter-shell .gallery-stage figure img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+.chapter-shell .gallery-stage { position: relative; width: 100%; display: grid; grid-template-columns: 1fr; background: var(--lichen-2); border: 1px solid var(--line-light); overflow: hidden; }
+.chapter-shell .gallery-figure-wrap { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; }
+.chapter-shell .gallery-stage figure { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; border: 0; }
+.chapter-shell .gallery-stage figure img { width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; }
 .chapter-shell .gallery-stage figure figcaption { position: absolute; right: 8px; bottom: 8px; margin: 0; padding: 3px 6px; color: var(--ink); background: var(--stock); font: 500 7.5px "DM Mono", monospace; letter-spacing: .12em; }
-.chapter-shell .gallery-caption { display: none; }
-.chapter-shell .gallery-pills { display: grid; grid-template-columns: repeat(6, 1fr); height: 34px; margin: 0; padding: 0; border: 1px solid var(--line-light); }
-.chapter-shell .gallery-pills button { height: 34px; min-height: 34px; border: 0; border-right: 1px solid var(--line-light); color: var(--mute-light); background: transparent; font: 500 9px "DM Mono", monospace; letter-spacing: .08em; cursor: pointer; transition: background 0.15s var(--ease), color 0.15s var(--ease); }
+.chapter-shell .gallery-caption { display: flex; flex-direction: column; justify-content: center; padding: 16px; gap: 12px; background: var(--stock); }
+.chapter-shell .gallery-caption > div { display: flex; flex-direction: column; gap: 4px; }
+.chapter-shell .gallery-caption span { color: var(--mute-light); font: 500 8.5px "DM Mono", monospace; letter-spacing: 0.14em; }
+.chapter-shell .gallery-caption h3 { margin: 0; color: var(--pale); font: 800 16px/1.15 Archivo, sans-serif; letter-spacing: -0.04em; }
+.chapter-shell .gallery-caption p { margin: 0; color: var(--mute); font-size: 13px; line-height: 1.5; }
+.chapter-shell .gallery-pills { display: grid; grid-template-columns: repeat(6, 1fr); height: 48px; margin: 0; padding: 0; border: 1px solid var(--line-light); border-top: 0; }
+.chapter-shell .gallery-pills button { height: 48px; min-height: 48px; border: 0; border-right: 1px solid var(--line-light); color: var(--mute-light); background: transparent; font: 500 9px "DM Mono", monospace; letter-spacing: .08em; cursor: pointer; transition: background 0.15s var(--ease), color 0.15s var(--ease); }
 .chapter-shell .gallery-pills button:last-child { border-right: 0; }
 .chapter-shell .gallery-pills .is-active { color: var(--lichen); background: var(--pale); font-weight: 700; }
 .chapter-shell .gallery-pills button:hover:not(.is-active) { background: rgba(247, 245, 239, 0.08); }
 
-.chapter-shell .chapter-fit { padding-top: var(--safe-start); padding-bottom: 0; }
-.chapter-shell .fit-layout { display: grid; grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); column-gap: var(--grid-gutter); row-gap: var(--space-6); }
-.chapter-shell .fit-marker { display: none; }
-.chapter-shell .fit-main,
-.chapter-shell .fit-layout figure { grid-column: 1 / -1; min-width: 0; }
-.chapter-shell .fit-list { display: grid; grid-template-columns: 1fr; margin-top: var(--space-4); border-top: 2px solid var(--ink); }
-.chapter-shell .fit-list article,
-.chapter-shell .fit-list article:nth-child(odd) { grid-template-columns: 88px minmax(0, 1fr); gap: var(--space-2); margin: 0; padding: var(--space-2) 0; }
-.chapter-shell .fit-list span { font-size: 10px; line-height: 16px; }
-.chapter-shell .fit-list b { font-size: 14px; line-height: 20px; }
-.chapter-shell .fit-layout figure { height: auto; aspect-ratio: 4 / 3; margin: 0 calc(var(--grid-margin) * -1); border-right: 0; border-left: 0; }
-.chapter-shell .fit-layout figure figcaption { left: var(--grid-margin); bottom: var(--space-2); }
+.chapter-shell .chapter-sizing { padding-top: var(--safe-start); }
+.chapter-shell .sizing-layout { display: grid; grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); column-gap: var(--grid-gutter); row-gap: var(--space-6); }
+.chapter-shell .sizing-copy, .chapter-shell .sizing-table-wrap { grid-column: 1 / -1; }
+.chapter-shell .sizing-table { width: 100%; border-collapse: collapse; font-family: "DM Mono", monospace; font-size: 11px; text-align: left; }
+.chapter-shell .sizing-table th { padding: 12px 8px; border-bottom: 1px solid var(--line); color: var(--mute); font-weight: 500; letter-spacing: 0.12em; font-size: 9px; }
+.chapter-shell .sizing-table td { padding: 16px 8px; border-bottom: 1px solid var(--line-light); color: var(--ink); }
+.chapter-shell .sizing-unit-note { margin-top: var(--space-2); padding-left: 8px; color: var(--mute-light); font: 500 9px "DM Mono", monospace; letter-spacing: 0.12em; text-transform: uppercase; }
+.chapter-shell .sizing-controls { display: flex; gap: 8px; margin-bottom: 24px; padding-left: 8px; }
+.chapter-shell .sizing-controls button { padding: 6px 12px; border: 1px solid var(--line); background: transparent; color: var(--mute); font: 500 10px "DM Mono", monospace; cursor: pointer; transition: all 0.2s; }
+.chapter-shell .sizing-controls button.is-active { background: var(--ink); color: var(--pale); border-color: var(--ink); }
 
-.chapter-shell .chapter-build { padding-top: var(--safe-start); }
-.chapter-shell .build-layout figure { order: 2; aspect-ratio: 4 / 3; margin: 0; }
-.chapter-shell .build-copy { order: 1; }
-.chapter-shell .build-copy .chapter-head { margin: 0; }
-.chapter-shell .build-copy ol { margin-top: var(--space-4); counter-reset: build-count; }
-.chapter-shell .build-copy li { counter-increment: build-count; grid-template-columns: 34px minmax(0, 1fr); gap: 4px var(--space-2); padding: var(--space-2) 0; }
-.chapter-shell .build-copy li::before { color: var(--mute); font: 500 9px "DM Mono", monospace; content: counter(build-count, decimal-leading-zero); letter-spacing: 0.1em; }
-.chapter-shell .build-copy li b { font-size: 15px; line-height: 20px; }
-.chapter-shell .build-copy li span { font-size: 13px; line-height: 20px; }
-.chapter-shell .build-layout figure figcaption { left: var(--space-2); bottom: var(--space-2); }
 
 .chapter-shell .chapter-care { padding-top: var(--safe-start); }
 .chapter-shell .care-layout { gap: var(--space-6) var(--grid-gutter); }
@@ -791,18 +758,19 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .chapter-shell .chapter-allocation .allocation-facts div,
   .chapter-shell .chapter-allocation .allocation-facts div + div { display: grid; grid-template-columns: 1fr; padding: var(--space-2); border-left: 1px solid var(--line); }
   .chapter-shell .chapter-allocation .allocation-facts div:first-child { border-left: 0; }
-  .chapter-shell .gallery-ribbon { max-width: 680px; }
-  .chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1fr) 180px; height: 260px; max-height: 260px; min-height: 0; }
-  .chapter-shell .gallery-stage figure { height: 260px; max-height: 260px; min-height: 0; border-right: 1px solid var(--line-light); }
-  .chapter-shell .gallery-caption { display: flex; flex-direction: column; justify-content: center; min-height: auto; padding: 16px; gap: 4px; }
-  .chapter-shell .gallery-caption span { color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: 0.14em; }
-  .chapter-shell .gallery-caption h3 { margin: 0; color: var(--pale); font: 800 16px/1.1 Archivo, sans-serif; letter-spacing: -0.04em; }
-  .chapter-shell .fit-main { grid-column: 2 / 7; }
-  .chapter-shell .fit-layout figure { grid-column: 7 / -1; grid-row: 1; height: 100%; min-height: 520px; margin: 0; border: 1px solid var(--line); }
-  .chapter-shell .fit-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .chapter-shell .fit-list article:nth-child(odd) { margin-right: var(--space-4); }
-  .chapter-shell .build-layout figure { grid-column: 1 / 4; grid-row: 1; aspect-ratio: auto; min-height: 480px; }
-  .chapter-shell .build-copy { grid-column: 5 / -1; }
+  .chapter-shell .gallery-ribbon { max-width: 820px; }
+  .chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1fr) 220px; height: auto; max-height: none; min-height: 0; }
+  .chapter-shell .gallery-figure-wrap { aspect-ratio: 4 / 5; min-height: 0; border-right: 1px solid var(--line-light); max-height: 65vh; margin: 0 auto; }
+  .chapter-shell .gallery-caption { display: flex; flex-direction: column; justify-content: center; min-height: auto; padding: 32px 24px; gap: 24px; }
+  .chapter-shell .gallery-caption > div { display: flex; flex-direction: column; gap: 8px; }
+  .chapter-shell .gallery-caption span { color: var(--mute-light); font: 500 10px "DM Mono", monospace; letter-spacing: 0.14em; }
+  .chapter-shell .gallery-caption h3 { margin: 0; color: var(--pale); font: 800 20px/1.15 Archivo, sans-serif; letter-spacing: -0.04em; }
+  .chapter-shell .gallery-caption p { margin: 0; color: var(--mute); font-size: 13px; line-height: 1.6; }
+  .chapter-shell .sizing-copy { grid-column: 1 / 6; }
+  .chapter-shell .sizing-table-wrap { grid-column: 6 / 13; }
+  .chapter-shell .chapter-sizing .chapter-head h2 { font-size: clamp(2rem, 4.5vw, 3rem); word-break: break-word; }
+  .chapter-shell .sizing-table th { font-size: 10px; }
+  .chapter-shell .sizing-table td { font-size: 13px; }
   .chapter-shell .care-layout > div { grid-column: 1 / 5; }
   .chapter-shell .care-layout ul { grid-column: 5 / 8; }
   .chapter-shell .care-layout aside { grid-column: 8 / -1; min-height: auto; }
@@ -820,14 +788,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .chapter-shell .allocation-copy { grid-column: 1 / 8; }
   .chapter-shell .allocation-card { grid-column: 9 / -1; }
   .chapter-shell .chapter-allocation .allocation-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .chapter-shell .gallery-ribbon { max-width: 700px; }
-  .chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1fr) 200px; height: 280px; max-height: 280px; min-height: 0; }
-  .chapter-shell .gallery-stage figure { height: 280px; max-height: 280px; min-height: 0; }
-  .chapter-shell .fit-layout { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-  .chapter-shell .fit-main { grid-column: 2 / 9; }
-  .chapter-shell .fit-layout figure { grid-column: 10 / -1; min-height: 560px; }
-  .chapter-shell .build-layout figure { grid-column: 1 / 6; min-height: 540px; }
-  .chapter-shell .build-copy { grid-column: 7 / -1; }
+  .chapter-shell .gallery-ribbon { max-width: 860px; }
+  .chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1fr) 240px; height: auto; max-height: none; min-height: 0; }
+  .chapter-shell .gallery-figure-wrap { aspect-ratio: 4 / 5; min-height: 0; max-height: 65vh; margin: 0 auto; }
+  .chapter-shell .sizing-layout { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .chapter-shell .sizing-copy { grid-column: 1 / 6; }
+  .chapter-shell .sizing-table-wrap { grid-column: 7 / 13; }
+  .chapter-shell .chapter-sizing .chapter-head h2 { font-size: clamp(2rem, 5vw, 3.8rem); word-break: break-word; }
   .chapter-shell .care-layout > div { grid-column: 1 / 6; }
   .chapter-shell .care-layout ul { grid-column: 7 / 11; }
   .chapter-shell .care-layout aside { grid-column: 11 / -1; }

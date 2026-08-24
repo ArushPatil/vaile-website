@@ -346,19 +346,21 @@ export default function Home() {
 
           {/* 03: THE CUT / PROOF SPREAD */}
           <section className="proof-spread" data-stack-item>
-            <div className="proof-image">
-              <img src={assets.front} alt="Full-length outdoor view of black duck canvas pants" />
-            </div>
-            <div className="proof-copy">
-              <p className="kicker">THE CUT</p>
-              <h2>
-                Easy through<br />the leg. Clear<br />over a shoe.
-              </h2>
-              <p>
-                It is a straight, relaxed work pant: enough room to move, enough structure to hold its line. The
-                silhouette is designed to wear in, not pose in.
-              </p>
-              <div className="proof-quote">“A uniform should get better with use.”</div>
+            <div className="proof-inner">
+              <div className="proof-image">
+                <img src={assets.front} alt="Full-length outdoor view of black duck canvas pants" />
+              </div>
+              <div className="proof-copy">
+                <p className="kicker">THE CUT</p>
+                <h2>
+                  Easy through<br />the leg. Clear<br />over a shoe.
+                </h2>
+                <p>
+                  It is a straight, relaxed work pant: enough room to move, enough structure to hold its line. The
+                  silhouette is designed to wear in, not pose in.
+                </p>
+                <div className="proof-quote">“A uniform should get better with use.”</div>
+              </div>
             </div>
           </section>
 
@@ -393,29 +395,31 @@ export default function Home() {
 
           {/* 05: BUILD SPREAD */}
           <section className="build-spread" id="build" data-stack-item>
-            <div className="build-copy">
-              <SectionHead
-                number="03"
-                title="The points that take the strain."
-                note="Construction reference / dense canvas, reinforced stress points, useful storage."
-              />
-              <ol>
-                <li>
-                  <b>Heavy canvas</b>
-                  <span>Dense 12oz cotton gives the garment a stable hand from day one.</span>
-                </li>
-                <li>
-                  <b>Rivet set</b>
-                  <span>Hardware anchors the stress points that get used the most.</span>
-                </li>
-                <li>
-                  <b>Layered pockets</b>
-                  <span>Practical storage without breaking the line of the leg.</span>
-                </li>
-              </ol>
-            </div>
-            <div className="build-image">
-              <img src={assets.detail} alt="Canvas pocket, rivet and belt-loop detail" />
+            <div className="build-inner">
+              <div className="build-copy">
+                <SectionHead
+                  number="03"
+                  title="The points that take the strain."
+                  note="Construction reference / dense canvas, reinforced stress points, useful storage."
+                />
+                <ol>
+                  <li>
+                    <b>Heavy canvas</b>
+                    <span>Dense 12oz cotton gives the garment a stable hand from day one.</span>
+                  </li>
+                  <li>
+                    <b>Rivet set</b>
+                    <span>Hardware anchors the stress points that get used the most.</span>
+                  </li>
+                  <li>
+                    <b>Layered pockets</b>
+                    <span>Practical storage without breaking the line of the leg.</span>
+                  </li>
+                </ol>
+              </div>
+              <div className="build-image">
+                <img src={assets.detail} alt="Canvas pocket, rivet and belt-loop detail" />
+              </div>
             </div>
           </section>
 

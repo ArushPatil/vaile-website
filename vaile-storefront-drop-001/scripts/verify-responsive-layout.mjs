@@ -2,8 +2,8 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 
 const port = 9555;
-const url = 'http://localhost:5173/';
-const outDir = '/home/ubuntu/vaile-latest-audit/overhaul-rendered';
+const url = process.env.LAYOUT_TEST_URL ?? 'http://127.0.0.1:5173/';
+const outDir = `/tmp/vaile-layout-probe-${process.pid}`;
 const viewports = [
   { name: 'desktop-1440', width: 1440, height: 900, mobile: false },
   { name: 'desktop-1024', width: 1024, height: 768, mobile: false },
@@ -90,7 +90,7 @@ try {
     }
     findings.push({ viewport, metric, checks, passed: Object.values(checks).every(Boolean), screenshots });
   }
-  await writeFile('/home/ubuntu/vaile-latest-audit/responsive_overhaul_results.json', JSON.stringify(findings, null, 2));
+  await writeFile(`${outDir}/results.json`, JSON.stringify(findings, null, 2));
   console.log(JSON.stringify(findings, null, 2));
   const failures = findings.flatMap((result) => Object.entries(result.checks).filter(([, value]) => !value).map(([check]) => `${result.viewport.name}: ${check}`));
   if (failures.length) throw new Error(`Responsive regression checks failed:\n${failures.join('\n')}`);

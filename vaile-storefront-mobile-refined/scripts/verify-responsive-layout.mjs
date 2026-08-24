@@ -61,7 +61,8 @@ try {
     }
     await evaluate(`document.documentElement.style.scrollBehavior = 'auto'; document.body.style.scrollBehavior = 'auto';`);
     const metric = await evaluate(`(() => {
-      const box = (selector) => { const el = document.querySelector(selector); if (!el) return { selector, missing: true, width: 0, height: 0, position: 'missing', grid: 'missing', overflow: 'missing', borderWidth: 'missing', padding: 'missing' }; const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return { selector, flowTop: Math.round(r.top + scrollY), width: Math.round(r.width), height: Math.round(r.height), position: s.position, grid: s.gridTemplateColumns, overflow: s.overflow, borderWidth: s.borderTopWidth, padding: s.paddingTop }; };
+      const box = (selector) => { const el = document.querySelector(selector); if (!el) return { selector, missing: true, width: 0, height: 0, position: 'missing', grid: 'missing', overflow: 'missing', borderWidth: 'missing', padding: 'missing', paddingLeft: 'missing', columns: 0 }; const r = el.getBoundingClientRect(); const s = getComputedStyle(el); return { selector, flowTop: Math.round(r.top + scrollY), width: Math.round(r.width), height: Math.round(r.height), position: s.position, grid: s.gridTemplateColumns, overflow: s.overflow, borderWidth: s.borderTopWidth, padding: s.paddingTop, paddingLeft: s.paddingLeft, columns: s.gridTemplateColumns === 'none' ? 0 : s.gridTemplateColumns.split(' ').filter(Boolean).length }; };
+      const heading = (selector) => { const section = document.querySelector(selector); const el = section?.querySelector('h2'); if (!section || !el) return { selector, missing: true, inset: 0 }; const s = section.getBoundingClientRect(); const h = el.getBoundingClientRect(); return { selector, inset: Math.round(h.top - s.top), flowTop: Math.round(h.top + scrollY) }; };
       return {
         viewport: { width: innerWidth, height: innerHeight },
         scrollWidth: document.documentElement.scrollWidth,
@@ -69,21 +70,29 @@ try {
         stackPositions: [...document.querySelectorAll('.manual-stack > [data-stack-item]')].map((el) => getComputedStyle(el).position),
         elements: ['.chapter-allocation', '.gallery-stage', '.gallery-stage figure', '.chapter-cut', '.cut-layout figure', '.chapter-fit', '.fit-layout figure', '.chapter-build', '.build-layout figure', '.chapter-care'].map(box),
         headerMark: box('.manual-header .manual-brand img'),
+        header: box('.manual-header'),
+        allocationGrid: box('.allocation-layout'),
+        headings: ['.chapter-allocation', '.chapter-gallery', '.chapter-cut', '.chapter-fit', '.chapter-build', '.chapter-care'].map(heading),
       };
     })()`);
 
     const lookup = Object.fromEntries(metric.elements.map((item) => [item.selector, item]));
-    const desktop = viewport.width >= 901;
+    const desktop = viewport.width >= 1200;
+    const compact = viewport.width < 768;
+    const expectedColumns = viewport.width >= 1200 ? 12 : viewport.width >= 768 ? 8 : 4;
     const checks = {
       noHorizontalOverflow: metric.scrollWidth === viewport.width,
       privacyIsInFlow: metric.privacyPosition !== 'fixed',
       expectedStackMode: desktop ? metric.stackPositions.every((position) => position === 'sticky') : metric.stackPositions.every((position) => position === 'relative'),
-      galleryImageHasReadableWidth: lookup['.gallery-stage figure'].width >= Math.floor(viewport.width * (desktop ? 0.42 : 0.82)),
-      cutImageHasReadableWidth: lookup['.cut-layout figure'].width >= Math.floor(viewport.width * (desktop ? 0.25 : 0.82)),
-      fitImageHasReadableWidth: lookup['.fit-layout figure'].width >= Math.floor(viewport.width * (desktop ? 0.14 : 0.9)),
-      buildImageHasReadableWidth: lookup['.build-layout figure'].width >= Math.floor(viewport.width * (desktop ? 0.3 : 0.82)),
-      mobileGalleryIsOneColumn: desktop || !lookup['.gallery-stage'].grid.includes(' '),
+      galleryImageHasReadableWidth: lookup['.gallery-stage figure'].width >= Math.floor(viewport.width * (compact ? 0.82 : 0.42)),
+      cutImageHasReadableWidth: lookup['.cut-layout figure'].width >= Math.floor(viewport.width * (compact ? 0.82 : 0.25)),
+      fitImageHasReadableWidth: lookup['.fit-layout figure'].width >= Math.floor(viewport.width * (compact ? 0.9 : 0.14)),
+      buildImageHasReadableWidth: lookup['.build-layout figure'].width >= Math.floor(viewport.width * (compact ? 0.82 : 0.3)),
+      mobileGalleryIsOneColumn: !compact || !lookup['.gallery-stage'].grid.includes(' '),
       unboxedHeaderMark: metric.headerMark.width >= (desktop ? 42 : 30) && metric.headerMark.borderWidth === '0px' && metric.headerMark.padding === '0px',
+      expectedSwissColumnCount: metric.allocationGrid.columns === expectedColumns,
+      headerSafeHeadingEntries: metric.headings.every((heading) => !heading.missing && heading.inset >= metric.header.height + (viewport.width >= 768 ? 40 : 24)),
+      measuredChapterInsets: metric.elements.filter((item) => item.selector.startsWith('.chapter-')).every((item) => Number.parseInt(item.padding) >= metric.header.height + (viewport.width >= 768 ? 40 : 24)),
     };
     const sectionTargets = ['.chapter-allocation', '.chapter-gallery', '.chapter-cut', '.chapter-fit', '.chapter-build', '.chapter-care'];
     const screenshots = [];

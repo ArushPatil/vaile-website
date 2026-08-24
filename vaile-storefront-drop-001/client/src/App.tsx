@@ -1,7 +1,6 @@
 /** Quarry Specimen global shell: a light paper foundation supports a dark canvas editorial storefront. */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import CookieConsent from "@/components/CookieConsent";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -29,7 +28,6 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
-          <CookieConsent />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

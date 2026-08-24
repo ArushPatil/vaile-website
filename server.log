@@ -1,0 +1,1025 @@
+
+> vaile-website@1.0.0 dev
+> vite
+
+8:27:54 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+
+  VITE v6.4.3  ready in 171 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.1.184:5173/
+8:35:45 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+8:35:45 PM [vite] (client) hmr update /src/index.css
+8:43:35 PM [vite] (client) hmr update /src/index.css
+8:43:48 PM [vite] (client) hmr update /src/index.css
+8:43:55 PM [vite] (client) hmr update /src/index.css
+8:44:08 PM [vite] (client) hmr update /src/index.css
+8:44:19 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+8:44:27 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+8:44:47 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+8:44:56 PM [vite] (client) hmr update /src/index.css
+8:45:03 PM [vite] (client) hmr update /src/index.css
+8:50:22 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+8:50:32 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+8:50:41 PM [vite] (client) hmr update /src/index.css
+8:51:12 PM [vite] (client) hmr update /src/index.css
+8:51:21 PM [vite] (client) hmr update /src/index.css
+8:51:33 PM [vite] (client) hmr update /src/index.css
+8:51:38 PM [vite] (client) hmr update /src/index.css
+8:52:02 PM [vite] (client) page reload test.js
+8:53:02 PM [vite] (client) hmr update /src/index.css
+8:58:31 PM [vite] (client) hmr update /src/index.css
+8:58:36 PM [vite] (client) hmr update /src/index.css
+8:58:48 PM [vite] (client) hmr update /src/index.css
+8:58:56 PM [vite] (client) hmr update /src/index.css
+9:26:32 PM [vite] (client) page reload index.html
+9:27:36 PM [vite] (client) hmr update /src/components/ErrorBoundary.tsx, /src/index.css
+9:27:40 PM [vite] (client) hmr update /src/App.tsx, /src/index.css
+9:27:40 PM [vite] (client) hmr update /src/components/CookieConsent.tsx, /src/index.css
+9:28:16 PM [vite] (client) page reload public/_redirects
+9:28:57 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+9:29:33 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+9:30:01 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+9:30:01 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:30:01 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:30:01 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:30:24 PM [vite] (client) hmr update /src/index.css
+9:30:49 PM [vite] (client) hmr update /src/index.css
+9:31:22 PM [vite] (client) hmr update /src/index.css
+9:31:27 PM [vite] (client) hmr update /src/index.css
+9:32:13 PM [vite] (client) Pre-transform error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+9:32:13 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:32:13 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:32:13 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:32:13 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:32:14 PM [vite] (client) hmr update /src/index.css
+9:32:36 PM [vite] (client) hmr update /src/index.css
+9:32:41 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:33:42 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+9:33:42 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:33:42 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:33:42 PM [vite] (client) Pre-transform error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+9:33:42 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:33:42 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:34:47 PM [vite] (client) hmr update /src/index.css
+9:35:12 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css
+9:35:12 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:35:12 PM [vite] Internal server error: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx: Expected corresponding JSX closing tag for <main>. (82:6)
+
+  80 |
+  81 |         <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+> 82 |       </div>
+     |       ^
+  83 |       <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |       <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+  85 |     </main>
+  Plugin: vite:react-babel
+  File: /Users/arushpatil/Documents/vaile website/vaile-storefront-drop-001/client/src/pages/HomeChapters.tsx:82:6
+  80 |  
+  81 |          <section id="care" className="chapter chapter-care"><div className="care-layout"><div><Head index="04" title="Keep the wear. Skip the damage." note="Care reference / clean only when needed." /><p>Duck canvas earns character slowly. Spot clean first; wash cold only when it needs it; hang dry. Skip bleach and high heat.</p></div><ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Iron inside out, warm</span></li></ul><aside className="care-stamp"><span>SPECIMEN CARE / 001</span><b>12OZ COTTON DUCK</b><p>COLD WASH ONLY / DO NOT DRY CLEAN</p></aside></div></section>
+  82 |        </div>
+     |        ^
+  83 |        <section className="closing-allocation"><p>DROP 001 / 50 PAIRS</p><h2>Choose a waist.<br />Start the note.</h2><div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Send allocation request on WhatsApp (opens in new tab)"><span>RECORD / 001 — WAIST {size}</span><b>SEND REQUEST</b><ArrowUpRight size={19} /></a></div></section>
+  84 |        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12oz duck canvas</span></div></footer>
+      at constructor (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:369:19)
+      at TypeScriptParserMixin.raise (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6620:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4743:16)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4714:32)
+      at TypeScriptParserMixin.jsxParseElement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4765:17)
+      at TypeScriptParserMixin.parseExprAtom (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:4775:19)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11102:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11087:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:11067:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9858:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10920:61)
+      at TypeScriptParserMixin.parseExprOps (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10925:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10902:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10852:21)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:39
+      at TypeScriptParserMixin.tryParse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:6928:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9796:18)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10805:23)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:39
+      at TypeScriptParserMixin.allowInAnd (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12450:16)
+      at TypeScriptParserMixin.parseExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10801:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13171:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12827:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12776:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:61)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseBlock (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12129:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12115:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9193:18)
+      at /Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13474:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12432:14)
+      at TypeScriptParserMixin.parseFunction (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13473:10)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13936:19)
+      at TypeScriptParserMixin.parseExportDefaultExpression (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9423:18)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13857:25)
+      at TypeScriptParserMixin.parseExport (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9406:20)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12907:27)
+      at TypeScriptParserMixin.parseStatementContent (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:9529:18)
+      at TypeScriptParserMixin.parseStatementLike (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12796:17)
+      at TypeScriptParserMixin.parseModuleItem (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12773:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13345:36)
+      at TypeScriptParserMixin.parseBlockBody (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:13338:10)
+      at TypeScriptParserMixin.parseProgram (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12651:10)
+      at TypeScriptParserMixin.parseTopLevel (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:12641:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14517:25)
+      at TypeScriptParserMixin.parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:10147:18)
+      at parse (/Users/arushpatil/Documents/vaile website/node_modules/@babel/parser/lib/index.js:14551:38)
+9:35:41 PM [vite] (client) hmr update /src/index.css
+9:36:05 PM [vite] (client) hmr update /src/pages/HomeChapters.tsx, /src/index.css

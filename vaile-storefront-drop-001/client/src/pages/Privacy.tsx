@@ -24,7 +24,7 @@ export default function Privacy() {
       <section>
         <h2>2. Information we may collect</h2>
         <p>
-          Depending on how you use VAILE, we may process the information you provide in a private allocation conversation, such as your name, phone number, preferred waist, fit questions, delivery details, and correspondence. We may also receive limited technical and usage information generated when you visit the website, such as device, browser, page-view, IP-address, and interaction data, subject to the configuration of our hosting and analytics providers.
+          Depending on how you use VAILE, we may process the information you provide in a private allocation conversation, such as your name, phone number, preferred waist, fit questions, delivery details, and correspondence. The storefront itself does not currently load third-party analytics. Hosting providers may still process limited technical information, such as IP address and browser request data, to deliver and secure the website under their own documented practices.
         </p>
       </section>
 
@@ -45,14 +45,14 @@ export default function Privacy() {
       <section>
         <h2>5. Sharing and service providers</h2>
         <p>
-          We may share information with providers that help us operate the storefront, host the website, measure website use, communicate through WhatsApp, process a confirmed order, deliver goods, obtain professional advice, or meet legal obligations. We do not sell personal information in exchange for money. If the meaning of "sale" or "sharing" under your local law is broader, <strong>[INSERT JURISDICTION-SPECIFIC DISCLOSURE IF REQUIRED]</strong>.
+          We may share information with providers that help us operate the storefront, host the website, communicate through WhatsApp, process a confirmed order, deliver goods, obtain professional advice, or meet legal obligations. We do not sell personal information in exchange for money. If the meaning of "sale" or "sharing" under your local law is broader, <strong>[INSERT JURISDICTION-SPECIFIC DISCLOSURE IF REQUIRED]</strong>.
         </p>
       </section>
 
       <section>
-        <h2>6. Cookies and analytics</h2>
+        <h2>6. Browser storage and analytics</h2>
         <p>
-          VAILE uses a necessary local browser preference to remember whether you allow optional analytics. Optional analytics are not loaded until you choose "Allow analytics" in the privacy-choice banner. If you choose "Necessary only", analytics remain disabled. Before launch, confirm the analytics provider, whether it uses cookies or similar technologies, its retention period, and whether any further consent requirements apply where you operate or receive visitors. Add those confirmed details here: <strong>[INSERT ANALYTICS / COOKIE DETAILS]</strong>.
+          VAILE does not currently load third-party analytics or set a storefront analytics preference. The site may use a session-only browser value to avoid replaying its opening loader during the same visit; that value is not used for cross-site tracking or advertising. Before adding analytics, cookies, pixels, or another storage-based service, update this notice and implement any consent controls required where VAILE operates or receives visitors.
         </p>
       </section>
 

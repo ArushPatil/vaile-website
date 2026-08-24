@@ -3,3 +3,5 @@ dist/
 .DS_Store
 *.local
 scratch_chrome/
+server.log
+server.pid

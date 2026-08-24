@@ -490,9 +490,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .build-layout figure img { object-position: 51% center; }
 .build-layout figure figcaption { position: absolute; left: 12px; bottom: 10px; margin: 0; padding: 5px 7px; color: var(--pale); background: var(--ink); }
 .build-copy .chapter-head { margin-left: clamp(0px, 2vw, 24px); }
-.build-copy ol { display: grid; gap: 0; margin: 42px 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
-.build-copy li { display: grid; grid-template-columns: 32px 1fr; gap: 6px 13px; padding: 16px 0; border-bottom: 1px solid var(--line); }
-.build-copy li::before { color: var(--mute); font: 500 8px "DM Mono", monospace; content: "00"; }
+.build-copy ol { display: grid; gap: 0; margin: 42px 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; counter-reset: build-count; }
+.build-copy li { counter-increment: build-count; display: grid; grid-template-columns: 32px 1fr; gap: 6px 13px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.build-copy li::before { color: var(--mute); font: 500 8px "DM Mono", monospace; content: counter(build-count, decimal-leading-zero); }
 .build-copy li b { font: 700 15px Archivo, sans-serif; }
 .build-copy li span { grid-column: 2; color: var(--mute); font-size: 12px; line-height: 1.5; }
 
@@ -505,11 +505,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .care-layout li { display: grid; grid-template-columns: 35px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line-light); }
 .care-layout li b { color: var(--mute-light); font: 500 8px "DM Mono", monospace; }
 .care-layout li span { font: 700 14px Archivo, sans-serif; }
-.care-layout aside { align-self: stretch; display: grid; place-content: end start; padding: 12px; border: 1px solid var(--line-light); color: var(--mute-light); line-height: 1.7; }
+.care-layout aside { align-self: end; display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid var(--line-light); background: rgba(247, 245, 239, 0.04); color: var(--pale); line-height: 1.5; }
+.care-layout aside span { color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: 0.14em; }
+.care-layout aside b { font: 750 13px Archivo, sans-serif; letter-spacing: -0.02em; }
+.care-layout aside p { margin: 0; color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: 0.08em; }
 @media (min-width: 901px) {
-  .care-layout { min-height: min(660px, 72svh); }
+  .care-layout { min-height: auto; }
   .care-layout ul { align-self: end; }
-  .care-layout aside { min-height: 100%; }
+  .care-layout aside { min-height: auto; }
 }
 .chapter-shell .closing-allocation { display: grid; grid-template-columns: 1fr auto; gap: 25px; align-items: end; min-height: 46vh; padding: clamp(64px, 8vw, 120px) 7vw; color: var(--ink); background: var(--stock); }
 .chapter-shell .closing-allocation p { grid-column: 1 / -1; margin: 0; color: var(--mute); font: 500 8px "DM Mono", monospace; letter-spacing: .14em; }
@@ -521,13 +524,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .chapter-shell .manual-footer a { color: inherit; text-decoration: none; }
 
 @media (min-width: 901px) {
-  .chapter-stack > .chapter { position: sticky; top: 0; min-height: 100svh; }
-  .chapter-stack > .chapter:nth-child(1) { z-index: 2; }
-  .chapter-stack > .chapter:nth-child(2) { z-index: 3; }
-  .chapter-stack > .chapter:nth-child(3) { z-index: 4; }
-  .chapter-stack > .chapter:nth-child(4) { z-index: 5; }
-  .chapter-stack > .chapter:nth-child(5) { z-index: 6; }
-  .chapter-stack > .chapter:nth-child(6) { z-index: 7; }
+  .chapter-stack > .chapter { position: relative; top: auto; min-height: auto; }
 }
 
 @media (max-width: 900px) {
@@ -632,8 +629,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   border-top: 1px solid var(--line);
 }
 .chapter-shell .chapter > * { width: 100%; max-width: none; margin-left: auto; margin-right: auto; }
-.chapter-shell .chapter-head { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: var(--space-2); padding: 0; border: 0; }
-.chapter-shell .chapter-head > span,
+.chapter-shell .chapter-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-2); align-items: start; padding: 0; border: 0; }
+.chapter-shell .chapter-head > span { display: inline-block; min-width: 24px; padding-top: 4px; color: var(--mute); font: 500 10px "DM Mono", monospace; letter-spacing: .12em; }
+.chapter-shell .chapter-cut .chapter-head > span,
+.chapter-shell .chapter-gallery .chapter-head > span,
+.chapter-shell .chapter-care .chapter-head > span { color: var(--mute-light); }
 .chapter-shell .chapter-head p,
 .chapter-shell .chapter-bridge,
 .chapter-shell .gallery-header > div:first-child > span,
@@ -641,8 +641,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .chapter-shell .gallery-caption > span,
 .chapter-shell .cut-title > span,
 .chapter-shell .fit-marker,
-.chapter-shell .chapter figure figcaption,
-.chapter-shell .care-layout aside { font-size: 10px; line-height: 16px; letter-spacing: .08em; }
+.chapter-shell .chapter figure figcaption { font-size: 10px; line-height: 16px; letter-spacing: .08em; }
 .chapter-shell .chapter-head h2 {
   max-width: 18ch;
   font-size: clamp(2.2rem, 9vw, 3.5rem);
@@ -730,8 +729,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .chapter-shell .build-layout figure { order: 2; aspect-ratio: 4 / 3; margin: 0; }
 .chapter-shell .build-copy { order: 1; }
 .chapter-shell .build-copy .chapter-head { margin: 0; }
-.chapter-shell .build-copy ol { margin-top: var(--space-4); }
-.chapter-shell .build-copy li { grid-template-columns: 34px minmax(0, 1fr); gap: 4px var(--space-2); padding: var(--space-2) 0; }
+.chapter-shell .build-copy ol { margin-top: var(--space-4); counter-reset: build-count; }
+.chapter-shell .build-copy li { counter-increment: build-count; grid-template-columns: 34px minmax(0, 1fr); gap: 4px var(--space-2); padding: var(--space-2) 0; }
+.chapter-shell .build-copy li::before { color: var(--mute); font: 500 9px "DM Mono", monospace; content: counter(build-count, decimal-leading-zero); letter-spacing: 0.1em; }
 .chapter-shell .build-copy li b { font-size: 15px; line-height: 20px; }
 .chapter-shell .build-copy li span { font-size: 13px; line-height: 20px; }
 .chapter-shell .build-layout figure figcaption { left: var(--space-2); bottom: var(--space-2); }
@@ -743,13 +743,61 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
 .chapter-shell .care-layout li { grid-template-columns: 34px minmax(0, 1fr); gap: var(--space-2); padding: var(--space-2) 0; }
 .chapter-shell .care-layout li b { font-size: 10px; line-height: 16px; }
 .chapter-shell .care-layout li span { font-size: 15px; line-height: 20px; }
-.chapter-shell .care-layout aside { min-height: 96px; padding: var(--space-2); }
-.chapter-shell .closing-allocation { display: grid; grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); gap: var(--space-3) var(--grid-gutter); min-height: 0; padding: var(--safe-start) var(--grid-margin) var(--space-8); }
+.chapter-shell .care-layout aside { align-self: end; display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid var(--line-light); background: rgba(247, 245, 239, 0.04); color: var(--pale); line-height: 1.5; }
+.chapter-shell .care-layout aside span { color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: 0.14em; }
+.chapter-shell .care-layout aside b { font: 750 13px Archivo, sans-serif; letter-spacing: -0.02em; }
+.chapter-shell .care-layout aside p { margin: 0; color: var(--mute-light); font: 500 8px "DM Mono", monospace; letter-spacing: 0.08em; }
+
+.chapter-shell .closing-allocation { display: grid; grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr)); gap: var(--space-3) var(--grid-gutter); min-height: 0; padding: var(--safe-start) var(--grid-margin) var(--space-8); background: var(--stock); color: var(--ink); }
 .chapter-shell .closing-allocation p,
 .chapter-shell .closing-allocation h2,
 .chapter-shell .closing-allocation > div { grid-column: 1 / -1; width: 100%; }
 .chapter-shell .closing-allocation h2 { margin: 0; font-size: clamp(2.7rem, 11vw, 4.6rem); line-height: .9; }
-.chapter-shell .closing-allocation > div > span { margin-bottom: var(--space-2); font-size: 10px; }
+.chapter-shell .closing-allocation > div > span { display: inline-block; margin-bottom: var(--space-2); color: var(--teal); font: 700 12px "DM Mono", monospace; letter-spacing: .08em; }
+.chapter-shell .closing-allocation .allocation-record {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  align-items: center;
+  margin-top: 0;
+  padding: 14px 18px;
+  color: var(--stock);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.chapter-shell .closing-allocation .allocation-record::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: var(--teal);
+  content: "";
+}
+.chapter-shell .closing-allocation .allocation-record span {
+  grid-column: 1;
+  color: rgba(236, 233, 223, 0.72);
+  font: 500 8.5px "DM Mono", monospace;
+  letter-spacing: 0.12em;
+}
+.chapter-shell .closing-allocation .allocation-record b {
+  grid-column: 1;
+  color: var(--stock);
+  font: 750 12px Archivo, sans-serif;
+  letter-spacing: 0.02em;
+}
+.chapter-shell .closing-allocation .allocation-record svg {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: var(--stock);
+}
+.chapter-shell .closing-allocation .allocation-record:hover {
+  background: var(--lichen);
+  border-color: var(--lichen);
+}
 .chapter-shell .manual-footer { padding: var(--space-4) var(--grid-margin); }
 
 @media (max-width: 1199px) {
@@ -774,7 +822,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .chapter-shell .chapter-allocation .allocation-facts div:first-child { border-left: 0; }
   .chapter-shell .gallery-stage { grid-template-columns: 5fr 3fr; }
   .chapter-shell .gallery-stage figure { aspect-ratio: auto; min-height: 520px; border-left: 1px solid var(--line-light); }
-  .chapter-shell .gallery-caption { min-height: 520px; padding: var(--space-6) var(--space-4); border-top: 1px solid var(--line-light); }
+  .chapter-shell .gallery-caption { min-height: 520px; padding: var(--space-6) var(--space-4); border-top: 1px solid var(--line-light); justify-content: center; }
   .chapter-shell .cut-title { grid-column: 1 / 4; }
   .chapter-shell .cut-layout figure { grid-column: 4 / 7; grid-row: 1 / span 2; }
   .chapter-shell .cut-layout blockquote { grid-column: 7 / -1; align-self: end; }
@@ -786,15 +834,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .chapter-shell .build-copy { grid-column: 5 / -1; }
   .chapter-shell .care-layout > div { grid-column: 1 / 5; }
   .chapter-shell .care-layout ul { grid-column: 5 / 8; }
-  .chapter-shell .care-layout aside { grid-column: 8 / -1; min-height: 100%; }
+  .chapter-shell .care-layout aside { grid-column: 8 / -1; min-height: auto; }
 }
 
 @media (min-width: 1200px) {
   .chapter-shell { --grid-margin: max(72px, calc((100vw - 1296px) / 2)); --grid-gutter: 24px; --grid-columns: 12; --header-h: 64px; --safe-start: calc(var(--header-h) + 48px); }
   .chapter-shell .manual-brand img { width: 44px; height: 44px; }
   .chapter-shell .manual-brand { font-size: 20px; }
-  .chapter-shell .chapter { display: grid; align-items: stretch; min-height: 100svh; padding-top: var(--safe-start); padding-bottom: var(--space-8); }
-  .chapter-stack > .chapter { position: sticky; top: 0; }
+  .chapter-shell .chapter { display: block; min-height: auto; padding-top: var(--safe-start); padding-bottom: var(--space-8); }
+  .chapter-stack > .chapter { position: relative; top: auto; min-height: auto; }
   .chapter-shell .chapter-allocation .allocation-layout,
   .chapter-shell .build-layout,
   .chapter-shell .care-layout { grid-template-columns: repeat(12, minmax(0, 1fr)); }
@@ -803,7 +851,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .chapter-shell .chapter-allocation .allocation-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .chapter-shell .gallery-stage { grid-template-columns: 8fr 4fr; min-height: 0; }
   .chapter-shell .gallery-stage figure { min-height: 560px; }
-  .chapter-shell .gallery-caption { min-height: 560px; }
+  .chapter-shell .gallery-caption { min-height: 560px; justify-content: center; }
   .chapter-shell .cut-layout { grid-template-columns: repeat(12, minmax(0, 1fr)); }
   .chapter-shell .cut-title { grid-column: 1 / 5; }
   .chapter-shell .cut-layout figure { grid-column: 6 / 10; }
@@ -816,4 +864,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-
   .chapter-shell .care-layout > div { grid-column: 1 / 6; }
   .chapter-shell .care-layout ul { grid-column: 7 / 11; }
   .chapter-shell .care-layout aside { grid-column: 11 / -1; }
+  .chapter-shell .closing-allocation { grid-template-columns: 1fr auto; align-items: end; }
+  .chapter-shell .closing-allocation p,
+  .chapter-shell .closing-allocation h2 { grid-column: 1; }
+  .chapter-shell .closing-allocation > div { grid-column: 2; width: 360px; }
 }

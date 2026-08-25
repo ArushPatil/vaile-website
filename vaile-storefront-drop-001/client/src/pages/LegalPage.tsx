@@ -1,7 +1,4 @@
-/**
- * Vaile Quarry Specimen legal shell: archival paper, square rules, and Cairn Teal
- * annotations keep required policy text aligned with the storefront's material-led system.
- */
+/** VAILE legal shell: clear policy text aligned with the storefront's restrained editorial system. */
 import type { ReactNode } from "react";
 
 type LegalPageProps = {
@@ -13,7 +10,7 @@ type LegalPageProps = {
 
 export default function LegalPage({ eyebrow, title, lead, children }: LegalPageProps) {
   return (
-    <main className="legal-page">
+    <main id="main" className="legal-page">
       <header className="legal-page__header">
         <a href="/" className="legal-page__brand" aria-label="Return to Vaile storefront">
           <img src="/images/logo.png" alt="" style={{ width: 18, height: 18, objectFit: "contain", filter: "brightness(0) invert(1)" }} />
@@ -39,7 +36,7 @@ export default function LegalPage({ eyebrow, title, lead, children }: LegalPageP
       <article className="legal-page__document">{children}</article>
 
       <footer className="legal-page__footer">
-        <span>VAILE / DROP 001 / FIELD ARCHIVE</span>
+        <span>VAILE · DROP 001 · 12 OZ DUCK CANVAS</span>
         <div>
           <a href="/terms">TERMS</a>
           <a href="/privacy">PRIVACY</a>

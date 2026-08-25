@@ -1124,7 +1124,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 .chapter-shell .gallery-header h2 { font-size: clamp(2.1rem, 5.3vw, 4.15rem); }
 .chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1.22fr) minmax(300px, .78fr); height: min(56vh, 500px); height: min(56svh, 500px); border: 1px solid var(--ink); }
 .chapter-shell .gallery-figure-wrap { position: relative; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; margin: 0; border: 0; background: var(--lichen-2); overflow: hidden; }
-.chapter-shell .gallery-stage figure { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; }
+.chapter-shell .gallery-stage figure { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; touch-action: pan-y; }
 .chapter-shell .gallery-stage figure picture,
 .chapter-shell .gallery-stage figure img { display: block; width: 100%; height: 100%; }
 .chapter-shell .gallery-stage figure img { object-fit: cover; object-position: 50% 38%; }
@@ -1435,4 +1435,44 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
     line-height: 22px;
     letter-spacing: .01em;
   }
+}
+
+/* ACCESSIBILITY SCALE — preserve the restrained editorial hierarchy without making interactive or reference labels microscopic. */
+.chapter-shell .manual-header { min-height: 64px; }
+.chapter-shell .header-menu::after,
+.chapter-shell .manual-brand small,
+.chapter-shell .header-action,
+.chapter-shell .header-action b,
+.chapter-shell .header-action span { font-size: 11px; line-height: 16px; }
+.chapter-shell .hero-copy p,
+.chapter-shell .hero-copy span,
+.chapter-shell .hero-index { font-size: 12px; line-height: 18px; }
+.chapter-shell .allocation-head > span,
+.chapter-shell .chapter-allocation dt,
+.chapter-shell .card-price-eyebrow,
+.chapter-shell .card-size-label,
+.chapter-shell .allocation-record span,
+.chapter-shell .copy-note,
+.chapter-shell .gallery-header > div:first-child > span,
+.chapter-shell .gallery-figure-count,
+.chapter-shell .gallery-dossier > div:first-child > span,
+.chapter-shell .gallery-dossier dt,
+.chapter-shell .gallery-controls button,
+.chapter-shell .gallery-pills button,
+.chapter-shell .sizing-copy > span,
+.chapter-shell .sizing-tile-ledger article header span,
+.chapter-shell .sizing-tile-ledger dt,
+.chapter-shell .sizing-unit-note,
+.chapter-shell .care-header p,
+.chapter-shell .care-stamp span,
+.chapter-shell .care-stamp p,
+.chapter-shell .care-layout li b,
+.chapter-shell .closing-allocation p { font-size: 11px; line-height: 16px; }
+.chapter-shell .sizing-controls button { min-height: 44px; font-size: 12px; }
+
+@media (max-width: 767px) {
+  .chapter-shell .gallery-info-toggle { min-height: 44px; padding: 8px 10px; font-size: 11px; }
+  .chapter-shell .gallery-mobile-nav button { min-width: 44px; min-height: 44px; }
+  .chapter-shell .gallery-mobile-info__copy > span,
+  .chapter-shell .gallery-mobile-info dt { font-size: 11px; line-height: 16px; }
 }

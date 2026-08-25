@@ -1,16 +1,13 @@
-/**
- * Vaile Quarry Specimen terms: practical allocation language with placeholders
- * for the details that cannot be safely inferred from the storefront.
- */
+/** VAILE terms: clear enquiry language with placeholders for client-supplied legal details. */
 import LegalPage from "./LegalPage";
 import PageMetadata from "@/components/PageMetadata";
 
 export default function Terms() {
   return (
-    <><PageMetadata title="Terms of Service — Vaile" description="Terms governing the Vaile DROP 001 private WhatsApp allocation process." /><LegalPage
+    <><PageMetadata title="Terms of Service — Vaile" description="Terms governing the VAILE DROP 001 WhatsApp enquiry process." /><LegalPage
       eyebrow="LEGAL RECORD / 01"
       title="Terms of Service"
-      lead="These terms govern use of the VAILE website and the private allocation process for DROP 001."
+      lead="These terms govern use of the VAILE website and the WhatsApp enquiry process for DROP 001."
     >
       <p className="legal-page__effective">EFFECTIVE DATE: [INSERT EFFECTIVE DATE]</p>
 
@@ -24,17 +21,17 @@ export default function Terms() {
       <section>
         <h2>2. Private allocation model</h2>
         <p>
-          VAILE DROP 001 is presented as a limited private allocation. Selecting a waist size or opening a WhatsApp allocation note is an expression of interest only. It is not a reservation, a completed purchase, an acceptance of an order, or a guarantee that a requested size will be available.
+          Selecting a waist size or opening a WhatsApp enquiry is an expression of interest only. It is not a reservation, a completed purchase, an acceptance of an order, or a guarantee that a requested size will be available.
         </p>
         <p>
-          Availability, order acceptance, payment instructions, delivery timing, and any required measurements are confirmed directly during the private allocation conversation. VAILE may decline, limit, or cancel an allocation request where permitted by applicable law, including where availability, pricing, payment, shipping, or product information cannot be confirmed.
+          Availability, order acceptance, payment instructions, delivery timing, and any required measurements are confirmed directly during the WhatsApp enquiry. VAILE may decline, limit, or cancel an enquiry where permitted by applicable law, including where availability, pricing, payment, shipping, or product information cannot be confirmed.
         </p>
       </section>
 
       <section>
         <h2>3. Pricing and payment</h2>
         <p>
-          The website currently displays DROP 001 at <strong>₹6,200 INR / $100 USD</strong>. Unless we state otherwise in writing during the allocation conversation, displayed pricing is informational and may exclude applicable taxes, duties, shipping, insurance, or other charges. The final amount, currency, payment method, and payment timing will be confirmed before an order is accepted.
+          The website currently displays DROP 001 at <strong>₹6,200 INR / $100 USD</strong>. Unless we state otherwise in writing during the enquiry, displayed pricing is informational and may exclude applicable taxes, duties, shipping, insurance, or other charges. The final amount, currency, payment method, and payment timing will be confirmed before an order is accepted.
         </p>
       </section>
 
@@ -55,7 +52,7 @@ export default function Terms() {
       <section>
         <h2>6. Acceptable use</h2>
         <p>
-          You may use the website for lawful personal and commercial-information purposes. You must not interfere with the website, attempt unauthorized access, misuse any allocation channel, submit false or misleading information, or use VAILE content in a way that infringes our rights or the rights of others.
+          You may use the website for lawful personal and commercial-information purposes. You must not interfere with the website, attempt unauthorized access, misuse any enquiry channel, submit false or misleading information, or use VAILE content in a way that infringes our rights or the rights of others.
         </p>
       </section>
 
@@ -76,7 +73,7 @@ export default function Terms() {
       <section>
         <h2>9. Governing law and changes</h2>
         <p>
-          These terms are governed by the laws of <strong>[INSERT GOVERNING JURISDICTION]</strong>, subject to any mandatory protections available in your place of residence. We may update these terms when our services, allocation process, or legal obligations change. The effective date above identifies the current version.
+          These terms are governed by the laws of <strong>[INSERT GOVERNING JURISDICTION]</strong>, subject to any mandatory protections available in your place of residence. We may update these terms when our services, enquiry process, or legal obligations change. The effective date above identifies the current version.
         </p>
       </section>
     </LegalPage></>

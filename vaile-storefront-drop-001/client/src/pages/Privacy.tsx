@@ -1,16 +1,13 @@
-/**
- * Vaile Quarry Specimen privacy notice: documents the current website and WhatsApp
- * allocation flow while marking business-specific compliance information for completion.
- */
+/** VAILE privacy notice: documents the current website and WhatsApp enquiry flow. */
 import LegalPage from "./LegalPage";
 import PageMetadata from "@/components/PageMetadata";
 
 export default function Privacy() {
   return (
-    <><PageMetadata title="Privacy Policy — Vaile" description="How Vaile handles information connected to the DROP 001 website and private WhatsApp allocation process." /><LegalPage
+    <><PageMetadata title="Privacy Policy — Vaile" description="How VAILE handles information connected to the DROP 001 website and WhatsApp enquiries." /><LegalPage
       eyebrow="LEGAL RECORD / 02"
       title="Privacy Policy"
-      lead="This notice explains how VAILE handles information connected to the website and the private WhatsApp allocation process."
+      lead="This notice explains how VAILE handles information connected to the website and WhatsApp enquiries."
     >
       <p className="legal-page__effective">EFFECTIVE DATE: [INSERT EFFECTIVE DATE]</p>
 
@@ -24,21 +21,21 @@ export default function Privacy() {
       <section>
         <h2>2. Information we may collect</h2>
         <p>
-          Depending on how you use VAILE, we may process the information you provide in a private allocation conversation, such as your name, phone number, preferred waist, fit questions, delivery details, and correspondence. The storefront itself does not currently load third-party analytics. Hosting providers may still process limited technical information, such as IP address and browser request data, to deliver and secure the website under their own documented practices.
+          Depending on how you use VAILE, we may process the information you provide in a WhatsApp enquiry, such as your name, phone number, preferred waist, fit questions, delivery details, and correspondence. The storefront itself does not currently load third-party analytics. Hosting providers may still process limited technical information, such as IP address and browser request data, to deliver and secure the website under their own documented practices.
         </p>
       </section>
 
       <section>
         <h2>3. WhatsApp allocation conversations</h2>
         <p>
-          The site opens WhatsApp with an editable allocation message that includes your selected preferred waist. Once you choose to continue in WhatsApp, your use of that service is also governed by WhatsApp's own terms and privacy practices. VAILE uses information you provide in that conversation to respond to allocation requests, confirm availability, discuss sizing, administer accepted orders, and provide customer support.
+          The site opens WhatsApp with an editable enquiry message that includes your selected preferred waist. Once you choose to continue in WhatsApp, your use of that service is also governed by WhatsApp's own terms and privacy practices. VAILE uses information you provide in that conversation to respond to enquiries, confirm availability, discuss sizing, administer accepted orders, and provide customer support.
         </p>
       </section>
 
       <section>
         <h2>4. Why we use information</h2>
         <p>
-          We use information to operate and secure the website, respond to private allocation requests, communicate about an order or enquiry, meet legal or accounting obligations, prevent misuse, and understand how the storefront performs. The legal basis or equivalent justification for each use depends on the applicable law and may include taking steps requested by you before a contract, performing a contract, complying with legal obligations, pursuing legitimate interests, or your consent where required.
+          We use information to operate and secure the website, respond to enquiries, communicate about an order, meet legal or accounting obligations, prevent misuse, and understand how the storefront performs. The legal basis or equivalent justification for each use depends on the applicable law and may include taking steps requested by you before a contract, performing a contract, complying with legal obligations, pursuing legitimate interests, or your consent where required.
         </p>
       </section>
 

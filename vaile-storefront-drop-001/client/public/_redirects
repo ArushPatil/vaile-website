@@ -1,2 +1,5 @@
+/privacy /index.html 200
+/terms /index.html 200
+/404 /index.html 200
 /images/* /images/:splat 404
-/* /index.html 200
+/* /404.html 404

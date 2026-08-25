@@ -1376,46 +1376,54 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   }
 }
 
-/* CLOSING ALLOCATION RECOMPOSITION — KEEP THE REQUEST CONTROL IN THE DISPLAY FIELD AT WIDE SIZES. */
+/* CLOSING ALLOCATION RECOMPOSITION — CENTER THE DISPLAY FIELD AND SPAN THE REQUEST CONTROL ACROSS THE DESKTOP GRID. */
 @media (min-width: 1200px) {
   .chapter-shell .closing-allocation {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-template-rows: auto auto auto;
-    align-items: start;
-    row-gap: var(--space-3);
-    min-height: clamp(500px, 42vw, 620px);
-    padding-top: max(112px, 10vh);
-    padding-bottom: clamp(96px, 8vw, 136px);
+    align-items: center;
+    justify-items: stretch;
+    align-content: center;
+    row-gap: var(--space-2);
+    min-height: clamp(560px, 46vw, 680px);
+    padding-top: max(96px, 9vh);
+    padding-bottom: clamp(72px, 6vw, 112px);
   }
   .chapter-shell .closing-allocation p {
-    grid-column: 1 / span 6;
+    grid-column: 1 / -1;
     grid-row: 1;
-    align-self: end;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
   }
   .chapter-shell .closing-allocation h2 {
-    grid-column: 1 / span 9;
+    grid-column: 1 / -1;
     grid-row: 2;
-    max-width: 11ch;
-    font-size: clamp(4.5rem, 5.9vw, 6.75rem);
+    max-width: none;
+    font-size: clamp(4.9rem, 6.5vw, 6.8rem);
     line-height: .82;
     letter-spacing: -.06em;
+    text-align: center;
+    white-space: nowrap;
   }
   .chapter-shell .closing-allocation > div {
-    grid-column: 1 / span 5;
+    grid-column: 1 / -1;
     grid-row: 3;
     width: 100%;
-    max-width: 520px;
-    margin-top: var(--space-3);
+    max-width: none;
+    margin-top: var(--space-2);
   }
   .chapter-shell .closing-allocation > div > span {
-    margin-bottom: var(--space-3);
+    display: block;
+    margin-bottom: var(--space-2);
     color: var(--ink);
     font-size: 14px;
     line-height: 20px;
+    text-align: center;
   }
   .chapter-shell .closing-allocation .allocation-record {
-    min-height: 92px;
-    padding: 18px 22px;
+    min-height: 80px;
+    padding: 16px 22px;
     border-width: 2px;
   }
   .chapter-shell .closing-allocation .allocation-record span {

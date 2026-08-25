@@ -2,6 +2,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Copy, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import type { TouchEvent as ReactTouchEvent } from "react";
 import { Link } from "wouter";
 import { toast } from "sonner";
 
@@ -24,6 +25,12 @@ const shots = [
 
 const sizes = ["30", "32", "34", "36", "38"];
 
+function getWhatsAppEnquiryUrl(phoneNumber: string, itemTitle: string, size: string) {
+  const cleanPhone = phoneNumber.replace(/[^0-9]/g, "");
+  const enquiry = `Hello VAILE,\n\nI would like to enquire about:\n• Item: ${itemTitle}\n• Size: ${size}\n\nPlease share availability and allocation details.`;
+  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(enquiry)}`;
+}
+
 export default function HomeChapters() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState("32");
@@ -33,7 +40,9 @@ export default function HomeChapters() {
   const activeGalleryRef = useRef(0);
   const galleryTransitionRef = useRef(false);
   const galleryRequestRef = useRef(0);
-  const galleryReleaseTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(null);
+  const galleryReleaseTimerRef = useRef<number | null>(null);
+  const galleryTouchStartRef = useRef<{ x: number; y: number } | null>(null);
+  const copyTimerRef = useRef<number | null>(null);
   const [copied, setCopied] = useState(false);
   const [unit, setUnit] = useState<"IN" | "CM">("IN");
   const [loading, setLoading] = useState(() => {
@@ -54,8 +63,8 @@ export default function HomeChapters() {
   };
 
   const reducedMotion = useReducedMotion();
-  const message = `VAILE — DROP 001\n\nI would like to enquire about this style.\nPreferred waist: ${size}\nPrice: ₹6,200 INR / $100 USD\n\nPlease share availability and next steps.`;
-  const href = `https://wa.me/918951066881?text=${encodeURIComponent(message)}`;
+  const message = `Hello VAILE,\n\nI would like to enquire about:\n• Item: VAILE — DROP 001\n• Size: ${size}\n\nPlease share availability and allocation details.`;
+  const href = getWhatsAppEnquiryUrl("918951066881", "VAILE — DROP 001", size);
   const shot = shots[active];
   const fmt = (value: number) => unit === "CM" ? (value * 2.54).toFixed(1) : Number.isInteger(value) ? value.toString() : value.toString();
   const gallerySource = (index: number) => {
@@ -106,6 +115,29 @@ export default function HomeChapters() {
 
   const moveGallery = (direction: 1 | -1) => selectGallery((activeGalleryRef.current + direction + shots.length) % shots.length);
 
+  const beginGallerySwipe = (event: ReactTouchEvent<HTMLDivElement>) => {
+    if (showGalleryInfo || event.touches.length !== 1 || (event.target as HTMLElement).closest("button, a, input, select, textarea")) {
+      galleryTouchStartRef.current = null;
+      return;
+    }
+    const touch = event.touches[0];
+    galleryTouchStartRef.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const completeGallerySwipe = (event: ReactTouchEvent<HTMLDivElement>) => {
+    const start = galleryTouchStartRef.current;
+    galleryTouchStartRef.current = null;
+    if (!start || showGalleryInfo || galleryTransitionRef.current || event.changedTouches.length !== 1) return;
+
+    const end = event.changedTouches[0];
+    const deltaX = end.clientX - start.x;
+    const deltaY = end.clientY - start.y;
+    const isDeliberateHorizontalSwipe = Math.abs(deltaX) >= 56 && Math.abs(deltaX) > Math.abs(deltaY) * 1.35;
+    if (!isDeliberateHorizontalSwipe) return;
+
+    moveGallery(deltaX < 0 ? 1 : -1);
+  };
+
   useEffect(() => {
     if (!loading) return;
     const timer = window.setTimeout(() => {
@@ -120,10 +152,25 @@ export default function HomeChapters() {
   }, [loading, reducedMotion]);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    const previousBodyOverflow = document.body.style.overflow;
+    const previousDocumentOverflow = document.documentElement.style.overflow;
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    }
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousBodyOverflow;
+      document.documentElement.style.overflow = previousDocumentOverflow;
     };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
   }, [menuOpen]);
 
   useEffect(() => {
@@ -134,14 +181,28 @@ export default function HomeChapters() {
 
   useEffect(() => () => {
     if (galleryReleaseTimerRef.current) window.clearTimeout(galleryReleaseTimerRef.current);
+    if (copyTimerRef.current) window.clearTimeout(copyTimerRef.current);
   }, []);
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(message);
-      toast.success("Enquiry message copied.");
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(message);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = message;
+        textArea.setAttribute("readonly", "");
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      }
       setCopied(true);
-      window.setTimeout(() => setCopied(false), 1600);
+      toast.success("Enquiry copied to clipboard.");
+      if (copyTimerRef.current) window.clearTimeout(copyTimerRef.current);
+      copyTimerRef.current = window.setTimeout(() => setCopied(false), 2500);
     } catch {
       toast.error("Copying was blocked. Use the WhatsApp link instead.");
     }
@@ -160,7 +221,7 @@ export default function HomeChapters() {
 
       <main id="main" className={loading ? "manual-shell is-loading chapter-shell" : "manual-shell chapter-shell"}>
         <header className="manual-header">
-          <button type="button" className="header-menu" onClick={() => setMenuOpen(true)} aria-label="Open navigation">
+          <button type="button" className="header-menu" onClick={() => setMenuOpen(true)} aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
             <Menu size={18} />
           </button>
           <a className="manual-brand" href="#top" aria-label="VAILE home">
@@ -175,7 +236,7 @@ export default function HomeChapters() {
 
         <AnimatePresence>
           {menuOpen && (
-            <motion.nav className="manual-menu" initial={{ clipPath: "inset(0 0 100% 0)" }} animate={{ clipPath: "inset(0 0 0% 0)" }} exit={{ clipPath: "inset(0 0 100% 0)" }} transition={{ duration: 0.36 }}>
+            <motion.nav id="mobile-menu" className="manual-menu" role="dialog" aria-modal="true" aria-label="Site navigation" initial={{ clipPath: "inset(0 0 100% 0)" }} animate={{ clipPath: "inset(0 0 0% 0)" }} exit={{ clipPath: "inset(0 0 100% 0)" }} transition={{ duration: 0.36 }}>
               <div>
                 <button type="button" onClick={() => setMenuOpen(false)} aria-label="Close navigation"><X size={25} /></button>
                 <p>VAILE · DROP 001</p>
@@ -191,7 +252,7 @@ export default function HomeChapters() {
         <section className="manual-hero" id="top">
           <picture>
             <source media="(max-width: 640px)" srcSet={assets.hero.mobile} type="image/webp" />
-            <img src={assets.hero.desktop} alt="Black duck canvas trousers worn outdoors" width="1920" height="1280" sizes="100vw" fetchPriority="high" decoding="async" />
+            <img src={assets.hero.desktop} alt="Black duck canvas trousers worn outdoors" width="1920" height="1280" sizes="100vw" loading="eager" fetchPriority="high" decoding="async" />
           </picture>
           <div className="hero-copy">
             <p>DROP 001</p>
@@ -207,7 +268,7 @@ export default function HomeChapters() {
               <header className="allocation-head">
                 <span>01</span>
                 <h2>One run. Fifty pairs.</h2>
-                <p>Choose your waist to start a private WhatsApp enquiry. We’ll confirm current availability and next steps.</p>
+                <p>Choose your size to start a private WhatsApp enquiry. We’ll confirm current availability and next steps.</p>
               </header>
               <dl className="allocation-facts">
                 <div><dt>FABRIC</dt><dd>12 oz duck-canvas trousers</dd></div>
@@ -218,14 +279,14 @@ export default function HomeChapters() {
             <aside className="allocation-card">
               <p className="card-price-eyebrow">PRICE</p>
               <div className="card-price-row"><strong>₹6,200 <small>INR</small></strong><span>$100 USD</span></div>
-              <p className="card-size-label">CHOOSE YOUR WAIST</p>
-              <div className="size-grid" role="radiogroup" aria-label="Preferred waist size">
-                {sizes.map((item) => <button type="button" key={item} className={size === item ? "is-selected" : ""} onClick={() => setSize(item)} role="radio" aria-checked={size === item} aria-label={`Waist size ${item}`}>{item}</button>)}
+              <p className="card-size-label">CHOOSE YOUR SIZE</p>
+              <div className="size-grid" role="radiogroup" aria-label="Preferred size">
+                {sizes.map((item) => <button type="button" key={item} className={size === item ? "is-selected" : ""} onClick={() => setSize(item)} role="radio" aria-checked={size === item} aria-label={`Size ${item}`}>{item}</button>)}
               </div>
               <a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab">
-                <span>WAIST {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={17} />
+                <span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={17} />
               </a>
-              <button type="button" className="copy-note" onClick={copy}>{copied ? <Check size={14} /> : <Copy size={14} />}{copied ? "COPIED" : "COPY ENQUIRY"}</button>
+              <button type="button" className="copy-note" onClick={copy} aria-live="polite">{copied ? <Check size={14} /> : <Copy size={14} />}{copied ? "COPIED TO CLIPBOARD ✓" : "COPY ENQUIRY"}</button>
             </aside>
           </div>
         </section>
@@ -236,11 +297,14 @@ export default function HomeChapters() {
               <div><span><b>02</b><i> — FIELD EVIDENCE / SIX VIEWS</i></span><h2>Lookbook <em>/ 001</em></h2></div>
               <b className="gallery-figure-count">FIGURE {shot.id} / 0{shots.length}</b>
             </header>
-            <div className="gallery-stage">
-              <div className="gallery-figure-wrap" aria-busy={galleryTransitioning}>
+            <div className="gallery-stage" tabIndex={0} onKeyDown={(event) => {
+              if (event.key === "ArrowLeft") { event.preventDefault(); moveGallery(-1); }
+              if (event.key === "ArrowRight") { event.preventDefault(); moveGallery(1); }
+            }} aria-label="Lookbook carousel. On mobile, swipe left or right to change images. Use left and right arrow keys when using a keyboard.">
+              <div id="lookbook-panel" className="gallery-figure-wrap" aria-busy={galleryTransitioning} onTouchStart={beginGallerySwipe} onTouchEnd={completeGallerySwipe} onTouchCancel={() => { galleryTouchStartRef.current = null; }}>
                 <AnimatePresence initial={false}>
                   <motion.figure key={`image-${shot.id}`} className={showGalleryInfo ? "is-hidden" : ""} initial={{ opacity: 0 }} animate={{ opacity: showGalleryInfo ? 0 : 1 }} exit={{ opacity: 0 }} transition={{ duration: reducedMotion ? 0 : 0.2 }}>
-                    <picture><source media="(max-width: 640px)" srcSet={shot.mobile} type="image/webp" /><img src={shot.desktop} alt={shot.alt} width="1200" height="1800" sizes="(max-width: 767px) 100vw, (max-width: 1199px) 58vw, 560px" loading="lazy" decoding="async" /></picture>
+                    <picture><source media="(max-width: 640px)" srcSet={shot.mobile} type="image/webp" /><img src={shot.desktop} alt={shot.alt} width="1200" height="1800" sizes="(max-width: 767px) 100vw, (max-width: 1199px) 58vw, 560px" loading={active === 0 ? "eager" : "lazy"} decoding="async" /></picture>
                     <figcaption>FRAME {shot.id} / DROP 001</figcaption>
                   </motion.figure>
                 </AnimatePresence>
@@ -254,10 +318,7 @@ export default function HomeChapters() {
                   )}
                 </AnimatePresence>
                 {!showGalleryInfo && <button type="button" className="gallery-info-toggle" onClick={() => setShowGalleryInfo(true)} aria-label={`Show details for ${shot.title}`} aria-expanded="false"><span aria-hidden="true">i</span><b>DETAILS</b></button>}
-                <div className={`gallery-mobile-nav${showGalleryInfo ? " is-concealed" : ""}`}>
-                  <button type="button" onClick={() => moveGallery(-1)} aria-label="Previous lookbook view"><ChevronLeft size={16} /></button>
-                  <button type="button" onClick={() => moveGallery(1)} aria-label="Next lookbook view"><ChevronRight size={16} /></button>
-                </div>
+                <span className={`gallery-swipe-hint${showGalleryInfo ? " is-concealed" : ""}`} aria-hidden="true">SWIPE ← →</span>
               </div>
               <aside className="gallery-dossier" aria-live="polite">
                 <div><span>{shot.proof} / {shot.id}</span><h3>{shot.title}</h3><p>{shot.insight}</p></div>
@@ -268,8 +329,8 @@ export default function HomeChapters() {
                 </div>
               </aside>
             </div>
-            <div className="gallery-pills">
-              {shots.map((item, index) => <button type="button" key={item.id} className={active === index ? "is-active" : ""} onClick={() => selectGallery(index)} aria-label={`View look ${item.id}: ${item.title}`}><span>{item.id}</span><small>{item.proof}</small></button>)}
+            <div className="gallery-pills" role="tablist" aria-label="Lookbook views">
+              {shots.map((item, index) => <button type="button" key={item.id} className={active === index ? "is-active" : ""} onClick={() => selectGallery(index)} role="tab" aria-selected={active === index} aria-controls="lookbook-panel" aria-label={`View look ${item.id}: ${item.title}`}><span>{item.id}</span><small>{item.proof}</small></button>)}
             </div>
           </div>
         </section>
@@ -278,9 +339,9 @@ export default function HomeChapters() {
           <div className="sizing-layout">
             <header className="sizing-copy">
               <span>03</span><h2>Engineered dimensions.</h2><p>Measured flat. Compare these against a pair you already own for the best reference.</p>
-              <div className="sizing-controls" role="group" aria-label="Measurement units">
-                <button type="button" className={unit === "IN" ? "is-active" : ""} onClick={() => setUnit("IN")} aria-pressed={unit === "IN"}>INCHES</button>
-                <button type="button" className={unit === "CM" ? "is-active" : ""} onClick={() => setUnit("CM")} aria-pressed={unit === "CM"}>CENTIMETRES</button>
+              <div className="sizing-controls" role="tablist" aria-label="Measurement units">
+                <button type="button" role="tab" className={unit === "IN" ? "is-active" : ""} onClick={() => setUnit("IN")} aria-selected={unit === "IN"}>INCHES</button>
+                <button type="button" role="tab" className={unit === "CM" ? "is-active" : ""} onClick={() => setUnit("CM")} aria-selected={unit === "CM"}>CENTIMETRES</button>
               </div>
               <p className="sizing-unit-note sizing-unit-note--desktop">ALL MEASUREMENTS IN {unit === "IN" ? "INCHES" : "CENTIMETRES"}. TOLERANCE ± {unit === "IN" ? "0.5" : "1.3"}.</p>
             </header>
@@ -307,7 +368,7 @@ export default function HomeChapters() {
 
         <section className="closing-allocation">
           <p>DROP 001</p><h2>Choose a size.<br />Request an allocation.</h2>
-          <div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab"><span>WAIST {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={19} /></a></div>
+          <div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab"><span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={19} /></a></div>
         </section>
 
         <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12 oz duck canvas</span></div></footer>

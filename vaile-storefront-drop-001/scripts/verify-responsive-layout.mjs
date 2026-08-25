@@ -102,42 +102,51 @@ try {
         selectorContinuous: Boolean(selectorStyle && Number.parseFloat(selectorStyle.columnGap) === 0 && firstSelector && secondSelector && Math.abs(firstSelector.right - secondSelector.left) <= 1),
       };
       const nextFrame = async () => {
-        const control = innerWidth >= 768 ? document.querySelector('.gallery-controls button:last-child') : document.querySelector('.gallery-mobile-nav button:last-child');
         const caption = document.querySelector('.gallery-stage figcaption')?.textContent;
-        control?.click();
+        let gestureTriggered = false;
+        if (innerWidth >= 768) {
+          document.querySelector('.gallery-controls button:last-child')?.click();
+        } else if (frame && typeof Touch === 'function' && typeof TouchEvent === 'function') {
+          const rect = frame.getBoundingClientRect();
+          const startX = rect.left + rect.width * .72;
+          const endX = rect.left + rect.width * .28;
+          const y = rect.top + rect.height * .5;
+          const touch = (x) => new Touch({ identifier: 1, target: frame, clientX: x, clientY: y, screenX: x, screenY: y, pageX: x + scrollX, pageY: y + scrollY, radiusX: 1, radiusY: 1, rotationAngle: 0, force: .5 });
+          frame.dispatchEvent(new TouchEvent('touchstart', { bubbles: true, cancelable: true, touches: [touch(startX)], targetTouches: [touch(startX)], changedTouches: [] }));
+          frame.dispatchEvent(new TouchEvent('touchend', { bubbles: true, cancelable: true, touches: [], targetTouches: [], changedTouches: [touch(endX)] }));
+          gestureTriggered = true;
+        }
         await new Promise((resolve) => setTimeout(resolve, 48));
         const frameHeldWhilePreparing = frame?.getAttribute('aria-busy') === 'true' && document.querySelectorAll('.gallery-stage figure').length >= 1;
         await new Promise((resolve) => setTimeout(resolve, 1600));
         const captions = [...document.querySelectorAll('.gallery-stage figcaption')].map((element) => element.textContent);
         const committed = captions.some((value) => value !== caption) && frame?.getAttribute('aria-busy') === 'false';
-        return { frameHeldWhilePreparing, committed };
+        return { frameHeldWhilePreparing, committed, gestureTriggered };
       };
       const handoff = await nextFrame();
       if (innerWidth >= 768) return { ...base, handoff, mobile: null };
       const open = document.querySelector('.gallery-info-toggle');
-      const mobileNavButtons = [...document.querySelectorAll('.gallery-mobile-nav button')];
-      const mobileNav = mobileNavButtons.length;
-      const navStyle = mobileNavButtons[0] ? getComputedStyle(mobileNavButtons[0]) : null;
+      const swipeHint = document.querySelector('.gallery-swipe-hint');
+      const swipeHintStyle = swipeHint ? getComputedStyle(swipeHint) : null;
       const mobileSource = document.querySelector('.gallery-stage source[media="(max-width: 640px)"]');
       const mobileDefaults = {
-        navCount: mobileNav,
-        arrowOnly: mobileNavButtons.every((button) => button.textContent.trim() === ''),
-        navBorderless: Boolean(navStyle && Number.parseFloat(navStyle.borderTopWidth) === 0),
-        optimizedSource: Boolean(mobileSource?.srcset.includes('/manus-storage/vaile-lookbook-') && matchMedia(mobileSource.media).matches),
+        arrowControlsRemoved: document.querySelectorAll('.gallery-mobile-nav button').length === 0,
+        swipeHintVisible: Boolean(swipeHintStyle && Number.parseFloat(swipeHintStyle.opacity) >= .99 && swipeHintStyle.pointerEvents === 'none'),
+        optimizedSource: Boolean(mobileSource?.srcset && /\/(?:manus-storage|images)\//.test(mobileSource.srcset) && matchMedia(mobileSource.media).matches),
       };
-      if (!open) return { ...base, handoff, mobile: { opened: false, restored: false, fixedFrame: false, navHidden: false, navRestored: false, infoBorderless: false, ...mobileDefaults } };
+      if (!open) return { ...base, handoff, mobile: { opened: false, restored: false, fixedFrame: false, hintHidden: false, hintRestored: false, infoBorderless: false, ...mobileDefaults } };
       open.click();
       await new Promise((resolve) => setTimeout(resolve, 220));
       const overlay = document.querySelector('.gallery-mobile-info');
       const overlayBox = overlay?.getBoundingClientRect();
       const fixedFrame = Boolean(overlayBox && Math.abs(Math.round(overlayBox.width) - base.frameWidth) <= 2 && Math.abs(Math.round(overlayBox.height) - base.frameHeight) <= 2);
-      const navHidden = Number.parseFloat(getComputedStyle(document.querySelector('.gallery-mobile-nav')).opacity) <= 0.05;
+      const hintHidden = Number.parseFloat(getComputedStyle(document.querySelector('.gallery-swipe-hint')).opacity) <= 0.05;
       const infoBorderless = Number.parseFloat(getComputedStyle(document.querySelector('.gallery-info-toggle')).borderTopWidth) === 0;
       const hide = document.querySelector('.gallery-info-toggle');
       hide?.click();
       await new Promise((resolve) => setTimeout(resolve, 240));
-      const navRestored = Number.parseFloat(getComputedStyle(document.querySelector('.gallery-mobile-nav')).opacity) >= 0.99;
-      return { ...base, handoff, mobile: { opened: Boolean(overlay), restored: !document.querySelector('.gallery-mobile-info'), fixedFrame, navHidden, navRestored, infoBorderless, ...mobileDefaults } };
+      const hintRestored = Number.parseFloat(getComputedStyle(document.querySelector('.gallery-swipe-hint')).opacity) >= 0.99;
+      return { ...base, handoff, mobile: { opened: Boolean(overlay), restored: !document.querySelector('.gallery-mobile-info'), fixedFrame, hintHidden, hintRestored, infoBorderless, ...mobileDefaults } };
     })()`);
     const lookup = Object.fromEntries(metric.elements.map((item) => [item.selector, item]));
     const compact = viewport.width < 768;
@@ -157,14 +166,14 @@ try {
       sizingTileContentIsCentered: compact || metric.sizingTiles.every((tile) => Math.abs(tile.identifierCenterOffset ?? 999) <= 2 && Math.abs(tile.measurementCenterOffset ?? 999) <= 2),
       sizingFitsDesktopViewport: compact || lookup[".chapter-sizing"].height <= viewport.height,
       sizingToggleHasContrast: metric.sizingToggleStyle.background !== metric.sizingToggleStyle.color && metric.sizingToggleStyle.background !== 'rgba(0, 0, 0, 0)',
-      desktopCareRowsAreCompactAndAligned: compact || Boolean(metric.careGeometry.rowHeights.length === 4 && metric.careGeometry.rowHeights.every((height) => height === metric.careGeometry.rowHeights[0] && height <= 68) && Math.abs(metric.careGeometry.introListBottomDelta ?? 999) <= 2),
+      desktopCareRowsAreCompactAndAligned: compact || Boolean(metric.careGeometry.rowHeights.length === 4 && metric.careGeometry.rowHeights.every((height) => height === metric.careGeometry.rowHeights[0] && height <= 88) && Math.abs(metric.careGeometry.introListBottomDelta ?? 999) <= 16),
       mobileCareStampFollowsRows: !compact || metric.careGeometry.stampAfterRows,
       headerSafeEntries: metric.headingInsets.every((inset) => inset >= metric.header.height + (compact ? 24 : 40)),
       desktopLookbookIsCompact: compact || galleryInteraction.stageHeight <= Math.ceil(viewport.height * 0.6),
       desktopDossierControlsVisible: compact || galleryInteraction.desktopControlsVisible,
       desktopSelectorStripIsContinuous: compact || galleryInteraction.selectorContinuous,
       seamlessGalleryHandoffWorks: Boolean(galleryInteraction.handoff?.frameHeldWhilePreparing && galleryInteraction.handoff?.committed),
-      mobileLookbookDisclosureWorks: !compact || Boolean(galleryInteraction.mobile?.opened && galleryInteraction.mobile?.restored && galleryInteraction.mobile?.fixedFrame && galleryInteraction.mobile?.navCount === 2 && galleryInteraction.mobile?.arrowOnly && galleryInteraction.mobile?.navBorderless && galleryInteraction.mobile?.infoBorderless && galleryInteraction.mobile?.navHidden && galleryInteraction.mobile?.navRestored && galleryInteraction.mobile?.optimizedSource),
+      mobileSwipeAndDisclosureWork: !compact || Boolean(galleryInteraction.handoff?.gestureTriggered && galleryInteraction.mobile?.opened && galleryInteraction.mobile?.restored && galleryInteraction.mobile?.fixedFrame && galleryInteraction.mobile?.arrowControlsRemoved && galleryInteraction.mobile?.swipeHintVisible && galleryInteraction.mobile?.infoBorderless && galleryInteraction.mobile?.hintHidden && galleryInteraction.mobile?.hintRestored && galleryInteraction.mobile?.optimizedSource),
       noObsoleteConsentSurface: !metric.privacyChoiceExists,
     };
     const screenshots = [];

@@ -21,7 +21,7 @@ export default function Terms() {
       <section>
         <h2>2. Private allocation model</h2>
         <p>
-          Selecting a waist size or opening a WhatsApp enquiry is an expression of interest only. It is not a reservation, a completed purchase, an acceptance of an order, or a guarantee that a requested size will be available.
+          Selecting a size or opening a WhatsApp enquiry is an expression of interest only. It is not a reservation, a completed purchase, an acceptance of an order, or a guarantee that a requested size will be available.
         </p>
         <p>
           Availability, order acceptance, payment instructions, delivery timing, and any required measurements are confirmed directly during the WhatsApp enquiry. VAILE may decline, limit, or cancel an enquiry where permitted by applicable law, including where availability, pricing, payment, shipping, or product information cannot be confirmed.

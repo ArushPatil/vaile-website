@@ -1141,8 +1141,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 .chapter-shell .gallery-pills { column-gap: 0; background: var(--stock); }
 .chapter-shell .gallery-pills button { border: 0 !important; }
 .chapter-shell .gallery-controls button:disabled,
-.chapter-shell .gallery-pills button:disabled,
-.chapter-shell .gallery-mobile-nav button:disabled { cursor: wait; pointer-events: none; }
+.chapter-shell .gallery-pills button:disabled { cursor: wait; pointer-events: none; }
 
 /* ENGINEERED DIMENSIONS — LIGHT ALLOCATION FIELD, MARKER-ABOVE HEADING, AND ONE CONSISTENT SIZE-TILE SYSTEM. */
 .chapter-shell .chapter-sizing { padding-top: var(--safe-start); padding-bottom: var(--space-12); background: var(--pale); }
@@ -1245,7 +1244,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .gallery-header h2 { font-size: clamp(2rem, 10.5vw, 3.25rem); line-height: .9; }
   .chapter-shell .gallery-figure-count { align-self: end; font-size: 9px; line-height: 14px; }
   .chapter-shell .gallery-stage { display: grid; grid-template-columns: 1fr; height: auto; border: 0; background: transparent; overflow: visible; }
-  .chapter-shell .gallery-figure-wrap { width: 100%; height: auto; aspect-ratio: 2 / 3; border: 1px solid var(--ink); background: var(--lichen-2); }
+  .chapter-shell .gallery-figure-wrap { width: 100%; height: auto; aspect-ratio: 2 / 3; border: 1px solid var(--ink); background: var(--lichen-2); touch-action: pan-y; user-select: none; }
   .chapter-shell .gallery-stage figure figcaption { display: none; }
   .chapter-shell .gallery-stage figure img { object-fit: cover; object-position: 50% 42%; }
   .chapter-shell .gallery-dossier,
@@ -1253,10 +1252,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .gallery-info-toggle { position: absolute; z-index: 4; top: 10px; right: 10px; display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 5px 8px; border: 0; color: var(--stock); background: rgba(12, 16, 13, .48); font: 600 8px/1 "DM Mono", monospace; letter-spacing: .08em; cursor: pointer; }
   .chapter-shell .gallery-info-toggle > span { display: inline-grid; place-items: center; width: 15px; height: 15px; border: 1px solid currentColor; border-radius: 50%; font: 700 10px/1 Arial, sans-serif; }
   .chapter-shell .gallery-info-toggle b { font: inherit; }
-  .chapter-shell .gallery-mobile-nav { position: absolute; z-index: 5; right: 10px; bottom: 10px; left: 10px; display: flex; align-items: center; justify-content: space-between; gap: 10px; pointer-events: none; opacity: 1; transform: translateY(0); transition: opacity 160ms var(--ease), transform 160ms var(--ease); }
-  .chapter-shell .gallery-mobile-nav.is-concealed { opacity: 0; transform: translateY(5px); }
-  .chapter-shell .gallery-mobile-nav button { pointer-events: auto; display: inline-flex; align-items: center; justify-content: center; min-width: 40px; min-height: 40px; padding: 8px; border: 0; color: var(--stock); background: rgba(0, 0, 0, .42); cursor: pointer; }
-  .chapter-shell .gallery-mobile-nav.is-concealed button { pointer-events: none; }
+  .chapter-shell .gallery-swipe-hint { position: absolute; z-index: 4; right: 50%; bottom: 10px; display: inline-flex; align-items: center; min-height: 24px; padding: 4px 7px; color: var(--stock); background: rgba(12, 16, 13, .48); font: 600 8px/1 "DM Mono", monospace; letter-spacing: .1em; pointer-events: none; transform: translateX(50%); opacity: 1; transition: opacity 160ms var(--ease), transform 160ms var(--ease); }
+  .chapter-shell .gallery-swipe-hint.is-concealed { opacity: 0; transform: translate(50%, 5px); }
   .chapter-shell .gallery-mobile-info { position: absolute; z-index: 3; inset: 0; display: grid; grid-template-rows: 1fr auto; align-content: space-between; gap: var(--space-3); padding: var(--space-3); color: var(--stock); background: var(--lichen-2); }
   .chapter-shell .gallery-mobile-info__copy { align-self: center; display: grid; gap: 10px; padding-right: 8px; }
   .chapter-shell .gallery-mobile-info__copy > span { color: rgba(247, 245, 239, .72); font: 600 9px/14px "DM Mono", monospace; letter-spacing: .1em; }
@@ -1472,7 +1469,30 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 
 @media (max-width: 767px) {
   .chapter-shell .gallery-info-toggle { min-height: 44px; padding: 8px 10px; font-size: 11px; }
-  .chapter-shell .gallery-mobile-nav button { min-width: 44px; min-height: 44px; }
   .chapter-shell .gallery-mobile-info__copy > span,
   .chapter-shell .gallery-mobile-info dt { font-size: 11px; line-height: 16px; }
+}
+
+/* Mobile polish: preserve the approved industrial grid while reserving safe-area space and 48px touch targets. */
+@media (max-width: 767px) {
+  .chapter-shell .manual-header {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+
+  .chapter-shell .manual-menu {
+    padding-top: max(28px, calc(20px + env(safe-area-inset-top)));
+    padding-bottom: max(28px, calc(20px + env(safe-area-inset-bottom)));
+  }
+
+  .chapter-shell .header-menu,
+  .chapter-shell .header-action,
+  .chapter-shell .size-grid button,
+  .chapter-shell .sizing-controls button,
+  .chapter-shell .gallery-pills button,
+  .chapter-shell .copy-note {
+    min-width: 48px;
+    min-height: 48px;
+  }
 }

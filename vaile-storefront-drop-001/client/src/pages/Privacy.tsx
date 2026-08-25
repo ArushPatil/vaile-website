@@ -21,14 +21,14 @@ export default function Privacy() {
       <section>
         <h2>2. Information we may collect</h2>
         <p>
-          Depending on how you use VAILE, we may process the information you provide in a WhatsApp enquiry, such as your name, phone number, preferred waist, fit questions, delivery details, and correspondence. The storefront itself does not currently load third-party analytics. Hosting providers may still process limited technical information, such as IP address and browser request data, to deliver and secure the website under their own documented practices.
+          Depending on how you use VAILE, we may process the information you provide in a WhatsApp enquiry, such as your name, phone number, preferred size, fit questions, delivery details, and correspondence. The storefront itself does not currently load third-party analytics. Hosting providers may still process limited technical information, such as IP address and browser request data, to deliver and secure the website under their own documented practices.
         </p>
       </section>
 
       <section>
         <h2>3. WhatsApp allocation conversations</h2>
         <p>
-          The site opens WhatsApp with an editable enquiry message that includes your selected preferred waist. Once you choose to continue in WhatsApp, your use of that service is also governed by WhatsApp's own terms and privacy practices. VAILE uses information you provide in that conversation to respond to enquiries, confirm availability, discuss sizing, administer accepted orders, and provide customer support.
+          The site opens WhatsApp with an editable enquiry message that includes your selected preferred size. Once you choose to continue in WhatsApp, your use of that service is also governed by WhatsApp's own terms and privacy practices. VAILE uses information you provide in that conversation to respond to enquiries, confirm availability, discuss sizing, administer accepted orders, and provide customer support.
         </p>
       </section>
 

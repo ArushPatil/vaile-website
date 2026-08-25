@@ -1,5 +1,6 @@
 /* Field Manual direction: pure high-end luxury editorial, prominent pricing, uncropped model specimen gallery, and frictionless natural scrolling. */
 /* VAILE Field Manual: a lichen-and-stock editorial storefront governed by shared Swiss-grid anchors, evidence-led imagery, and frictionless normal scrolling. */
+/* Desktop care-section refinement: preserve a measured 12-column Swiss field with an intentional blank row between the material stamp and instruction ledger. */
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -1312,4 +1313,118 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .allocation-copy { grid-column: 1 / 8; }
   .chapter-shell .allocation-card { grid-column: 9 / -1; }
   .chapter-shell .chapter-allocation .allocation-card { max-width: 464px; justify-self: end; }
+}
+
+/* CARE RECOMPOSITION — EXPANDED DESKTOP FIELD WITH MEASURED NEGATIVE SPACE. */
+@media (min-width: 1200px) {
+  .chapter-shell .chapter-care {
+    padding-top: max(116px, 11vh) !important;
+    padding-bottom: clamp(112px, 9vw, 156px) !important;
+  }
+  .chapter-shell .care-layout {
+    grid-template-rows: 108px minmax(88px, 1fr) repeat(4, 84px);
+    min-height: clamp(580px, 38vw, 640px);
+    width: min(100%, 1248px);
+  }
+  .chapter-shell .care-copy {
+    grid-column: 1 / span 5;
+    grid-row: 1 / -1;
+    padding-bottom: 4px;
+  }
+  .chapter-shell .care-header {
+    gap: var(--space-3);
+  }
+  .chapter-shell .care-header h2 {
+    max-width: 8.8ch;
+    font-size: clamp(3.5rem, 5vw, 5.6rem);
+    line-height: .84;
+  }
+  .chapter-shell .care-header p {
+    max-width: 37ch;
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .chapter-shell .care-layout .care-copy .care-intro {
+    max-width: 31ch;
+    margin-top: auto !important;
+    font-size: 17px;
+    line-height: 28px;
+  }
+  .chapter-shell .care-layout .care-stamp {
+    grid-column: 8 / -1;
+    grid-row: 1;
+    grid-template-columns: minmax(164px, .72fr) minmax(0, 1.28fr);
+    min-height: 108px;
+    padding: 20px;
+  }
+  .chapter-shell .care-layout .care-stamp b {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .chapter-shell .care-layout ul {
+    grid-column: 8 / -1;
+    grid-row: 3 / -1;
+    grid-template-rows: repeat(4, 84px);
+  }
+  .chapter-shell .care-layout li {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+  .chapter-shell .care-layout li span {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/* CLOSING ALLOCATION RECOMPOSITION — KEEP THE REQUEST CONTROL IN THE DISPLAY FIELD AT WIDE SIZES. */
+@media (min-width: 1200px) {
+  .chapter-shell .closing-allocation {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    align-items: start;
+    row-gap: var(--space-3);
+    min-height: clamp(500px, 42vw, 620px);
+    padding-top: max(112px, 10vh);
+    padding-bottom: clamp(96px, 8vw, 136px);
+  }
+  .chapter-shell .closing-allocation p {
+    grid-column: 1 / span 6;
+    grid-row: 1;
+    align-self: end;
+  }
+  .chapter-shell .closing-allocation h2 {
+    grid-column: 1 / span 9;
+    grid-row: 2;
+    max-width: 11ch;
+    font-size: clamp(4.5rem, 5.9vw, 6.75rem);
+    line-height: .82;
+    letter-spacing: -.06em;
+  }
+  .chapter-shell .closing-allocation > div {
+    grid-column: 1 / span 5;
+    grid-row: 3;
+    width: 100%;
+    max-width: 520px;
+    margin-top: var(--space-3);
+  }
+  .chapter-shell .closing-allocation > div > span {
+    margin-bottom: var(--space-3);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .chapter-shell .closing-allocation .allocation-record {
+    min-height: 92px;
+    padding: 18px 22px;
+    border-width: 2px;
+  }
+  .chapter-shell .closing-allocation .allocation-record span {
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .chapter-shell .closing-allocation .allocation-record b {
+    font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+    line-height: 22px;
+    letter-spacing: .01em;
+  }
 }

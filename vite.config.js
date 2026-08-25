@@ -18,8 +18,9 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    port: 5173,
+    port: 3000,
     open: false,
     host: true,
+    allowedHosts: ['3000-iw6u698cmxgr70hcyj66z-43493a91.sg1.manus.computer'],
   },
 });

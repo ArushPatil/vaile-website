@@ -1,3 +1,4 @@
+/* VAILE Field Dossier shell: restrained editorial navigation with only the primary product, studio, and technical record routes. */
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
@@ -10,8 +11,6 @@ const links = [
   { label: "Product / Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Deep Dive", href: "/deep-dive" },
-  { label: "Lookbook", href: "/#gallery" },
-  { label: "Size guide", href: "/#sizing" },
 ];
 
 export function PageMeta({ title, description, canonical }: { title: string; description: string; canonical: string }) {

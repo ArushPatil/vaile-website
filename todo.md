@@ -1,0 +1,37 @@
+# Preview Recovery Checklist
+
+- [x] Inspect the active preview entrypoint, routing, and server log.
+- [x] Correct the managed preview configuration if it does not target the synchronized storefront.
+- [x] Confirm the preview displays the Vaile storefront in the project interface.
+- [x] Allow the managed preview host in Vite and verify the authorization error is resolved.
+- [x] Trace and repair broken mobile lookbook images, then verify the carousel on a phone-sized preview.
+- [ ] Commit the verified project changes and push them to GitHub.
+- [x] Increase desktop care-section scale, negative space, and Swiss-grid text alignment without affecting mobile behavior.
+- [x] Correct the closing allocation panel’s wide-screen scaling and request-button hierarchy.
+- [x] Verify the refined closing allocation panel at 1440px and push the approved latest changes to GitHub.
+- [x] Restore the centered title, centered price, and full-width request control from the approved closing-panel reference.
+- [x] Push the approved centered closing-panel correction to GitHub.
+- [x] Diagnose and eliminate intermittent freezing or delayed responses in lookbook image navigation.
+- [x] Remove lookbook swipe navigation and add subtle frame-loading feedback for slow image changes.
+- [x] Remove the lookbook loading-frame marker and produce a numbered reconciliation of every prior audit finding.
+- [x] Implement audit priorities 1–4, remove stock/scarcity claims, and replace archival language with clear high-end editorial copy.
+- [x] Restore the original storefront and legal heading text while preserving the technical improvements.
+- [x] Replace the closing heading phrase with “Request an allocation.”
+- [x] Replace “Choose a waist” with “Choose a size” in the closing heading.
+- [x] Commit and push the current approved website revision to GitHub.
+- [x] Implement and validate the supplied frontend optimization specification, preserving button-only lookbook navigation and reverting if the verification gate fails.
+- [x] Replace mobile lookbook arrow buttons with clean swipe navigation and validate mobile gesture behavior.
+- [x] Commit and push the verified mobile swipe-navigation update to GitHub.
+- [x] Task 1 — Stabilize the desktop lookbook selector and lock its navigation controls; pause for approval.
+- [x] Task 2 — Lock the desktop CTA panel and replace copy enquiry with size-chart prompts; pause for approval.
+- [x] Task 3 — Add desktop size-chart selection and the selected-size state; pause for approval.
+- [x] Task 4 — Recompose mobile size-chart tiles and selection state; pause for approval.
+- [x] Task 4 refinement — Rebalance the mobile sizing tiles with calmer spacing and clearer measurement grouping; pause for approval.
+- [x] Task 4 Swiss-grid rebuild — Rebuild the mobile sizing cards around explicit columns, gutters, and hierarchy; pause for approval.
+- [x] Task 4 waist integration — Move waist from the size rail into the mobile measurement grid; pause for approval.
+- [x] Desktop waist restoration — Restore the approved desktop waist placement and keep waist-in-grid behavior mobile-only; pause for approval.
+- [x] Task 5 — Redesign the care-guide stamp with improved balance and color; pause for approval.
+- [x] Task 5 mobile refinement — Rebalance the care-card sizing and internal alignment at the compact breakpoint; pause for approval.
+- [x] Task 5 restrained rollback — Restore the prior left-rail mobile care card and make only smaller, internal alignment adjustments; pause for approval.
+- [x] Task 6 — Correct the mobile closing CTA text wrapping; pause for approval.
+- [ ] Commit and push the approved responsive refinement checkpoint to GitHub main.

@@ -1,10 +1,9 @@
 /* VAILE editorial storefront: clear product language, button-led image navigation, and accessible product decisions. */
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowUpRight, Check, ChevronLeft, ChevronRight, Copy, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { TouchEvent as ReactTouchEvent } from "react";
 import { Link } from "wouter";
-import { toast } from "sonner";
 
 const assets = {
   hero: {
@@ -19,8 +18,8 @@ const shots = [
   { id: "02", title: "SIDE PROFILE", proof: "FIT", detail: "Balanced shape through the leg", insight: "The side profile holds a steady fall through the leg with room to move and a clean break over the shoe.", desktop: "/images/2.webp", mobile: "/images/2.webp", alt: "VAILE Drop 001 black duck canvas pants, side view" },
   { id: "03", title: "POCKETS & HARDWARE", proof: "DETAILS", detail: "Utility pockets · reinforced stress points", insight: "Dense canvas and brass rivets give the utility pockets structure while keeping the trouser easy to wear.", desktop: "/images/3.webp", mobile: "/images/3.webp", alt: "VAILE Drop 001 canvas pocket and brass rivet detail" },
   { id: "04", title: "MOVEMENT", proof: "FABRIC", detail: "12 oz duck canvas · softens with wear", insight: "The fabric begins with structure and gradually softens where the garment moves with you.", desktop: "/images/10_warm.webp", mobile: "/images/10_warm.webp", alt: "VAILE Drop 001 duck canvas trousers in motion" },
-  { id: "05", title: "SEATED FIT", proof: "COMFORT", detail: "Ease through the seat and thigh", insight: "The pattern keeps comfort through the seat and thigh during a full day of wear without changing the intended fit.", desktop: "/images/6.webp", mobile: "/images/6.webp", alt: "VAILE Drop 001 black duck canvas trousers in a seated position" },
-  { id: "06", title: "HEM", proof: "FINISH", detail: "Clean break over footwear", insight: "The hem falls naturally across boots and sneakers without tapering too aggressively around the shoe.", desktop: "/images/9.webp", mobile: "/images/9.webp", alt: "VAILE Drop 001 black duck canvas trousers while walking" },
+  { id: "05", title: "SEATED FIT", proof: "COMFORT", detail: "Ease through the seat and thigh", insight: "The pattern keeps comfort through the seat and thigh during a full day of wear without changing the intended fit.", desktop: "/images/6.webp", mobile: "/images/6.webp", alt: "VAILE Drop 001 black duck canvas pants in a seated position" },
+  { id: "06", title: "HEM", proof: "FINISH", detail: "Clean break over footwear", insight: "The hem falls naturally across boots and sneakers without tapering too aggressively around the shoe.", desktop: "/images/9.webp", mobile: "/images/9.webp", alt: "VAILE Drop 001 black duck canvas pants while walking" },
 ];
 
 const sizes = ["30", "32", "34", "36", "38"];
@@ -42,8 +41,6 @@ export default function HomeChapters() {
   const galleryRequestRef = useRef(0);
   const galleryReleaseTimerRef = useRef<number | null>(null);
   const galleryTouchStartRef = useRef<{ x: number; y: number } | null>(null);
-  const copyTimerRef = useRef<number | null>(null);
-  const [copied, setCopied] = useState(false);
   const [unit, setUnit] = useState<"IN" | "CM">("IN");
   const [loading, setLoading] = useState(() => {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
@@ -63,7 +60,6 @@ export default function HomeChapters() {
   };
 
   const reducedMotion = useReducedMotion();
-  const message = `Hello VAILE,\n\nI would like to enquire about:\n• Item: VAILE — DROP 001\n• Size: ${size}\n\nPlease share availability and allocation details.`;
   const href = getWhatsAppEnquiryUrl("918951066881", "VAILE — DROP 001", size);
   const shot = shots[active];
   const fmt = (value: number) => unit === "CM" ? (value * 2.54).toFixed(1) : Number.isInteger(value) ? value.toString() : value.toString();
@@ -72,26 +68,13 @@ export default function HomeChapters() {
     return shots[index].desktop;
   };
 
-  const preloadGalleryImage = (index: number) => new Promise<void>((resolve) => {
-    if (typeof window === "undefined") {
-      resolve();
-      return;
-    }
+  const preloadGalleryImage = (index: number) => {
+    if (typeof window === "undefined") return;
     const image = new Image();
-    let settled = false;
-    let fallbackTimer = 0;
-    const complete = () => {
-      if (settled) return;
-      settled = true;
-      if (fallbackTimer) window.clearTimeout(fallbackTimer);
-      resolve();
-    };
-    image.onload = complete;
-    image.onerror = complete;
-    fallbackTimer = window.setTimeout(complete, 1200);
+    image.decoding = "async";
     image.src = gallerySource(index);
-    if (image.complete && image.naturalWidth > 0) complete();
-  });
+    if ("decode" in image) void image.decode().catch(() => undefined);
+  };
 
   const selectGallery = (index: number) => {
     const nextIndex = (index + shots.length) % shots.length;
@@ -101,19 +84,19 @@ export default function HomeChapters() {
     galleryTransitionRef.current = true;
     setGalleryTransitioning(true);
     setShowGalleryInfo(false);
-    void preloadGalleryImage(nextIndex).finally(() => {
+    setActive(nextIndex);
+    preloadGalleryImage(nextIndex);
+    if (galleryReleaseTimerRef.current) window.clearTimeout(galleryReleaseTimerRef.current);
+    galleryReleaseTimerRef.current = window.setTimeout(() => {
       if (requestId !== galleryRequestRef.current) return;
-      setActive(nextIndex);
-      if (galleryReleaseTimerRef.current) window.clearTimeout(galleryReleaseTimerRef.current);
-      galleryReleaseTimerRef.current = window.setTimeout(() => {
-        if (requestId !== galleryRequestRef.current) return;
-        galleryTransitionRef.current = false;
-        setGalleryTransitioning(false);
-      }, reducedMotion ? 0 : 180);
-    });
+      galleryTransitionRef.current = false;
+      setGalleryTransitioning(false);
+    }, reducedMotion ? 0 : 180);
   };
 
   const moveGallery = (direction: 1 | -1) => selectGallery((activeGalleryRef.current + direction + shots.length) % shots.length);
+
+  const selectChartSize = (nextSize: string) => setSize(nextSize);
 
   const beginGallerySwipe = (event: ReactTouchEvent<HTMLDivElement>) => {
     if (showGalleryInfo || event.touches.length !== 1 || (event.target as HTMLElement).closest("button, a, input, select, textarea")) {
@@ -175,38 +158,13 @@ export default function HomeChapters() {
 
   useEffect(() => {
     activeGalleryRef.current = active;
-    void preloadGalleryImage((active + 1) % shots.length);
-    void preloadGalleryImage((active + shots.length - 1) % shots.length);
+    preloadGalleryImage((active + 1) % shots.length);
+    preloadGalleryImage((active + shots.length - 1) % shots.length);
   }, [active]);
 
   useEffect(() => () => {
     if (galleryReleaseTimerRef.current) window.clearTimeout(galleryReleaseTimerRef.current);
-    if (copyTimerRef.current) window.clearTimeout(copyTimerRef.current);
   }, []);
-
-  const copy = async () => {
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(message);
-      } else {
-        const textArea = document.createElement("textarea");
-        textArea.value = message;
-        textArea.setAttribute("readonly", "");
-        textArea.style.position = "fixed";
-        textArea.style.left = "-999999px";
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textArea);
-      }
-      setCopied(true);
-      toast.success("Enquiry copied to clipboard.");
-      if (copyTimerRef.current) window.clearTimeout(copyTimerRef.current);
-      copyTimerRef.current = window.setTimeout(() => setCopied(false), 2500);
-    } catch {
-      toast.error("Copying was blocked. Use the WhatsApp link instead.");
-    }
-  };
 
   return (
     <>
@@ -279,14 +237,13 @@ export default function HomeChapters() {
             <aside className="allocation-card">
               <p className="card-price-eyebrow">PRICE</p>
               <div className="card-price-row"><strong>₹6,200 <small>INR</small></strong><span>$100 USD</span></div>
-              <p className="card-size-label">CHOOSE YOUR SIZE</p>
+              <p className="card-size-label">CHOOSE YOUR SIZE <span aria-hidden="true">/</span> <a className="size-chart-link" href="#sizing">VIEW SIZE CHART</a></p>
               <div className="size-grid" role="radiogroup" aria-label="Preferred size">
                 {sizes.map((item) => <button type="button" key={item} className={size === item ? "is-selected" : ""} onClick={() => setSize(item)} role="radio" aria-checked={size === item} aria-label={`Size ${item}`}>{item}</button>)}
               </div>
               <a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab">
                 <span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={17} />
               </a>
-              <button type="button" className="copy-note" onClick={copy} aria-live="polite">{copied ? <Check size={14} /> : <Copy size={14} />}{copied ? "COPIED TO CLIPBOARD ✓" : "COPY ENQUIRY"}</button>
             </aside>
           </div>
         </section>
@@ -348,9 +305,14 @@ export default function HomeChapters() {
             <div className="sizing-tile-ledger" aria-label={`Full ${unit === "IN" ? "inch" : "centimetre"} garment measurements`}>
               <p>MEASUREMENTS / {unit === "IN" ? "INCHES" : "CENTIMETRES"}</p>
               {Object.entries(measurements).map(([waist, measurement]) => (
-                <article key={waist}>
-                  <header><b>{waist}</b><span>WAIST {fmt(measurement.waist)}</span></header>
-                  <dl><div><dt>RISE</dt><dd>{fmt(measurement.rise)}</dd></div><div><dt>THIGH</dt><dd>{fmt(measurement.thigh)}</dd></div><div><dt>KNEE</dt><dd>{fmt(measurement.knee)}</dd></div><div><dt>HEM</dt><dd>{fmt(measurement.hem)}</dd></div><div><dt>INSEAM</dt><dd>{fmt(measurement.inseam)}</dd></div></dl>
+                <article key={waist} className={size === waist ? "is-selected" : ""} role="button" tabIndex={0} aria-pressed={size === waist} aria-label={`Select size ${waist} for your enquiry`} onClick={() => selectChartSize(waist)} onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    selectChartSize(waist);
+                  }
+                }}>
+                  <header><b>{waist}</b><span>WAIST <em>{fmt(measurement.waist)}</em></span></header>
+                  <dl><div className="measurement-waist"><dt>WAIST</dt><dd>{fmt(measurement.waist)}</dd></div><div><dt>RISE</dt><dd>{fmt(measurement.rise)}</dd></div><div><dt>THIGH</dt><dd>{fmt(measurement.thigh)}</dd></div><div><dt>KNEE</dt><dd>{fmt(measurement.knee)}</dd></div><div><dt>HEM</dt><dd>{fmt(measurement.hem)}</dd></div><div><dt>INSEAM</dt><dd>{fmt(measurement.inseam)}</dd></div></dl>
                 </article>
               ))}
             </div>
@@ -361,13 +323,13 @@ export default function HomeChapters() {
         <section id="care" className="chapter chapter-care">
           <div className="care-layout">
             <div className="care-copy"><header className="care-header"><span>04</span><h2>Keep the wear. Skip the damage.</h2><p>Simple care for everyday wear.</p></header><p className="care-intro">Spot clean when possible. If washing is needed, wash cold and hang dry. Avoid bleach, high heat, and dry cleaning.</p></div>
-            <aside className="care-stamp"><span>CARE GUIDE</span><b>12 OZ DUCK CANVAS</b><p>COLD WASH · NO DRY CLEANING</p></aside>
+            <aside className="care-stamp"><span>CARE / 04</span><b>12 OZ DUCK<br />CANVAS</b><p>COLD WASH · HANG DRY · NO DRY CLEANING</p></aside>
             <ul><li><b>01</b><span>Spot clean first</span></li><li><b>02</b><span>Wash cold, gently</span></li><li><b>03</b><span>Hang dry</span></li><li><b>04</b><span>Avoid bleach and high heat</span></li></ul>
           </div>
         </section>
 
         <section className="closing-allocation">
-          <p>DROP 001</p><h2>Choose a size.<br />Request an allocation.</h2>
+          <p>DROP 001</p><h2><span>Choose a size.</span><span>Request</span><span>an allocation.</span></h2>
           <div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab"><span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={19} /></a></div>
         </section>
 

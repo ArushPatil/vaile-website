@@ -76,13 +76,27 @@ try {
         chapterCount: document.querySelectorAll('.chapter').length,
         galleryPills: document.querySelectorAll('.gallery-pills button').length,
         galleryControls: document.querySelectorAll('.gallery-controls button').length,
-        sizingTiles: [...document.querySelectorAll('.sizing-tile-ledger article')].map((tile) => { const s = getComputedStyle(tile); const r = tile.getBoundingClientRect(); const identifier = tile.querySelector('header'); const measurements = tile.querySelector('dl'); const measurementStyle = measurements ? getComputedStyle(measurements) : null; const center = r.top + r.height / 2; const identifierCenterOffset = identifier ? Math.round((identifier.getBoundingClientRect().top + identifier.getBoundingClientRect().height / 2) - center) : null; const measurementCenterOffset = measurements ? Math.round((measurements.getBoundingClientRect().top + measurements.getBoundingClientRect().height / 2) - center) : null; return { column: s.gridColumnStart, row: s.gridRowStart, width: Math.round(r.width), height: Math.round(r.height), measurementColumns: measurementStyle?.gridTemplateColumns === 'none' ? 0 : measurementStyle?.gridTemplateColumns.split(' ').filter(Boolean).length, identifierCenterOffset, measurementCenterOffset }; }),
+        sizingTiles: [...document.querySelectorAll('.sizing-tile-ledger article')].map((tile) => { const s = getComputedStyle(tile); const r = tile.getBoundingClientRect(); const identifier = tile.querySelector('header'); const measurements = tile.querySelector('dl'); const measurementStyle = measurements ? getComputedStyle(measurements) : null; const center = r.top + r.height / 2; const identifierCenterOffset = identifier ? Math.round((identifier.getBoundingClientRect().top + identifier.getBoundingClientRect().height / 2) - center) : null; const measurementCenterOffset = measurements ? Math.round((measurements.getBoundingClientRect().top + measurements.getBoundingClientRect().height / 2) - center) : null; return { selected: tile.classList.contains('is-selected'), column: s.gridColumnStart, row: s.gridRowStart, width: Math.round(r.width), height: Math.round(r.height), measurementColumns: measurementStyle?.gridTemplateColumns === 'none' ? 0 : measurementStyle?.gridTemplateColumns.split(' ').filter(Boolean).length, identifierCenterOffset, measurementCenterOffset }; }),
         privacyChoiceExists: Boolean(document.querySelector('.privacy-choice')),
         elements: ['.allocation-layout', '.chapter-gallery', '.gallery-stage', '.gallery-figure-wrap', '.gallery-dossier', '.chapter-sizing', '.sizing-tile-ledger', '.chapter-care', '.closing-allocation'].map(box),
         headingInsets: ['.chapter-allocation', '.chapter-gallery', '.chapter-sizing', '.chapter-care'].map(headingInset),
         dossierStyle: style('.gallery-dossier'),
         sizingToggleStyle: style('.sizing-controls button.is-active'),
         careGeometry: (() => { const intro = document.querySelector('.care-intro')?.getBoundingClientRect(); const list = document.querySelector('.care-layout ul')?.getBoundingClientRect(); const stamp = document.querySelector('.care-stamp')?.getBoundingClientRect(); const rows = [...document.querySelectorAll('.care-layout li')].map((row) => { const r = row.getBoundingClientRect(); return { top: Math.round(r.top), bottom: Math.round(r.bottom), height: Math.round(r.height) }; }); return { introListBottomDelta: intro && list ? Math.round(intro.bottom - list.bottom) : null, rowHeights: rows.map((row) => row.height), stampAfterRows: Boolean(stamp && list && stamp.top >= list.bottom) }; })(),
+      };
+    })()`);
+    const sizingInteraction = await evaluate(`(async () => {
+      const tiles = [...document.querySelectorAll('.sizing-tile-ledger article')];
+      const target = tiles.find((tile) => tile.querySelector('header b')?.textContent?.trim() === '34');
+      target?.click();
+      await new Promise((resolve) => setTimeout(resolve, 240));
+      const selected = tiles.find((tile) => tile.classList.contains('is-selected'));
+      const enquiry = document.querySelector('.chapter-allocation .allocation-record');
+      return {
+        selectedSize: selected?.querySelector('header b')?.textContent?.trim(),
+        selectedPressed: selected?.getAttribute('aria-pressed'),
+        enquirySize: enquiry?.querySelector('span')?.textContent?.trim(),
+        whatsappHas34: enquiry?.getAttribute('href')?.includes(encodeURIComponent('Size: 34')),
       };
     })()`);
     const galleryInteraction = await evaluate(`(async () => {
@@ -132,7 +146,7 @@ try {
       const mobileDefaults = {
         arrowControlsRemoved: document.querySelectorAll('.gallery-mobile-nav button').length === 0,
         swipeHintVisible: Boolean(swipeHintStyle && Number.parseFloat(swipeHintStyle.opacity) >= .99 && swipeHintStyle.pointerEvents === 'none'),
-        optimizedSource: Boolean(mobileSource?.srcset && /\/(?:manus-storage|images)\//.test(mobileSource.srcset) && matchMedia(mobileSource.media).matches),
+        optimizedSource: Boolean(mobileSource?.srcset.includes('/manus-storage/') && matchMedia(mobileSource.media).matches),
       };
       if (!open) return { ...base, handoff, mobile: { opened: false, restored: false, fixedFrame: false, hintHidden: false, hintRestored: false, infoBorderless: false, ...mobileDefaults } };
       open.click();
@@ -162,7 +176,9 @@ try {
       dossierHasContrastSurface: metric.dossierStyle.background !== "rgba(0, 0, 0, 0)" && metric.dossierStyle.color !== metric.dossierStyle.background,
       sizingPresentationIsReadable: metric.sizingTiles.length === 5 && lookup[".sizing-tile-ledger"].width >= Math.floor(viewport.width * (compact ? 0.8 : 0.4)),
       sizingDesktopTileDeployment: compact || JSON.stringify(metric.sizingTiles.map(({ column, row }) => ({ column, row }))) === JSON.stringify([{ column: '1', row: 'auto' }, { column: '1', row: 'auto' }, { column: '1', row: 'auto' }, { column: '1', row: 'auto' }, { column: '1', row: 'auto' }]),
-      sizingDesktopGridIsEqual: compact || Boolean(metric.sizingTiles.length === 5 && metric.sizingTiles.every((tile) => tile.width === metric.sizingTiles[0].width && tile.height === metric.sizingTiles[0].height && tile.measurementColumns === 5)),
+      sizingDesktopGridIsEqual: compact || (() => { const selected = metric.sizingTiles.filter((tile) => tile.selected); const standard = metric.sizingTiles.filter((tile) => !tile.selected); const baseline = standard[0]; return Boolean(metric.sizingTiles.length === 5 && selected.length === 1 && standard.length === 4 && baseline && standard.every((tile) => tile.width === baseline.width && tile.height === baseline.height && tile.measurementColumns === 5) && selected[0].width >= baseline.width && selected[0].height >= baseline.height && selected[0].measurementColumns === 5); })(),
+      mobileSizingTilesAreCompact: !compact || metric.sizingTiles.every((tile) => tile.measurementColumns === 6 && tile.height >= 120 && tile.height <= 130),
+      sizingSelectionUpdatesEnquiry: Boolean(sizingInteraction.selectedSize === '34' && sizingInteraction.selectedPressed === 'true' && sizingInteraction.enquirySize === 'SIZE 34' && sizingInteraction.whatsappHas34),
       sizingTileContentIsCentered: compact || metric.sizingTiles.every((tile) => Math.abs(tile.identifierCenterOffset ?? 999) <= 2 && Math.abs(tile.measurementCenterOffset ?? 999) <= 2),
       sizingFitsDesktopViewport: compact || lookup[".chapter-sizing"].height <= viewport.height,
       sizingToggleHasContrast: metric.sizingToggleStyle.background !== metric.sizingToggleStyle.color && metric.sizingToggleStyle.background !== 'rgba(0, 0, 0, 0)',
@@ -193,7 +209,7 @@ try {
         await evaluate(`document.querySelector('.gallery-info-toggle')?.click(); new Promise((resolve) => setTimeout(resolve, 240))`);
       }
     }
-    findings.push({ viewport, metric, galleryInteraction, checks, passed: Object.values(checks).every(Boolean), screenshots });
+    findings.push({ viewport, metric, sizingInteraction, galleryInteraction, checks, passed: Object.values(checks).every(Boolean), screenshots });
   }
   await writeFile(`${outDir}/results.json`, JSON.stringify(findings, null, 2));
   console.log(JSON.stringify(findings, null, 2));

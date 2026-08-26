@@ -1393,15 +1393,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .care-layout .care-stamp {
     grid-column: 8 / -1;
     grid-row: 1;
-    /* Preserve the approved vertical oxide block without letting its column grow with the desktop field. */
-    grid-template-columns: 164px minmax(0, 1fr);
+    /* Desktop label rail remains intentionally narrow and cannot scale with the care-stamp field. */
+    grid-template-columns: 68px minmax(0, 1fr);
     min-height: 108px;
     padding: 20px;
   }
   .chapter-shell .care-layout .care-stamp::before {
-    width: 164px;
-    min-width: 164px;
-    max-width: 164px;
+    width: 68px;
+    min-width: 68px;
+    max-width: 68px;
   }
   .chapter-shell .care-layout ul {
     grid-column: 8 / -1;

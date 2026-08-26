@@ -1,4 +1,5 @@
 /* VAILE editorial storefront: clear product language, button-led image navigation, and accessible product decisions. */
+/* VAILE Field Dossier home: minimal primary navigation with a measured lichen-panel menu reveal and readable motion hierarchy. */
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -23,6 +24,12 @@ const shots = [
 ];
 
 const sizes = ["30", "32", "34", "36", "38"];
+const menuEase = [0.23, 1, 0.32, 1] as const;
+const menuItems = [
+  { kind: "anchor", label: "Home", href: "#top" },
+  { kind: "route", label: "About Us", href: "/about" },
+  { kind: "route", label: "Deep Dive", href: "/deep-dive" },
+] as const;
 
 function getWhatsAppEnquiryUrl(phoneNumber: string, itemTitle: string, size: string) {
   const cleanPhone = phoneNumber.replace(/[^0-9]/g, "");
@@ -60,6 +67,7 @@ export default function HomeChapters() {
   };
 
   const reducedMotion = useReducedMotion();
+  const menuDuration = reducedMotion ? 0 : 0.42;
   const href = getWhatsAppEnquiryUrl("918951066881", "VAILE — DROP 001", size);
   const shot = shots[active];
   const fmt = (value: number) => unit === "CM" ? (value * 2.54).toFixed(1) : Number.isInteger(value) ? value.toString() : value.toString();
@@ -194,15 +202,16 @@ export default function HomeChapters() {
 
         <AnimatePresence>
           {menuOpen && (
-            <motion.nav id="mobile-menu" className="manual-menu" role="dialog" aria-modal="true" aria-label="Site navigation" initial={{ clipPath: "inset(0 0 100% 0)" }} animate={{ clipPath: "inset(0 0 0% 0)" }} exit={{ clipPath: "inset(0 0 100% 0)" }} transition={{ duration: 0.36 }}>
-              <div>
+            <motion.nav id="mobile-menu" className="manual-menu" role="dialog" aria-modal="true" aria-label="Site navigation" initial={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }} animate={{ opacity: 1, clipPath: "inset(0 0 0% 0)" }} exit={{ opacity: 0, clipPath: "inset(0 0 100% 0)" }} transition={{ duration: menuDuration, ease: menuEase }}>
+              <motion.div initial={{ opacity: 0, y: reducedMotion ? 0 : -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reducedMotion ? 0 : -6 }} transition={{ duration: reducedMotion ? 0 : 0.24, delay: reducedMotion ? 0 : 0.08, ease: menuEase }}>
                 <button type="button" onClick={() => setMenuOpen(false)} aria-label="Close navigation"><X size={25} /></button>
                 <p>VAILE · DROP 001</p>
-              </div>
-              <a onClick={() => setMenuOpen(false)} href="#allocation">Product</a>
-              <a onClick={() => setMenuOpen(false)} href="#care">Care</a>
-              <Link onClick={() => setMenuOpen(false)} href="/about">About Us</Link>
-              <Link onClick={() => setMenuOpen(false)} href="/deep-dive">Deep Dive</Link>
+              </motion.div>
+              {menuItems.map((item, index) => (
+                <motion.div key={item.href} initial={{ opacity: 0, y: reducedMotion ? 0 : 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reducedMotion ? 0 : -8 }} transition={{ duration: reducedMotion ? 0 : 0.28, delay: reducedMotion ? 0 : 0.16 + index * 0.06, ease: menuEase }}>
+                  {item.kind === "anchor" ? <a className="is-current" onClick={() => setMenuOpen(false)} href={item.href} aria-current="page">{item.label}</a> : <Link onClick={() => setMenuOpen(false)} href={item.href}>{item.label}</Link>}
+                </motion.div>
+              ))}
             </motion.nav>
           )}
         </AnimatePresence>

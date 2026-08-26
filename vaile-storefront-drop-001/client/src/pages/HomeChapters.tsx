@@ -285,10 +285,6 @@ export default function HomeChapters() {
                 </AnimatePresence>
                 {!showGalleryInfo && <button type="button" className="gallery-info-toggle" onClick={() => setShowGalleryInfo(true)} aria-label={`Show details for ${shot.title}`} aria-expanded="false"><span aria-hidden="true">i</span><b>DETAILS</b></button>}
                 <span className={`gallery-swipe-hint${showGalleryInfo ? " is-concealed" : ""}`} aria-hidden="true">SWIPE ← →</span>
-                <div className={`gallery-mobile-nav${showGalleryInfo ? " is-concealed" : ""}`} aria-label="Lookbook controls">
-                  <button type="button" onClick={() => moveGallery(-1)} disabled={galleryTransitioning} aria-label="Previous lookbook view"><ChevronLeft size={16} /></button>
-                  <button type="button" onClick={() => moveGallery(1)} disabled={galleryTransitioning} aria-label="Next lookbook view"><ChevronRight size={16} /></button>
-                </div>
               </div>
               <aside className="gallery-dossier" aria-live="polite">
                 <div><span>{shot.proof} / {shot.id}</span><h3>{shot.title}</h3><p>{shot.insight}</p></div>

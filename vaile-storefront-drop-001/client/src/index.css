@@ -1353,6 +1353,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .chapter-allocation .allocation-card { max-width: 464px; justify-self: end; }
 }
 
+/* DESKTOP LOOKBOOK CONTROL RAIL — KEEP THE REFERENCE'S TWO-PANEL FIELD, WITH CLEAR PREVIOUS/NEXT ACTIONS AT THE DOSSIER BASE. */
+@media (min-width: 768px) {
+  .chapter-shell .gallery-dossier { display: flex; flex-direction: column; min-height: 0; }
+  .chapter-shell .gallery-dossier dl { display: none; }
+  .chapter-shell .gallery-controls { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; width: 100%; margin-top: auto; padding-top: var(--space-3); background: rgba(247, 245, 239, .32); }
+  .chapter-shell .gallery-controls button { min-height: 52px; color: var(--stock); background: var(--lichen); font: 700 10px/14px "DM Mono", monospace; letter-spacing: .12em; }
+  .chapter-shell .gallery-controls button:hover,
+  .chapter-shell .gallery-controls button:focus-visible { color: var(--ink); background: var(--pale); outline: 0; }
+}
+
 /* CARE RECOMPOSITION — EXPANDED DESKTOP FIELD WITH MEASURED NEGATIVE SPACE. */
 @media (min-width: 1200px) {
   .chapter-shell .chapter-care {

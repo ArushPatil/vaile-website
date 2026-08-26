@@ -200,8 +200,6 @@ export default function HomeChapters() {
                 <p>VAILE · DROP 001</p>
               </div>
               <a onClick={() => setMenuOpen(false)} href="#allocation">Product</a>
-              <a onClick={() => setMenuOpen(false)} href="#gallery">Lookbook</a>
-              <a onClick={() => setMenuOpen(false)} href="#sizing">Size guide</a>
               <a onClick={() => setMenuOpen(false)} href="#care">Care</a>
               <Link onClick={() => setMenuOpen(false)} href="/about">About Us</Link>
               <Link onClick={() => setMenuOpen(false)} href="/deep-dive">Deep Dive</Link>

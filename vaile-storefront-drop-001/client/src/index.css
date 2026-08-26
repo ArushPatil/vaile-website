@@ -891,8 +891,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .care-layout .care-stamp b,
   .chapter-shell .care-layout .care-stamp p { align-self: auto; }
   .chapter-shell .care-layout .care-stamp span { grid-column: 1; grid-row: 1 / -1; align-self: center; justify-self: center; }
-  .chapter-shell .care-layout .care-stamp b { grid-column: 2; grid-row: 1; align-self: end; padding: 13px 15px 7px; font-size: 20px; line-height: 17px; }
-  .chapter-shell .care-layout .care-stamp p { grid-column: 2; grid-row: 2; align-self: start; padding: 7px 15px 9px; text-align: left; }
+  .chapter-shell .care-layout .care-stamp {
+    grid-template-rows: auto auto;
+    align-content: center;
+  }
+  .chapter-shell .care-layout .care-stamp b { grid-column: 2; grid-row: 1; align-self: auto; padding: 0 15px 7px; font-size: 20px; line-height: 17px; }
+  .chapter-shell .care-layout .care-stamp p { grid-column: 2; grid-row: 2; align-self: auto; padding: 7px 15px 0; text-align: left; }
   .chapter-shell .care-layout ul { grid-column: 1; grid-row: auto; order: 2; width: calc(100% - 22px); justify-self: center; display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 0; }
   .chapter-shell .care-layout li { grid-template-columns: 42px minmax(0, 1fr); gap: var(--space-2); min-height: 54px; padding-left: 9px; }
   .chapter-shell .care-layout li b { justify-self: center; }
@@ -1393,6 +1397,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
     grid-template-columns: 164px minmax(0, 1fr);
     min-height: 108px;
     padding: 20px;
+  }
+  .chapter-shell .care-layout .care-stamp::before {
+    width: 164px;
+    min-width: 164px;
+    max-width: 164px;
   }
   .chapter-shell .care-layout ul {
     grid-column: 8 / -1;

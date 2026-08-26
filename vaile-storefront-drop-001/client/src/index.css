@@ -1296,6 +1296,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .gallery-info-toggle b { font: inherit; }
   .chapter-shell .gallery-swipe-hint { position: absolute; z-index: 4; right: 50%; bottom: 10px; display: inline-flex; align-items: center; min-height: 24px; padding: 4px 7px; color: var(--stock); background: rgba(12, 16, 13, .48); font: 600 8px/1 "DM Mono", monospace; letter-spacing: .1em; pointer-events: none; transform: translateX(50%); opacity: 1; transition: opacity 160ms var(--ease), transform 160ms var(--ease); }
   .chapter-shell .gallery-swipe-hint.is-concealed { opacity: 0; transform: translate(50%, 5px); }
+  .chapter-shell .gallery-mobile-nav { position: absolute; z-index: 4; bottom: 10px; left: 10px; display: flex; gap: 4px; opacity: 1; transform: translateY(0); transition: opacity 160ms var(--ease), transform 160ms var(--ease); }
+  .chapter-shell .gallery-mobile-nav.is-concealed { opacity: 0; pointer-events: none; transform: translateY(5px); }
+  .chapter-shell .gallery-mobile-nav button { display: inline-grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 0; color: var(--stock); background: rgba(12, 16, 13, .62); cursor: pointer; }
+  .chapter-shell .gallery-mobile-nav button:focus-visible { outline: 2px solid var(--stock); outline-offset: 2px; }
+  .chapter-shell .gallery-mobile-nav button:disabled { cursor: wait; opacity: .55; }
   .chapter-shell .gallery-mobile-info { position: absolute; z-index: 3; inset: 0; display: grid; grid-template-rows: 1fr auto; align-content: space-between; gap: var(--space-3); padding: var(--space-3); color: var(--stock); background: var(--lichen-2); }
   .chapter-shell .gallery-mobile-info__copy { align-self: center; display: grid; gap: 10px; padding-right: 8px; }
   .chapter-shell .gallery-mobile-info__copy > span { color: rgba(247, 245, 239, .72); font: 600 9px/14px "DM Mono", monospace; letter-spacing: .1em; }

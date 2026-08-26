@@ -9,6 +9,7 @@
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "test:layout": "node scripts/verify-responsive-layout.mjs",
+    "test:editorial": "node scripts/verify-editorial-pages.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {

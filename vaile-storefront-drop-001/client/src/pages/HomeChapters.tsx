@@ -203,6 +203,8 @@ export default function HomeChapters() {
               <a onClick={() => setMenuOpen(false)} href="#gallery">Lookbook</a>
               <a onClick={() => setMenuOpen(false)} href="#sizing">Size guide</a>
               <a onClick={() => setMenuOpen(false)} href="#care">Care</a>
+              <Link onClick={() => setMenuOpen(false)} href="/about">About Us</Link>
+              <Link onClick={() => setMenuOpen(false)} href="/deep-dive">Deep Dive</Link>
             </motion.nav>
           )}
         </AnimatePresence>
@@ -333,7 +335,7 @@ export default function HomeChapters() {
           <div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab"><span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={19} /></a></div>
         </section>
 
-        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12 oz duck canvas</span></div></footer>
+        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/about">About</Link><Link href="/deep-dive">Deep Dive</Link><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12 oz duck canvas</span></div></footer>
       </main>
     </>
   );

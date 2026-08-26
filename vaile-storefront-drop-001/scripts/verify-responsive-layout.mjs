@@ -146,7 +146,7 @@ try {
       const mobileDefaults = {
         arrowControlsRemoved: document.querySelectorAll('.gallery-mobile-nav button').length === 0,
         swipeHintVisible: Boolean(swipeHintStyle && Number.parseFloat(swipeHintStyle.opacity) >= .99 && swipeHintStyle.pointerEvents === 'none'),
-        optimizedSource: Boolean(mobileSource?.srcset.includes('/manus-storage/') && matchMedia(mobileSource.media).matches),
+        optimizedSource: Boolean(mobileSource && (mobileSource.srcset.includes('/manus-storage/') || mobileSource.srcset.toLowerCase().includes('.webp')) && matchMedia(mobileSource.media).matches),
       };
       if (!open) return { ...base, handoff, mobile: { opened: false, restored: false, fixedFrame: false, hintHidden: false, hintRestored: false, infoBorderless: false, ...mobileDefaults } };
       open.click();

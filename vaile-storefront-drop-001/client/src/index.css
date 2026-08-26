@@ -1389,13 +1389,37 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .care-layout .care-stamp {
     grid-column: 8 / -1;
     grid-row: 1;
-    grid-template-columns: minmax(164px, .72fr) minmax(0, 1.28fr);
+    grid-template-columns: 10px minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr) auto;
     min-height: 108px;
-    padding: 20px;
+    padding: 0;
+  }
+  .chapter-shell .care-layout .care-stamp::before {
+    grid-column: 1;
+    grid-row: 1 / -1;
+  }
+  .chapter-shell .care-layout .care-stamp span {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    justify-self: start;
+    padding: 14px 20px 0;
+    color: var(--oxide-deep) !important;
+    writing-mode: horizontal-tb;
+    transform: none;
   }
   .chapter-shell .care-layout .care-stamp b {
-    font-size: 16px;
-    line-height: 18px;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    padding: 22px 20px 10px;
+    font-size: 20px;
+    line-height: 17px;
+  }
+  .chapter-shell .care-layout .care-stamp p {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 8px 20px 10px;
   }
   .chapter-shell .care-layout ul {
     grid-column: 8 / -1;

@@ -3,9 +3,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
+import { SITE_URL, WHATSAPP_ENQUIRY_URL as enquiry } from "@/lib/site";
 
 const mark = "/images/logo.png";
-const enquiry = "https://wa.me/918951066881?text=Hello%20VAILE%2C%20I%20would%20like%20to%20enquire%20about%20Edition%20001.";
+
+// Restored by PageMeta cleanup on unmount so client-side navigation
+// back to "/" never inherits a previous route's metadata.
+const DEFAULT_HOME_TITLE = "VAILE — Heavyweight Workwear & Garment Architecture";
+const DEFAULT_HOME_DESCRIPTION =
+  "Heavyweight duck canvas workwear pants with engineered construction, detailed size specifications, and private enquiry.";
 
 const links = [
   { label: "Drop 001", href: "/" },
@@ -26,7 +32,9 @@ export function PageMeta({ title, description, canonical }: { title: string; des
     }
     canonicalNode.href = canonical;
     return () => {
-      document.title = "VAILE — Drop 001";
+      document.title = DEFAULT_HOME_TITLE;
+      descriptionNode?.setAttribute("content", DEFAULT_HOME_DESCRIPTION);
+      if (canonicalNode) canonicalNode.href = `${SITE_URL}/`;
     };
   }, [title, description, canonical]);
   return null;

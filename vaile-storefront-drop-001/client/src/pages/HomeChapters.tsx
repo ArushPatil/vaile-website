@@ -5,6 +5,7 @@ import { ArrowUpRight, ChevronLeft, ChevronRight, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { TouchEvent as ReactTouchEvent } from "react";
 import { Link } from "wouter";
+import { buildWhatsAppEnquiryUrl } from "@/lib/site";
 
 const assets = {
   hero: {
@@ -30,12 +31,6 @@ const menuItems = [
   { kind: "route", label: "About Us", href: "/about" },
   { kind: "route", label: "Deep Dive", href: "/deep-dive" },
 ] as const;
-
-function getWhatsAppEnquiryUrl(phoneNumber: string, itemTitle: string, size: string) {
-  const cleanPhone = phoneNumber.replace(/[^0-9]/g, "");
-  const enquiry = `Hello VAILE,\n\nI would like to enquire about:\n• Item: ${itemTitle}\n• Size: ${size}\n\nPlease share availability and allocation details.`;
-  return `https://wa.me/${cleanPhone}?text=${encodeURIComponent(enquiry)}`;
-}
 
 export default function HomeChapters() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,7 +63,7 @@ export default function HomeChapters() {
 
   const reducedMotion = useReducedMotion();
   const menuDuration = reducedMotion ? 0 : 0.42;
-  const href = getWhatsAppEnquiryUrl("918951066881", "VAILE — DROP 001", size);
+  const href = buildWhatsAppEnquiryUrl("VAILE — DROP 001", size);
   const shot = shots[active];
   const fmt = (value: number) => unit === "CM" ? (value * 2.54).toFixed(1) : Number.isInteger(value) ? value.toString() : value.toString();
   const gallerySource = (index: number) => {

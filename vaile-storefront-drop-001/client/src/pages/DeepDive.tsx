@@ -2,6 +2,7 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { EditorialPageFrame, PageMeta } from "@/components/EditorialPageFrame";
+import { SITE_URL, WHATSAPP_ENQUIRY_URL } from "@/lib/site";
 
 const fabricDetails = [
   { label: "RAW MATERIAL", value: "100% Long-Staple Cotton", note: "Breathable natural fiber that softens beautifully with wear" },
@@ -95,15 +96,20 @@ export default function DeepDive() {
       <PageMeta
         title="Deep Dive — VAILE Drop 001 Materials, Fit & Craft"
         description="A detailed look at VAILE Drop 001: 12oz cotton duck canvas, relaxed straight cut, solid brass hardware, and real-world versatility."
-        canonical="https://vaile.studio/deep-dive"
+        canonical={`${SITE_URL}/deep-dive`}
       />
       <main id="main" className="editorial-page field-dossier deep-dossier">
         {/* HERO */}
         <section className="editorial-hero dossier-hero deep-dossier__hero">
           <div className="editorial-hero__visual">
             <img
-              src="/images/vaile-canvas-double-knee-study.jpg"
+              src="/images/vaile-canvas-double-knee-study.webp"
               alt="VAILE Drop 001 cotton canvas and double-knee detail"
+              width={2304}
+              height={1536}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
           <div className="editorial-hero__copy">
@@ -174,6 +180,10 @@ export default function DeepDive() {
               <img
                 src="/images/1.webp"
                 alt="VAILE Drop 001 straight leg fit"
+                width={1333}
+                height={2000}
+                loading="lazy"
+                decoding="async"
               />
               <div className="kinematics-badge">
                 <span>THE CUT</span>
@@ -260,7 +270,7 @@ export default function DeepDive() {
           <div className="close-actions">
             <a
               className="dark-record"
-              href="https://wa.me/918951066881?text=Hello%20VAILE%2C%20I%20would%20like%20to%20enquire%20about%20Edition%20001."
+              href={WHATSAPP_ENQUIRY_URL}
               target="_blank"
               rel="noopener noreferrer"
             >

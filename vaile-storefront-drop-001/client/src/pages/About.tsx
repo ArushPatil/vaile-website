@@ -92,17 +92,18 @@ export default function About() {
           <span className="editorial-hero__index">ATELIER / RECORD 01</span>
         </section>
 
-        {/* SECTION 01: THE GENESIS */}
+        {/* SECTION 01: THE GENESIS (Clean 2-Column Swiss Alignment) */}
         <section id="genesis" className="about-genesis dossier-section">
-          <div className="dossier-rail">
-            <span>01</span>
-            <p>ATELIER GENESIS / 2022</p>
-          </div>
-          <div className="about-genesis__lead">
+          <div className="genesis-header-col">
+            <div className="dossier-rail">
+              <span>01</span>
+              <p>ATELIER GENESIS / 2022</p>
+            </div>
             <p className="eyebrow">THE FOUNDING PREMISE</p>
             <h2>Built from a practical<br /><span>frustration.</span></h2>
           </div>
-          <div className="about-genesis__body">
+
+          <div className="genesis-body-col">
             <p className="lead-text">
               In late 2022, we looked at the modern trouser landscape and saw two extremes: fragile fashion garments that bind the moment you get on a bicycle, and bulky heritage workwear that feels like cardboard with no consideration for modern proportions.
             </p>
@@ -119,20 +120,18 @@ export default function About() {
           </div>
         </section>
 
-        {/* SECTION 02: THE SAMPLING CHRONICLE (2-Column Ledger) */}
+        {/* SECTION 02: THE SAMPLING CHRONICLE */}
         <section className="about-chronicle dossier-section">
           <div className="about-chronicle__header">
             <div className="dossier-rail">
               <span>02</span>
               <p>THE SAMPLING CHRONICLE</p>
             </div>
-            <div className="chronicle-headline">
-              <p className="eyebrow">THE ROAD TO DROP 001</p>
-              <h2>Fourteen pattern drafts.<br /><span>Three rejected mills.</span></h2>
-              <p className="section-dek">
-                Drop 001 was not an overnight idea. It is the cumulative result of 14 physical iterations, continuous stress-testing across workshops and commutes, and uncompromising material sourcing.
-              </p>
-            </div>
+            <p className="eyebrow">THE ROAD TO DROP 001</p>
+            <h2>Fourteen pattern drafts.<br /><span>Three rejected mills.</span></h2>
+            <p className="section-dek">
+              Drop 001 was not an overnight idea. It is the cumulative result of 14 physical iterations, continuous stress-testing across workshops and commutes, and uncompromising material sourcing.
+            </p>
           </div>
 
           <div className="chronicle-ledger">

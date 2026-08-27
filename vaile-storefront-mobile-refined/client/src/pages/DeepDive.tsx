@@ -1,5 +1,5 @@
-/* VAILE — Deep Dive: Technical Specifications, Material Science & Pattern Kinematics */
-import { ArrowDown, ArrowUpRight, Check, Compass, Cpu, Layers, Ruler, Shield, Wrench } from "lucide-react";
+/* VAILE — Deep Dive: Technical Specifications, Material Science & Situational Contexts */
+import { ArrowDown, ArrowUpRight, Compass, Layers, Shield, Wrench } from "lucide-react";
 import { Link } from "wouter";
 import { EditorialPageFrame, PageMeta } from "@/components/EditorialPageFrame";
 
@@ -63,20 +63,39 @@ const hardwareLedger = [
   }
 ];
 
-const sizingMatrix = [
-  { size: "30", waist: "31.0\"", rise: "11.25\"", thigh: "24.5\"", knee: "19.0\"", hem: "17.5\"", inseam: "31.5\"" },
-  { size: "32", waist: "33.0\"", rise: "11.75\"", thigh: "25.5\"", knee: "19.75\"", hem: "18.0\"", inseam: "32.0\"" },
-  { size: "34", waist: "35.0\"", rise: "12.25\"", thigh: "26.5\"", knee: "20.5\"", hem: "18.5\"", inseam: "32.0\"" },
-  { size: "36", waist: "37.0\"", rise: "12.75\"", thigh: "27.5\"", knee: "21.25\"", hem: "19.0\"", inseam: "32.5\"" },
-  { size: "38", waist: "39.0\"", rise: "13.25\"", thigh: "28.5\"", knee: "22.0\"", hem: "19.5\"", inseam: "32.5\"" },
+const situationalApplications = [
+  {
+    num: "01",
+    scenario: "ARCHITECTURE & SITE INSPECTION",
+    tag: "Boardroom to Jobsite",
+    description: "Engineered for designers who move between drafting tables, client presentations, and active job sites. The crisp straight fall maintains a refined architectural silhouette, while the 12oz duck canvas resists gypsum dust, structural steel scuffs, and ladder friction."
+  },
+  {
+    num: "02",
+    scenario: "TWO-WHEEL & COMMUTER TRANSIT",
+    tag: "Motorcycle & Urban Cycle",
+    description: "The contoured rear rise stays anchored to prevent lower back exposure on motorcycles, café racers, and road bikes. The tight plain weave acts as a natural windbreak against highway draft, while 2.5\" thigh ease prevents knee binding across miles of saddle time."
+  },
+  {
+    num: "03",
+    scenario: "INDUSTRIAL DESIGN & PROTOTYPING",
+    tag: "Floor Assembly & Bench Work",
+    description: "From clay modeling and 3D printing to CNC machine shop setups. The 9.5-inch heavy canvas pocket bags securely house brass calipers, steel rules, and marking tools without pocket-corner blowout or sagging."
+  },
+  {
+    num: "04",
+    scenario: "LONG-HAUL TRANSIT & TRAVEL UNIFORM",
+    tag: "Extended Transit Stability",
+    description: "Unlike synthetic trousers that crease permanently or denim that bags out at the knees after hours seated in airplane cabins, dense cotton duck canvas holds its structured drape across 14-hour flights, looking sharp the moment you land."
+  }
 ];
 
 export default function DeepDive() {
   return (
     <EditorialPageFrame active="/deep-dive">
       <PageMeta
-        title="Deep Dive — VAILE Drop 001 Technical Specifications"
-        description="Complete technical specifications for VAILE Drop 001: 12oz duck canvas material science, pattern kinematics, solid hardware, and sizing matrices."
+        title="Deep Dive — VAILE Drop 001 Technical Specifications & Situational Index"
+        description="Technical specifications for VAILE Drop 001: 12oz duck canvas material science, pattern kinematics, solid hardware, and versatile situational contexts."
         canonical="https://vaile.studio/deep-dive"
       />
       <main id="main" className="editorial-page field-dossier deep-dossier">
@@ -92,7 +111,7 @@ export default function DeepDive() {
             <p className="eyebrow">FIELD DOSSIER / SPECIFICATION 001</p>
             <h1>Garment physics.<br /><em>Material & method.</em></h1>
             <p className="hero-dek">
-              A comprehensive technical record of Drop 001: textile architecture, pattern kinematics, solid brass reinforcement points, and precision dimensional tolerances.
+              A comprehensive technical record of Drop 001: textile architecture, pattern kinematics, solid brass reinforcement points, and extended situational contexts.
             </p>
             <a className="scroll-cue" href="#textile">
               <span>INSPECT THE TECHNICAL LEDGER</span>
@@ -109,13 +128,11 @@ export default function DeepDive() {
               <span>01</span>
               <p>TEXTILE ARCHITECTURE</p>
             </div>
-            <div className="tech-spec-headline">
-              <p className="eyebrow">RAW MATERIAL RECORD</p>
-              <h2>12oz 100% Cotton Duck.<br /><span>Loom-state integrity.</span></h2>
-              <p className="section-dek">
-                Drop 001 is built from a custom 12oz plain weave cotton duck selected for its high yarn density, firm structural drape, and resistance to cyclic friction.
-              </p>
-            </div>
+            <p className="eyebrow">RAW MATERIAL RECORD</p>
+            <h2>12oz 100% Cotton Duck.<br /><span>Loom-state integrity.</span></h2>
+            <p className="section-dek">
+              Drop 001 is built from a custom 12oz plain weave cotton duck selected for its high yarn density, firm structural drape, and resistance to cyclic friction.
+            </p>
           </div>
 
           <div className="tech-data-table-wrap">
@@ -187,13 +204,11 @@ export default function DeepDive() {
               <span>03</span>
               <p>HARDWARE & REINFORCEMENT</p>
             </div>
-            <div className="hardware-headline">
-              <p className="eyebrow">STRESS-POINT ANCHORING</p>
-              <h2>Anchored where<br /><span>repetition lives.</span></h2>
-              <p className="section-dek">
-                Every seam, bar-tack, and rivet is mapped to the physiological contact zones where trousers typically fail.
-              </p>
-            </div>
+            <p className="eyebrow">STRESS-POINT ANCHORING</p>
+            <h2>Anchored where<br /><span>repetition lives.</span></h2>
+            <p className="section-dek">
+              Every seam, bar-tack, and rivet is mapped to the physiological contact zones where trousers typically fail.
+            </p>
           </div>
 
           <div className="hardware-grid">
@@ -208,49 +223,31 @@ export default function DeepDive() {
           </div>
         </section>
 
-        {/* SECTION 04: DIMENSIONAL TOLERANCES & FLAT MEASUREMENTS */}
-        <section className="tech-sizing-section dossier-section">
-          <div className="sizing-header">
+        {/* SECTION 04: SITUATIONAL APPLICATION INDEX (REPLACED REDUNDANT SIZE CHART) */}
+        <section className="tech-situations-section dossier-section">
+          <div className="situations-header">
             <div className="dossier-rail">
               <span>04</span>
-              <p>DIMENSIONAL SPECIFICATIONS</p>
+              <p>SITUATIONAL CONTEXTS</p>
             </div>
-            <div className="sizing-headline">
-              <p className="eyebrow">PRECISION SIZING MATRIX</p>
-              <h2>All measurements taken flat.<br /><span>Tolerance ±0.5 inches.</span></h2>
-              <p className="section-dek">
-                Compare these exact flat dimensions against a pair of well-fitting non-stretch trousers in your current wardrobe.
-              </p>
-            </div>
+            <p className="eyebrow">BEYOND THE WORKSHOP</p>
+            <h2>Engineered for the overlap.<br /><span>Where work & life collide.</span></h2>
+            <p className="section-dek">
+              Drop 001 is built for lives that don't fit into a single wardrobe category: bridging technical durability with sharp everyday presence.
+            </p>
           </div>
 
-          <div className="spec-matrix-wrap">
-            <table className="spec-matrix-table">
-              <thead>
-                <tr>
-                  <th>WAIST SIZE</th>
-                  <th>WAIST (FLAT)</th>
-                  <th>FRONT RISE</th>
-                  <th>THIGH (AT CROTCH)</th>
-                  <th>KNEE (14" DOWN)</th>
-                  <th>LEG OPENING (HEM)</th>
-                  <th>INSEAM</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sizingMatrix.map((r) => (
-                  <tr key={r.size}>
-                    <td className="size-badge-cell">SIZE {r.size}</td>
-                    <td>{r.waist}</td>
-                    <td>{r.rise}</td>
-                    <td>{r.thigh}</td>
-                    <td>{r.knee}</td>
-                    <td>{r.hem}</td>
-                    <td>{r.inseam}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="situations-grid">
+            {situationalApplications.map((s) => (
+              <article key={s.num} className="situation-card">
+                <div className="situation-header">
+                  <span className="situation-num">{s.num}</span>
+                  <span className="situation-tag">{s.tag}</span>
+                </div>
+                <h3>{s.scenario}</h3>
+                <p>{s.description}</p>
+              </article>
+            ))}
           </div>
         </section>
 

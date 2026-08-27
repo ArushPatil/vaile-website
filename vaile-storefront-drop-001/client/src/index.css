@@ -1188,7 +1188,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 
 @media (min-width: 768px) {
   .chapter-shell .chapter-sizing { min-height: 100vh; min-height: 100svh; padding-top: max(88px, 10vh); padding-bottom: 28px; }
-  .chapter-shell .sizing-layout { min-height: min(70vh, 600px); grid-template-rows: repeat(8, minmax(0, 1fr)); column-gap: var(--space-3); row-gap: var(--space-2); }
+  .chapter-shell .sizing-layout { min-height: min(65vh, 580px); grid-template-rows: repeat(8, minmax(0, 1fr)); column-gap: var(--space-3); row-gap: var(--space-2); }
   .chapter-shell .sizing-copy { grid-column: 1 / span 4; grid-row: 1 / -1; grid-template-rows: auto auto auto auto 1fr auto; align-self: stretch; gap: var(--space-2); }
   .chapter-shell .sizing-copy h2 { font-size: clamp(2.7rem, 4.7vw, 4.5rem); }
   .chapter-shell .sizing-copy > p { max-width: 30ch; }
@@ -1966,5 +1966,22 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   }
   .chapter-shell .gallery-controls button:hover {
     background: rgba(247, 245, 239, 0.15) !important;
+  }
+}
+@media (min-width: 768px) {
+  .chapter-shell .gallery-stage {
+    height: min(65vh, 580px) !important;
+    min-height: 520px !important;
+  }
+  .chapter-shell .gallery-dossier dl {
+    align-self: stretch !important;
+    width: 100% !important;
+    margin-top: auto !important;
+  }
+  .chapter-shell .gallery-dossier dl > div {
+    grid-template-columns: 80px minmax(0, 1fr) !important;
+  }
+  .chapter-shell .gallery-controls {
+    margin-top: 24px !important;
   }
 }

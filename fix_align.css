@@ -1,0 +1,17 @@
+@media (min-width: 768px) {
+  .chapter-shell .gallery-stage {
+    height: min(70vh, 600px) !important;
+    min-height: 520px !important;
+  }
+  .chapter-shell .gallery-dossier dl {
+    align-self: stretch !important;
+    width: 100% !important;
+    margin-top: auto !important;
+  }
+  .chapter-shell .gallery-dossier dl > div {
+    grid-template-columns: 80px minmax(0, 1fr) !important;
+  }
+  .chapter-shell .gallery-controls {
+    margin-top: 24px !important;
+  }
+}

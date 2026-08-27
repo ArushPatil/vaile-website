@@ -1349,8 +1349,18 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 
 @media (min-width: 1200px) {
   .chapter-shell .allocation-copy { grid-column: 1 / 8; }
-  .chapter-shell .allocation-card { grid-column: 9 / -1; }
-  .chapter-shell .chapter-allocation .allocation-card { max-width: 464px; justify-self: end; }
+  /* PRIMARY CTA PROPORTION — USE FIVE WHOLE GRID COLUMNS, NOT A FREEFORM WIDTH. */
+  .chapter-shell .allocation-card { grid-column: 8 / -1; }
+  .chapter-shell .chapter-allocation .allocation-card { max-width: none; justify-self: stretch; }
+  /* PRIMARY CTA RHYTHM — OPEN THE HORIZONTAL FIELD WHILE GIVING EACH DECISION ITS OWN MEASURED BEAT. */
+  .chapter-shell .chapter-allocation .allocation-card { padding: 36px 36px 34px; }
+  .chapter-shell .chapter-allocation .card-price-eyebrow { margin-bottom: 13px; }
+  .chapter-shell .chapter-allocation .card-price-row { padding-bottom: 22px; }
+  .chapter-shell .chapter-allocation .card-size-label { margin-top: 22px; margin-bottom: 10px; }
+  .chapter-shell .chapter-allocation .size-grid button { min-height: 52px; }
+  .chapter-shell .chapter-allocation .initials-field { gap: 9px; margin-top: 20px; padding-top: 18px; }
+  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 56px; }
+  .chapter-shell .chapter-allocation .allocation-record { min-height: 68px; margin-top: 18px; }
 }
 
 /* DESKTOP LOOKBOOK CONTROL RAIL — KEEP THE REFERENCE'S TWO-PANEL FIELD, WITH CLEAR PREVIOUS/NEXT ACTIONS AT THE DOSSIER BASE. */
@@ -2044,4 +2054,223 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
     justify-content: flex-end;
     margin-left: auto;
   }
+}
+
+/* MOBILE EDITORIAL FIELD DOSSIER — DETACH TEXT FROM HERO IMAGERY, TURN DENSE DESKTOP LEDGERS INTO A CALM SINGLE-COLUMN READING SEQUENCE. */
+@media (max-width: 767px) {
+  .editorial-page-shell {
+    --editorial-mobile-space: 16px;
+    --editorial-mobile-section: 56px;
+  }
+
+  .editorial-page-shell .editorial-hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+    color: var(--pale);
+    background: var(--lichen);
+  }
+  .editorial-page-shell .editorial-hero::after {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: min(132vw, 540px);
+    background: linear-gradient(180deg, rgba(18,22,19,.08) 45%, rgba(18,22,19,.62) 100%);
+  }
+  .editorial-page-shell .editorial-hero__visual {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 0;
+    height: min(132vw, 540px);
+  }
+  .editorial-page-shell .editorial-hero__visual img { height: 100%; }
+  .editorial-page-shell .about-dossier__hero .editorial-hero__visual img { object-position: 62% 46%; }
+  .editorial-page-shell .deep-dossier__hero .editorial-hero__visual img { object-position: 52% 34%; }
+  .editorial-page-shell .editorial-hero__copy {
+    z-index: 2;
+    align-self: auto;
+    width: 100%;
+    margin: 0;
+    padding: 32px var(--editorial-mobile-space) 40px;
+    background: var(--lichen);
+  }
+  .editorial-page-shell .editorial-hero__copy .eyebrow { color: rgba(247,245,239,.66); }
+  .editorial-page-shell .editorial-hero__copy h1 {
+    max-width: 9.5ch;
+    margin-top: 14px;
+    font-size: clamp(3rem, 12.5vw, 4.35rem);
+    line-height: .88;
+    letter-spacing: -.045em;
+  }
+  .editorial-page-shell .hero-dek {
+    max-width: 32ch;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .editorial-page-shell .scroll-cue {
+    min-height: 48px;
+    margin-top: 26px;
+    padding: 0 0 7px;
+    font-size: 10px;
+  }
+  .editorial-page-shell .editorial-hero__index {
+    right: var(--editorial-mobile-space);
+    bottom: calc(min(132vw, 540px) - 26px);
+    color: var(--pale);
+    font-size: 9px;
+  }
+
+  .editorial-page-shell .dossier-section {
+    padding: var(--editorial-mobile-section) var(--editorial-mobile-space);
+  }
+  .editorial-page-shell .dossier-rail {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+    font-size: 9px;
+    line-height: 14px;
+  }
+  .editorial-page-shell .eyebrow { font-size: 9px; line-height: 14px; }
+  .editorial-page-shell .section-dek { max-width: 34ch; font-size: 15px; line-height: 24px; }
+
+  /* ABOUT — READ AS THREE DISTINCT REPORTS, NOT AS A SQUEEZED DESKTOP GRID. */
+  .editorial-page-shell .about-genesis,
+  .editorial-page-shell .about-chronicle,
+  .editorial-page-shell .about-manifesto {
+    display: block;
+  }
+  .editorial-page-shell .genesis-header-col,
+  .editorial-page-shell .about-chronicle__header { margin-bottom: 34px; }
+  .editorial-page-shell .genesis-header-col .eyebrow,
+  .editorial-page-shell .about-chronicle__header .eyebrow { margin-bottom: 10px; }
+  .editorial-page-shell .genesis-header-col h2,
+  .editorial-page-shell .about-chronicle__header h2 {
+    max-width: 9ch;
+    margin: 0 0 18px;
+    font-size: clamp(2.7rem, 11.5vw, 3.8rem);
+    line-height: .9;
+    letter-spacing: -.045em;
+  }
+  .editorial-page-shell .genesis-body-col { gap: 18px; }
+  .editorial-page-shell .genesis-body-col p { font-size: 15px; line-height: 25px; }
+  .editorial-page-shell .genesis-body-col p.lead-text { font-size: 18px; line-height: 28px; }
+  .editorial-page-shell .atelier-quote {
+    margin-top: 14px;
+    padding: 20px 0 0 18px;
+    gap: 10px;
+  }
+  .editorial-page-shell .atelier-quote blockquote { font-size: 19px; line-height: 27px; }
+  .editorial-page-shell .atelier-quote cite { font-size: 10px; line-height: 15px; }
+  .editorial-page-shell .chronicle-ledger { border-top-width: 2px; }
+  .editorial-page-shell .chronicle-row {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 14px;
+    padding: 22px 0;
+  }
+  .editorial-page-shell .chronicle-meta { gap: 5px; }
+  .editorial-page-shell .chronicle-phase { font-size: 8px; line-height: 12px; }
+  .editorial-page-shell .chronicle-year { font-size: 23px; line-height: 1; }
+  .editorial-page-shell .chronicle-content h3 { margin-bottom: 7px; font-size: 19px; line-height: 23px; }
+  .editorial-page-shell .chronicle-subtitle { margin-bottom: 9px; font-size: 9px; line-height: 14px; }
+  .editorial-page-shell .chronicle-desc { font-size: 14px; line-height: 22px; }
+  .editorial-page-shell .about-manifesto { padding: 0; }
+  .editorial-page-shell .manifesto-visual { min-height: 0; aspect-ratio: 1 / 1.06; }
+  .editorial-page-shell .manifesto-visual img { object-position: center; }
+  .editorial-page-shell .visual-caption { right: 12px; bottom: 12px; left: 12px; padding: 10px 12px; }
+  .editorial-page-shell .visual-caption p { font-size: 9px; line-height: 13px; }
+  .editorial-page-shell .manifesto-content { padding: var(--editorial-mobile-section) var(--editorial-mobile-space); }
+  .editorial-page-shell .manifesto-content h2 {
+    max-width: 9.4ch;
+    margin-bottom: 16px;
+    font-size: clamp(2.75rem, 11.5vw, 3.85rem);
+    line-height: .9;
+    letter-spacing: -.045em;
+  }
+  .editorial-page-shell .manifesto-dek { margin-bottom: 28px; font-size: 15px; line-height: 24px; }
+  .editorial-page-shell .tenets-matrix { gap: 0; padding-top: 0; }
+  .editorial-page-shell .tenet-item { gap: 7px; padding: 19px 0 22px; border-bottom: 1px solid rgba(247,245,239,.2); }
+  .editorial-page-shell .tenet-item h3 { font-size: 20px; line-height: 25px; }
+  .editorial-page-shell .tenet-item p { max-width: 38ch; font-size: 14px; line-height: 22px; }
+
+  /* DEEP DIVE — CONVERT THE SPECIFICATION TABLE AND REPEATED CARDS INTO MOBILE READING LEDGERS. */
+  .editorial-page-shell .tech-spec-section,
+  .editorial-page-shell .tech-hardware-section,
+  .editorial-page-shell .tech-situations-section { display: block; }
+  .editorial-page-shell .tech-spec-header,
+  .editorial-page-shell .hardware-header,
+  .editorial-page-shell .situations-header { margin-bottom: 34px; }
+  .editorial-page-shell .tech-spec-header .eyebrow,
+  .editorial-page-shell .hardware-header .eyebrow,
+  .editorial-page-shell .situations-header .eyebrow { margin-bottom: 10px; }
+  .editorial-page-shell .tech-spec-header h2,
+  .editorial-page-shell .hardware-header h2,
+  .editorial-page-shell .situations-header h2 {
+    max-width: 10ch;
+    margin: 0 0 18px;
+    font-size: clamp(2.65rem, 11.2vw, 3.7rem);
+    line-height: .9;
+    letter-spacing: -.045em;
+  }
+  .editorial-page-shell .tech-data-table-wrap { overflow: visible; border-top-width: 2px; }
+  .editorial-page-shell .tech-data-table,
+  .editorial-page-shell .tech-data-table tbody,
+  .editorial-page-shell .tech-data-table tr,
+  .editorial-page-shell .tech-data-table td { display: block; width: 100%; }
+  .editorial-page-shell .tech-data-table thead { display: none; }
+  .editorial-page-shell .tech-data-table tr { padding: 19px 0 21px; border-bottom: 1px solid var(--line); }
+  .editorial-page-shell .tech-data-table td { padding: 0; border: 0; }
+  .editorial-page-shell .tech-data-table .spec-label-cell { color: var(--oxide-deep); font-size: 9px; line-height: 14px; }
+  .editorial-page-shell .tech-data-table .spec-val-cell { margin-top: 7px; font-size: 19px; line-height: 24px; }
+  .editorial-page-shell .tech-data-table .spec-note-cell { max-width: 37ch; margin-top: 8px; font-size: 14px; line-height: 22px; }
+  .editorial-page-shell .tech-kinematics-section { padding-top: var(--editorial-mobile-section); }
+  .editorial-page-shell .kinematics-intro { margin-bottom: 34px; }
+  .editorial-page-shell .kinematics-intro h2 {
+    max-width: 9.8ch;
+    margin-bottom: 16px;
+    font-size: clamp(2.75rem, 11.5vw, 3.85rem);
+    line-height: .9;
+    letter-spacing: -.045em;
+  }
+  .editorial-page-shell .kinematics-dek { max-width: 34ch; font-size: 15px; line-height: 24px; }
+  .editorial-page-shell .kinematics-layout { display: block; }
+  .editorial-page-shell .kinematics-visual { min-height: 0; aspect-ratio: 4 / 5; margin-bottom: 30px; }
+  .editorial-page-shell .kinematics-visual img { object-position: 50% 38%; }
+  .editorial-page-shell .kinematics-badge { right: 12px; bottom: 12px; left: 12px; padding: 10px 12px; }
+  .editorial-page-shell .kinematics-badge strong { display: block; margin-top: 4px; font-size: 12px; line-height: 16px; }
+  .editorial-page-shell .kinematics-cards { gap: 0; border-top: 1px solid rgba(247,245,239,.26); }
+  .editorial-page-shell .kinematic-item { gap: 8px; padding: 19px 0 22px; border: 0; border-bottom: 1px solid rgba(247,245,239,.2); background: transparent; }
+  .editorial-page-shell .item-focus { font-size: 8px; line-height: 12px; text-align: right; }
+  .editorial-page-shell .kinematic-item h3 { font-size: 20px; line-height: 25px; }
+  .editorial-page-shell .kinematic-item p { max-width: 38ch; font-size: 14px; line-height: 22px; }
+  .editorial-page-shell .hardware-grid,
+  .editorial-page-shell .situations-grid { gap: 0; padding-top: 0; border-top-width: 2px; }
+  .editorial-page-shell .hardware-card,
+  .editorial-page-shell .situation-card { gap: 8px; padding: 20px 0 22px; border: 0; border-bottom: 1px solid var(--line); background: transparent; }
+  .editorial-page-shell .hardware-card h3,
+  .editorial-page-shell .situation-card h3 { font-size: 20px; line-height: 25px; }
+  .editorial-page-shell .hw-location,
+  .editorial-page-shell .situation-tag { font-size: 9px; line-height: 14px; }
+  .editorial-page-shell .hw-detail,
+  .editorial-page-shell .situation-card p { max-width: 38ch; margin-top: 2px; font-size: 14px; line-height: 22px; }
+
+  .editorial-page-shell .dossier-close {
+    display: block;
+    min-height: 0;
+    padding: 64px var(--editorial-mobile-space);
+    text-align: left;
+  }
+  .editorial-page-shell .dossier-close h2 {
+    max-width: 9.7ch;
+    margin: 17px 0;
+    font-size: clamp(3rem, 12.5vw, 4.25rem);
+    line-height: .88;
+    letter-spacing: -.045em;
+  }
+  .editorial-page-shell .dossier-close > p:not(.eyebrow) { max-width: 34ch; margin: 0 0 28px; font-size: 15px; line-height: 24px; }
+  .editorial-page-shell .close-actions { align-items: stretch; gap: 10px; }
+  .editorial-page-shell .dark-record { min-height: 56px; padding: 15px 16px; font-size: 9px; }
 }

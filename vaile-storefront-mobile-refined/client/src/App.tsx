@@ -10,12 +10,16 @@ import Home from "./pages/HomeChapters";
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
+const About = lazy(() => import("./pages/About"));
+const DeepDive = lazy(() => import("./pages/DeepDive"));
 
 function Router() {
   return (
     <Suspense fallback={<main className="route-loading" aria-live="polite">LOADING RECORD…</main>}>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/deep-dive" component={DeepDive} />
         <Route path="/terms" component={Terms} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/404" component={NotFound} />

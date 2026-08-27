@@ -1580,8 +1580,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 .editorial-hero__index { position: absolute; z-index: 2; right: 7vw; bottom: 12vh; color: rgba(247,245,239,.68); font: 500 8px "DM Mono", monospace; letter-spacing: .16em; }
 .scroll-cue { display: inline-flex; align-items: center; gap: 10px; margin-top: 34px; padding-bottom: 7px; border-bottom: 1px solid rgba(247,245,239,.55); color: var(--pale); font: 500 8px "DM Mono", monospace; letter-spacing: .13em; text-decoration: none; }
 .scroll-cue svg { color: var(--oxide); }
-.about-hero .editorial-hero__visual img { object-position: 58% 30%; }
-.deep-hero .editorial-hero__visual img { object-position: 50% 26%; }
+.about-hero .editorial-hero__visual img,
+.about-dossier__hero .editorial-hero__visual img { object-position: 58% 30%; }
+.deep-hero .editorial-hero__visual img,
+.deep-dossier__hero .editorial-hero__visual img { object-position: 50% 26%; }
+.dossier-portrait__img { display: block; width: 100%; height: 100%; min-height: clamp(390px, 39vw, 680px); object-fit: cover; object-position: 50% 40%; filter: saturate(.76) contrast(1.05); }
+.dossier-close .eyebrow { color: rgba(247,245,239,.6); }
+.dossier-close--lichen .eyebrow { color: rgba(247,245,239,.6); }
 
 .editorial-band { display: grid; grid-template-columns: 1fr minmax(0, 1.45fr); gap: 5vw; padding: clamp(72px, 10vw, 150px) 7vw; border-top: 1px solid var(--line); }
 .band-index { color: var(--mute); font: 500 8px "DM Mono", monospace; letter-spacing: .14em; }

@@ -35,6 +35,7 @@ const menuItems = [
 export default function HomeChapters() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState("32");
+  const [initials, setInitials] = useState("");
   const [active, setActive] = useState(0);
   const [showGalleryInfo, setShowGalleryInfo] = useState(false);
   const [galleryTransitioning, setGalleryTransitioning] = useState(false);
@@ -43,6 +44,7 @@ export default function HomeChapters() {
   const galleryRequestRef = useRef(0);
   const galleryReleaseTimerRef = useRef<number | null>(null);
   const galleryTouchStartRef = useRef<{ x: number; y: number } | null>(null);
+  const initialsInputRef = useRef<HTMLInputElement>(null);
   const [unit, setUnit] = useState<"IN" | "CM">("IN");
   const [loading, setLoading] = useState(() => {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
@@ -63,7 +65,8 @@ export default function HomeChapters() {
 
   const reducedMotion = useReducedMotion();
   const menuDuration = reducedMotion ? 0 : 0.42;
-  const href = buildWhatsAppEnquiryUrl("VAILE — DROP 001", size);
+  const hasInitials = initials.length > 0;
+  const href = buildWhatsAppEnquiryUrl("VAILE — DROP 001", size, initials);
   const shot = shots[active];
   const fmt = (value: number) => unit === "CM" ? (value * 2.54).toFixed(1) : Number.isInteger(value) ? value.toString() : value.toString();
   const gallerySource = (index: number) => {
@@ -100,6 +103,13 @@ export default function HomeChapters() {
   const moveGallery = (direction: 1 | -1) => selectGallery((activeGalleryRef.current + direction + shots.length) % shots.length);
 
   const selectChartSize = (nextSize: string) => setSize(nextSize);
+  const updateInitials = (value: string) => setInitials(value.toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3));
+  const requireInitials = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (hasInitials) return;
+    event.preventDefault();
+    initialsInputRef.current?.focus();
+    initialsInputRef.current?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
+  };
 
   const beginGallerySwipe = (event: ReactTouchEvent<HTMLDivElement>) => {
     if (showGalleryInfo || event.touches.length !== 1 || (event.target as HTMLElement).closest("button, a, input, select, textarea")) {
@@ -190,7 +200,7 @@ export default function HomeChapters() {
             <span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span>
             <small>001</small>
           </a>
-          <a className="header-action" href={href} target="_blank" rel="noopener noreferrer" aria-label="Enquire about VAILE Drop 001 on WhatsApp, opens in a new tab">
+          <a className="header-action" href="#allocation" aria-label="Go to the VAILE enquiry form">
             <b>ENQUIRE</b><ArrowUpRight size={15} />
           </a>
         </header>
@@ -245,7 +255,12 @@ export default function HomeChapters() {
               <div className="size-grid" role="radiogroup" aria-label="Preferred size">
                 {sizes.map((item) => <button type="button" key={item} className={size === item ? "is-selected" : ""} onClick={() => setSize(item)} role="radio" aria-checked={size === item} aria-label={`Size ${item}`}>{item}</button>)}
               </div>
-              <a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab">
+              <label className="initials-field" htmlFor="enquiry-initials">
+                <span><b>YOUR INITIALS</b><em>REQUIRED</em></span>
+                <span className="initials-field__entry"><input ref={initialsInputRef} id="enquiry-initials" type="text" inputMode="text" autoComplete="off" maxLength={3} value={initials} onChange={(event) => updateInitials(event.target.value)} placeholder="ABC" aria-describedby="initials-note" /><small>{initials.length}/3</small></span>
+                <i id="initials-note">UP TO THREE LETTERS</i>
+              </label>
+              <a className={hasInitials ? "allocation-record" : "allocation-record is-awaiting-initials"} href={href} onClick={requireInitials} target={hasInitials ? "_blank" : undefined} rel={hasInitials ? "noopener noreferrer" : undefined} aria-disabled={!hasInitials} aria-label={hasInitials ? "Start a WhatsApp enquiry, opens in a new tab" : "Enter initials before starting an enquiry"}>
                 <span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={17} />
               </a>
             </aside>
@@ -334,10 +349,14 @@ export default function HomeChapters() {
 
         <section className="closing-allocation">
           <p>DROP 001</p><h2><span>Choose a size.</span><span>Request</span><span>an allocation.</span></h2>
-          <div><span>₹6,200 INR / $100 USD</span><a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab"><span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={19} /></a></div>
+          <div><span>₹6,200 INR / $100 USD</span><a className="allocation-record allocation-record--gateway" href="#allocation" aria-label="Go to the primary enquiry form"><span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={19} /></a></div>
+          <aside className="closing-learn" aria-label="Learn more about VAILE">
+            <p>WANT TO LEARN MORE?</p>
+            <span>Visit <Link href="/about">About</Link> for the studio story or <Link href="/deep-dive">Deep Dive</Link> for the Drop 001 record.</span>
+          </aside>
         </section>
 
-        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/about">About</Link><Link href="/deep-dive">Deep Dive</Link><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link><span>12 oz duck canvas</span></div></footer>
+        <footer className="manual-footer"><a href="/" className="manual-brand"><img src={assets.mark} alt="VAILE logo" /><span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span><small>001</small></a><div><Link href="/terms">Terms</Link><Link href="/privacy">Privacy</Link></div></footer>
       </main>
     </>
   );

@@ -2,7 +2,7 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { EditorialPageFrame, PageMeta } from "@/components/EditorialPageFrame";
-import { SITE_URL, WHATSAPP_ENQUIRY_URL } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
 
 const journeySteps = [
   {
@@ -211,15 +211,13 @@ export default function About() {
               <span>READ THE TECHNICAL DETAILS</span>
               <ArrowUpRight size={17} />
             </Link>
-            <a
+            <Link
               className="dark-record dark-record--secondary"
-              href={WHATSAPP_ENQUIRY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#allocation"
             >
-              <span>ENQUIRE ON WHATSAPP</span>
+              <span>START AN ENQUIRY</span>
               <ArrowUpRight size={17} />
-            </a>
+            </Link>
           </div>
         </section>
       </main>

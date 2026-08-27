@@ -5,12 +5,10 @@
 export const SITE_URL = "https://vaile-website.pages.dev";
 export const WHATSAPP_PHONE_NUMBER = "918951066881";
 
-export const WHATSAPP_ENQUIRY_URL = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(
-  "Hello VAILE,\n\nI would like to enquire about Edition 001.",
-)}`;
+export function buildWhatsAppEnquiryUrl(itemTitle: string, size: string, initials: string): string {
+  const normalizedInitials = initials.toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3);
 
-export function buildWhatsAppEnquiryUrl(itemTitle: string, size: string): string {
   return `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(
-    `Hello VAILE,\n\nI would like to enquire about:\n• Item: ${itemTitle}\n• Size: ${size}\n\nPlease share availability and allocation details.`,
+    `Hello VAILE,\n\nI would like to enquire about:\n• Item: ${itemTitle}\n• Size: ${size}\n• Initials: ${normalizedInitials}\n\nPlease share availability and allocation details.`,
   )}`;
 }

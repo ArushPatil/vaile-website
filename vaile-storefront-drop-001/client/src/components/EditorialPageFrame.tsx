@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "wouter";
-import { SITE_URL, WHATSAPP_ENQUIRY_URL as enquiry } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
 
 // Menu choreography constants copied verbatim from HomeChapters so both shells animate identically.
 const menuEase = [0.23, 1, 0.32, 1] as const;
@@ -110,9 +110,9 @@ export function EditorialPageFrame({ children, active }: { children: ReactNode; 
           <span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span>
           <small>001</small>
         </Link>
-        <a className="header-action" href={enquiry} target="_blank" rel="noopener noreferrer" aria-label="Enquire about VAILE on WhatsApp, opens in a new tab">
+        <Link className="header-action" href="/#allocation" aria-label="Go to the VAILE enquiry form">
           <b>ENQUIRE</b><ArrowUpRight size={15} />
-        </a>
+        </Link>
       </header>
 
       <AnimatePresence>
@@ -140,11 +140,8 @@ export function EditorialPageFrame({ children, active }: { children: ReactNode; 
           <small>001</small>
         </Link>
         <div>
-          <Link href="/about">About</Link>
-          <Link href="/deep-dive">Deep Dive</Link>
           <Link href="/terms">Terms</Link>
           <Link href="/privacy">Privacy</Link>
-          <span>12 oz duck canvas</span>
         </div>
       </footer>
     </div>

@@ -2,7 +2,7 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { EditorialPageFrame, PageMeta } from "@/components/EditorialPageFrame";
-import { SITE_URL, WHATSAPP_ENQUIRY_URL } from "@/lib/site";
+import { SITE_URL } from "@/lib/site";
 
 const fabricDetails = [
   { label: "RAW MATERIAL", value: "100% Long-Staple Cotton", note: "Breathable natural fiber that softens beautifully with wear" },
@@ -268,15 +268,13 @@ export default function DeepDive() {
             Reach out directly on WhatsApp for personal sizing advice, questions, or to request your pair.
           </p>
           <div className="close-actions">
-            <a
+            <Link
               className="dark-record"
-              href={WHATSAPP_ENQUIRY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#allocation"
             >
-              <span>ENQUIRE ON WHATSAPP</span>
+              <span>START AN ENQUIRY</span>
               <ArrowUpRight size={17} />
-            </a>
+            </Link>
             <Link className="dark-record dark-record--secondary" href="/about">
               <span>READ OUR STORY</span>
               <ArrowUpRight size={17} />

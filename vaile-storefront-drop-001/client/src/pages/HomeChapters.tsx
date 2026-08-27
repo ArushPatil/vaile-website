@@ -179,6 +179,28 @@ export default function HomeChapters() {
     if (galleryReleaseTimerRef.current) window.clearTimeout(galleryReleaseTimerRef.current);
   }, []);
 
+  useEffect(() => {
+    let frameId: number | null = null;
+    const scrollToPrimaryEnquiry = () => {
+      if (window.location.hash !== "#enquiry") return;
+      frameId = window.requestAnimationFrame(() => {
+        const target = document.getElementById("enquiry");
+        const header = document.querySelector<HTMLElement>(".chapter-shell .manual-header");
+        if (!target) return;
+        const headerOffset = (header?.getBoundingClientRect().height ?? 0) + 20;
+        const targetTop = window.scrollY + target.getBoundingClientRect().top - headerOffset;
+        window.scrollTo({ top: targetTop, behavior: reducedMotion ? "auto" : "smooth" });
+      });
+    };
+
+    scrollToPrimaryEnquiry();
+    window.addEventListener("hashchange", scrollToPrimaryEnquiry);
+    return () => {
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      window.removeEventListener("hashchange", scrollToPrimaryEnquiry);
+    };
+  }, [loading, reducedMotion]);
+
   return (
     <>
       <AnimatePresence>
@@ -200,7 +222,7 @@ export default function HomeChapters() {
             <span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span>
             <small>001</small>
           </a>
-          <a className="header-action" href="#allocation" aria-label="Go to the VAILE enquiry form">
+          <a className="header-action" href="#enquiry" aria-label="Go to the VAILE enquiry form">
             <b>ENQUIRE</b><ArrowUpRight size={15} />
           </a>
         </header>
@@ -248,7 +270,7 @@ export default function HomeChapters() {
                 <div><dt>FIT</dt><dd>Relaxed straight leg</dd></div>
               </dl>
             </div>
-            <aside className="allocation-card">
+            <aside id="enquiry" className="allocation-card">
               <p className="card-price-eyebrow">PRICE</p>
               <div className="card-price-row"><strong>₹6,200 <small>INR</small></strong><span>$100 USD</span></div>
               <p className="card-size-label">CHOOSE YOUR SIZE <span aria-hidden="true">/</span> <a className="size-chart-link" href="#sizing">VIEW SIZE CHART</a></p>
@@ -349,7 +371,7 @@ export default function HomeChapters() {
 
         <section className="closing-allocation">
           <p>DROP 001</p><h2><span>Choose a size.</span><span>Request</span><span>an allocation.</span></h2>
-          <div><span>₹6,200 INR / $100 USD</span><a className="allocation-record allocation-record--gateway" href="#allocation" aria-label="Go to the primary enquiry form"><span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={19} /></a></div>
+          <div><span>₹6,200 INR / $100 USD</span><a className="allocation-record allocation-record--gateway" href="#enquiry" aria-label="Go to the primary enquiry form"><span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={19} /></a></div>
           <aside className="closing-learn" aria-label="Learn more about VAILE">
             <p>WANT TO LEARN MORE?</p>
             <span>Visit <Link href="/about">About</Link> for the studio story or <Link href="/deep-dive">Deep Dive</Link> for the Drop 001 record.</span>

@@ -213,7 +213,7 @@ export default function About() {
             </Link>
             <Link
               className="dark-record dark-record--secondary"
-              href="/#allocation"
+              href="/#enquiry"
             >
               <span>START AN ENQUIRY</span>
               <ArrowUpRight size={17} />

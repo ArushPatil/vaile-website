@@ -270,7 +270,7 @@ export default function DeepDive() {
           <div className="close-actions">
             <Link
               className="dark-record"
-              href="/#allocation"
+              href="/#enquiry"
             >
               <span>START AN ENQUIRY</span>
               <ArrowUpRight size={17} />

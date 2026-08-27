@@ -110,7 +110,7 @@ export function EditorialPageFrame({ children, active }: { children: ReactNode; 
           <span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span>
           <small>001</small>
         </Link>
-        <Link className="header-action" href="/#allocation" aria-label="Go to the VAILE enquiry form">
+        <Link className="header-action" href="/#enquiry" aria-label="Go to the VAILE enquiry form">
           <b>ENQUIRE</b><ArrowUpRight size={15} />
         </Link>
       </header>

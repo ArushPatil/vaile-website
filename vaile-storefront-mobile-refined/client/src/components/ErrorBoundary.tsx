@@ -18,6 +18,18 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError(error: Error): State {
+    // Check if error is a chunk loading error from a new deployment
+    if (
+      error?.message?.includes("Failed to fetch dynamically imported module") ||
+      error?.message?.includes("Importing a module script failed") ||
+      error?.name === "ChunkLoadError"
+    ) {
+      const hasReloaded = sessionStorage.getItem("chunk_reload_retry");
+      if (!hasReloaded) {
+        sessionStorage.setItem("chunk_reload_retry", "true");
+        window.location.reload();
+      }
+    }
     return { hasError: true, error };
   }
 

@@ -6,12 +6,12 @@ import { lazy, Suspense } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/HomeChapters";
+import About from "./pages/About";
+import DeepDive from "./pages/DeepDive";
 
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
-const About = lazy(() => import("./pages/About"));
-const DeepDive = lazy(() => import("./pages/DeepDive"));
 
 function Router() {
   return (

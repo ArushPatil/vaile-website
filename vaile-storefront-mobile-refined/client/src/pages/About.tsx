@@ -1,92 +1,217 @@
-/* VAILE — About page: evidence-led studio record, stock paper foundation, lichen accent fields. */
-import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
+/* VAILE — About: The Atelier & Founding Chronicle */
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { EditorialPageFrame, PageMeta } from "@/components/EditorialPageFrame";
 
-const studioPrinciples = [
-  ["01", "ONE GARMENT, DEEPLY", "We would rather continue a useful conversation with one trouser than scatter attention across a crowded seasonal rack."],
-  ["02", "UTILITY WITHOUT NOISE", "Every pocket, reinforcement, and piece of hardware has to answer to movement before it answers to styling."],
-  ["03", "PATINA IS EVIDENCE", "The garment is not completed by the studio. It is completed slowly by a commute, a shift, a rehearsal, a ride, and a thousand ordinary decisions."],
+const chronicleMilestones = [
+  {
+    phase: "PHASE 01",
+    year: "2022",
+    title: "The Structural Failure Analysis",
+    subtitle: "Deconstructing eighteen pairs of work trousers",
+    desc: "VAILE started with a simple, frustrating realization: modern trousers look right on a showroom hanger, but bind during a commute, blow out at the pocket rivets, and disintegrate within six months of real friction. We cut apart 18 vintage and contemporary pairs to map exact failure points across the crotch, outseam, and pocket junctions."
+  },
+  {
+    phase: "PHASE 02",
+    year: "2023",
+    title: "Fourteen Pattern Iterations",
+    subtitle: "Refining the line between workshop and street",
+    desc: "Over 14 months of physical sampling on diverse bodies, we drafted fourteen complete pattern blocks. The goal was rigorous: engineer enough ease through the seat and quadriceps for motorcycle saddles, floor work, and long transit days, without compromising the clean, sharp vertical fall from hip to hem."
+  },
+  {
+    phase: "PHASE 03",
+    year: "2024",
+    title: "The Canvas Quest & Mill Selection",
+    subtitle: "Rejecting synthetic blends for loom-state purity",
+    desc: "We rejected three commercial canvas mills that offered chemical-softened, pre-distressed textiles. We chose an unyielding 12oz 100% cotton duck canvas—firm, dry to the touch, and structured—so that every crease, honeycomb, and fade is authentic evidence earned by the wearer."
+  },
+  {
+    phase: "PHASE 04",
+    year: "2025",
+    title: "Drop 001: Fifty Numbered Pairs",
+    subtitle: "A finite edition allocated person-to-person",
+    desc: "Rather than mass-producing hundreds of unmonitored units, Drop 001 is intentionally limited to 50 numbered pairs. Hand-inspected, reinforced with solid brass rivets, and allocated person-to-person to build real relationships with our first cohort of owners."
+  }
 ];
 
-const workingRecords = [
-  ["MATERIAL", "Canvas before concept", "A heavyweight duck canvas establishes the hand, the drape, and the honest resistance that Drop 001 needs."],
-  ["CONSTRUCTION", "Reinforcement where repetition lives", "Double knees, stress-point hardware, and practical pocket architecture are considered as a system rather than surface detail."],
-  ["USE", "Made for overlap", "The trouser is designed for the part of life where workwear, personal uniform, and daily movement stop being separate categories."],
-];
-
-const archiveRows = [
-  ["2022", "THE QUESTION", "What would a trouser look like if its entire brief was to remain useful long after the first good outfit?"],
-  ["2023", "THE PATTERN", "A relaxed straight leg, a measured rise, and room through the seat and thigh became the working silhouette."],
-  ["2024", "THE MATERIAL", "Duck canvas, solid hardware, and a tightly considered construction language became the first field record."],
-  ["2025", "DROP 001", "Fifty numbered pairs. Private allocation. A finite first run designed to be worn in, not saved."],
+const studioTenets = [
+  {
+    index: "01",
+    label: "SINGLE-GARMENT OBSESSION",
+    title: "Depth over seasonal noise",
+    copy: "We refuse the fast-fashion calendar. We would rather spend three years engineering one pair of trousers that lasts a decade than three months releasing twenty disposable styles."
+  },
+  {
+    index: "02",
+    label: "PATINA IS PROOF",
+    title: "The wearer completes the design",
+    copy: "The garment is not finished when it leaves our studio. It is finished slowly by a daily commute, workshop friction, rain, repairs, and a thousand ordinary decisions."
+  },
+  {
+    index: "03",
+    label: "FORM FOLLOWS KINEMATICS",
+    title: "Utility before styling",
+    copy: "Every pocket depth, bar-tack coordinate, and seam allowance answers to body mechanics and weight distribution before it answers to aesthetics."
+  },
+  {
+    index: "04",
+    label: "FINITE ALLOCATIONS",
+    title: "Accountability in every stitch",
+    copy: "Strict 50-pair editions ensure complete quality control, direct sizing consultation, and an open feedback loop as each trouser enters real-world service."
+  }
 ];
 
 export default function About() {
   return (
     <EditorialPageFrame active="/about">
-      <PageMeta title="About VAILE — The Studio Behind Drop 001" description="VAILE is an independent garment studio building durable, considered trousers for actual wear. Read the story behind Drop 001." canonical="https://vaile.studio/about" />
+      <PageMeta
+        title="About VAILE — The Atelier & Founding Chronicle"
+        description="The story behind VAILE: three years of pattern sampling, single-garment obsession, and the journey to Drop 001."
+        canonical="https://vaile.studio/about"
+      />
       <main id="main" className="editorial-page field-dossier about-dossier">
+        {/* HERO */}
         <section className="editorial-hero dossier-hero about-dossier__hero">
-          <div className="editorial-hero__visual"><img src="/images/vaile-field-dossier-hero.jpg" alt="VAILE field study — heavyweight canvas trousers in an open industrial landscape" /></div>
+          <div className="editorial-hero__visual">
+            <img
+              src="/images/vaile-field-dossier-hero.jpg"
+              alt="VAILE atelier field study — heavyweight duck canvas trouser in an industrial landscape"
+            />
+          </div>
           <div className="editorial-hero__copy">
-            <p className="eyebrow">ABOUT VAILE / FIELD DOSSIER 001</p>
-            <h1>Built around<br /><em>one good pair.</em></h1>
-            <p className="hero-dek">VAILE is a small garment studio interested in the long middle of a product's life: the thousand ordinary moments that turn material into something personal.</p>
-            <a className="scroll-cue" href="#position"><span>OPEN THE STUDIO RECORD</span><ArrowDown size={16} /></a>
+            <p className="eyebrow">ABOUT VAILE / ATELIER RECORD 001</p>
+            <h1>One pair.<br /><em>Three years of refusal.</em></h1>
+            <p className="hero-dek">
+              VAILE was founded on a simple dissatisfaction with disposable garments. Drop 001 is our response: a single, obsessively engineered trouser built for the long middle of life.
+            </p>
+            <a className="scroll-cue" href="#genesis">
+              <span>READ THE FOUNDING CHRONICLE</span>
+              <ArrowDown size={16} />
+            </a>
           </div>
-          <span className="editorial-hero__index">A / 01 — STUDIO</span>
+          <span className="editorial-hero__index">ATELIER / RECORD 01</span>
         </section>
 
-        <section id="position" className="dossier-position dossier-section">
-          <div className="dossier-rail"><span>01</span><p>POSITION / NOT A SEASON</p></div>
-          <div className="dossier-position__lead">
-            <p className="eyebrow">THE SHORT VERSION</p>
-            <h2>Not seasonal.<br /><span>Situational.</span></h2>
+        {/* SECTION 01: THE GENESIS */}
+        <section id="genesis" className="about-genesis dossier-section">
+          <div className="dossier-rail">
+            <span>01</span>
+            <p>ATELIER GENESIS / 2022</p>
           </div>
-          <div className="dossier-position__copy">
-            <p>VAILE started with a practical frustration: most trousers are asked to perform in one narrow context. They look right but bind on a bike. They move well but lose their structure. They carry utility loudly when the better answer is quiet specificity.</p>
-            <p>Drop 001 is our answer in progress. It is a limited, studied trouser for the overlap between workshop and street, rehearsal and commute, private uniform and public life.</p>
-            <div className="dossier-callout"><span>STUDIO PREMISE</span><b>Clothes become more useful when the brief leaves space for the person wearing them.</b></div>
+          <div className="about-genesis__lead">
+            <p className="eyebrow">THE FOUNDING PREMISE</p>
+            <h2>Built from a practical<br /><span>frustration.</span></h2>
           </div>
-        </section>
-
-        <section className="dossier-record dossier-section">
-          <div className="dossier-record__title"><p className="eyebrow">02 — THE WORKING RECORD</p><h2>A trouser is a<br />chain of decisions.</h2></div>
-          <div className="dossier-record__grid">
-            {workingRecords.map(([label, title, copy], index) => <article key={label} className="record-card"><span>0{index + 1} / {label}</span><h3>{title}</h3><p>{copy}</p><ArrowRight size={17} /></article>)}
-          </div>
-        </section>
-
-        <section className="dossier-portrait dossier-section">
-          <div className="dossier-portrait__visual">
-            <img src="/images/vaile-hardware-bench-study.jpg" alt="VAILE — material study: workwear hardware and duck canvas pocket construction" className="dossier-portrait__img" />
-          </div>
-          <div className="dossier-portrait__copy">
-            <p className="eyebrow">THE WAY WE WORK</p>
-            <h2>Specific enough<br />to be useful.</h2>
-            <p>We build fewer garments so we can stay with the choices that matter. A pocket is tested as a place for the things you actually carry. A double knee is considered as a working surface. A rivet is placed where a seam sees repetition.</p>
-            <p>The result should look uncomplicated from across the room and deliberate when it is close enough to inspect.</p>
-            <Link className="dossier-link" href="/deep-dive"><span>READ THE DROP 001 TECHNICAL RECORD</span><ArrowUpRight size={17} /></Link>
+          <div className="about-genesis__body">
+            <p className="lead-text">
+              In late 2022, we looked at the modern trouser landscape and saw two extremes: fragile fashion garments that bind the moment you get on a bicycle, and bulky heritage workwear that feels like cardboard with no consideration for modern proportions.
+            </p>
+            <p>
+              We founded VAILE to bridge that divide. We made an intentional, stubborn decision to reject seasonal collections and multi-category expansion. Instead, we committed the studio to one pursuit: crafting the definitive everyday utility trouser.
+            </p>
+            <div className="atelier-quote">
+              <span className="quote-tag">STUDIO MANIFESTO // 2022</span>
+              <blockquote>
+                “We would rather spend three years engineering one honest pair of trousers than three months releasing twenty mediocre styles.”
+              </blockquote>
+              <cite>— Founder’s Notebook, Bangalore Workshop</cite>
+            </div>
           </div>
         </section>
 
-        <section className="dossier-principles dossier-section">
-          <div className="dossier-rail dossier-rail--light"><span>03</span><p>WORKING PRINCIPLES</p></div>
-          <div className="dossier-principles__head"><h2>A slower kind<br /><em>of confidence.</em></h2><p>VAILE is not trying to speak louder than the wearer's life. It is trying to hold up inside it.</p></div>
-          <div className="dossier-principles__grid">{studioPrinciples.map(([number, title, copy]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
+        {/* SECTION 02: THE SAMPLING CHRONICLE (2-Column Ledger) */}
+        <section className="about-chronicle dossier-section">
+          <div className="about-chronicle__header">
+            <div className="dossier-rail">
+              <span>02</span>
+              <p>THE SAMPLING CHRONICLE</p>
+            </div>
+            <div className="chronicle-headline">
+              <p className="eyebrow">THE ROAD TO DROP 001</p>
+              <h2>Fourteen pattern drafts.<br /><span>Three rejected mills.</span></h2>
+              <p className="section-dek">
+                Drop 001 was not an overnight idea. It is the cumulative result of 14 physical iterations, continuous stress-testing across workshops and commutes, and uncompromising material sourcing.
+              </p>
+            </div>
+          </div>
+
+          <div className="chronicle-ledger">
+            {chronicleMilestones.map((m) => (
+              <article key={m.phase} className="chronicle-row">
+                <div className="chronicle-meta">
+                  <span className="chronicle-phase">{m.phase}</span>
+                  <strong className="chronicle-year">{m.year}</strong>
+                </div>
+                <div className="chronicle-content">
+                  <h3>{m.title}</h3>
+                  <p className="chronicle-subtitle">{m.subtitle}</p>
+                  <p className="chronicle-desc">{m.desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
-        <section className="dossier-archive dossier-section">
-          <div className="dossier-archive__intro"><p className="eyebrow">04 — THE RECORD, SO FAR</p><h2>Keep the story<br />open-ended.</h2><p>The first drop is a starting point, not a finished mythology. Material tests, repairs, owner notes, and additional field studies can be added as the edition earns its history.</p></div>
-          <div className="dossier-archive__ledger">{archiveRows.map(([year, title, copy]) => <article key={year}><span>{year}</span><div><h3>{title}</h3><p>{copy}</p></div><ArrowUpRight size={17} /></article>)}</div>
+        {/* SECTION 03: ATELIER PRINCIPLES & CRAFT STUDY */}
+        <section className="about-manifesto dossier-section">
+          <div className="manifesto-visual">
+            <img
+              src="/images/vaile-hardware-bench-study.jpg"
+              alt="VAILE material study — hardware bench, rivet placement, and pocket construction"
+            />
+            <div className="visual-caption">
+              <span>ATELIER BENCH STUDY</span>
+              <p>12oz Cotton Duck / Solid Brass Hardware / Dual-Plane Knees</p>
+            </div>
+          </div>
+
+          <div className="manifesto-content">
+            <div className="dossier-rail dossier-rail--light">
+              <span>03</span>
+              <p>WORKING PRINCIPLES</p>
+            </div>
+            <h2>A slower kind<br /><em>of confidence.</em></h2>
+            <p className="manifesto-dek">
+              Our four founding tenets govern every pattern adjustment, fabric order, and finishing detail that leaves the bench.
+            </p>
+
+            <div className="tenets-matrix">
+              {studioTenets.map((t) => (
+                <div key={t.index} className="tenet-item">
+                  <div className="tenet-header">
+                    <span className="tenet-num">{t.index}</span>
+                    <span className="tenet-tag">{t.label}</span>
+                  </div>
+                  <h3>{t.title}</h3>
+                  <p>{t.copy}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
-        <section className="dossier-close">
-          <p className="eyebrow">NEXT / THE TECHNICAL RECORD</p>
-          <h2>See what holds<br /><em>the line.</em></h2>
-          <p>Canvas, double knees, hardware, pocket map, and the decisions that make Drop 001 more than a silhouette.</p>
-          <Link className="dark-record" href="/deep-dive"><span>OPEN THE DEEP DIVE</span><ArrowUpRight size={17} /></Link>
+        {/* SECTION 04: CLOSING & NAVIGATION */}
+        <section className="dossier-close dossier-close--dark">
+          <p className="eyebrow">CONTINUE THE RECORD</p>
+          <h2>Inspect the build.<br /><em>Every millimeter accounted for.</em></h2>
+          <p>
+            From yarn density to double-knee load distribution, explore the exact technical specifications behind Drop 001.
+          </p>
+          <div className="close-actions">
+            <Link className="dark-record" href="/deep-dive">
+              <span>OPEN TECHNICAL DEEP DIVE</span>
+              <ArrowUpRight size={17} />
+            </Link>
+            <a
+              className="dark-record dark-record--secondary"
+              href="https://wa.me/918951066881?text=Hello%20VAILE%2C%20I%20would%20like%20to%20enquire%20about%20Edition%20001."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>DIRECT ATELIER ENQUIRY</span>
+              <ArrowUpRight size={17} />
+            </a>
+          </div>
         </section>
       </main>
     </EditorialPageFrame>

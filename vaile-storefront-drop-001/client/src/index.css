@@ -1137,7 +1137,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 .chapter-shell .gallery-header > div:first-child > span b { font: inherit; color: var(--ink); }
 .chapter-shell .gallery-header > div:first-child > span i { font: inherit; font-style: normal; }
 .chapter-shell .gallery-header h2 { font-size: clamp(2.1rem, 5.3vw, 4.15rem); }
-.chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1.22fr) minmax(300px, .78fr); height: min(56vh, 500px); height: min(56svh, 500px); border: 1px solid var(--ink); }
+.chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1.22fr) minmax(300px, .78fr); min-height: min(56vh, 500px); border: 1px solid var(--ink); }
 .chapter-shell .gallery-figure-wrap { position: relative; width: 100%; height: 100%; max-height: none; aspect-ratio: auto; margin: 0; border: 0; background: var(--lichen-2); overflow: hidden; }
 .chapter-shell .gallery-stage figure { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; touch-action: pan-y; }
 .chapter-shell .gallery-stage figure picture,
@@ -1258,7 +1258,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 
 @media (min-width: 1200px) {
   .chapter-shell .chapter-gallery { padding-top: var(--space-12); padding-bottom: var(--space-12); }
-  .chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1.27fr) minmax(340px, .73fr); height: min(56vh, 520px); height: min(56svh, 520px); }
+  .chapter-shell .gallery-stage { grid-template-columns: minmax(0, 1.27fr) minmax(340px, .73fr); min-height: min(56vh, 520px); }
   .chapter-shell .gallery-dossier { padding: var(--space-4) var(--space-6); }
 }
 

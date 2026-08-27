@@ -1,0 +1,65 @@
+@media (min-width: 768px) {
+  /* Fix the height of the gallery stage so it doesn't clip, but stays compact */
+  .chapter-shell .gallery-stage {
+    height: auto !important;
+    min-height: min(65vh, 600px) !important;
+  }
+  
+  /* Ensure the image container scales properly and doesn't dictate a massive height */
+  .chapter-shell .gallery-figure-wrap {
+    height: 100% !important;
+    max-height: 650px !important;
+  }
+  
+  /* Re-establish the clean Grid layout that was overwritten by the user's commit */
+  .chapter-shell .gallery-dossier {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: minmax(0, 1fr) auto auto !important;
+    gap: 0 !important;
+    padding: 40px 32px 32px 32px !important;
+    min-height: 100% !important;
+  }
+  
+  /* Title & Description row */
+  .chapter-shell .gallery-dossier > div:first-child {
+    grid-row: 1 !important;
+    align-self: start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  /* FIT & STYLE row (dl) */
+  .chapter-shell .gallery-dossier dl {
+    grid-row: 2 !important;
+    margin: 0 0 32px 0 !important;
+    align-self: end !important;
+    width: 100% !important;
+  }
+  
+  /* Align the text perfectly with the title above it */
+  .chapter-shell .gallery-dossier dl > div {
+    grid-template-columns: 82px minmax(0, 1fr) !important;
+  }
+  
+  /* PREVIOUS & NEXT buttons */
+  .chapter-shell .gallery-controls {
+    grid-row: 3 !important;
+    display: flex !important;
+    gap: 8px !important;
+    background: transparent !important;
+    padding-top: 0 !important;
+    margin: 0 !important;
+  }
+  .chapter-shell .gallery-controls button {
+    flex: 1 !important;
+    min-height: 48px !important;
+    background: rgba(247, 245, 239, 0.08) !important;
+    color: var(--pale) !important;
+    border: none !important;
+  }
+  .chapter-shell .gallery-controls button:hover {
+    background: rgba(247, 245, 239, 0.15) !important;
+  }
+}

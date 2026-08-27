@@ -1946,3 +1946,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .dossier-position h2, .dossier-record h2, .dossier-portrait h2, .dossier-principles h2, .dossier-archive h2, .technical-ledger h2, .construction-field h2, .technical-bays h2, .wear-index h2, .fit-dossier h2 { font-size: clamp(2.7rem, 12.9vw, 3.85rem); }
   .construction-stats b { font-size: 14px; }
 }
+@media (min-width: 768px) {
+  .chapter-shell .gallery-dossier dl { border-bottom: 1px solid rgba(247, 245, 239, 0.2); }
+  .chapter-shell .gallery-dossier dl > div:last-child { border-bottom: 0; }
+  .chapter-shell .gallery-controls {
+    background: transparent !important;
+    padding-top: 24px !important;
+    border-top: 0 !important;
+    gap: 8px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  .chapter-shell .gallery-controls button {
+    flex: 1;
+    background: rgba(247, 245, 239, 0.08) !important;
+    color: var(--pale) !important;
+    border: 0 !important;
+    min-height: 48px !important;
+  }
+  .chapter-shell .gallery-controls button:hover {
+    background: rgba(247, 245, 239, 0.15) !important;
+  }
+}

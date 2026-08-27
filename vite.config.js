@@ -8,33 +8,26 @@ function spaStaticRoutesPlugin(outDirPath) {
   return {
     name: 'spa-static-routes',
     closeBundle() {
-      const routes = ['about', 'deep-dive', 'terms', 'privacy', '404'];
+      const routes = ['about', 'deep-dive', 'terms', 'privacy'];
       const indexPath = path.resolve(outDirPath, 'index.html');
       if (!fs.existsSync(indexPath)) return;
       const indexHtml = fs.readFileSync(indexPath, 'utf-8');
 
-      // Create static directory entry points for direct CDN resolution
+      // One canonical asset per route: directory entry points only.
+      // Do NOT emit duplicate route.html twins - under Cloudflare's asset
+      // routing both candidates normalize against each other and extensionless
+      // /route requests degenerate into 308s. Directory form serves natively.
       routes.forEach((route) => {
         const routeDir = path.resolve(outDirPath, route);
-        if (!fs.existsSync(routeDir)) {
-          fs.mkdirSync(routeDir, { recursive: true });
-        }
+        fs.mkdirSync(routeDir, { recursive: true });
         fs.writeFileSync(path.resolve(routeDir, 'index.html'), indexHtml);
-        fs.writeFileSync(path.resolve(outDirPath, `${route}.html`), indexHtml);
       });
 
-      // Write 404.html as SPA entrypoint so Cloudflare fallback always serves the React app
+      // Write 404.html as SPA entrypoint so unknown paths render the branded
+      // Not Found view while correctly returning HTTP 404. No _redirects file:
+      // the 200-rewrite rules are ignored by Cloudflare's asset routing and
+      // only add ambiguity on top of the per-route directories.
       fs.writeFileSync(path.resolve(outDirPath, '404.html'), indexHtml);
-
-      // Write Cloudflare _redirects
-      const redirects = [
-        '/about /index.html 200',
-        '/deep-dive /index.html 200',
-        '/terms /index.html 200',
-        '/privacy /index.html 200',
-        '/* /index.html 200',
-      ].join('\n');
-      fs.writeFileSync(path.resolve(outDirPath, '_redirects'), redirects + '\n');
     },
   };
 }

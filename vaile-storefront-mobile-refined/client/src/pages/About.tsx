@@ -1,63 +1,63 @@
-/* VAILE — About: The Atelier & Founding Chronicle */
+/* VAILE — About: Our Story & Philosophy */
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { EditorialPageFrame, PageMeta } from "@/components/EditorialPageFrame";
 
-const chronicleMilestones = [
+const journeySteps = [
   {
-    phase: "PHASE 01",
+    step: "01",
     year: "2022",
-    title: "The Structural Failure Analysis",
-    subtitle: "Deconstructing eighteen pairs of work trousers",
-    desc: "VAILE started with a simple, frustrating realization: modern trousers look right on a showroom hanger, but bind during a commute, blow out at the pocket rivets, and disintegrate within six months of real friction. We cut apart 18 vintage and contemporary pairs to map exact failure points across the crotch, outseam, and pocket junctions."
+    title: "Deconstructing the Problem",
+    subtitle: "Understanding why everyday trousers fail",
+    desc: "We started by examining dozens of vintage and modern trousers, noting where seams pulled, where fabric thinned, and where pocket rivets blew out within months of daily wear."
   },
   {
-    phase: "PHASE 02",
+    step: "02",
     year: "2023",
-    title: "Fourteen Pattern Iterations",
-    subtitle: "Refining the line between workshop and street",
-    desc: "Over 14 months of physical sampling on diverse bodies, we drafted fourteen complete pattern blocks. The goal was rigorous: engineer enough ease through the seat and quadriceps for motorcycle saddles, floor work, and long transit days, without compromising the clean, sharp vertical fall from hip to hem."
+    title: "Perfecting the Pattern",
+    subtitle: "Fourteen rounds of physical sampling",
+    desc: "Over 14 months of fittings on different bodies, we refined the rise, thigh room, and leg opening. The goal was simple: complete freedom of movement with a sharp, tailored silhouette."
   },
   {
-    phase: "PHASE 03",
+    step: "03",
     year: "2024",
-    title: "The Canvas Quest & Mill Selection",
-    subtitle: "Rejecting synthetic blends for loom-state purity",
-    desc: "We rejected three commercial canvas mills that offered chemical-softened, pre-distressed textiles. We chose an unyielding 12oz 100% cotton duck canvas—firm, dry to the touch, and structured—so that every crease, honeycomb, and fade is authentic evidence earned by the wearer."
+    title: "Sourcing Pure Canvas",
+    subtitle: "Rejecting synthetic blends and fake distressing",
+    desc: "We turned down pre-softened, chemically treated fabrics and chose a dense 12oz 100% cotton canvas that feels substantial and breaks in naturally through real-world wear."
   },
   {
-    phase: "PHASE 04",
+    step: "04",
     year: "2025",
-    title: "Drop 001: Fifty Numbered Pairs",
-    subtitle: "A finite edition allocated person-to-person",
-    desc: "Rather than mass-producing hundreds of unmonitored units, Drop 001 is intentionally limited to 50 numbered pairs. Hand-inspected, reinforced with solid brass rivets, and allocated person-to-person to build real relationships with our first cohort of owners."
+    title: "Drop 001",
+    subtitle: "Fifty individually numbered pairs",
+    desc: "Produced in a small, carefully monitored run. Hand-inspected, reinforced with solid brass rivets, and offered directly to our first cohort of owners."
   }
 ];
 
-const studioTenets = [
+const philosophyPoints = [
   {
-    index: "01",
-    label: "SINGLE-GARMENT OBSESSION",
-    title: "Depth over seasonal noise",
-    copy: "We refuse the fast-fashion calendar. We would rather spend three years engineering one pair of trousers that lasts a decade than three months releasing twenty disposable styles."
+    num: "01",
+    label: "FOCUS",
+    title: "One garment at a time",
+    copy: "We refuse the fast-fashion calendar. We would rather spend years perfecting one honest pair of trousers than rush out twenty disposable styles every season."
   },
   {
-    index: "02",
-    label: "PATINA IS PROOF",
-    title: "The wearer completes the design",
-    copy: "The garment is not finished when it leaves our studio. It is finished slowly by a daily commute, workshop friction, rain, repairs, and a thousand ordinary decisions."
+    num: "02",
+    label: "LONGEVITY",
+    title: "Made to get better with age",
+    copy: "Our trousers are designed to break in over years. Natural creases, softened canvas, and gentle fades are evidence of a well-lived garment."
   },
   {
-    index: "03",
-    label: "FORM FOLLOWS KINEMATICS",
-    title: "Utility before styling",
-    copy: "Every pocket depth, bar-tack coordinate, and seam allowance answers to body mechanics and weight distribution before it answers to aesthetics."
+    num: "03",
+    label: "UTILITY",
+    title: "Comfort and function first",
+    copy: "Every pocket depth, stitch placement, and rivet exists to make daily life more comfortable, long before it answers to aesthetics."
   },
   {
-    index: "04",
-    label: "FINITE ALLOCATIONS",
-    title: "Accountability in every stitch",
-    copy: "Strict 50-pair editions ensure complete quality control, direct sizing consultation, and an open feedback loop as each trouser enters real-world service."
+    num: "04",
+    label: "CARE",
+    title: "Small, personal editions",
+    copy: "Strict 50-pair releases allow us to personally oversee quality control, assist with sizing, and stay in direct contact with everyone who wears VAILE."
   }
 ];
 
@@ -65,8 +65,8 @@ export default function About() {
   return (
     <EditorialPageFrame active="/about">
       <PageMeta
-        title="About VAILE — The Atelier & Founding Chronicle"
-        description="The story behind VAILE: three years of pattern sampling, single-garment obsession, and the journey to Drop 001."
+        title="About VAILE — Our Story & Philosophy"
+        description="The story of VAILE: three years of sampling, single-garment focus, and the journey to Drop 001."
         canonical="https://vaile.studio/about"
       />
       <main id="main" className="editorial-page field-dossier about-dossier">
@@ -75,114 +75,114 @@ export default function About() {
           <div className="editorial-hero__visual">
             <img
               src="/images/vaile-field-dossier-hero.jpg"
-              alt="VAILE atelier field study — heavyweight duck canvas trouser in an industrial landscape"
+              alt="VAILE Drop 001 trousers in natural landscape"
             />
           </div>
           <div className="editorial-hero__copy">
-            <p className="eyebrow">ABOUT VAILE / ATELIER RECORD 001</p>
-            <h1>One pair.<br /><em>Three years of refusal.</em></h1>
+            <p className="eyebrow">ABOUT VAILE</p>
+            <h1>One pair.<br /><em>Three years in the making.</em></h1>
             <p className="hero-dek">
-              VAILE was founded on a simple dissatisfaction with disposable garments. Drop 001 is our response: a single, obsessively engineered trouser built for the long middle of life.
+              VAILE was founded on a simple frustration with disposable clothing: trousers that look sharp in photos, but bind when you move and fall apart within months. Drop 001 is our response.
             </p>
-            <a className="scroll-cue" href="#genesis">
-              <span>READ THE FOUNDING CHRONICLE</span>
+            <a className="scroll-cue" href="#story">
+              <span>READ OUR STORY</span>
               <ArrowDown size={16} />
             </a>
           </div>
-          <span className="editorial-hero__index">ATELIER / RECORD 01</span>
+          <span className="editorial-hero__index">EDITION 001</span>
         </section>
 
-        {/* SECTION 01: THE GENESIS (Clean 2-Column Swiss Alignment) */}
-        <section id="genesis" className="about-genesis dossier-section">
+        {/* SECTION 01: THE STORY */}
+        <section id="story" className="about-genesis dossier-section">
           <div className="genesis-header-col">
             <div className="dossier-rail">
               <span>01</span>
-              <p>ATELIER GENESIS / 2022</p>
+              <p>THE BEGINNING</p>
             </div>
-            <p className="eyebrow">THE FOUNDING PREMISE</p>
-            <h2>Built from a practical<br /><span>frustration.</span></h2>
+            <p className="eyebrow">HOW IT STARTED</p>
+            <h2>Born from everyday<br /><span>frustration.</span></h2>
           </div>
 
           <div className="genesis-body-col">
             <p className="lead-text">
-              In late 2022, we looked at the modern trouser landscape and saw two extremes: fragile fashion garments that bind the moment you get on a bicycle, and bulky heritage workwear that feels like cardboard with no consideration for modern proportions.
+              In 2022, we grew tired of having to choose between fragile fashion trousers that tear when you ride a bike, and stiff workwear that feels too bulky for daily life.
             </p>
             <p>
-              We founded VAILE to bridge that divide. We made an intentional, stubborn decision to reject seasonal collections and multi-category expansion. Instead, we committed the studio to one pursuit: crafting the definitive everyday utility trouser.
+              We started VAILE to create the one pair of trousers we couldn't find anywhere else: a piece built with the honesty of heavy workwear, tailored with clean modern lines, and made to last years of daily wear.
             </p>
             <div className="atelier-quote">
-              <span className="quote-tag">STUDIO MANIFESTO // 2022</span>
+              <span className="quote-tag">FOUNDING NOTE</span>
               <blockquote>
-                “We would rather spend three years engineering one honest pair of trousers than three months releasing twenty mediocre styles.”
+                “We chose to spend three years making one honest pair of trousers, rather than rushing out twenty styles a season.”
               </blockquote>
-              <cite>— Founder’s Notebook, Bangalore Workshop</cite>
+              <cite>— Founder’s Notebook, Bangalore Studio</cite>
             </div>
           </div>
         </section>
 
-        {/* SECTION 02: THE SAMPLING CHRONICLE */}
+        {/* SECTION 02: THE JOURNEY */}
         <section className="about-chronicle dossier-section">
           <div className="about-chronicle__header">
             <div className="dossier-rail">
               <span>02</span>
-              <p>THE SAMPLING CHRONICLE</p>
+              <p>THE PROCESS</p>
             </div>
-            <p className="eyebrow">THE ROAD TO DROP 001</p>
-            <h2>Fourteen pattern drafts.<br /><span>Three rejected mills.</span></h2>
+            <p className="eyebrow">THE JOURNEY TO DROP 001</p>
+            <h2>Fourteen iterations.<br /><span>No shortcuts.</span></h2>
             <p className="section-dek">
-              Drop 001 was not an overnight idea. It is the cumulative result of 14 physical iterations, continuous stress-testing across workshops and commutes, and uncompromising material sourcing.
+              Getting Drop 001 right took three years of physical sampling, real-world wear testing, and uncompromising fabric choices.
             </p>
           </div>
 
           <div className="chronicle-ledger">
-            {chronicleMilestones.map((m) => (
-              <article key={m.phase} className="chronicle-row">
+            {journeySteps.map((item) => (
+              <article key={item.step} className="chronicle-row">
                 <div className="chronicle-meta">
-                  <span className="chronicle-phase">{m.phase}</span>
-                  <strong className="chronicle-year">{m.year}</strong>
+                  <span className="chronicle-phase">STEP {item.step}</span>
+                  <strong className="chronicle-year">{item.year}</strong>
                 </div>
                 <div className="chronicle-content">
-                  <h3>{m.title}</h3>
-                  <p className="chronicle-subtitle">{m.subtitle}</p>
-                  <p className="chronicle-desc">{m.desc}</p>
+                  <h3>{item.title}</h3>
+                  <p className="chronicle-subtitle">{item.subtitle}</p>
+                  <p className="chronicle-desc">{item.desc}</p>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        {/* SECTION 03: ATELIER PRINCIPLES & CRAFT STUDY */}
+        {/* SECTION 03: PHILOSOPHY */}
         <section className="about-manifesto dossier-section">
           <div className="manifesto-visual">
             <img
               src="/images/vaile-hardware-bench-study.jpg"
-              alt="VAILE material study — hardware bench, rivet placement, and pocket construction"
+              alt="VAILE workshop bench and hardware study"
             />
             <div className="visual-caption">
-              <span>ATELIER BENCH STUDY</span>
-              <p>12oz Cotton Duck / Solid Brass Hardware / Dual-Plane Knees</p>
+              <span>WORKSHOP STUDY</span>
+              <p>12oz Cotton Canvas / Solid Brass Hardware / Reinforced Knees</p>
             </div>
           </div>
 
           <div className="manifesto-content">
             <div className="dossier-rail dossier-rail--light">
               <span>03</span>
-              <p>WORKING PRINCIPLES</p>
+              <p>OUR PRINCIPLES</p>
             </div>
-            <h2>A slower kind<br /><em>of confidence.</em></h2>
+            <h2>A simpler way<br /><em>of making things.</em></h2>
             <p className="manifesto-dek">
-              Our four founding tenets govern every pattern adjustment, fabric order, and finishing detail that leaves the bench.
+              Four simple commitments guide every garment that leaves our studio.
             </p>
 
             <div className="tenets-matrix">
-              {studioTenets.map((t) => (
-                <div key={t.index} className="tenet-item">
+              {philosophyPoints.map((p) => (
+                <div key={p.num} className="tenet-item">
                   <div className="tenet-header">
-                    <span className="tenet-num">{t.index}</span>
-                    <span className="tenet-tag">{t.label}</span>
+                    <span className="tenet-num">{p.num}</span>
+                    <span className="tenet-tag">{p.label}</span>
                   </div>
-                  <h3>{t.title}</h3>
-                  <p>{t.copy}</p>
+                  <h3>{p.title}</h3>
+                  <p>{p.copy}</p>
                 </div>
               ))}
             </div>
@@ -191,14 +191,14 @@ export default function About() {
 
         {/* SECTION 04: CLOSING & NAVIGATION */}
         <section className="dossier-close dossier-close--dark">
-          <p className="eyebrow">CONTINUE THE RECORD</p>
-          <h2>Inspect the build.<br /><em>Every millimeter accounted for.</em></h2>
+          <p className="eyebrow">EXPLORE DROP 001</p>
+          <h2>See how it’s made.<br /><em>Every detail explained.</em></h2>
           <p>
-            From yarn density to double-knee load distribution, explore the exact technical specifications behind Drop 001.
+            From the weave of our 12oz canvas to the placement of every solid brass rivet, discover the engineering behind Drop 001.
           </p>
           <div className="close-actions">
             <Link className="dark-record" href="/deep-dive">
-              <span>OPEN TECHNICAL DEEP DIVE</span>
+              <span>READ THE TECHNICAL DETAILS</span>
               <ArrowUpRight size={17} />
             </Link>
             <a
@@ -207,7 +207,7 @@ export default function About() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>DIRECT ATELIER ENQUIRY</span>
+              <span>ENQUIRE ON WHATSAPP</span>
               <ArrowUpRight size={17} />
             </a>
           </div>

@@ -1,92 +1,91 @@
-/* VAILE — Deep Dive: Technical Specifications, Material Science & Situational Contexts */
-import { ArrowDown, ArrowUpRight, Compass, Layers, Shield, Wrench } from "lucide-react";
+/* VAILE — Deep Dive: Materials, Fit, Construction & Real-World Use */
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { EditorialPageFrame, PageMeta } from "@/components/EditorialPageFrame";
 
-const textileSpecs = [
-  { label: "RAW FIBER", value: "100% Long-Staple Ring-Spun Cotton", note: "High tensile single yarn with minimal pilling" },
-  { label: "WEAVE ARCHITECTURE", value: "Dense Plain Weave (Canvas Duck)", note: "Tight 1-over-1 balanced orthogonal yarn interlocking" },
-  { label: "FABRIC WEIGHT", value: "12.0 oz/yd² (407 GSM)", note: "Heavyweight structural fall with natural wind resistance" },
-  { label: "YARN COUNT", value: "10s × 10s Double Ply", note: "Plied core structure for superior puncture resistance" },
-  { label: "FINISHING PROCESS", value: "Loom-State Dry Calendered", note: "Zero synthetic softeners or artificial distressing" },
-  { label: "WARP RESIDUAL SHRINK", value: "< 1.5% Controlled", note: "Sanforized stabilization prevents post-wash inseam loss" },
-  { label: "AGING TRAJECTORY", value: "Mechanical Honeycombing & Whiskering", note: "Softens at flex points while retaining foundational structure" },
+const fabricDetails = [
+  { label: "RAW MATERIAL", value: "100% Long-Staple Cotton", note: "Breathable natural fiber that softens beautifully with wear" },
+  { label: "FABRIC WEIGHT", value: "12 oz/yd² (Heavyweight)", note: "Substantial structure with clean drape and wind resistance" },
+  { label: "WEAVE STRUCTURE", value: "Dense Plain Weave Canvas", note: "Tough, tightly woven yarn resistant to snags and friction" },
+  { label: "FINISHING", value: "Raw & Unwashed", note: "No synthetic softening chemicals or artificial distressing" },
+  { label: "SHRINKAGE", value: "Pre-Stabilized (< 1.5%)", note: "Holds its length and silhouette through routine washing" },
+  { label: "BREAK-IN", value: "Natural Wear Patina", note: "Molds to your daily movement, creasing and fading uniquely" },
 ];
 
-const patternKinematics = [
+const fitFeatures = [
   {
     num: "01",
-    title: "MID-HIGH ARTICULATED RISE",
-    focus: "Saddle & Seat Stability",
-    description: "The waistband is calibrated with a contoured rear pitch that sits securely on the iliac crest. When seated, crouching, or leaning forward over handlebars, the waistband remains anchored without rear gaping or lower-back draft."
+    title: "CONTOURED WAISTBAND",
+    focus: "Sits Naturally at the Waist",
+    description: "Shaped with a slightly higher rear rise to sit flush against the lower back. Stays comfortably in place when you're seated, crouching, or riding a bike."
   },
   {
     num: "02",
-    title: "STRAIGHT-FALL KINEMATICS",
-    focus: "Zero Artificial Taper",
-    description: "The leg pattern drops plumb from the lower hip through the knee to the hem. This prevents the calf binding common in modern tapered trousers and ensures an effortless, natural break over work boots and low-profile footwear alike."
+    title: "RELAXED STRAIGHT LEG",
+    focus: "Clean Vertical Line",
+    description: "Falls straight from hip to hem with zero artificial taper. Hangs cleanly over both heavy work boots and low-profile sneakers."
   },
   {
     num: "03",
-    title: "2.5\" QUADRICEPS EASE",
-    focus: "Rotational Freedom",
-    description: "We engineered 2.5 inches of calculated volume through the thigh circumference. This allows the wearer to mount a bicycle, climb ladders, and step into deep lunges without the fabric binding against the knee or straining the pocket mouths."
+    title: "ROOM THROUGH THE THIGH",
+    focus: "Effortless Movement",
+    description: "Generously cut through the seat and quadriceps so you can climb stairs, cycle, and move freely without any tight pulling across the fabric."
   },
   {
     num: "04",
-    title: "DUAL-PLANE DOUBLE KNEE",
-    focus: "Reinforced Contact Zone",
-    description: "A full secondary layer of 12oz duck canvas extends from the mid-thigh to below the tibial crest. Top-stitched with heavy core-spun thread and reinforced with clean stress-mitigation corners."
+    title: "REINFORCED DOUBLE KNEES",
+    focus: "Long-Term Durability",
+    description: "A full secondary panel of 12oz cotton canvas extends from the thigh to below the knee, providing extra protection and lasting durability."
   }
 ];
 
-const hardwareLedger = [
+const constructionPoints = [
   {
-    title: "SOLID BRASS COUNTERSUNK RIVETS",
-    loc: "Pocket Mouth Corners & Stress Vertices",
-    detail: "Custom machined solid brass rivets with flat rear washers. Positioned at high-shear junction points to permanently prevent seam tearing under heavy pocket loads."
+    title: "SOLID BRASS RIVETS",
+    loc: "Pocket Corners & Key Junctions",
+    detail: "Hand-set solid brass rivets protect each pocket corner against tears, ensuring heavy everyday loads never blow out the seams."
   },
   {
-    title: "42 HIGH-DENSITY BAR-TACKS",
-    loc: "Belt Loops, Crotch Gusset, Pocket Flanges",
-    detail: "Heavy 28-stitch industrial bar-tacking secures every belt loop top and bottom, outseam terminations, and pocket entries against cyclic fatigue."
+    title: "42 BAR-TACK REINFORCEMENTS",
+    loc: "Belt Loops & Stress Points",
+    detail: "High-density industrial bar-tack stitches anchor all belt loops, outseam terminations, and pocket openings against daily strain."
   },
   {
-    title: "TEX-80 CORE-SPUN THREAD",
-    loc: "All Structural & Flat-Felled Seams",
-    detail: "Polyester continuous filament core wrapped in long-staple cotton. Combines the tensile breaking strength of synthetic fiber with the heat and UV resistance of cotton."
+    title: "HEAVY-DUTY CORE THREAD",
+    loc: "All Structural Seams",
+    detail: "High-tensile poly-core thread wrapped in cotton combines maximum break strength with high resistance to heat, washing, and friction."
   },
   {
-    title: "9.5\" DEEP COTTON DUCK POCKET BAGS",
-    loc: "Front Symmetrical Pocket Architecture",
-    detail: "Deep utility pockets cut from the same durable 12oz canvas rather than fragile poplin, ensuring daily pocket knives, tools, and heavy phones never wear through."
+    title: "9.5-INCH DEEP CANVAS POCKETS",
+    loc: "Front Pocket Bags",
+    detail: "Extra-deep pocket bags cut from full-weight cotton canvas rather than fragile thin lining, so keys and tools never wear through."
   }
 ];
 
-const situationalApplications = [
+const realWorldUse = [
   {
     num: "01",
-    scenario: "ARCHITECTURE & SITE INSPECTION",
-    tag: "Boardroom to Jobsite",
-    description: "Engineered for designers who move between drafting tables, client presentations, and active job sites. The crisp straight fall maintains a refined architectural silhouette, while the 12oz duck canvas resists gypsum dust, structural steel scuffs, and ladder friction."
+    scenario: "DESIGN STUDIOS & SITE VISITS",
+    tag: "Studio to Jobsite",
+    description: "Sharp and tailored enough for client presentations, yet resilient enough for dusty active workshops, building sites, and hands-on days."
   },
   {
     num: "02",
-    scenario: "TWO-WHEEL & COMMUTER TRANSIT",
-    tag: "Motorcycle & Urban Cycle",
-    description: "The contoured rear rise stays anchored to prevent lower back exposure on motorcycles, café racers, and road bikes. The tight plain weave acts as a natural windbreak against highway draft, while 2.5\" thigh ease prevents knee binding across miles of saddle time."
+    scenario: "COMMUTING & TWO-WHEEL TRANSIT",
+    tag: "Motorcycle & Urban Cycling",
+    description: "The tight canvas weave naturally blocks chilly highway wind, while the relaxed thigh cut ensures zero binding across hours in the saddle."
   },
   {
     num: "03",
-    scenario: "INDUSTRIAL DESIGN & PROTOTYPING",
-    tag: "Floor Assembly & Bench Work",
-    description: "From clay modeling and 3D printing to CNC machine shop setups. The 9.5-inch heavy canvas pocket bags securely house brass calipers, steel rules, and marking tools without pocket-corner blowout or sagging."
+    scenario: "WORKSHOP & DAILY CREATIVE WORK",
+    tag: "Bench Work & Floor Assembly",
+    description: "Generous canvas pockets keep notebooks, markers, and tools close at hand without sagging or pulling the trousers down."
   },
   {
     num: "04",
-    scenario: "LONG-HAUL TRANSIT & TRAVEL UNIFORM",
-    tag: "Extended Transit Stability",
-    description: "Unlike synthetic trousers that crease permanently or denim that bags out at the knees after hours seated in airplane cabins, dense cotton duck canvas holds its structured drape across 14-hour flights, looking sharp the moment you land."
+    scenario: "TRAVEL & EXTENDED TRANSIT",
+    tag: "Long-Haul Stability",
+    description: "Unlike synthetic trousers that wrinkle or stretch denim that bags out at the knees, 12oz cotton canvas holds its crisp drape through 14-hour flights."
   }
 ];
 
@@ -94,8 +93,8 @@ export default function DeepDive() {
   return (
     <EditorialPageFrame active="/deep-dive">
       <PageMeta
-        title="Deep Dive — VAILE Drop 001 Technical Specifications & Situational Index"
-        description="Technical specifications for VAILE Drop 001: 12oz duck canvas material science, pattern kinematics, solid hardware, and versatile situational contexts."
+        title="Deep Dive — VAILE Drop 001 Materials, Fit & Craft"
+        description="A detailed look at VAILE Drop 001: 12oz cotton duck canvas, relaxed straight cut, solid brass hardware, and real-world versatility."
         canonical="https://vaile.studio/deep-dive"
       />
       <main id="main" className="editorial-page field-dossier deep-dossier">
@@ -104,34 +103,34 @@ export default function DeepDive() {
           <div className="editorial-hero__visual">
             <img
               src="/images/vaile-canvas-double-knee-study.jpg"
-              alt="VAILE Drop 001 macro technical study — 12oz duck canvas and double-knee construction"
+              alt="VAILE Drop 001 cotton canvas and double-knee detail"
             />
           </div>
           <div className="editorial-hero__copy">
-            <p className="eyebrow">FIELD DOSSIER / SPECIFICATION 001</p>
-            <h1>Garment physics.<br /><em>Material & method.</em></h1>
+            <p className="eyebrow">PRODUCT DETAILS</p>
+            <h1>Materials, fit,<br /><em>and craft.</em></h1>
             <p className="hero-dek">
-              A comprehensive technical record of Drop 001: textile architecture, pattern kinematics, solid brass reinforcement points, and extended situational contexts.
+              A clear look at everything that goes into Drop 001: from the weight of our pure cotton canvas to the reinforcement on every pocket.
             </p>
-            <a className="scroll-cue" href="#textile">
-              <span>INSPECT THE TECHNICAL LEDGER</span>
+            <a className="scroll-cue" href="#fabric">
+              <span>EXPLORE THE DETAILS</span>
               <ArrowDown size={16} />
             </a>
           </div>
-          <span className="editorial-hero__index">SPECIFICATION / 01</span>
+          <span className="editorial-hero__index">SPECIFICATIONS</span>
         </section>
 
-        {/* SECTION 01: TEXTILE ARCHITECTURE & MATERIAL SCIENCE */}
-        <section id="textile" className="tech-spec-section dossier-section">
+        {/* SECTION 01: THE FABRIC */}
+        <section id="fabric" className="tech-spec-section dossier-section">
           <div className="tech-spec-header">
             <div className="dossier-rail">
               <span>01</span>
-              <p>TEXTILE ARCHITECTURE</p>
+              <p>THE MATERIAL</p>
             </div>
-            <p className="eyebrow">RAW MATERIAL RECORD</p>
-            <h2>12oz 100% Cotton Duck.<br /><span>Loom-state integrity.</span></h2>
+            <p className="eyebrow">FABRIC OVERVIEW</p>
+            <h2>12oz Pure Cotton Canvas.<br /><span>Durable, breathable, raw.</span></h2>
             <p className="section-dek">
-              Drop 001 is built from a custom 12oz plain weave cotton duck selected for its high yarn density, firm structural drape, and resistance to cyclic friction.
+              We chose a heavyweight 100% cotton duck canvas that holds its structure, blocks the wind, and softens naturally with every wash.
             </p>
           </div>
 
@@ -139,13 +138,13 @@ export default function DeepDive() {
             <table className="tech-data-table">
               <thead>
                 <tr>
-                  <th>SPECIFICATION PROPERTY</th>
-                  <th>ENGINEERED METRIC</th>
-                  <th>FUNCTIONAL NOTE</th>
+                  <th>PROPERTY</th>
+                  <th>SPECIFICATION</th>
+                  <th>WHY IT MATTERS</th>
                 </tr>
               </thead>
               <tbody>
-                {textileSpecs.map((spec) => (
+                {fabricDetails.map((spec) => (
                   <tr key={spec.label}>
                     <td className="spec-label-cell">{spec.label}</td>
                     <td className="spec-val-cell">{spec.value}</td>
@@ -157,16 +156,16 @@ export default function DeepDive() {
           </div>
         </section>
 
-        {/* SECTION 02: PATTERN KINEMATICS & KINETIC GEOMETRY */}
+        {/* SECTION 02: THE FIT */}
         <section className="tech-kinematics-section dossier-section">
           <div className="kinematics-intro">
             <div className="dossier-rail dossier-rail--light">
               <span>02</span>
-              <p>PATTERN KINEMATICS</p>
+              <p>THE SILHOUETTE</p>
             </div>
-            <h2>Movement geometry.<br /><em>Calibrated for real days.</em></h2>
+            <h2>Cut for movement.<br /><em>Tailored for daily life.</em></h2>
             <p className="kinematics-dek">
-              The pattern block for Drop 001 was engineered through 14 physical sampling phases to eliminate restriction points across common body movements.
+              Designed to feel easy when you're sitting, walking, or riding, while keeping a sharp, clean vertical drape.
             </p>
           </div>
 
@@ -174,89 +173,89 @@ export default function DeepDive() {
             <div className="kinematics-visual">
               <img
                 src="/images/1.webp"
-                alt="VAILE Drop 001 front profile standing line"
+                alt="VAILE Drop 001 straight leg fit"
               />
               <div className="kinematics-badge">
-                <span>PATTERN BLOCK // 001</span>
-                <strong>RELAXED STRAIGHT CUT</strong>
+                <span>THE CUT</span>
+                <strong>RELAXED STRAIGHT FIT</strong>
               </div>
             </div>
 
             <div className="kinematics-cards">
-              {patternKinematics.map((k) => (
-                <article key={k.num} className="kinematic-item">
+              {fitFeatures.map((f) => (
+                <article key={f.num} className="kinematic-item">
                   <div className="item-header">
-                    <span className="item-num">{k.num}</span>
-                    <span className="item-focus">{k.focus}</span>
+                    <span className="item-num">{f.num}</span>
+                    <span className="item-focus">{f.focus}</span>
                   </div>
-                  <h3>{k.title}</h3>
-                  <p>{k.description}</p>
+                  <h3>{f.title}</h3>
+                  <p>{f.description}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SECTION 03: HARDWARE & STRESS POINT BLUEPRINT */}
+        {/* SECTION 03: HARDWARE & CONSTRUCTION */}
         <section className="tech-hardware-section dossier-section">
           <div className="hardware-header">
             <div className="dossier-rail">
               <span>03</span>
-              <p>HARDWARE & REINFORCEMENT</p>
+              <p>CONSTRUCTION</p>
             </div>
-            <p className="eyebrow">STRESS-POINT ANCHORING</p>
-            <h2>Anchored where<br /><span>repetition lives.</span></h2>
+            <p className="eyebrow">REINFORCEMENTS</p>
+            <h2>Reinforced where<br /><span>it matters most.</span></h2>
             <p className="section-dek">
-              Every seam, bar-tack, and rivet is mapped to the physiological contact zones where trousers typically fail.
+              We placed solid brass metalwork and dense bar-tack stitching at every high-stress point on the garment.
             </p>
           </div>
 
           <div className="hardware-grid">
-            {hardwareLedger.map((h, i) => (
-              <div key={h.title} className="hardware-card">
-                <div className="hw-index">0{i + 1} // REINFORCEMENT</div>
-                <h3>{h.title}</h3>
-                <p className="hw-location">{h.loc}</p>
-                <p className="hw-detail">{h.detail}</p>
+            {constructionPoints.map((item, i) => (
+              <div key={item.title} className="hardware-card">
+                <div className="hw-index">DETAIL 0{i + 1}</div>
+                <h3>{item.title}</h3>
+                <p className="hw-location">{item.loc}</p>
+                <p className="hw-detail">{item.detail}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* SECTION 04: SITUATIONAL APPLICATION INDEX (REPLACED REDUNDANT SIZE CHART) */}
+        {/* SECTION 04: REAL WORLD USE */}
         <section className="tech-situations-section dossier-section">
           <div className="situations-header">
             <div className="dossier-rail">
               <span>04</span>
-              <p>SITUATIONAL CONTEXTS</p>
+              <p>VERSATILITY</p>
             </div>
-            <p className="eyebrow">BEYOND THE WORKSHOP</p>
-            <h2>Engineered for the overlap.<br /><span>Where work & life collide.</span></h2>
+            <p className="eyebrow">WHERE TO WEAR</p>
+            <h2>Made for real days.<br /><span>In and out of the studio.</span></h2>
             <p className="section-dek">
-              Drop 001 is built for lives that don't fit into a single wardrobe category: bridging technical durability with sharp everyday presence.
+              Drop 001 is versatile enough to transition across work, travel, and downtime without feeling out of place.
             </p>
           </div>
 
           <div className="situations-grid">
-            {situationalApplications.map((s) => (
-              <article key={s.num} className="situation-card">
+            {realWorldUse.map((item) => (
+              <article key={item.num} className="situation-card">
                 <div className="situation-header">
-                  <span className="situation-num">{s.num}</span>
-                  <span className="situation-tag">{s.tag}</span>
+                  <span className="situation-num">{item.num}</span>
+                  <span className="situation-tag">{item.tag}</span>
                 </div>
-                <h3>{s.scenario}</h3>
-                <p>{s.description}</p>
+                <h3>{item.scenario}</h3>
+                <p>{item.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        {/* SECTION 05: CLOSING & ALLOCATION */}
+        {/* SECTION 05: CLOSING */}
         <section className="dossier-close dossier-close--lichen">
-          <p className="eyebrow">DROP 001 / PRIVATE ALLOCATION</p>
-          <h2>Read the specs.<br /><em>Experience the weight.</em></h2>
+          <p className="eyebrow">EDITION 001</p>
+          <h2>Fifty numbered pairs.<br /><em>Made to last a decade.</em></h2>
           <p>
-            Fifty numbered pairs worldwide. Private WhatsApp allocation with personal sizing consultation and direct studio support.
+            Reach out directly on WhatsApp for personal sizing advice, questions, or to request your pair.
           </p>
           <div className="close-actions">
             <a
@@ -265,11 +264,11 @@ export default function DeepDive() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span>START ALLOCATION REQUEST</span>
+              <span>ENQUIRE ON WHATSAPP</span>
               <ArrowUpRight size={17} />
             </a>
             <Link className="dark-record dark-record--secondary" href="/about">
-              <span>READ THE FOUNDING STORY</span>
+              <span>READ OUR STORY</span>
               <ArrowUpRight size={17} />
             </Link>
           </div>

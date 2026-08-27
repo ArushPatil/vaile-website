@@ -1566,10 +1566,101 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
    EDITORIAL FOUNDATION — ABOUT & DEEP DIVE (SWISS DESIGN DOCTRINE)
    ========================================================================== */
 
-.editorial-page-shell { min-height: 100vh; background: var(--stock); }
-.editorial-page-shell .manual-header { z-index: 70; backdrop-filter: blur(8px); background: rgba(236, 233, 223, 0.92); border-bottom: 1px solid rgba(23, 26, 23, 0.1); }
+.editorial-page-shell {
+  /* TASK 1b — shared header geometry: token set mirrors .chapter-shell
+     exactly (source of truth: index.css Swiss Grid Rebuild block). */
+  --grid-margin: 16px;
+  --grid-gutter: 12px;
+  --grid-columns: 4;
+  --header-h: 56px;
+  --safe-start: calc(var(--header-h) + 32px);
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  min-height: 100vh;
+  background: var(--stock);
+}
+.editorial-page-shell .manual-header {
+  height: var(--header-h);
+  padding: 0 var(--grid-margin);
+  background: rgba(247, 245, 239, .98);
+  backdrop-filter: none;
+}
+@media (min-width: 480px) {
+  .editorial-page-shell { --grid-margin: 20px; }
+}
+@media (min-width: 768px) {
+  .editorial-page-shell { --grid-margin: 32px; --grid-columns: 8; --header-h: 64px; --safe-start: calc(var(--header-h) + 48px); }
+}
+@media (min-width: 1200px) {
+  .editorial-page-shell { --grid-margin: max(72px, calc((100vw - 1296px) / 2)); --grid-gutter: 24px; --grid-columns: 12; --header-h: 64px; --safe-start: calc(var(--header-h) + 48px); }
+}
+
+/* TASK 1b — accessibility scale for header chrome, mirrors .chapter-shell. */
+.editorial-page-shell .manual-header { min-height: 64px; }
+.editorial-page-shell .header-menu::after,
+.editorial-page-shell .manual-brand small,
+.editorial-page-shell .header-action,
+.editorial-page-shell .header-action b,
+.editorial-page-shell .header-action span { font-size: 11px; line-height: 16px; }
+
+/* TASK 1b — mobile polish: safe-area reserves + 48px touch targets, mirrors .chapter-shell. */
+@media (max-width: 767px) {
+  .editorial-page-shell .manual-header {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+  .editorial-page-shell .manual-menu {
+    padding-top: max(28px, calc(20px + env(safe-area-inset-top)));
+    padding-bottom: max(28px, calc(20px + env(safe-area-inset-bottom)));
+  }
+  .editorial-page-shell .header-menu,
+  .editorial-page-shell .header-action {
+    min-width: 48px;
+    min-height: 48px;
+  }
+}
+
 .editorial-page-shell .manual-footer { position: relative; z-index: 2; }
 .editorial-page { padding-top: 0; }
+
+/* TASK 1a — BRAND MARK PARITY: mirror the homepage (.chapter-shell) logo
+   ladder verbatim. Home renders the mark bare at 44/38/35/31px per breakpoint;
+   these pages previously fell through to the boxed 28px plaque (padding +
+   border + --stock background). Source of truth: index.css chapter-shell
+   rules (lines ~589, ~514, ~771, ~775, ~805). */
+.editorial-page-shell .manual-brand { gap: 8px; font-size: 16px; }
+.editorial-page-shell .manual-brand img {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  object-fit: contain;
+}
+.editorial-page-shell .manual-brand small { font-size: 8px; margin-top: 2px; }
+
+@media (max-width: 900px) {
+  .editorial-page-shell .manual-brand { gap: 7px; font-size: 17px; }
+  .editorial-page-shell .manual-brand img { width: 35px; height: 35px; }
+}
+@media (min-width: 768px) {
+  .editorial-page-shell .manual-brand { font-size: 18px; }
+  .editorial-page-shell .manual-brand img { width: 38px; height: 38px; }
+}
+@media (min-width: 1200px) {
+  .editorial-page-shell .manual-brand { font-size: 20px; }
+  .editorial-page-shell .manual-brand img { width: 44px; height: 44px; }
+}
+@media (max-width: 420px) {
+  .editorial-page-shell .manual-brand { gap: 5px; font-size: 15px; }
+  .editorial-page-shell .manual-brand img { width: 31px; height: 31px; }
+  .editorial-page-shell .manual-brand small { font-size: 7px; }
+}
 
 .eyebrow { margin: 0; color: var(--mute); font: 600 9px/1.4 "DM Mono", monospace; letter-spacing: 0.12em; text-transform: uppercase; }
 .hero-dek { max-width: 480px; margin: 24px 0 0; color: rgba(247,245,239,.82); font-size: 15px; line-height: 1.65; }
@@ -1729,6 +1820,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 .dark-record--secondary:hover { background: var(--pale); color: var(--ink); }
 
 /* RESPONSIVE MEDIA QUERIES FOR EDITORIAL PAGES */
+
+/* Footer mirrors the homepage .manual-footer vocabulary (chapter-shell rules are
+   home-scoped, so the editorial shell carries its own identical copy). */
+.editorial-page-shell .manual-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: var(--space-4) var(--grid-margin); border-top: 1px solid var(--line); }
+.editorial-page-shell .manual-footer > div { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; color: var(--mute); font: 500 11px/16px "DM Mono", monospace; letter-spacing: .08em; }
+.editorial-page-shell .manual-footer > div a { color: inherit; text-decoration: none; }
+.editorial-page-shell .manual-footer > div a:hover { color: var(--ink); }
+@media (max-width: 767px) {
+  .editorial-page-shell .manual-footer { align-items: flex-start; flex-direction: column; padding: var(--space-4) 16px; }
+}
+
 @media (max-width: 1024px) {
   .about-genesis, .about-chronicle, .about-manifesto, .tech-spec-section, .tech-hardware-section, .tech-situations-section { display: flex; flex-direction: column; gap: 32px; }
   .manifesto-content, .manifesto-visual, .tech-spec-header, .tech-data-table-wrap, .hardware-header, .hardware-grid, .situations-header, .situations-grid { width: 100%; }

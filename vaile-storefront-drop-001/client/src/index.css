@@ -34,30 +34,33 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 ::-webkit-scrollbar-thumb:hover { background: var(--mute); }
 
 /* Skip Link */
-.skip-link { position: absolute; top: -40px; left: 0; background: var(--ink); color: var(--pale); padding: 8px; z-index: 100; transition: top 0.2s; }
-.skip-link:focus { top: 0; }
+.skip-link { position: absolute; top: -60px; left: 16px; background: var(--ink); color: var(--pale); padding: 12px 20px; min-height: 44px; display: inline-flex; align-items: center; z-index: 100; font: 600 12px "DM Mono", monospace; letter-spacing: 0.08em; text-decoration: none; transition: top 0.2s ease; }
+.skip-link:focus, .skip-link:focus-visible { top: 12px; outline: 2px solid var(--ink); outline-offset: 2px; }
 
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--stock); }
+::-webkit-scrollbar-thumb { background: rgba(23, 26, 23, 0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(23, 26, 23, 0.45); }
 
 /* SHELL & LOADERS */
 .manual-shell { background: var(--stock); overflow: visible; }
 .manual-shell.is-loading { min-height: 100vh; min-height: 100svh; pointer-events: none; }
-.manual-loader { position: fixed; z-index: 100; inset: 0; display: grid; place-content: center; gap: 13px; color: var(--stock); background: var(--lichen); font: 500 11px "DM Mono", monospace; letter-spacing: 0.14em; text-align: center; }
-.manual-loader img { width: 50px; height: 50px; margin: auto; padding: 8px; background: var(--stock); object-fit: contain; }
+.manual-loader { position: fixed; z-index: 100; inset: 0; display: grid; place-content: center; gap: 14px; color: var(--stock); background: var(--lichen); font: 600 13px "DM Mono", monospace; letter-spacing: 0.16em; text-align: center; }
+.manual-loader img { width: 52px; height: 52px; margin: auto; padding: 8px; background: var(--stock); object-fit: contain; }
 
 /* HEADER */
-.manual-header { position: fixed; z-index: 60; top: 0; left: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: 100%; padding: 14px 28px; color: var(--ink); border-bottom: 1px solid var(--line); background: rgba(247, 245, 239, 0.94); backdrop-filter: blur(14px); }
-.header-menu { justify-self: start; display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; color: inherit; background: transparent; cursor: pointer; }
-.header-menu::after { content: "MENU"; font: 500 9px "DM Mono", monospace; letter-spacing: 0.14em; }
-.manual-brand { display: inline-flex; align-items: center; gap: 8px; color: inherit; font: 800 17px/1 Archivo, sans-serif; letter-spacing: -0.04em; text-decoration: none; }
+.manual-header { position: fixed; z-index: 60; top: 0; left: 0; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: 100%; min-height: 64px; padding: 10px 28px; color: var(--ink); border-bottom: 1px solid var(--line); background: rgba(247, 245, 239, 0.94); backdrop-filter: blur(14px); }
+.header-menu { justify-self: start; display: inline-flex; align-items: center; gap: 8px; min-width: 44px; min-height: 44px; padding: 10px 14px; border: 0; color: inherit; background: transparent; cursor: pointer; }
+.header-menu::after { content: "MENU"; font: 600 11px "DM Mono", monospace; letter-spacing: 0.14em; }
+.manual-brand { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: inherit; font: 800 17px/1 Archivo, sans-serif; letter-spacing: -0.04em; text-decoration: none; }
 .manual-brand img { width: 28px; height: 28px; padding: 5px; border: 1px solid var(--line); background: var(--stock); object-fit: contain; }
 .brand-wordmark { display: inline-flex; align-items: center; letter-spacing: -0.03em; }
 .brand-wordmark .kerning-v { margin-right: -0.08em; }
 .brand-wordmark .kerning-a { margin-right: 0.01em; }
 .manual-brand small { align-self: flex-start; margin-top: 1px; color: var(--mute); font: 500 8px "DM Mono", monospace; letter-spacing: 0.08em; }
-.header-action { justify-self: end; display: grid; grid-template-columns: auto auto; align-items: center; column-gap: 6px; color: inherit; font: 500 8.5px "DM Mono", monospace; letter-spacing: 0.09em; text-decoration: none; }
-.header-action span { grid-column: 1; color: var(--mute); font-size: 7px; }
-.header-action b { grid-column: 1; font: 700 8.5px Archivo, sans-serif; letter-spacing: 0.02em; }
-.header-action svg { grid-column: 2; grid-row: 1 / span 2; }
+.header-action { justify-self: end; display: inline-flex; align-items: center; gap: 8px; min-width: 44px; min-height: 44px; padding: 10px 16px; color: inherit; font: 600 11.5px "DM Mono", monospace; letter-spacing: 0.10em; text-decoration: none; }
+.header-action b { font: 700 11.5px Archivo, sans-serif; letter-spacing: 0.04em; }
 
 /* DRAWER MENU */
 .manual-menu { position: fixed; z-index: 80; inset: 0; display: flex; flex-direction: column; gap: 14px; padding: 28px 32px 42px; color: var(--stock); background: var(--lichen); }
@@ -465,12 +468,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 .gallery-stage { position: relative; width: 100%; display: grid; grid-template-columns: 1fr; background: var(--lichen-2); border: 1px solid var(--line-light); overflow: hidden; }
 .gallery-stage figure { position: relative; width: 100%; margin: 0 auto; overflow: hidden; aspect-ratio: 4/5; }
 .gallery-stage figure picture, .gallery-stage figure img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: 50% 50%; }
-.gallery-stage figure figcaption { position: absolute; right: 8px; bottom: 8px; margin: 0; padding: 3px 6px; color: var(--ink); background: var(--stock); font: 500 7.5px "DM Mono", monospace; letter-spacing: .12em; }
+.gallery-stage figure figcaption { position: absolute; right: 12px; bottom: 12px; margin: 0; padding: 4px 8px; color: var(--ink); background: var(--stock); font: 600 11px "DM Mono", monospace; letter-spacing: .12em; }
 
 .gallery-caption { display: none; }
 
-.chapter-gallery .gallery-pills { display: grid; grid-template-columns: repeat(6, 1fr); height: 34px; border: 1px solid var(--line-light); }
-.chapter-gallery .gallery-pills button { height: 34px; min-height: 34px; border: 0; border-right: 1px solid var(--line-light); color: var(--mute); background: transparent; font: 500 9px "DM Mono", monospace; letter-spacing: .08em; cursor: pointer; transition: background 0.15s var(--ease), color 0.15s var(--ease); }
+.chapter-gallery .gallery-pills { display: grid; grid-template-columns: repeat(6, 1fr); min-height: 44px; border: 1px solid var(--line-light); }
+.chapter-gallery .gallery-pills button { height: 44px; min-height: 44px; border: 0; border-right: 1px solid var(--line-light); color: var(--mute); background: transparent; font: 600 11px "DM Mono", monospace; letter-spacing: .08em; cursor: pointer; transition: background 0.15s var(--ease), color 0.15s var(--ease); }
 .chapter-gallery .gallery-pills button:last-child { border-right: 0; }
 .chapter-gallery .gallery-pills .is-active { color: var(--lichen); background: var(--pale); font-weight: 700; }
 .chapter-gallery .gallery-pills button:hover:not(.is-active) { background: rgba(247, 245, 239, 0.08); }
@@ -603,8 +606,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   margin: 0;
   padding: var(--safe-start) var(--grid-margin) var(--space-8);
   overflow: visible;
-  scroll-margin-top: var(--safe-start);
+  scroll-margin-top: calc(var(--header-h) + 40px);
   border-top: 1px solid var(--line);
+}
+#gallery, #allocation, #sizing, #care, #enquiry {
+  scroll-margin-top: calc(var(--header-h) + 40px);
 }
 .chapter-shell .chapter > * { width: 100%; max-width: none; margin-left: auto; margin-right: auto; }
 .chapter-shell .chapter-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-2); align-items: start; padding: 0; border: 0; }

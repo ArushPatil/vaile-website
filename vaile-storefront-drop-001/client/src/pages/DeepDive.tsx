@@ -86,7 +86,7 @@ const realWorldUse = [
     num: "04",
     scenario: "TRAVEL & EXTENDED TRANSIT",
     tag: "Long-Haul Stability",
-    description: "Unlike synthetic trousers that wrinkle or stretch denim that bags out at the knees, 12oz cotton canvas holds its crisp drape through 14-hour flights."
+    description: "Dense 12oz cotton duck canvas retains its shape and clean vertical drape throughout long travel days and extended transit."
   }
 ];
 
@@ -263,7 +263,7 @@ export default function DeepDive() {
         {/* SECTION 05: CLOSING */}
         <section className="dossier-close dossier-close--lichen">
           <p className="eyebrow">EDITION 001</p>
-          <h2>Fifty numbered pairs.<br /><em>Made to last a decade.</em></h2>
+          <h2>Fifty numbered pairs.<br /><em>Engineered for the long haul.</em></h2>
           <p>
             Reach out directly on WhatsApp for personal sizing advice, questions, or to request your pair.
           </p>

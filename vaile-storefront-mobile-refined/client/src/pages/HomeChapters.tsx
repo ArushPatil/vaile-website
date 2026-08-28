@@ -217,11 +217,11 @@ export default function HomeChapters() {
           <button type="button" className="header-menu" onClick={() => setMenuOpen(true)} aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
             <Menu size={18} />
           </button>
-          <a className="manual-brand" href="#top" aria-label="VAILE home">
+          <Link className="manual-brand" href="/" aria-label="VAILE home">
             <img src={assets.mark} alt="" />
             <span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span>
             <small>001</small>
-          </a>
+          </Link>
           <a className="header-action" href="#enquiry" aria-label="Go to the VAILE enquiry form">
             <b>ENQUIRE</b><ArrowUpRight size={15} />
           </a>
@@ -251,7 +251,7 @@ export default function HomeChapters() {
           <div className="hero-copy">
             <p>DROP 001</p>
             <h1>Made for<br />actual wear.</h1>
-            <span>12 oz duck canvas · private enquiry</span>
+            <span>12oz cotton duck canvas · private enquiry</span>
           </div>
           <a href="#allocation" className="hero-index"><span>VIEW DETAILS</span><span className="hero-index__arrow" aria-hidden="true">↓</span></a>
         </section>
@@ -265,7 +265,7 @@ export default function HomeChapters() {
                 <p>Choose your size to start a private WhatsApp enquiry. We’ll confirm current availability and next steps.</p>
               </header>
               <dl className="allocation-facts">
-                <div><dt>FABRIC</dt><dd>12 oz duck-canvas trousers</dd></div>
+                <div><dt>FABRIC</dt><dd>12oz cotton duck canvas</dd></div>
                 <div><dt>HARDWARE</dt><dd>Solid brass at stress points</dd></div>
                 <div><dt>FIT</dt><dd>Relaxed straight leg</dd></div>
               </dl>
@@ -282,9 +282,15 @@ export default function HomeChapters() {
                 <span className="initials-field__entry"><input ref={initialsInputRef} id="enquiry-initials" type="text" inputMode="text" autoComplete="off" maxLength={3} value={initials} onChange={(event) => updateInitials(event.target.value)} placeholder="ABC" aria-describedby="initials-note" /><small>{initials.length}/3</small></span>
                 <i id="initials-note">UP TO THREE LETTERS</i>
               </label>
-              <a className={hasInitials ? "allocation-record" : "allocation-record is-awaiting-initials"} href={href} onClick={requireInitials} target={hasInitials ? "_blank" : undefined} rel={hasInitials ? "noopener noreferrer" : undefined} aria-disabled={!hasInitials} aria-label={hasInitials ? "Start a WhatsApp enquiry, opens in a new tab" : "Enter initials before starting an enquiry"}>
-                <span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={17} />
-              </a>
+              {hasInitials ? (
+                <a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab">
+                  <span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={17} />
+                </a>
+              ) : (
+                <button type="button" disabled tabIndex={-1} className="allocation-record is-awaiting-initials" aria-disabled="true" onClick={requireInitials} aria-label="Enter initials before starting an enquiry">
+                  <span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={17} />
+                </button>
+              )}
             </aside>
           </div>
         </section>

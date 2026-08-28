@@ -8,26 +8,26 @@ const routeMetadata: Record<string, { title: string; description: string; url: s
   about: {
     title: "About VAILE — Our Story & Philosophy",
     description: "The story of VAILE: three years of sampling, single-garment focus, and the journey to Drop 001.",
-    url: "https://vaile.co/about",
-    image: "https://vaile.co/images/vaile-field-dossier-hero.webp",
+    url: "https://vaile-website.pages.dev/about",
+    image: "https://vaile-website.pages.dev/images/vaile-field-dossier-hero.webp",
   },
   "deep-dive": {
     title: "Deep Dive — VAILE Drop 001 Materials, Fit & Craft",
     description: "A detailed look at VAILE Drop 001: 12oz cotton duck canvas, relaxed straight cut, solid brass hardware, and real-world versatility.",
-    url: "https://vaile.co/deep-dive",
-    image: "https://vaile.co/images/vaile-canvas-double-knee-study.webp",
+    url: "https://vaile-website.pages.dev/deep-dive",
+    image: "https://vaile-website.pages.dev/images/vaile-canvas-double-knee-study.webp",
   },
   terms: {
     title: "Terms of Service — VAILE",
     description: "Terms governing the VAILE DROP 001 website and WhatsApp enquiry process.",
-    url: "https://vaile.co/terms",
-    image: "https://vaile.co/images/5.webp",
+    url: "https://vaile-website.pages.dev/terms",
+    image: "https://vaile-website.pages.dev/images/5.webp",
   },
   privacy: {
     title: "Privacy Policy — VAILE",
     description: "How VAILE handles information connected to the DROP 001 website and WhatsApp enquiries.",
-    url: "https://vaile.co/privacy",
-    image: "https://vaile.co/images/5.webp",
+    url: "https://vaile-website.pages.dev/privacy",
+    image: "https://vaile-website.pages.dev/images/5.webp",
   },
 };
 

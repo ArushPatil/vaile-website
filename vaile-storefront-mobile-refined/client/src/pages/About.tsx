@@ -2,6 +2,7 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import { EditorialPageFrame, PageMeta } from "@/components/EditorialPageFrame";
+import { SITE_URL } from "@/lib/site";
 
 const journeySteps = [
   {
@@ -67,15 +68,20 @@ export default function About() {
       <PageMeta
         title="About VAILE — Our Story & Philosophy"
         description="The story of VAILE: three years of sampling, single-garment focus, and the journey to Drop 001."
-        canonical="https://vaile.studio/about"
+        canonical={`${SITE_URL}/about`}
       />
       <main id="main" className="editorial-page field-dossier about-dossier">
         {/* HERO */}
         <section className="editorial-hero dossier-hero about-dossier__hero">
           <div className="editorial-hero__visual">
             <img
-              src="/images/vaile-field-dossier-hero.jpg"
+              src="/images/vaile-field-dossier-hero.webp"
               alt="VAILE Drop 001 trousers in natural landscape"
+              width={2560}
+              height={1440}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
             />
           </div>
           <div className="editorial-hero__copy">
@@ -155,8 +161,12 @@ export default function About() {
         <section className="about-manifesto dossier-section">
           <div className="manifesto-visual">
             <img
-              src="/images/vaile-hardware-bench-study.jpg"
+              src="/images/vaile-hardware-bench-study.webp"
               alt="VAILE workshop bench and hardware study"
+              width={1664}
+              height={2080}
+              loading="lazy"
+              decoding="async"
             />
             <div className="visual-caption">
               <span>WORKSHOP STUDY</span>
@@ -201,15 +211,13 @@ export default function About() {
               <span>READ THE TECHNICAL DETAILS</span>
               <ArrowUpRight size={17} />
             </Link>
-            <a
+            <Link
               className="dark-record dark-record--secondary"
-              href="https://wa.me/918951066881?text=Hello%20VAILE%2C%20I%20would%20like%20to%20enquire%20about%20Edition%20001."
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#enquiry"
             >
-              <span>ENQUIRE ON WHATSAPP</span>
+              <span>START AN ENQUIRY</span>
               <ArrowUpRight size={17} />
-            </a>
+            </Link>
           </div>
         </section>
       </main>

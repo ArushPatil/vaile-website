@@ -15,6 +15,10 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const routeEase = [0.23, 1, 0.32, 1] as const;
 
+if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
 // ROUTE SCROLL RESTORATION — NORMAL VAILE PAGE CHANGES BEGIN AT THE TOP;
 // HASH LINKS KEEP THEIR INTENTIONAL LOCAL TARGETS, INCLUDING #enquiry.
 function RouteScrollReset() {
@@ -22,7 +26,17 @@ function RouteScrollReset() {
 
   useEffect(() => {
     if (window.location.hash) return;
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    window.scrollTo(0, 0);
+    const frameId = requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
+    const timerId = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 40);
+    return () => {
+      cancelAnimationFrame(frameId);
+      clearTimeout(timerId);
+    };
   }, [location]);
 
   return null;

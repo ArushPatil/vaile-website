@@ -61,6 +61,12 @@ export function EditorialPageFrame({ children, active }: { children: ReactNode; 
   }, [menuOpen]);
 
   useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [active]);
+
+  useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => { if (event.key === "Escape") setMenuOpen(false); };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);

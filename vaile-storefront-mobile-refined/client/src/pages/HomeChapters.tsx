@@ -283,7 +283,7 @@ export default function HomeChapters() {
                 <i id="initials-note">UP TO THREE LETTERS</i>
               </label>
               {hasInitials ? (
-                <a className="allocation-record" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab">
+                <a className="allocation-record allocation-record--ready" href={href} target="_blank" rel="noopener noreferrer" aria-label="Start a WhatsApp enquiry, opens in a new tab">
                   <span>SIZE {size}</span><b>START AN ENQUIRY</b><ArrowUpRight size={17} />
                 </a>
               ) : (

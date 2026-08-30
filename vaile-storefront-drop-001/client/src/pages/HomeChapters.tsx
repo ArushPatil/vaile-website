@@ -207,9 +207,22 @@ export default function HomeChapters() {
     <>
       <AnimatePresence>
         {loading && (
-          <motion.div className="manual-loader" initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
-            <img src={assets.mark} alt="" />
-            <span>VAILE</span>
+          <motion.div
+            className="manual-loader"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+          >
+            <motion.div
+              className="manual-loader__lockup"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+            >
+              <img src={assets.mark} alt="" />
+              <span className="manual-loader__wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span>
+              <small className="manual-loader__edition">001</small>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

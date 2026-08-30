@@ -151,20 +151,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   width: 100%;
   box-sizing: border-box;
   margin-top: 18px;
-  padding: 16px 18px;
-  color: var(--pale);
-  border: 1px solid rgba(247, 245, 239, 0.42);
-  background: rgba(23, 26, 23, 0.35);
+  padding: 16px 20px;
   text-decoration: none;
   text-align: left;
-  cursor: pointer;
+  border-radius: 0;
   overflow: hidden;
   transition:
-    background-color 0.25s cubic-bezier(0.23, 1, 0.32, 1),
-    border-color 0.25s cubic-bezier(0.23, 1, 0.32, 1),
-    color 0.25s cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+    color 0.22s cubic-bezier(0.23, 1, 0.32, 1),
     transform 0.22s cubic-bezier(0.23, 1, 0.32, 1),
-    box-shadow 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow 0.22s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .allocation-record::before {
   position: absolute;
@@ -172,58 +169,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   bottom: 0;
   left: 0;
   width: 4px;
-  background: var(--teal);
   content: "";
   transition: width 0.22s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.22s ease;
 }
 .allocation-record span {
   grid-column: 1;
-  color: rgba(247, 245, 239, 0.72);
   font: 600 8.5px "DM Mono", monospace;
   letter-spacing: 0.12em;
   transition: color 0.22s ease;
 }
 .allocation-record b {
   grid-column: 1;
-  font: 750 12.5px Archivo, sans-serif;
+  font: 750 13px Archivo, sans-serif;
   letter-spacing: 0.02em;
   transition: color 0.22s ease;
 }
 .allocation-record svg {
   grid-column: 2;
   grid-row: 1 / span 2;
-  color: var(--pale);
   transition: transform 0.22s cubic-bezier(0.23, 1, 0.32, 1), color 0.22s ease;
-}
-.allocation-record:not(.is-awaiting-initials):hover,
-.allocation-record:not(.is-awaiting-initials):focus-visible {
-  color: var(--ink);
-  background: var(--pale);
-  border-color: var(--pale);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
-  transform: translateY(-2px);
-}
-.allocation-record:not(.is-awaiting-initials):hover::before,
-.allocation-record:not(.is-awaiting-initials):focus-visible::before {
-  width: 6px;
-  background: var(--ink);
-}
-.allocation-record:not(.is-awaiting-initials):hover span,
-.allocation-record:not(.is-awaiting-initials):focus-visible span {
-  color: rgba(23, 26, 23, 0.75);
-}
-.allocation-record:not(.is-awaiting-initials):hover b,
-.allocation-record:not(.is-awaiting-initials):focus-visible b {
-  color: var(--ink);
-}
-.allocation-record:not(.is-awaiting-initials):hover svg,
-.allocation-record:not(.is-awaiting-initials):focus-visible svg {
-  color: var(--ink);
-  transform: translate(3px, -3px);
-}
-.allocation-record:not(.is-awaiting-initials):active {
-  transform: translateY(0) scale(0.99);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 .size-chart-link { display: inline; margin: 0; padding: 0 0 2px; border-bottom: 1px solid rgba(247, 245, 239, .42); color: rgba(247, 245, 239, .78); font: inherit; letter-spacing: inherit; text-decoration: none; transition: color 160ms var(--ease), border-color 160ms var(--ease); }
 .size-chart-link:hover,
@@ -1417,40 +1381,40 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .chapter-allocation .allocation-card {
     width: 100%;
     max-width: 100%;
-    padding: 22px 18px 18px;
+    padding: 24px 20px 20px;
     box-sizing: border-box;
   }
-  .chapter-shell .chapter-allocation .card-price-row { padding-bottom: var(--space-2); }
-  .chapter-shell .chapter-allocation .card-size-label { margin-top: var(--space-2); margin-bottom: 6px; font-size: 9.5px; }
-  .chapter-shell .chapter-allocation .size-grid button { min-height: 46px; font-size: 13.5px; }
-  .chapter-shell .chapter-allocation .initials-field { margin-top: 14px; padding-top: 12px; }
-  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 46px; }
-  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 58px; margin-top: 14px; padding: 12px 14px; }
+  .chapter-shell .chapter-allocation .card-price-row { padding-bottom: var(--space-3); }
+  .chapter-shell .chapter-allocation .card-size-label { margin-top: var(--space-3); margin-bottom: 8px; font-size: 10px; }
+  .chapter-shell .chapter-allocation .size-grid button { min-height: 48px; font-size: 14px; }
+  .chapter-shell .chapter-allocation .initials-field { margin-top: 16px; padding-top: 14px; }
+  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 48px; }
+  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 60px; margin-top: 16px; padding: 14px 16px; }
 }
 
 @media (min-width: 768px) {
   .chapter-shell .allocation-copy { grid-column: 1 / 7; }
   .chapter-shell .allocation-card { grid-column: 7 / -1; }
   .chapter-shell .chapter-allocation .allocation-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .chapter-shell .chapter-allocation .allocation-card { max-width: 390px; width: 100%; justify-self: end; padding: 24px 22px 20px; }
-  .chapter-shell .chapter-allocation .size-grid button { min-height: 48px; font-size: 14px; }
-  .chapter-shell .chapter-allocation .initials-field { gap: 6px; margin-top: 16px; padding-top: 14px; }
-  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 48px; }
-  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 60px; margin-top: 16px; }
+  .chapter-shell .chapter-allocation .allocation-card { max-width: 460px; width: 100%; justify-self: end; padding: 28px 26px 24px; }
+  .chapter-shell .chapter-allocation .size-grid button { min-height: 50px; font-size: 15px; }
+  .chapter-shell .chapter-allocation .initials-field { gap: 8px; margin-top: 18px; padding-top: 16px; }
+  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 52px; }
+  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 64px; margin-top: 18px; }
 }
 
 @media (min-width: 1200px) {
   .chapter-shell .allocation-copy { grid-column: 1 / 8; }
-  /* REFINED COMPACT 390PX ALLOCATION CARD */
+  /* REFINED 460PX ALLOCATION CARD ON DESKTOP */
   .chapter-shell .allocation-card { grid-column: 8 / -1; }
-  .chapter-shell .chapter-allocation .allocation-card { max-width: 390px; width: 100%; justify-self: end; padding: 26px 24px 22px; }
-  .chapter-shell .chapter-allocation .card-price-eyebrow { margin-bottom: 8px; }
-  .chapter-shell .chapter-allocation .card-price-row { padding-bottom: 14px; }
-  .chapter-shell .chapter-allocation .card-size-label { margin-top: 14px; margin-bottom: 6px; font-size: 9.5px; }
-  .chapter-shell .chapter-allocation .size-grid button { min-height: 46px; font-size: 14px; }
-  .chapter-shell .chapter-allocation .initials-field { gap: 6px; margin-top: 14px; padding-top: 12px; }
-  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 48px; }
-  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 60px; margin-top: 16px; padding: 14px 16px; }
+  .chapter-shell .chapter-allocation .allocation-card { max-width: 460px; width: 100%; justify-self: end; padding: 30px 28px 26px; }
+  .chapter-shell .chapter-allocation .card-price-eyebrow { margin-bottom: 10px; }
+  .chapter-shell .chapter-allocation .card-price-row { padding-bottom: 18px; }
+  .chapter-shell .chapter-allocation .card-size-label { margin-top: 18px; margin-bottom: 8px; font-size: 10px; }
+  .chapter-shell .chapter-allocation .size-grid button { min-height: 48px; font-size: 14.5px; }
+  .chapter-shell .chapter-allocation .initials-field { gap: 8px; margin-top: 18px; padding-top: 16px; }
+  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 52px; }
+  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 66px; margin-top: 18px; padding: 16px 18px; }
 }
 
 /* DESKTOP LOOKBOOK CONTROL RAIL — KEEP THE REFERENCE'S TWO-PANEL FIELD, WITH CLEAR PREVIOUS/NEXT ACTIONS AT THE DOSSIER BASE. */

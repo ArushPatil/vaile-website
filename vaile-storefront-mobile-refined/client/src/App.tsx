@@ -25,18 +25,19 @@ function RouteScrollReset() {
   const [location] = useLocation();
 
   useEffect(() => {
-    if (window.location.hash) return;
-    window.scrollTo(0, 0);
-    const frameId = requestAnimationFrame(() => {
+    if (!window.location.hash) {
       window.scrollTo(0, 0);
-    });
-    const timerId = setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 40);
-    return () => {
-      cancelAnimationFrame(frameId);
-      clearTimeout(timerId);
-    };
+      const frameId = requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
+      const timerId = setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 40);
+      return () => {
+        cancelAnimationFrame(frameId);
+        clearTimeout(timerId);
+      };
+    }
   }, [location]);
 
   return null;

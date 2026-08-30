@@ -180,8 +180,11 @@ export default function HomeChapters() {
   }, []);
 
   useEffect(() => {
+    // When the page loads or refreshes, ALWAYS begin at the very top (Hero section).
+    window.scrollTo(0, 0);
+
     let frameId: number | null = null;
-    const scrollToPrimaryEnquiry = () => {
+    const handleHashChange = () => {
       if (window.location.hash !== "#enquiry") return;
       frameId = window.requestAnimationFrame(() => {
         const target = document.getElementById("enquiry");
@@ -193,13 +196,12 @@ export default function HomeChapters() {
       });
     };
 
-    scrollToPrimaryEnquiry();
-    window.addEventListener("hashchange", scrollToPrimaryEnquiry);
+    window.addEventListener("hashchange", handleHashChange);
     return () => {
       if (frameId !== null) window.cancelAnimationFrame(frameId);
-      window.removeEventListener("hashchange", scrollToPrimaryEnquiry);
+      window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [loading, reducedMotion]);
+  }, [reducedMotion]);
 
   return (
     <>
@@ -222,7 +224,24 @@ export default function HomeChapters() {
             <span className="brand-wordmark"><span className="kerning-v">V</span><span className="kerning-a">A</span>ILE</span>
             <small>001</small>
           </Link>
-          <a className="header-action" href="#enquiry" aria-label="Go to the VAILE enquiry form">
+          <a
+            className="header-action"
+            href="#enquiry"
+            onClick={(e) => {
+              const target = document.getElementById("enquiry");
+              if (target) {
+                e.preventDefault();
+                const header = document.querySelector<HTMLElement>(".chapter-shell .manual-header");
+                const headerOffset = (header?.getBoundingClientRect().height ?? 0) + 20;
+                const targetTop = window.scrollY + target.getBoundingClientRect().top - headerOffset;
+                window.scrollTo({ top: targetTop, behavior: reducedMotion ? "auto" : "smooth" });
+                if (window.history.replaceState) {
+                  window.history.replaceState(null, "", window.location.pathname);
+                }
+              }
+            }}
+            aria-label="Go to the VAILE enquiry form"
+          >
             <b>ENQUIRE</b><ArrowUpRight size={15} />
           </a>
         </header>

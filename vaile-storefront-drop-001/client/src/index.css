@@ -2085,9 +2085,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 }
 .chapter-shell .initials-field input::placeholder { color: rgba(236, 233, 223, .35); }
 .chapter-shell .initials-field__entry small { padding: 0 13px; color: rgba(236, 233, 223, .62); font: 600 8px/12px "DM Mono", monospace; letter-spacing: .1em; }
-.chapter-shell .allocation-record,
-.chapter-shell .allocation-record.is-awaiting-initials,
-.chapter-shell .allocation-record.allocation-record--ready {
+.chapter-shell .chapter-allocation .allocation-record,
+.chapter-shell .chapter-allocation .allocation-record.is-awaiting-initials,
+.chapter-shell .chapter-allocation .allocation-record.allocation-record--ready {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -2097,9 +2097,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 }
 
 /* ==========================================================================
-   STATE 1: INACTIVE (AWAITING INITIALS)
+   CHAPTER 01 ALLOCATION CARD: INACTIVE (AWAITING INITIALS)
    ========================================================================== */
-.chapter-shell button.allocation-record.is-awaiting-initials {
+.chapter-shell .chapter-allocation button.allocation-record.is-awaiting-initials {
   color: rgba(236, 233, 223, 0.48) !important;
   border: 1px solid rgba(247, 245, 239, 0.16) !important;
   background: rgba(23, 26, 23, 0.38) !important;
@@ -2108,26 +2108,26 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   transform: none !important;
   transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
-.chapter-shell button.allocation-record.is-awaiting-initials::before {
+.chapter-shell .chapter-allocation button.allocation-record.is-awaiting-initials::before {
   background: var(--oxide) !important;
   width: 4px !important;
 }
-.chapter-shell button.allocation-record.is-awaiting-initials span {
+.chapter-shell .chapter-allocation button.allocation-record.is-awaiting-initials span {
   color: rgba(236, 233, 223, 0.42) !important;
 }
-.chapter-shell button.allocation-record.is-awaiting-initials b {
+.chapter-shell .chapter-allocation button.allocation-record.is-awaiting-initials b {
   color: rgba(236, 233, 223, 0.52) !important;
 }
-.chapter-shell button.allocation-record.is-awaiting-initials svg {
+.chapter-shell .chapter-allocation button.allocation-record.is-awaiting-initials svg {
   color: rgba(236, 233, 223, 0.35) !important;
   transform: none !important;
 }
 
 /* ==========================================================================
-   STATE 2: ACTIVE / READY (INITIALS MET — STATE CHANGE)
+   CHAPTER 01 ALLOCATION CARD: ACTIVE / READY (INITIALS ENTERED)
    ========================================================================== */
-.chapter-shell a.allocation-record.allocation-record--ready,
-.chapter-shell a.allocation-record {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready,
+.chapter-shell .chapter-allocation a.allocation-record {
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -2149,8 +2149,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
     transform 0.24s cubic-bezier(0.23, 1, 0.32, 1),
     box-shadow 0.24s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.chapter-shell a.allocation-record.allocation-record--ready::before,
-.chapter-shell a.allocation-record::before {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready::before,
+.chapter-shell .chapter-allocation a.allocation-record::before {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2160,24 +2160,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   content: "";
   transition: width 0.22s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.22s ease;
 }
-.chapter-shell a.allocation-record.allocation-record--ready span,
-.chapter-shell a.allocation-record span {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready span,
+.chapter-shell .chapter-allocation a.allocation-record span {
   grid-column: 1;
   color: rgba(247, 245, 239, 0.8) !important;
   font: 600 8.5px "DM Mono", monospace;
   letter-spacing: 0.12em;
   transition: color 0.22s ease;
 }
-.chapter-shell a.allocation-record.allocation-record--ready b,
-.chapter-shell a.allocation-record b {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready b,
+.chapter-shell .chapter-allocation a.allocation-record b {
   grid-column: 1;
   font: 750 12.5px Archivo, sans-serif;
   letter-spacing: 0.02em;
   color: var(--pale) !important;
   transition: color 0.22s ease;
 }
-.chapter-shell a.allocation-record.allocation-record--ready svg,
-.chapter-shell a.allocation-record svg {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready svg,
+.chapter-shell .chapter-allocation a.allocation-record svg {
   grid-column: 2;
   grid-row: 1 / span 2;
   color: var(--pale) !important;
@@ -2185,49 +2185,97 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
 }
 
 /* ==========================================================================
-   STATE 3: MOUSE HOVER ON ACTIVE BUTTON
+   CHAPTER 01 ALLOCATION CARD: MOUSE HOVER ANIMATION
    ========================================================================== */
-.chapter-shell a.allocation-record.allocation-record--ready:hover,
-.chapter-shell a.allocation-record.allocation-record--ready:focus-visible,
-.chapter-shell a.allocation-record:hover,
-.chapter-shell a.allocation-record:focus-visible {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:hover,
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:focus-visible,
+.chapter-shell .chapter-allocation a.allocation-record:hover,
+.chapter-shell .chapter-allocation a.allocation-record:focus-visible {
   color: var(--ink) !important;
   background: var(--pale) !important;
   border-color: var(--pale) !important;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38) !important;
   transform: translateY(-2px) !important;
 }
-.chapter-shell a.allocation-record.allocation-record--ready:hover::before,
-.chapter-shell a.allocation-record.allocation-record--ready:focus-visible::before,
-.chapter-shell a.allocation-record:hover::before,
-.chapter-shell a.allocation-record:focus-visible::before {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:hover::before,
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:focus-visible::before,
+.chapter-shell .chapter-allocation a.allocation-record:hover::before,
+.chapter-shell .chapter-allocation a.allocation-record:focus-visible::before {
   width: 6px !important;
   background: var(--ink) !important;
 }
-.chapter-shell a.allocation-record.allocation-record--ready:hover span,
-.chapter-shell a.allocation-record.allocation-record--ready:focus-visible span,
-.chapter-shell a.allocation-record:hover span,
-.chapter-shell a.allocation-record:focus-visible span {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:hover span,
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:focus-visible span,
+.chapter-shell .chapter-allocation a.allocation-record:hover span,
+.chapter-shell .chapter-allocation a.allocation-record:focus-visible span {
   color: rgba(23, 26, 23, 0.78) !important;
 }
-.chapter-shell a.allocation-record.allocation-record--ready:hover b,
-.chapter-shell a.allocation-record.allocation-record--ready:focus-visible b,
-.chapter-shell a.allocation-record:hover b,
-.chapter-shell a.allocation-record:focus-visible b {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:hover b,
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:focus-visible b,
+.chapter-shell .chapter-allocation a.allocation-record:hover b,
+.chapter-shell .chapter-allocation a.allocation-record:focus-visible b {
   color: var(--ink) !important;
 }
-.chapter-shell a.allocation-record.allocation-record--ready:hover svg,
-.chapter-shell a.allocation-record.allocation-record--ready:focus-visible svg,
-.chapter-shell a.allocation-record:hover svg,
-.chapter-shell a.allocation-record:focus-visible svg {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:hover svg,
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:focus-visible svg,
+.chapter-shell .chapter-allocation a.allocation-record:hover svg,
+.chapter-shell .chapter-allocation a.allocation-record:focus-visible svg {
   color: var(--ink) !important;
   transform: translate(3px, -3px) !important;
 }
-.chapter-shell a.allocation-record.allocation-record--ready:active,
-.chapter-shell a.allocation-record:active {
+.chapter-shell .chapter-allocation a.allocation-record.allocation-record--ready:active,
+.chapter-shell .chapter-allocation a.allocation-record:active {
   transform: translateY(0) scale(0.99) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
 }
+
+/* ==========================================================================
+   ORIGINAL CLOSING ALLOCATION CTA BUTTON (RESTORED SOLID INK STYLING)
+   ========================================================================== */
+.chapter-shell .closing-allocation .allocation-record,
+.chapter-shell .closing-allocation a.allocation-record {
+  width: 100%;
+  min-height: 80px;
+  padding: 16px 22px;
+  border: 2px solid var(--ink) !important;
+  color: var(--stock) !important;
+  background: var(--ink) !important;
+  text-decoration: none;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.chapter-shell .closing-allocation .allocation-record::before,
+.chapter-shell .closing-allocation a.allocation-record::before {
+  background: var(--teal) !important;
+  width: 4px !important;
+}
+.chapter-shell .closing-allocation .allocation-record span,
+.chapter-shell .closing-allocation a.allocation-record span {
+  color: var(--stock) !important;
+  opacity: 0.8;
+}
+.chapter-shell .closing-allocation .allocation-record b,
+.chapter-shell .closing-allocation a.allocation-record b {
+  color: var(--stock) !important;
+}
+.chapter-shell .closing-allocation .allocation-record svg,
+.chapter-shell .closing-allocation a.allocation-record svg {
+  color: var(--stock) !important;
+  transform: none !important;
+}
+.chapter-shell .closing-allocation .allocation-record:hover,
+.chapter-shell .closing-allocation a.allocation-record:hover {
+  background: var(--lichen) !important;
+  border-color: var(--lichen) !important;
+  color: var(--stock) !important;
+  transform: none !important;
+}
+.chapter-shell .closing-allocation .allocation-record:hover span,
+.chapter-shell .closing-allocation .allocation-record:hover b,
+.chapter-shell .closing-allocation .allocation-record:hover svg {
+  color: var(--stock) !important;
+}
+
 .chapter-shell .allocation-record--gateway { display: grid; width: 100%; }
 @media (max-width: 767px) {
   .chapter-shell .initials-field { margin-top: var(--space-2); padding-top: var(--space-2); }

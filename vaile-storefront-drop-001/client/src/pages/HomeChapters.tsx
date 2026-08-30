@@ -104,7 +104,7 @@ export default function HomeChapters() {
 
   const selectChartSize = (nextSize: string) => setSize(nextSize);
   const updateInitials = (value: string) => setInitials(value.toUpperCase().replace(/[^A-Z]/g, "").slice(0, 3));
-  const requireInitials = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const requireInitials = (event: React.MouseEvent<HTMLElement>) => {
     if (hasInitials) return;
     event.preventDefault();
     initialsInputRef.current?.focus();

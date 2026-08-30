@@ -1432,25 +1432,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   .chapter-shell .allocation-copy { grid-column: 1 / 7; }
   .chapter-shell .allocation-card { grid-column: 7 / -1; }
   .chapter-shell .chapter-allocation .allocation-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .chapter-shell .chapter-allocation .allocation-card { max-width: 480px; width: 100%; justify-self: end; padding: 28px 28px 26px; }
-  .chapter-shell .chapter-allocation .size-grid button { min-height: 52px; font-size: 15px; }
+  .chapter-shell .chapter-allocation .allocation-card { max-width: 440px; width: 100%; justify-self: end; padding: 26px 26px 24px; }
+  .chapter-shell .chapter-allocation .size-grid button { min-height: 50px; font-size: 15px; }
   .chapter-shell .chapter-allocation .initials-field { gap: 8px; margin-top: 18px; padding-top: 16px; }
-  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 52px; }
-  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 66px; margin-top: 18px; }
+  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 50px; }
+  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 64px; margin-top: 18px; }
 }
 
 @media (min-width: 1200px) {
   .chapter-shell .allocation-copy { grid-column: 1 / 8; }
-  /* PRIMARY CTA PROPORTION — SPACIOUS 5-COLUMN EDITORIAL FIELD */
+  /* REFINED ALLOCATION CARD PROPORTION — ELEGANT 440PX COMPACT LUXURY BOX */
   .chapter-shell .allocation-card { grid-column: 8 / -1; }
-  .chapter-shell .chapter-allocation .allocation-card { max-width: 520px; width: 100%; justify-self: end; padding: 34px 34px 30px; }
-  .chapter-shell .chapter-allocation .card-price-eyebrow { margin-bottom: 12px; }
-  .chapter-shell .chapter-allocation .card-price-row { padding-bottom: 20px; }
-  .chapter-shell .chapter-allocation .card-size-label { margin-top: 20px; margin-bottom: 10px; font-size: 10.5px; }
-  .chapter-shell .chapter-allocation .size-grid button { min-height: 52px; font-size: 15px; }
-  .chapter-shell .chapter-allocation .initials-field { gap: 9px; margin-top: 20px; padding-top: 18px; }
-  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 54px; }
-  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 68px; margin-top: 20px; padding: 16px 20px; }
+  .chapter-shell .chapter-allocation .allocation-card { max-width: 440px; width: 100%; justify-self: end; padding: 30px 30px 26px; }
+  .chapter-shell .chapter-allocation .card-price-eyebrow { margin-bottom: 10px; }
+  .chapter-shell .chapter-allocation .card-price-row { padding-bottom: 18px; }
+  .chapter-shell .chapter-allocation .card-size-label { margin-top: 18px; margin-bottom: 8px; font-size: 10px; }
+  .chapter-shell .chapter-allocation .size-grid button { min-height: 48px; font-size: 14.5px; }
+  .chapter-shell .chapter-allocation .initials-field { gap: 8px; margin-top: 18px; padding-top: 16px; }
+  .chapter-shell .chapter-allocation .initials-field__entry { min-height: 52px; }
+  .chapter-shell .chapter-allocation .allocation-record { width: 100%; min-height: 66px; margin-top: 18px; padding: 16px 18px; }
 }
 
 /* DESKTOP LOOKBOOK CONTROL RAIL — KEEP THE REFERENCE'S TWO-PANEL FIELD, WITH CLEAR PREVIOUS/NEXT ACTIONS AT THE DOSSIER BASE. */
@@ -2130,36 +2130,123 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-o
   box-sizing: border-box;
   text-align: left;
 }
-.chapter-shell .allocation-record.is-awaiting-initials {
-  color: rgba(236, 233, 223, .58);
-  border-color: rgba(247, 245, 239, .18);
-  background: rgba(23, 26, 23, .42);
-  cursor: default;
-  box-shadow: none;
-  transform: none;
+
+/* ACTIVATED ENQUIRY BUTTON (WHEN INITIALS ARE ENTERED) */
+.chapter-shell a.allocation-record {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 14px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--pale);
+  background: rgba(23, 26, 23, 0.45);
+  border: 1px solid rgba(247, 245, 239, 0.45);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    background-color 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+    border-color 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+    color 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.22s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.chapter-shell .allocation-record.is-awaiting-initials::before {
-  background: var(--oxide);
+.chapter-shell a.allocation-record::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 4px;
+  background: var(--teal);
+  content: "";
+  transition: width 0.22s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.22s ease;
 }
-.chapter-shell .allocation-record.is-awaiting-initials svg {
-  color: rgba(236, 233, 223, .45);
-  transform: none;
+.chapter-shell a.allocation-record span {
+  grid-column: 1;
+  color: rgba(247, 245, 239, 0.75);
+  font: 600 9px "DM Mono", monospace;
+  letter-spacing: 0.12em;
+  transition: color 0.22s ease;
 }
-.chapter-shell .allocation-record.is-awaiting-initials:hover {
-  color: rgba(236, 233, 223, .58);
-  background: rgba(23, 26, 23, .42);
-  border-color: rgba(247, 245, 239, .18);
-  transform: none;
-  box-shadow: none;
+.chapter-shell a.allocation-record b {
+  grid-column: 1;
+  font: 750 13px Archivo, sans-serif;
+  letter-spacing: 0.02em;
+  color: var(--pale);
+  transition: color 0.22s ease;
 }
-.chapter-shell .allocation-record.is-awaiting-initials:hover span,
-.chapter-shell .allocation-record.is-awaiting-initials:hover b {
-  color: rgba(236, 233, 223, .58);
+.chapter-shell a.allocation-record svg {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: var(--pale);
+  transition: transform 0.22s cubic-bezier(0.23, 1, 0.32, 1), color 0.22s ease;
 }
-.chapter-shell .allocation-record.is-awaiting-initials:hover svg {
-  color: rgba(236, 233, 223, .45);
-  transform: none;
+
+/* ACTIVE HOVER EFFECT ON HOME & CLOSING ALLOCATION */
+.chapter-shell a.allocation-record:hover,
+.chapter-shell a.allocation-record:focus-visible {
+  color: var(--ink) !important;
+  background: var(--pale) !important;
+  border-color: var(--pale) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32) !important;
+  transform: translateY(-2px) !important;
+}
+.chapter-shell a.allocation-record:hover::before,
+.chapter-shell a.allocation-record:focus-visible::before {
+  width: 6px !important;
+  background: var(--ink) !important;
+}
+.chapter-shell a.allocation-record:hover span,
+.chapter-shell a.allocation-record:focus-visible span {
+  color: rgba(23, 26, 23, 0.78) !important;
+}
+.chapter-shell a.allocation-record:hover b,
+.chapter-shell a.allocation-record:focus-visible b {
+  color: var(--ink) !important;
+}
+.chapter-shell a.allocation-record:hover svg,
+.chapter-shell a.allocation-record:focus-visible svg {
+  color: var(--ink) !important;
+  transform: translate(3px, -3px) !important;
+}
+.chapter-shell a.allocation-record:active {
+  transform: translateY(0) scale(0.99) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* DISABLED AWAITING-INITIALS BUTTON */
+.chapter-shell button.allocation-record.is-awaiting-initials {
+  color: rgba(236, 233, 223, 0.58) !important;
+  border-color: rgba(247, 245, 239, 0.18) !important;
+  background: rgba(23, 26, 23, 0.42) !important;
+  cursor: default !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+.chapter-shell button.allocation-record.is-awaiting-initials::before {
+  background: var(--oxide) !important;
+  width: 4px !important;
+}
+.chapter-shell button.allocation-record.is-awaiting-initials svg {
+  color: rgba(236, 233, 223, 0.45) !important;
+  transform: none !important;
+}
+.chapter-shell button.allocation-record.is-awaiting-initials:hover {
+  color: rgba(236, 233, 223, 0.58) !important;
+  background: rgba(23, 26, 23, 0.42) !important;
+  border-color: rgba(247, 245, 239, 0.18) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+.chapter-shell button.allocation-record.is-awaiting-initials:hover span,
+.chapter-shell button.allocation-record.is-awaiting-initials:hover b {
+  color: rgba(236, 233, 223, 0.58) !important;
+}
+.chapter-shell button.allocation-record.is-awaiting-initials:hover svg {
+  color: rgba(236, 233, 223, 0.45) !important;
+  transform: none !important;
 }
 .chapter-shell .allocation-record--gateway { display: grid; width: 100%; }
 @media (max-width: 767px) {
